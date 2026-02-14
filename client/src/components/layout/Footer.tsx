@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
@@ -19,10 +20,10 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold text-white">Hızlı Erişim</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#about" className="hover:text-white transition-colors">Hakkımızda</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Ürünler</a></li>
-              <li><a href="#global" className="hover:text-white transition-colors">Hizmet Bölgeleri</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">İletişim</a></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Hakkımızda</Link></li>
+              <li><Link href="/products" className="hover:text-white transition-colors">Ürünler</Link></li>
+              <li><Link href="/global-network" className="hover:text-white transition-colors">Hizmet Bölgeleri</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">İletişim</Link></li>
             </ul>
           </div>
 
