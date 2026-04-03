@@ -143,10 +143,11 @@ const getBrandDomain = (brandName: string) => {
 const getBrandLogo = (brandName: string) => {
   const domain = getBrandDomain(brandName);
   if (domain) {
-    return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
+    // Clearbit'ten en yüksek kalitede logo çekmek için size parametresi
+    return `https://logo.clearbit.com/${domain}?size=800`;
   }
   
-  return `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33`;
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`;
 };
 
 export default function ProductsPage() {
@@ -234,25 +235,37 @@ export default function ProductsPage() {
                       <Layers className="w-5 h-5 text-primary" />
                       Tedarikçi Markalar
                     </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                       {cat.brands.map((brand, idx) => (
                         <div 
                           key={idx} 
-                          className="flex flex-col items-center justify-center p-4 bg-white border rounded-xl hover:border-primary/50 hover:shadow-sm transition-all"
+                          className="flex flex-col items-center justify-center p-4 sm:p-6 bg-white border rounded-2xl hover:border-primary/50 hover:shadow-xl transition-all duration-300 group shadow-sm"
                         >
-                          <div className="h-12 flex items-center justify-center w-full mb-3">
+                          <div className="h-36 sm:h-48 flex items-center justify-center w-full mb-4 transition-transform duration-500 group-hover:scale-110 p-1">
                             <img 
                               src={getBrandLogo(brand)} 
                               alt={`${brand} logo`} 
                               className="max-h-full max-w-full object-contain mix-blend-multiply"
+                              style={{ 
+                                objectFit: 'contain',
+                                width: '100%',
+                                height: '100%',
+                                filter: 'contrast(1.05)'
+                              }}
                               onError={(e) => {
-                                // Fallback if clearbit fails
                                 const target = e.target as HTMLImageElement;
-                                target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(brand)}&background=f8fafc&color=0f172a&font-size=0.33`;
+                                if (target.src.includes('clearbit')) {
+                                  const domain = getBrandDomain(brand);
+                                  if (domain) {
+                                    target.src = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=256`;
+                                  }
+                                } else {
+                                  target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(brand)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`;
+                                }
                               }}
                             />
                           </div>
-                          <span className="text-sm font-medium text-center">{brand}</span>
+                          <span className="text-sm sm:text-base font-bold text-center text-slate-800">{brand}</span>
                         </div>
                       ))}
                     </div>
