@@ -20,18 +20,18 @@ export function Navbar() {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/">
-            <a className="flex items-center gap-3">
+            <div className="flex items-center gap-3 cursor-pointer">
               <img src="/logo.png" alt="Globalvelo Logo" className="h-12 w-auto object-contain" />
-            </a>
+            </div>
           </Link>
         </div>
 
         <div className="hidden md:flex md:items-center md:gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a className={`text-sm font-medium transition-colors hover:text-primary ${location === link.href ? 'text-primary' : 'text-muted-foreground'}`}>
+              <span className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${location === link.href ? 'text-primary' : 'text-muted-foreground'}`}>
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
           <Button>Teklif Al</Button>
@@ -47,9 +47,9 @@ export function Navbar() {
             <div className="flex flex-col gap-6 pt-10">
               {links.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <a className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                  <span className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>
                     {link.label}
-                  </a>
+                  </span>
                 </Link>
               ))}
               <Button className="w-full">Teklif Al</Button>

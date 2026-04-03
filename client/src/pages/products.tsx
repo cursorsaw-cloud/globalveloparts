@@ -72,7 +72,7 @@ const categoriesData = [
 ];
 
 // Helper to get a brand logo using their official domain via Clearbit.
-const getBrandLogo = (brandName: string) => {
+const getBrandDomain = (brandName: string) => {
   const domainMap: Record<string, string> = {
     "Brembo": "brembo.com",
     "Textar": "textar.com",
@@ -137,10 +137,13 @@ const getBrandLogo = (brandName: string) => {
     "Walker": "walker-exhaust.eu",
     "GKN": "gknautomotive.com"
   };
-  
-  const domain = domainMap[brandName];
+  return domainMap[brandName];
+};
+
+const getBrandLogo = (brandName: string) => {
+  const domain = getBrandDomain(brandName);
   if (domain) {
-    return `https://logo.clearbit.com/${domain}`;
+    return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
   }
   
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33`;
