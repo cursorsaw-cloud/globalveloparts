@@ -21,8 +21,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/">
             <a className="flex items-center gap-3">
-              <img src="/logo.png" alt="Globalvelo Logo" className="h-10 w-10 object-contain" />
-              <span className="font-heading text-xl font-bold tracking-tight text-primary">Globalvelo</span>
+              <img src="/logo.png" alt="Globalvelo Logo" className="h-12 w-auto object-contain" />
             </a>
           </Link>
         </div>

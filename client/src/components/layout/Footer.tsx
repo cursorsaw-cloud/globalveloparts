@@ -8,8 +8,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="Globalvelo" className="h-8 w-8 brightness-0 invert" />
-              <span className="font-heading text-xl font-bold text-white">Globalvelo</span>
+              <img src="/logo.png" alt="Globalvelo" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-slate-400 max-w-xs">
               Uluslararası otomotiv yedek parça ticaretinde güvenilir çözüm ortağınız.
