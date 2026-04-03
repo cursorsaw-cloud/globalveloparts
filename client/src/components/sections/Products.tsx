@@ -2,24 +2,44 @@ import { Button } from "@/components/ui/button";
 
 const categories = [
   {
+    title: "Fren Sistemi",
+    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
+    desc: "Balata, Disk, Kaliper, Hidrolik, ABS, Hortum."
+  },
+  {
+    title: "Filtreler",
+    image: "https://images.unsplash.com/photo-1622204558230-010e979a02fb?auto=format&fit=crop&q=80&w=800",
+    desc: "Yağ, Hava, Polen, Yakıt, Performans."
+  },
+  {
     title: "Motor Parçaları",
     image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
-    desc: "Piston, segman, silindir kapağı ve daha fazlası."
+    desc: "Yağ, Conta, Zamanlama, Piston, Pompa."
   },
   {
-    title: "Fren Sistemleri",
-    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
-    desc: "Diskler, balatalar, kaliperler ve ABS sensörleri."
-  },
-  {
-    title: "Süspansiyon",
+    title: "Süspansiyon & Sönümleme",
     image: "https://images.unsplash.com/photo-1552176625-e47ff529b595?auto=format&fit=crop&q=80&w=800",
-    desc: "Amortisörler, yaylar ve alt takım bileşenleri."
+    desc: "Salıncak, Rot, Rulman, Amortisör, Yay."
   },
   {
-    title: "Elektrik Aksamı",
+    title: "Kayış & Zincir",
+    image: "https://images.unsplash.com/photo-1616422285623-1384f5bc93cd?auto=format&fit=crop&q=80&w=800",
+    desc: "Triger Seti, V Kayışı, Gergi."
+  },
+  {
+    title: "Elektrik & Aydınlatma",
     image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
-    desc: "Alternatörler, marş motorları ve sensörler."
+    desc: "Far, Silecek, Ateşleme, Akü, Röle."
+  },
+  {
+    title: "Soğutma & Isıtma",
+    image: "https://images.unsplash.com/photo-1622322339893-6c7d242ef99a?auto=format&fit=crop&q=80&w=800",
+    desc: "Radyatör, Pompa, Termostat."
+  },
+  {
+    title: "Debriyaj & Aktarma",
+    image: "https://images.unsplash.com/photo-1588616149298-6a56e7e01d16?auto=format&fit=crop&q=80&w=800",
+    desc: "Debriyaj Seti, Volan, Aks, Şanzıman."
   },
 ];
 
