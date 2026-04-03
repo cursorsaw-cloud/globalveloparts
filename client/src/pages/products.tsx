@@ -235,13 +235,13 @@ export default function ProductsPage() {
                       <Layers className="w-5 h-5 text-primary" />
                       Tedarikçi Markalar
                     </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                       {cat.brands.map((brand, idx) => (
                         <div 
                           key={idx} 
-                          className="flex flex-col items-center justify-center p-4 sm:p-6 bg-white border rounded-2xl hover:border-primary/50 hover:shadow-xl transition-all duration-300 group shadow-sm"
+                          className="flex flex-col items-center justify-center p-4 sm:p-5 bg-white border rounded-xl hover:border-primary/40 hover:shadow-md transition-all duration-300 group shadow-sm"
                         >
-                          <div className="h-36 sm:h-48 flex items-center justify-center w-full mb-4 transition-transform duration-500 group-hover:scale-110 p-1">
+                          <div className="h-20 sm:h-24 flex items-center justify-center w-full mb-3 transition-transform duration-300 group-hover:scale-105 p-2">
                             <img 
                               src={getBrandLogo(brand)} 
                               alt={`${brand} logo`} 
@@ -250,7 +250,7 @@ export default function ProductsPage() {
                                 objectFit: 'contain',
                                 width: '100%',
                                 height: '100%',
-                                filter: 'contrast(1.05)'
+                                filter: 'contrast(1.05) grayscale(0.1)'
                               }}
                               onError={(e) => {
                                 const target = e.target as HTMLImageElement;
@@ -265,7 +265,7 @@ export default function ProductsPage() {
                               }}
                             />
                           </div>
-                          <span className="text-sm sm:text-base font-bold text-center text-slate-800">{brand}</span>
+                          <span className="text-xs sm:text-sm font-semibold text-center text-slate-700">{brand}</span>
                         </div>
                       ))}
                     </div>
