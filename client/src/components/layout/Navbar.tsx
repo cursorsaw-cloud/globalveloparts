@@ -1,8 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Menu } from "lucide-react";
+import { Menu, Globe } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +45,23 @@ export function Navbar() {
               </span>
             </Link>
           ))}
-          <Button>Teklif Al</Button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 font-medium ml-2">
+                <Globe className="h-4 w-4" />
+                TR
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-[120px]">
+              <DropdownMenuItem className="cursor-pointer font-medium">
+                TR - Türkçe
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer font-medium text-muted-foreground">
+                EN - English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -57,7 +79,16 @@ export function Navbar() {
                   </span>
                 </Link>
               ))}
-              <Button className="w-full">Teklif Al</Button>
+              
+              <div className="h-px bg-border my-2 w-full"></div>
+              
+              <div className="flex items-center gap-4">
+                <Globe className="h-5 w-5 text-muted-foreground" />
+                <div className="flex gap-4">
+                  <span className="text-lg font-medium text-primary cursor-pointer">TR</span>
+                  <span className="text-lg font-medium text-muted-foreground cursor-pointer">EN</span>
+                </div>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
