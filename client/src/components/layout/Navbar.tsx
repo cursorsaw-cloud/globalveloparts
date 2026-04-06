@@ -12,6 +12,7 @@ export function Navbar() {
     { href: "/about", label: "Hakkımızda" },
     { href: "/products", label: "Ürünler" },
     { href: "/global", label: "Global Ağımız" },
+    { href: "/sabancidx", label: "SabancıDx" },
     { href: "/#contact", label: "İletişim" },
   ];
 

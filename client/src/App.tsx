@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Products from "@/pages/products";
 import Global from "@/pages/global";
+import SabanciDx from "@/pages/sabancidx";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/products" component={Products} />
         <Route path="/global" component={Global} />
+        <Route path="/sabancidx" component={SabanciDx} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
