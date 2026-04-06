@@ -4,6 +4,7 @@ import {
   Zap, Snowflake, Settings2, Fuel, ChevronDown, ChevronUp,
   LayoutGrid, Layers
 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const categoriesData = [
   {
@@ -152,6 +153,7 @@ const getBrandLogo = (brandName: string) => {
 
 export default function ProductsPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const toggleCategory = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
@@ -160,10 +162,9 @@ export default function ProductsPage() {
   return (
     <div className="py-20 container animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4 font-heading">Ürün Kategorileri & Markalar</h1>
+        <h1 className="text-4xl font-bold mb-4 font-heading">{t('prod.title')}</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          Globalvelo olarak, dünyanın önde gelen otomotiv yedek parça üreticileriyle çalışıyoruz.
-          Aşağıdaki kategorilerden ürün gruplarını ve distribütörlüğünü yaptığımız markaları inceleyebilirsiniz.
+          {t('prod.desc')}
         </p>
       </div>
       
@@ -192,7 +193,7 @@ export default function ProductsPage() {
                   <div>
                     <h2 className="text-2xl font-bold">{cat.name}</h2>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {cat.subCategories.length} Alt Kategori • {cat.brands.length} Marka
+                      {cat.subCategories.length} {t('prod.subcats')} • {cat.brands.length} Marka
                     </p>
                   </div>
                 </div>
@@ -204,7 +205,7 @@ export default function ProductsPage() {
                   }}
                   data-testid={`button-details-${cat.id}`}
                 >
-                  Detaylar
+                  {t('prod.btn.details')}
                   {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </button>
               </div>
@@ -216,7 +217,7 @@ export default function ProductsPage() {
                   <div className="mb-8 mt-6">
                     <h3 className="text-lg font-semibold flex items-center gap-2 mb-4">
                       <LayoutGrid className="w-5 h-5 text-primary" />
-                      Alt Kategoriler
+                      {t('prod.subcats')}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {cat.subCategories.map((sub, idx) => (
@@ -233,7 +234,7 @@ export default function ProductsPage() {
                   <div>
                     <h3 className="text-lg font-semibold flex items-center gap-2 mb-4">
                       <Layers className="w-5 h-5 text-primary" />
-                      Tedarikçi Markalar
+                      {t('prod.brands')}
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                       {cat.brands.map((brand, idx) => (

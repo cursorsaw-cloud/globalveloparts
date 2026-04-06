@@ -1,7 +1,10 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-slate-950 text-slate-200">
       <div className="container py-12 md:py-16">
@@ -11,27 +14,26 @@ export function Footer() {
               <img src="/logo.png" alt="Globalvelo" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-slate-400 max-w-xs">
-              Uluslararası otomotiv yedek parça ticaretinde güvenilir çözüm ortağınız.
-              Dünya çapında tedarik zinciri yönetimi ve lojistik çözümleri.
+              {t('hero.desc')}
             </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-semibold text-white">Hızlı Erişim</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link href="/about" className="hover:text-white transition-colors">Hakkımızda</Link></li>
-              <li><Link href="/products" className="hover:text-white transition-colors">Ürünler</Link></li>
-              <li><Link href="/global-network" className="hover:text-white transition-colors">Hizmet Bölgeleri</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">İletişim</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">{t('nav.about')}</Link></li>
+              <li><Link href="/products" className="hover:text-white transition-colors">{t('nav.products')}</Link></li>
+              <li><Link href="/global" className="hover:text-white transition-colors">{t('nav.global')}</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">İletişim</h3>
+            <h3 className="mb-4 text-lg font-semibold text-white">{t('nav.contact')}</h3>
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-primary" />
-                <span>Maslak Mah. Büyükdere Cad.<br />No: 123, Sarıyer, İstanbul</span>
+                <span>{t('contact.address.desc1')}<br />{t('contact.address.desc2')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />

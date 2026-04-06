@@ -1,30 +1,33 @@
 import { Globe, ShieldCheck, Truck, Users, Award, Zap, Server, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const features = [
-  {
-    title: "Global Tedarik Ağı",
-    description: "40'tan fazla ülkeye ihracat kapasitesi ve dünyanın önde gelen otomotiv markalarıyla güçlü tedarik zinciri ortaklıkları.",
-    icon: Globe,
-  },
-  {
-    title: "Orijinal ve OEM Kalitesi",
-    description: "Tüm yedek parçalarımız uluslararası kalite standartlarına (ISO/TS) uygun, sertifikalı ve üretici garantisi altındadır.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Hızlı Lojistik Çözümleri",
-    description: "Modern depolama altyapımız sayesinde dünyanın her noktasına güvenli, sigortalı ve zamanında teslimat garantisi sunuyoruz.",
-    icon: Truck,
-  },
-  {
-    title: "Uzman Destek Ekibi",
-    description: "Sektörde yılların deneyimine sahip uzman kadromuzla iş ortaklarımıza 7/24 teknik ve operasyonel destek sağlıyoruz.",
-    icon: Users,
-  },
-];
+import { useLanguage } from "@/lib/i18n";
 
 export function Features() {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      title: t('feat.1.title'),
+      description: t('feat.1.desc'),
+      icon: Globe,
+    },
+    {
+      title: t('feat.2.title'),
+      description: t('feat.2.desc'),
+      icon: ShieldCheck,
+    },
+    {
+      title: t('feat.3.title'),
+      description: t('feat.3.desc'),
+      icon: Truck,
+    },
+    {
+      title: t('feat.4.title'),
+      description: t('feat.4.desc'),
+      icon: Users,
+    },
+  ];
+
   return (
     <section id="about" className="py-24 bg-slate-50 border-t border-slate-200/60 relative overflow-hidden">
       {/* Decorative background elements */}
@@ -33,12 +36,12 @@ export function Features() {
       
       <div className="container relative z-10">
         <div className="mb-16 text-center max-w-3xl mx-auto">
-          <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-3 block">Kurumsal Değerlerimiz</span>
+          <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-3 block">{t('feat.badge')}</span>
           <h2 className="mb-6 text-4xl font-extrabold md:text-5xl text-slate-900 tracking-tight">
-            Neden Globalvelo?
+            {t('feat.title')}
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed">
-            Sektördeki köklü tecrübemiz, yenilikçi lojistik altyapımız ve tavizsiz kalite odaklı yaklaşımımızla global iş ortaklarımıza sürdürülebilir değer katıyoruz.
+            {t('feat.desc')}
           </p>
         </div>
 
@@ -64,19 +67,19 @@ export function Features() {
         <div className="mt-20 pt-10 border-t border-slate-200/60 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="text-4xl font-extrabold text-primary mb-2">40+</div>
-            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">İhracat Ülkesi</div>
+            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{t('feat.stat.1.label')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-extrabold text-primary mb-2">80+</div>
-            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Global Marka</div>
+            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{t('feat.stat.2.label')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-extrabold text-primary mb-2">15k+</div>
-            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Ürün Çeşidi</div>
+            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{t('feat.stat.3.label')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-extrabold text-primary mb-2">%100</div>
-            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">OEM Kalitesi</div>
+            <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{t('feat.stat.4.label')}</div>
           </div>
         </div>
       </div>

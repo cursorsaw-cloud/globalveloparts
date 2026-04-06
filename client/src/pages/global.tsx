@@ -1,30 +1,35 @@
+import { useLanguage } from "@/lib/i18n";
+
 export default function GlobalNetworkPage() {
+  const { t } = useLanguage();
+  
   return (
     <div className="py-20 container animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h1 className="text-4xl font-bold mb-8 font-heading">Global Ağımız</h1>
+      <h1 className="text-4xl font-bold mb-8 font-heading">{t('global.title')}</h1>
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Globalvelo, Türkiye merkezli olmak üzere Avrupa, Orta Doğu, Asya ve Afrika pazarlarında aktif bir rol oynamaktadır. 
-            40'tan fazla ülkeye yayılan geniş distribütör ağımız ve stratejik lojistik merkezlerimizle, yedek parça ihtiyacını sınır tanımadan karşılıyoruz.
+            {t('global.desc')}
           </p>
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <div className="h-2 w-2 rounded-full bg-primary" />
-              <span className="font-medium">Avrupa Lojistik Merkezi: Almanya</span>
+              <span className="font-medium">{t('global.eu')}</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="h-2 w-2 rounded-full bg-primary" />
-              <span className="font-medium">Orta Doğu Dağıtım: Dubai</span>
+              <span className="font-medium">{t('global.me')}</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="h-2 w-2 rounded-full bg-primary" />
-              <span className="font-medium">Asya Pasifik Ofisi: Şangay</span>
+              <span className="font-medium">{t('global.asia')}</span>
             </div>
           </div>
         </div>
-        <div className="bg-slate-900 aspect-video rounded-2xl flex items-center justify-center text-white/20 font-bold text-2xl border border-white/10">
-          [Global Harita Görseli]
+        <div className="bg-slate-900 aspect-video rounded-2xl flex items-center justify-center text-white/20 font-bold text-2xl border border-white/10 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity" alt="Global Network" />
+          <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+          <span className="relative z-10 text-white/80 tracking-widest uppercase text-lg">Globalvelo Network</span>
         </div>
       </div>
     </div>

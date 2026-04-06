@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, Globe2, ShieldCheck, Zap } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export function Hero() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-[90vh] w-full flex items-center bg-slate-950 overflow-hidden">
       {/* Premium Background with Gradient & Texture */}
@@ -29,12 +32,12 @@ export function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-sm font-medium text-slate-300">Global Yedek Parça Tedarikçiniz</span>
+              <span className="text-sm font-medium text-slate-300">{t('hero.badge')}</span>
             </div>
             
             <h1 className="mb-6 font-heading text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl leading-[1.1]">
-              Otomotiv Dünyasında <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Global Güç</span>
+              {t('hero.title1')} <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">{t('hero.title2')}</span>
             </h1>
           </motion.div>
 
@@ -44,7 +47,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             <p className="mb-10 text-lg text-slate-300 md:text-xl font-light leading-relaxed max-w-2xl">
-              Uluslararası standartlarda OEM garantili otomotiv yedek parça tedariği ve akıllı lojistik çözümleri. En kaliteli parçaları, dünyanın her noktasına kusursuz ulaştırıyoruz.
+              {t('hero.desc')}
             </p>
           </motion.div>
           
@@ -55,11 +58,11 @@ export function Hero() {
             className="flex flex-col gap-4 sm:flex-row items-start"
           >
             <Button size="lg" className="text-base h-14 px-8 rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all group">
-              Ürünleri İncele
+              {t('hero.btn.products')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="lg" variant="outline" className="text-base h-14 px-8 rounded-full bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white backdrop-blur-sm transition-all group">
-              Bizimle İletişime Geçin 
+              {t('hero.btn.contact')}
               <ChevronRight className="ml-1 h-5 w-5 text-slate-400 group-hover:text-white transition-colors" />
             </Button>
           </motion.div>
@@ -73,15 +76,15 @@ export function Hero() {
           >
             <div className="flex items-center gap-3">
               <Globe2 className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">40+ Ülke</span>
+              <span className="text-sm font-medium text-slate-300">{t('hero.trust.countries')}</span>
             </div>
             <div className="flex items-center gap-3">
               <ShieldCheck className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">%100 Orijinal</span>
+              <span className="text-sm font-medium text-slate-300">{t('hero.trust.original')}</span>
             </div>
             <div className="flex items-center gap-3">
               <Zap className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">Hızlı Teslimat</span>
+              <span className="text-sm font-medium text-slate-300">{t('hero.trust.fast')}</span>
             </div>
           </motion.div>
         </div>

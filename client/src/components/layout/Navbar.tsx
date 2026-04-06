@@ -9,23 +9,25 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/lib/i18n";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const links = [
-    { href: "/about", label: "Hakkımızda" },
-    { href: "/products", label: "Ürünler" },
-    { href: "/global", label: "Global Ağımız" },
-    { href: "/sabancidx", label: "SabancıDx" },
-    { href: "/#contact", label: "İletişim" },
+    { href: "/about", label: t('nav.about') },
+    { href: "/products", label: t('nav.products') },
+    { href: "/global", label: t('nav.global') },
+    { href: "/sabancidx", label: t('nav.sabancidx') },
+    { href: "/#contact", label: t('nav.contact') },
   ];
 
   return (
     <>
       <div className="bg-primary text-primary-foreground py-2 px-4 text-center text-xs sm:text-sm font-medium tracking-wide">
-        SabancıDx Güvencesiyle
+        {t('nav.assurance')}
       </div>
       <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
@@ -50,14 +52,20 @@ export function Navbar() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 font-medium ml-2">
                 <Globe className="h-4 w-4" />
-                TR
+                {language.toUpperCase()}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-[120px]">
-              <DropdownMenuItem className="cursor-pointer font-medium">
+              <DropdownMenuItem 
+                className={`cursor-pointer font-medium ${language === 'tr' ? 'text-primary' : 'text-muted-foreground'}`}
+                onClick={() => setLanguage('tr')}
+              >
                 TR - Türkçe
               </DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer font-medium text-muted-foreground">
+              <DropdownMenuItem 
+                className={`cursor-pointer font-medium ${language === 'en' ? 'text-primary' : 'text-muted-foreground'}`}
+                onClick={() => setLanguage('en')}
+              >
                 EN - English
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -85,8 +93,24 @@ export function Navbar() {
               <div className="flex items-center gap-4">
                 <Globe className="h-5 w-5 text-muted-foreground" />
                 <div className="flex gap-4">
-                  <span className="text-lg font-medium text-primary cursor-pointer">TR</span>
-                  <span className="text-lg font-medium text-muted-foreground cursor-pointer">EN</span>
+                  <span 
+                    className={`text-lg font-medium cursor-pointer ${language === 'tr' ? 'text-primary' : 'text-muted-foreground'}`}
+                    onClick={() => {
+                      setLanguage('tr');
+                      setIsOpen(false);
+                    }}
+                  >
+                    TR
+                  </span>
+                  <span 
+                    className={`text-lg font-medium cursor-pointer ${language === 'en' ? 'text-primary' : 'text-muted-foreground'}`}
+                    onClick={() => {
+                      setLanguage('en');
+                      setIsOpen(false);
+                    }}
+                  >
+                    EN
+                  </span>
                 </div>
               </div>
             </div>
