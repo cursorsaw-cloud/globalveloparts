@@ -30,11 +30,11 @@ export function Navbar() {
         {t('nav.assurance')}
       </div>
       <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex py-4 items-center justify-between min-h-[5rem]">
         <div className="flex items-center gap-2">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/logo.png" alt="Globalvelo Logo" className="h-12 w-auto object-contain" />
+              <img src="/logo.png" alt="Globalvelo Logo" className="h-20 sm:h-24 w-auto object-contain" />
             </div>
           </Link>
         </div>
