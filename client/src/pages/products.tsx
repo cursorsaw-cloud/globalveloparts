@@ -104,6 +104,7 @@ const getBrandDomain = (brandName: string) => {
     "INA": "repxpert.com.tr",
     "FAG": "repxpert.com.tr",
     "LuK": "repxpert.com.tr",
+    "Vitesco": "repxpert.com.tr",
     "Gates": "gates.com",
     "Dayco": "daycoaftermarket.com",
     "SKF": "skf.com",
@@ -142,8 +143,14 @@ const getBrandDomain = (brandName: string) => {
 };
 
 const getBrandLogo = (brandName: string) => {
+  // Special Schaeffler brands from Repxpert
+  if (brandName === "LuK") return "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg";
+  if (brandName === "INA") return "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg";
+  if (brandName === "FAG") return "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg";
+  if (brandName === "Vitesco") return "https://www.repxpert.com.tr/assets/images/brands/vitesco-logo.svg";
+
   const domain = getBrandDomain(brandName);
-  if (domain) {
+  if (domain && domain !== "repxpert.com.tr") {
     // Clearbit'ten en yüksek kalitede logo çekmek için size parametresi
     return `https://logo.clearbit.com/${domain}?size=800`;
   }
