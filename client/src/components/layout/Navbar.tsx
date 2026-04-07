@@ -26,27 +26,27 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
       <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
-        <div className="flex min-h-[92px] items-center gap-6 md:min-h-[98px]">
+        <div className="flex min-h-[94px] items-center gap-6 md:min-h-[102px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
               <img
                 src="/logo-globalvelo-white-header.png"
                 alt="Globalvelo Logo"
-                className="h-13 w-auto object-contain sm:h-[3.85rem] lg:h-[4.25rem]"
+                className="h-14 w-auto object-contain sm:h-[4.05rem] lg:h-[4.45rem]"
                 data-testid="img-globalvelo-logo"
               />
             </div>
           </Link>
 
-          <div className="ml-auto hidden min-w-0 items-center justify-end gap-6 md:flex lg:gap-7">
-            <div className="flex items-center gap-5 lg:gap-7 xl:gap-8">
+          <div className="ml-auto hidden min-w-0 items-center justify-end gap-6 md:flex lg:gap-8 xl:gap-10">
+            <div className="flex items-center gap-6 lg:gap-8 xl:gap-9">
               {links.map((link) => {
                 const isActive = location === link.href;
 
                 return (
                   <Link key={link.href} href={link.href}>
                     <span
-                      className={`relative cursor-pointer whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
+                      className={`relative cursor-pointer whitespace-nowrap py-2 text-[13px] font-semibold uppercase tracking-[0.16em] transition-colors duration-300 lg:text-[14px] ${
                         isActive ? "text-white" : "text-slate-300 hover:text-white"
                       }`}
                       data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
@@ -59,19 +59,21 @@ export function Navbar() {
 
               <a
                 href="/#contact"
-                className="whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition-colors duration-300 hover:text-white"
+                className="whitespace-nowrap py-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-slate-300 transition-colors duration-300 hover:text-white lg:text-[14px]"
                 data-testid="link-nav-contact"
               >
                 {t("nav.contact")}
               </a>
             </div>
 
+            <div className="h-7 w-px bg-white/12" />
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-10 rounded-full border border-white/10 bg-white/[0.045] px-4 text-[12px] font-semibold tracking-[0.14em] text-slate-100 hover:bg-white/10 hover:text-white"
+                  className="h-10 rounded-full border border-white/10 bg-white/[0.045] px-4 text-[13px] font-semibold tracking-[0.14em] text-slate-100 hover:bg-white/10 hover:text-white"
                   data-testid="button-language-switcher"
                 >
                   <Globe className="h-4 w-4" />
@@ -121,7 +123,7 @@ export function Navbar() {
                   {links.map((link) => (
                     <Link key={link.href} href={link.href}>
                       <span
-                        className={`block cursor-pointer rounded-2xl px-4 py-3 text-base font-semibold transition-colors ${
+                        className={`block cursor-pointer rounded-2xl px-4 py-3 text-[1.02rem] font-semibold transition-colors ${
                           location === link.href ? "bg-white/10 text-white" : "text-white/85 hover:bg-white/6 hover:text-white"
                         }`}
                         onClick={() => setIsOpen(false)}
@@ -134,7 +136,7 @@ export function Navbar() {
 
                   <a
                     href="/#contact"
-                    className="block rounded-2xl px-4 py-3 text-base font-semibold text-white/85 transition-colors hover:bg-white/6 hover:text-white"
+                    className="block rounded-2xl px-4 py-3 text-[1.02rem] font-semibold text-white/85 transition-colors hover:bg-white/6 hover:text-white"
                     onClick={() => setIsOpen(false)}
                     data-testid="link-mobile-contact"
                   >

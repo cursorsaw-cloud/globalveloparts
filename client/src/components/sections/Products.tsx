@@ -80,8 +80,8 @@ export function Products() {
   const { language, t } = useLanguage();
 
   return (
-    <section id="products" className="section-divider relative overflow-hidden bg-slate-100">
-      <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/8 blur-[130px]" />
+    <section id="products" className="section-divider relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_32%,#eef2f7_100%)]">
+      <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/8 blur-[130px]" />
       <div className="section-shell relative z-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="section-heading">
@@ -108,10 +108,10 @@ export function Products() {
             <a
               key={category.key}
               href="/products"
-              className="group relative overflow-hidden rounded-[1.85rem] border border-white/60 bg-slate-900 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.65)]"
+              className="group relative overflow-hidden rounded-[1.9rem] border border-white/65 bg-slate-900 shadow-[0_34px_90px_-50px_rgba(15,23,42,0.62)]"
               data-testid={`card-home-category-${category.key}`}
             >
-              <div className="aspect-[4/4.65] overflow-hidden">
+              <div className="aspect-[4/4.7] overflow-hidden">
                 <img
                   src={category.image}
                   alt={category.title[language]}
@@ -122,13 +122,13 @@ export function Products() {
                   data-testid={`img-home-category-${category.key}`}
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/42 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="mb-3 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200">
                   Globalvelo
                 </div>
-                <h3 className="text-[1.65rem] font-bold leading-tight text-white">{category.title[language]}</h3>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-slate-300">{category.desc[language]}</p>
+                <h3 className="text-[1.72rem] font-bold leading-tight text-white">{category.title[language]}</h3>
+                <p className="mt-3 max-w-xs text-[0.95rem] leading-6 text-slate-300">{category.desc[language]}</p>
               </div>
             </a>
           ))}

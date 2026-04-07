@@ -36,12 +36,21 @@ export function Features() {
   ];
 
   return (
-    <section id="about" className="section-divider relative overflow-hidden bg-slate-50">
+    <section id="about" className="relative -mt-18 overflow-visible bg-slate-50">
       <div className="absolute right-0 top-0 h-96 w-96 translate-x-1/4 -translate-y-1/3 rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-96 w-96 -translate-x-1/4 translate-y-1/3 rounded-full bg-secondary/10 blur-3xl" />
 
-      <div className="section-shell relative z-10">
-        <div className="mx-auto flex max-w-[60rem] flex-col items-center text-center">
+      <div className="section-shell relative z-10 pt-0">
+        <div className="surface-panel grid gap-5 rounded-[2rem] px-6 py-7 sm:grid-cols-2 xl:grid-cols-4 xl:px-8 xl:py-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="rounded-[1.4rem] border border-slate-200/70 bg-white/75 px-5 py-5 text-center xl:text-left">
+              <div className="text-4xl font-extrabold tracking-[-0.05em] text-primary">{stat.value}</div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-16 flex max-w-[62rem] flex-col items-center text-center">
           <div className="section-heading items-center text-center">
             <span className="section-kicker text-secondary" data-testid="text-features-badge">
               {t("feat.badge")}
@@ -55,31 +64,22 @@ export function Features() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="surface-panel rounded-[1.75rem] bg-white/95 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_38px_90px_-60px_rgba(15,23,42,0.42)]"
+              className="surface-panel rounded-[1.75rem] bg-white/95 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_42px_90px_-60px_rgba(15,23,42,0.4)]"
             >
               <CardHeader className="space-y-5 px-6 pb-4 pt-6">
-                <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] border border-slate-200/80 bg-slate-100 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] border border-slate-200/80 bg-slate-100 text-primary shadow-sm">
                   <feature.icon className="h-6 w-6" strokeWidth={2} />
                 </div>
-                <CardTitle className="text-[1.35rem] font-bold leading-tight text-slate-950">{feature.title}</CardTitle>
+                <CardTitle className="text-[1.4rem] font-bold leading-tight text-slate-950">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pb-6">
-                <p className="text-sm leading-7 text-slate-600">{feature.description}</p>
+                <p className="text-[0.95rem] leading-7 text-slate-600">{feature.description}</p>
               </CardContent>
             </Card>
-          ))}
-        </div>
-
-        <div className="mt-16 grid gap-4 border-t border-slate-200/70 pt-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
-          {stats.map((stat, index) => (
-            <div key={index} className="surface-panel rounded-[1.6rem] px-6 py-7 text-center">
-              <div className="text-4xl font-extrabold tracking-[-0.04em] text-primary">{stat.value}</div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{stat.label}</div>
-            </div>
           ))}
         </div>
       </div>

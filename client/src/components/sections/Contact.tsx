@@ -121,7 +121,7 @@ export function Contact() {
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-secondary/10 blur-[120px]" />
 
       <div className="section-shell relative z-10">
-        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:gap-12">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
           <div className="space-y-10 pt-2">
             <div className="section-heading">
               <span className="section-kicker text-secondary" data-testid="text-contact-badge">
@@ -142,14 +142,14 @@ export function Contact() {
                 const Icon = item.icon;
 
                 return (
-                  <div key={index} className="surface-panel rounded-[1.75rem] px-5 py-5 sm:px-6">
+                  <div key={index} className="surface-panel rounded-[1.8rem] px-5 py-5 sm:px-6">
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-slate-200/80 bg-slate-50 text-primary">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                        <div className="mt-1 text-sm leading-7 text-slate-600">{item.description}</div>
+                        <h3 className="text-[1.1rem] font-bold text-slate-900">{item.title}</h3>
+                        <div className="mt-1 text-[0.96rem] leading-7 text-slate-600">{item.description}</div>
                         {item.content ? <div className="mt-2">{item.content}</div> : null}
                       </div>
                     </div>
@@ -160,11 +160,11 @@ export function Contact() {
           </div>
 
           <div>
-            <Card className="surface-panel relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white p-7 md:p-9">
+            <Card className="surface-panel relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white p-7 md:p-10">
               <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-primary" />
               <div className="mb-8 flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-950" data-testid="text-contact-form-title">{t("contact.form.title")}</h3>
+                  <h3 className="text-[1.9rem] font-bold text-slate-950" data-testid="text-contact-form-title">{t("contact.form.title")}</h3>
                   <p className="mt-2 max-w-md text-sm leading-6 text-slate-500" data-testid="text-contact-form-helper">
                     {t("contact.form.helper")}
                   </p>
@@ -234,7 +234,7 @@ export function Contact() {
                   <Textarea
                     id="message"
                     placeholder={t("contact.form.message.ph")}
-                    className="min-h-[170px] resize-none rounded-2xl border-slate-200 bg-slate-50 transition-colors focus:bg-white"
+                    className="min-h-[180px] resize-none rounded-2xl border-slate-200 bg-slate-50 transition-colors focus:bg-white"
                     aria-invalid={Boolean(errors.message)}
                     data-testid="input-contact-message"
                     {...register("message")}
