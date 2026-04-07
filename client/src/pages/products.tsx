@@ -114,11 +114,15 @@ const getBrandLogoCandidates = (brandName: string) => {
     Budweg: "https://www.budweg.com/hubfs/budweg-logo.png",
     Autofren: "https://www.autofrenseinsa.com/themes/custom/autofren/logo.svg",
     Brembo: "https://www.brembo.com/en/_layouts/15/IBSA/Images/brembo_logo.png",
-    Textar: "https://www.textar.com/fileadmin/_processed_/c/2/csm_textar-logo_9ca4cc88f9.png",
-    Ferodo: "https://www.ferodo.com/content/dam/marketing/emea/ferodo/logos/ferodo-logo.png",
-    Mahle: "https://www.mahle.com/media/local-country-sites/mahle_com/images/mahle-logo.png",
-    Mann: "https://www.mann-filter.com/content/dam/website/mann-filter/logo/mann-filter-logo.png",
-    Delphi: "https://www.delphiautoparts.com/content/dam/marketing/delphi-aftermarket/global/logo/delphi-logo.png",
+    Textar: "https://textar.com/wp-content/uploads/2021/09/Textar_Logo_UZ_black.svg",
+    Ferodo: "https://www.ferodo.com/content/loc-emea/loc-eu/fmmp-ferodo/en_GB/_jcr_content/page-nav/site_nav/logo-image.img.png/Ferodo%20Logo-1635556089357.png",
+    Mahle: "https://www.mahle.com/media/system_files/img/mahle_logo_2020.png",
+    Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
+    Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
+    Febi: "https://www.febi.com/typo3conf/ext/febi_theme/Resources/Public/Images/logo.svg",
+    Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
+    Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
+    Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
@@ -389,8 +393,8 @@ export default function ProductsPage() {
                                   <img
                                     src={getBrandLogo(brand)}
                                     alt={`${brand} logo`}
-                                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
-                                    style={{ filter: "contrast(1.08) saturate(1.06)" }}
+                                    className="h-full w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04]"
+                                    style={{ filter: "contrast(1.1) saturate(1.08)", objectPosition: "center" }}
                                     loading="lazy"
                                     decoding="async"
                                     referrerPolicy="no-referrer"
