@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { useEffect } from "react";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,9 +14,47 @@ import Global from "@/pages/global";
 import SabanciDx from "@/pages/sabancidx";
 import NotFound from "@/pages/not-found";
 
+function HashScrollManager() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      if (window.location.pathname !== "/" || !window.location.hash) {
+        return;
+      }
+
+      const targetId = window.location.hash.slice(1);
+      const target = document.getElementById(targetId);
+
+      if (!target) {
+        return;
+      }
+
+      const offset = 120;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    };
+
+    const timeoutId = window.setTimeout(scrollToHash, 80);
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
     <Layout>
+      <HashScrollManager />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />

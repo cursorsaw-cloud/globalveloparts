@@ -116,7 +116,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="section-divider relative overflow-hidden bg-white">
+    <section id="contact" className="section-divider relative scroll-mt-32 overflow-hidden bg-white">
       <div className="absolute left-0 top-10 h-72 w-72 rounded-full bg-primary/5 blur-[130px]" />
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-secondary/10 blur-[120px]" />
 
