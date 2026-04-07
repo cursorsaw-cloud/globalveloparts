@@ -51,15 +51,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mb-6 inline-flex max-w-fit rounded-[1.8rem] border border-white/12 bg-white/[0.05] px-5 py-4 shadow-[0_24px_70px_-34px_rgba(15,23,42,0.88)] backdrop-blur-md">
-              <img
-                src="/logo-clean.png"
-                alt="GlobalVelo Spare Parts Logo"
-                className="h-12 w-auto object-contain drop-shadow-[0_18px_38px_rgba(15,23,42,0.35)] sm:h-[3.5rem]"
-                data-testid="img-hero-logo"
-              />
-            </div>
-
             <div className="glass-panel-dark mb-8 inline-flex items-center gap-3 rounded-full px-4 py-2.5">
               <span className="flex h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_rgba(37,99,235,0.8)]" />
               <span className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300" data-testid="text-hero-badge">
