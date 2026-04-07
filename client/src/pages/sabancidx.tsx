@@ -52,11 +52,11 @@ export default function SabanciDxPage() {
                       />
                     </div>
                     <div className="h-10 w-px shrink-0 bg-white/14" />
-                    <div className="min-w-0 rounded-[0.9rem] bg-white/[0.02] px-1 py-1">
+                    <div className="min-w-0 rounded-[1rem] border border-white/8 bg-white/[0.03] px-2 py-1.5 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.9)]">
                       <img
-                        src="/logo-globalvelo-white-header.png"
-                        alt="Globalvelo Logo"
-                        className="h-10 w-auto max-w-[10.5rem] object-contain sm:h-11 sm:max-w-[12.5rem]"
+                        src="/logo-clean.png"
+                        alt="GlobalVelo Spare Parts Logo"
+                        className="h-12 w-auto max-w-[11.5rem] object-contain drop-shadow-[0_14px_30px_rgba(15,23,42,0.35)] sm:h-[3.35rem] sm:max-w-[14rem]"
                         data-testid="img-globalvelo-logo"
                       />
                     </div>
