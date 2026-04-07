@@ -24,25 +24,25 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/96 shadow-[0_16px_50px_-34px_rgba(15,23,42,0.28)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/88">
-      <div className="container flex min-h-[5.5rem] items-center justify-between gap-6 py-3">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-10 xl:px-14">
         <Link href="/">
-          <div className="flex cursor-pointer items-center" data-testid="link-home-logo">
+          <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
             <img
               src="/logo-globalvelo-white-header.png"
               alt="Globalvelo Logo"
-              className="h-12 w-auto object-contain sm:h-14 lg:h-16"
+              className="h-14 w-auto object-contain sm:h-16 lg:h-[4.5rem]"
               data-testid="img-globalvelo-logo"
             />
           </div>
         </Link>
 
-        <div className="hidden flex-1 items-center justify-center md:flex">
-          <div className="flex items-center gap-8 lg:gap-10">
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-8 md:flex lg:gap-10">
+          <div className="flex items-center gap-6 lg:gap-8 xl:gap-10">
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 <span
-                  className={`cursor-pointer text-[13px] font-semibold tracking-[0.16em] uppercase transition-colors duration-300 ${location === link.href ? "text-slate-950" : "text-slate-500 hover:text-slate-950"}`}
+                  className={`cursor-pointer whitespace-nowrap text-[13px] font-semibold tracking-[0.16em] uppercase transition-colors duration-300 ${location === link.href ? "text-white" : "text-slate-300 hover:text-white"}`}
                   data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
                 >
                   {link.label}
@@ -52,37 +52,37 @@ export function Navbar() {
 
             <a
               href="/#contact"
-              className="text-[13px] font-semibold tracking-[0.16em] uppercase text-slate-500 transition-colors duration-300 hover:text-slate-950"
+              className="whitespace-nowrap text-[13px] font-semibold tracking-[0.16em] uppercase text-slate-300 transition-colors duration-300 hover:text-white"
               data-testid="link-nav-contact"
             >
               {t("nav.contact")}
             </a>
           </div>
-        </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+          <div className="h-8 w-px bg-white/12" />
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-10 rounded-full border border-slate-200 bg-white px-4 text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+                className="h-11 rounded-full border border-white/12 bg-white/6 px-4 text-white hover:bg-white/10 hover:text-white"
                 data-testid="button-language-switcher"
               >
                 <Globe className="h-4 w-4" />
                 {language.toUpperCase()}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[140px] rounded-2xl border-slate-200 p-2">
+            <DropdownMenuContent align="end" className="w-[144px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
               <DropdownMenuItem
-                className={`cursor-pointer rounded-xl font-medium ${language === "tr" ? "text-slate-950" : "text-slate-500"}`}
+                className={`cursor-pointer rounded-xl font-medium ${language === "tr" ? "text-white" : "text-slate-400"}`}
                 onClick={() => setLanguage("tr")}
                 data-testid="button-language-tr"
               >
                 TR - Türkçe
               </DropdownMenuItem>
               <DropdownMenuItem
-                className={`cursor-pointer rounded-xl font-medium ${language === "en" ? "text-slate-950" : "text-slate-500"}`}
+                className={`cursor-pointer rounded-xl font-medium ${language === "en" ? "text-white" : "text-slate-400"}`}
                 onClick={() => setLanguage("en")}
                 data-testid="button-language-en"
               >
@@ -97,25 +97,25 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="text-slate-900 hover:bg-slate-100 hover:text-slate-950"
+              className="text-white hover:bg-white/10 hover:text-white"
               data-testid="button-mobile-menu"
             >
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="border-l border-slate-200 bg-white">
+          <SheetContent side="right" className="border-l border-white/10 bg-slate-950 text-white">
             <div className="flex flex-col gap-6 pt-8">
               <img
                 src="/logo-globalvelo-white-header.png"
                 alt="Globalvelo Logo"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 data-testid="img-mobile-globalvelo-logo"
               />
 
               {links.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className="cursor-pointer text-lg font-semibold text-slate-900"
+                    className="cursor-pointer text-lg font-semibold text-white/90"
                     onClick={() => setIsOpen(false)}
                     data-testid={`link-mobile-${link.href.replace("/", "") || "home"}`}
                   >
@@ -126,21 +126,21 @@ export function Navbar() {
 
               <a
                 href="/#contact"
-                className="text-lg font-semibold text-slate-900"
+                className="text-lg font-semibold text-white/90"
                 onClick={() => setIsOpen(false)}
                 data-testid="link-mobile-contact"
               >
                 {t("nav.contact")}
               </a>
 
-              <div className="my-1 h-px w-full bg-slate-200" />
+              <div className="my-1 h-px w-full bg-white/10" />
 
               <div className="flex items-center gap-4">
-                <Globe className="h-5 w-5 text-slate-500" />
+                <Globe className="h-5 w-5 text-slate-400" />
                 <div className="flex gap-4">
                   <button
                     type="button"
-                    className={`text-lg font-semibold ${language === "tr" ? "text-slate-950" : "text-slate-500"}`}
+                    className={`text-lg font-semibold ${language === "tr" ? "text-white" : "text-slate-400"}`}
                     onClick={() => {
                       setLanguage("tr");
                       setIsOpen(false);
@@ -151,7 +151,7 @@ export function Navbar() {
                   </button>
                   <button
                     type="button"
-                    className={`text-lg font-semibold ${language === "en" ? "text-slate-950" : "text-slate-500"}`}
+                    className={`text-lg font-semibold ${language === "en" ? "text-white" : "text-slate-400"}`}
                     onClick={() => {
                       setLanguage("en");
                       setIsOpen(false);
