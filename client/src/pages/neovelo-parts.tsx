@@ -1,0 +1,299 @@
+import { ArrowRight, BadgeCheck, Cpu, Gauge, Layers3, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/i18n";
+
+export default function NeoVeloPartsPage() {
+  const { t } = useLanguage();
+
+  const metrics = [
+    { value: "01", label: t("neovelo.metrics.1") },
+    { value: "04", label: t("neovelo.metrics.2") },
+    { value: "OEM", label: t("neovelo.metrics.3") },
+    { value: "24/7", label: t("neovelo.metrics.4") },
+  ];
+
+  const ranges = [
+    { icon: ShieldCheck, title: t("neovelo.range.1") },
+    { icon: Gauge, title: t("neovelo.range.2") },
+    { icon: Layers3, title: t("neovelo.range.3") },
+    { icon: Zap, title: t("neovelo.range.4") },
+  ];
+
+  const advantages = [
+    t("neovelo.advantages.1"),
+    t("neovelo.advantages.2"),
+    t("neovelo.advantages.3"),
+    t("neovelo.advantages.4"),
+    t("neovelo.advantages.5"),
+  ];
+
+  const digitalPoints = [
+    t("neovelo.digital.1"),
+    t("neovelo.digital.2"),
+    t("neovelo.digital.3"),
+    t("neovelo.digital.4"),
+  ];
+
+  return (
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#0b1220_0%,#0f172a_48%,#1e293b_100%)] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.18),transparent_30%)]" />
+        <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(24rem,32rem)] lg:gap-12">
+            <div className="max-w-[46rem]">
+              <span className="section-kicker text-slate-300" data-testid="text-neovelo-badge">
+                {t("neovelo.badge")}
+              </span>
+              <h1 className="mt-5 text-[3rem] font-extrabold leading-[0.94] tracking-[-0.055em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-neovelo-title">
+                {t("neovelo.title")}
+              </h1>
+              <p className="mt-7 max-w-[41rem] text-[1.06rem] leading-8 text-slate-300 md:text-[1.14rem]" data-testid="text-neovelo-description">
+                {t("neovelo.desc")}
+              </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm"
+                    data-testid={`card-neovelo-metric-${metric.label}`}
+                  >
+                    <div className="text-[1.9rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
+                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="h-14 rounded-full px-8 text-base shadow-[0_22px_55px_-24px_rgba(37,99,235,0.7)]">
+                  <a href="/products" data-testid="button-neovelo-products">
+                    {t("neovelo.cta.primary")}
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="h-14 rounded-full border-white/15 bg-white/5 px-8 text-base text-white hover:bg-white/10 hover:text-white">
+                  <a href="/#contact" data-testid="button-neovelo-contact">
+                    {t("neovelo.cta.secondary")}
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            <div className="glass-panel-dark rounded-[2rem] p-4 md:p-5">
+              <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-slate-900/60">
+                <img
+                  src="/images/neovelo/neovelo-parts-hero.png"
+                  alt="NeoVelo automotive parts"
+                  className="aspect-[16/11] w-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  data-testid="img-neovelo-hero"
+                />
+              </div>
+              <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white/10 text-primary">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-neovelo-panel-kicker">
+                      {t("neovelo.panel.kicker")}
+                    </p>
+                    <h2 className="mt-1 text-2xl font-bold text-white" data-testid="text-neovelo-panel-title">
+                      {t("neovelo.panel.title")}
+                    </h2>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm leading-7 text-slate-300" data-testid="text-neovelo-panel-description">
+                  {t("neovelo.panel.desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-white">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
+            <div className="surface-panel rounded-[2rem] p-7 md:p-9">
+              <span className="section-kicker text-secondary" data-testid="text-neovelo-story-kicker">
+                {t("neovelo.story.kicker")}
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.8rem]" data-testid="text-neovelo-story-title">
+                {t("neovelo.story.title")}
+              </h2>
+              <p className="mt-5 text-[1rem] leading-8 text-slate-600" data-testid="text-neovelo-story-body-1">
+                {t("neovelo.story.body1")}
+              </p>
+              <p className="mt-4 text-[1rem] leading-8 text-slate-600" data-testid="text-neovelo-story-body-2">
+                {t("neovelo.story.body2")}
+              </p>
+              <p className="mt-4 text-[1rem] leading-8 text-slate-600" data-testid="text-neovelo-story-body-3">
+                {t("neovelo.story.body3")}
+              </p>
+            </div>
+
+            <div className="grid gap-6">
+              <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)] p-7 shadow-[0_30px_80px_-55px_rgba(15,23,42,0.35)] md:p-8">
+                <p className="section-kicker text-secondary" data-testid="text-neovelo-range-kicker">
+                  {t("neovelo.range.kicker")}
+                </p>
+                <h3 className="mt-4 text-[1.8rem] font-bold tracking-[-0.04em] text-slate-950" data-testid="text-neovelo-range-title">
+                  {t("neovelo.range.title")}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-slate-600" data-testid="text-neovelo-range-description">
+                  {t("neovelo.range.desc")}
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-[0_36px_90px_-50px_rgba(15,23,42,0.85)] md:p-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[0.95rem] bg-white/10 text-primary">
+                    <BadgeCheck className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-neovelo-positioning-kicker">
+                    NeoVelo
+                  </p>
+                </div>
+                <p className="mt-4 text-lg leading-8 text-slate-200" data-testid="text-neovelo-positioning-description">
+                  {t("neovelo.panel.desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-slate-50">
+        <div className="section-shell">
+          <div className="mx-auto max-w-[46rem] text-center">
+            <span className="section-kicker text-secondary" data-testid="text-neovelo-capabilities-badge">
+              {t("neovelo.range.kicker")}
+            </span>
+            <h2 className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]" data-testid="text-neovelo-capabilities-title">
+              {t("neovelo.range.title")}
+            </h2>
+            <p className="mx-auto mt-5 max-w-[42rem] text-[1rem] leading-8 text-slate-600" data-testid="text-neovelo-capabilities-description">
+              {t("neovelo.range.desc")}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {ranges.map((range) => {
+              const Icon = range.icon;
+
+              return (
+                <div key={range.title} className="surface-panel rounded-[1.8rem] p-6" data-testid={`card-neovelo-range-${range.title}`}>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-slate-200/80 bg-slate-100 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-[1.35rem] font-bold text-slate-950">{range.title}</h3>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-white">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-10">
+            <div className="rounded-[2rem] bg-[linear-gradient(135deg,#0f172a_0%,#1e293b_100%)] p-7 text-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.75)] md:p-9">
+              <p className="section-kicker text-slate-400" data-testid="text-neovelo-advantages-kicker">
+                {t("neovelo.advantages.kicker")}
+              </p>
+              <h2 className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]" data-testid="text-neovelo-advantages-title">
+                {t("neovelo.advantages.title")}
+              </h2>
+              <p className="mt-4 text-[1rem] leading-8 text-slate-300" data-testid="text-neovelo-advantages-description">
+                {t("neovelo.advantages.desc")}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-2">
+              {advantages.map((item, index) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-4 rounded-[1.6rem] border border-slate-200 bg-white px-5 py-5 shadow-[0_28px_70px_-55px_rgba(15,23,42,0.4)]"
+                  data-testid={`card-neovelo-advantage-${index + 1}`}
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <BadgeCheck className="h-5 w-5" />
+                  </div>
+                  <p className="pt-1 text-sm font-medium leading-7 text-slate-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-slate-50">
+        <div className="section-shell">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
+            <div>
+              <span className="section-kicker text-secondary" data-testid="text-neovelo-digital-kicker">
+                {t("neovelo.digital.kicker")}
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.8rem]" data-testid="text-neovelo-digital-title">
+                {t("neovelo.digital.title")}
+              </h2>
+              <p className="mt-5 max-w-[42rem] text-[1rem] leading-8 text-slate-600" data-testid="text-neovelo-digital-description">
+                {t("neovelo.digital.desc")}
+              </p>
+            </div>
+
+            <div className="surface-panel rounded-[2rem] p-7 md:p-8">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary/10 text-primary">
+                  <Cpu className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-neovelo-digital-panel-kicker">
+                    {t("neovelo.digital.panel.kicker")}
+                  </p>
+                  <h3 className="mt-1 text-2xl font-bold text-slate-950" data-testid="text-neovelo-digital-panel-title">
+                    {t("neovelo.digital.panel.title")}
+                  </h3>
+                </div>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {digitalPoints.map((item, index) => (
+                  <div
+                    key={item}
+                    className="rounded-[1.25rem] border border-slate-200 bg-slate-50 px-4 py-4"
+                    data-testid={`card-neovelo-digital-${index + 1}`}
+                  >
+                    <p className="text-sm font-medium leading-7 text-slate-700">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 rounded-[2rem] bg-[linear-gradient(135deg,#0f172a_0%,#1e293b_100%)] px-7 py-8 text-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.75)] md:px-10 md:py-10">
+            <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+              <div>
+                <p className="section-kicker text-slate-400" data-testid="text-neovelo-cta-kicker">
+                  {t("neovelo.cta.kicker")}
+                </p>
+                <h2 className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]" data-testid="text-neovelo-cta-title">
+                  {t("neovelo.cta.title")}
+                </h2>
+                <p className="mt-4 max-w-[46rem] text-[1rem] leading-8 text-slate-300" data-testid="text-neovelo-cta-description">
+                  {t("neovelo.cta.desc")}
+                </p>
+              </div>
+              <Button asChild size="lg" variant="secondary" className="h-14 rounded-full px-8 text-base font-semibold">
+                <a href="/#contact" data-testid="button-neovelo-cta-contact">
+                  {t("neovelo.cta.secondary")}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

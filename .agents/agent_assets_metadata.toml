@@ -18,6 +18,12 @@ uri = "file://client/public/images/categories/cooling-heating-pro.png"
 type = "image"
 title = "premium cooling parts image"
 
+[[generated]]
+id = "r6biu7l-SpuCb4IPBV7RO"
+uri = "file://client/public/images/neovelo/neovelo-parts-hero.png"
+type = "image"
+title = "NeoVelo parts hero image"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"

@@ -23,6 +23,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-400">
               <li><Link href="/about" className="transition-colors hover:text-white" data-testid="link-footer-about">{t("nav.about")}</Link></li>
               <li><Link href="/products" className="transition-colors hover:text-white" data-testid="link-footer-products">{t("nav.products")}</Link></li>
+              <li><Link href="/neovelo-parts" className="transition-colors hover:text-white" data-testid="link-footer-neovelo">{t("nav.neovelo")}</Link></li>
               <li><Link href="/global" className="transition-colors hover:text-white" data-testid="link-footer-global">{t("nav.global")}</Link></li>
               <li><a href="/#contact" className="transition-colors hover:text-white" data-testid="link-footer-contact">{t("nav.contact")}</a></li>
             </ul>

@@ -19,6 +19,7 @@ export function Navbar() {
   const links = [
     { href: "/about", label: t("nav.about") },
     { href: "/products", label: t("nav.products") },
+    { href: "/neovelo-parts", label: t("nav.neovelo") },
     { href: "/global", label: t("nav.global") },
     { href: "/sabancidx", label: t("nav.sabancidx") },
   ];
