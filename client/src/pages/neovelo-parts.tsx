@@ -1,4 +1,5 @@
 import { ArrowRight, BadgeCheck, Cpu, Gauge, Layers3, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -80,15 +81,18 @@ export default function NeoVeloPartsPage() {
             </div>
 
             <div className="glass-panel-dark rounded-[2rem] p-4 md:p-5">
-              <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-slate-900/60">
-                <img
-                  src="/images/neovelo/neovelo-parts-hero.png"
-                  alt="NeoVelo automotive parts"
-                  className="aspect-[16/11] w-full object-cover"
-                  loading="eager"
-                  decoding="async"
-                  data-testid="img-neovelo-hero"
-                />
+              <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(241,245,249,0.94)_100%)] px-6 py-8 shadow-[0_30px_90px_-50px_rgba(255,255,255,0.35)] md:px-8 md:py-10">
+                <div className="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(132,204,22,0.75),transparent)]" />
+                <div className="rounded-[1.4rem] border border-slate-200/80 bg-white/90 p-4 shadow-[0_28px_70px_-48px_rgba(15,23,42,0.4)] backdrop-blur-sm md:p-5">
+                  <img
+                    src={neoveloLogo}
+                    alt="NeoVelo Spare Parts logo"
+                    className="w-full object-contain"
+                    loading="eager"
+                    decoding="async"
+                    data-testid="img-neovelo-logo"
+                  />
+                </div>
               </div>
               <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
                 <div className="flex items-center gap-3">
