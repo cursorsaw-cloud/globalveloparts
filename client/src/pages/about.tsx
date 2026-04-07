@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Globe2, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe2, Network, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -6,35 +6,50 @@ export default function AboutPage() {
   const { t } = useLanguage();
 
   const metrics = [
-    { value: "20+", label: t("about.metrics.years") },
-    { value: "40+", label: t("about.metrics.markets") },
-    { value: "80+", label: t("about.metrics.brands") },
-    { value: "24/7", label: t("about.metrics.support") },
+    { value: "HQ", label: t("about.metrics.years") },
+    { value: "Global", label: t("about.metrics.markets") },
+    { value: "B2B", label: t("about.metrics.brands") },
+    { value: "Dx", label: t("about.metrics.support") },
   ];
 
   const values = [
-    { icon: ShieldCheck, title: t("about.values.1") },
-    { icon: Sparkles, title: t("about.values.2") },
-    { icon: CheckCircle2, title: t("about.values.3") },
-    { icon: Globe2, title: t("about.values.4") },
+    { icon: Globe2, title: t("about.values.1"), detail: t("about.values.detail1") },
+    { icon: Network, title: t("about.values.2"), detail: t("about.values.detail2") },
+    { icon: CheckCircle2, title: t("about.values.3"), detail: t("about.values.detail3") },
+    { icon: ShieldCheck, title: t("about.values.4"), detail: t("about.values.detail4") },
   ];
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#0f172a_0%,#111827_55%,#1e293b_100%)] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.2),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.22),transparent_28%)]" />
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#0b1220_0%,#0f172a_48%,#1e293b_100%)] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.18),transparent_30%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
         <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,28rem)] lg:gap-12">
-            <div className="max-w-[44rem]">
+          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(22rem,28rem)] lg:gap-12">
+            <div className="max-w-[49rem]">
               <span className="section-kicker text-slate-300" data-testid="text-about-badge">
                 {t("about.badge")}
               </span>
-              <h1 className="mt-5 text-[3rem] font-extrabold leading-[0.96] tracking-[-0.05em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-about-title">
+              <h1 className="mt-5 text-[3rem] font-extrabold leading-[0.94] tracking-[-0.055em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-about-title">
                 {t("about.title")}
               </h1>
-              <p className="mt-7 max-w-[38rem] text-[1.06rem] leading-8 text-slate-300 md:text-[1.16rem]" data-testid="text-about-description">
+              <p className="mt-7 max-w-[44rem] text-[1.06rem] leading-8 text-slate-300 md:text-[1.14rem]" data-testid="text-about-description">
                 {t("about.desc")}
               </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm"
+                    data-testid={`card-about-metric-${metric.label}`}
+                  >
+                    <div className="text-[1.9rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
+                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg" className="h-14 rounded-full px-8 text-base shadow-[0_22px_55px_-24px_rgba(37,99,235,0.7)]">
                   <a href="/products" data-testid="button-about-products">
@@ -53,7 +68,7 @@ export default function AboutPage() {
             <div className="glass-panel-dark rounded-[2rem] p-7 md:p-8">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white/10 text-primary">
-                  <Globe2 className="h-6 w-6" />
+                  <Sparkles className="h-6 w-6" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-about-panel-kicker">
@@ -64,14 +79,25 @@ export default function AboutPage() {
                   </h2>
                 </div>
               </div>
+
               <p className="text-sm leading-7 text-slate-300" data-testid="text-about-panel-description">
                 {t("about.panel.desc")}
               </p>
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                {metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-[1.35rem] border border-white/10 bg-white/5 px-5 py-4" data-testid={`card-about-metric-${metric.label}`}>
-                    <div className="text-3xl font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
-                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{metric.label}</div>
+
+              <div className="mt-7 space-y-3">
+                {[
+                  t("about.metrics.years"),
+                  t("about.metrics.markets"),
+                  t("about.metrics.brands"),
+                  t("about.metrics.support"),
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-4"
+                    data-testid={`row-about-focus-${item}`}
+                  >
+                    <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+                    <span className="text-sm font-medium text-slate-200">{item}</span>
                   </div>
                 ))}
               </div>
@@ -82,12 +108,12 @@ export default function AboutPage() {
 
       <section className="section-divider bg-white">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:gap-10">
             <div className="surface-panel rounded-[2rem] p-7 md:p-9">
               <span className="section-kicker text-secondary" data-testid="text-about-story-kicker">
                 {t("about.story.kicker")}
               </span>
-              <h2 className="mt-4 text-[2.2rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.75rem]" data-testid="text-about-story-title">
+              <h2 className="mt-4 text-[2.2rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.8rem]" data-testid="text-about-story-title">
                 {t("about.story.title")}
               </h2>
               <p className="mt-5 text-[1rem] leading-8 text-slate-600" data-testid="text-about-story-body-1">
@@ -96,10 +122,13 @@ export default function AboutPage() {
               <p className="mt-4 text-[1rem] leading-8 text-slate-600" data-testid="text-about-story-body-2">
                 {t("about.story.body2")}
               </p>
+              <p className="mt-4 text-[1rem] leading-8 text-slate-600" data-testid="text-about-story-body-3">
+                {t("about.story.body3")}
+              </p>
             </div>
 
             <div className="grid gap-6">
-              <div className="surface-panel rounded-[2rem] p-7 md:p-8">
+              <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)] p-7 shadow-[0_30px_80px_-55px_rgba(15,23,42,0.35)] md:p-8">
                 <p className="section-kicker text-secondary" data-testid="text-about-vision-kicker">
                   {t("about.vision.title")}
                 </p>
@@ -107,12 +136,27 @@ export default function AboutPage() {
                   {t("about.vision.desc")}
                 </p>
               </div>
-              <div className="surface-panel rounded-[2rem] p-7 md:p-8">
+
+              <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-7 shadow-[0_30px_80px_-55px_rgba(15,23,42,0.28)] md:p-8">
                 <p className="section-kicker text-secondary" data-testid="text-about-mission-kicker">
                   {t("about.mission.title")}
                 </p>
                 <p className="mt-4 text-lg leading-8 text-slate-700" data-testid="text-about-mission-description">
                   {t("about.mission.desc")}
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-[0_36px_90px_-50px_rgba(15,23,42,0.85)] md:p-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[0.95rem] bg-white/10 text-primary">
+                    <ShieldCheck className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-about-positioning-kicker">
+                    GlobalVelo
+                  </p>
+                </div>
+                <p className="mt-4 text-lg leading-8 text-slate-200" data-testid="text-about-positioning-description">
+                  {t("about.promise.desc")}
                 </p>
               </div>
             </div>
@@ -122,14 +166,14 @@ export default function AboutPage() {
 
       <section className="section-divider bg-slate-50">
         <div className="section-shell">
-          <div className="mx-auto max-w-[44rem] text-center">
+          <div className="mx-auto max-w-[46rem] text-center">
             <span className="section-kicker text-secondary" data-testid="text-about-values-badge">
               {t("about.values.title")}
             </span>
             <h2 className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]" data-testid="text-about-values-title">
               {t("about.values.heading")}
             </h2>
-            <p className="mx-auto mt-5 max-w-[40rem] text-[1rem] leading-8 text-slate-600" data-testid="text-about-values-description">
+            <p className="mx-auto mt-5 max-w-[42rem] text-[1rem] leading-8 text-slate-600" data-testid="text-about-values-description">
               {t("about.values.desc")}
             </p>
           </div>
@@ -144,7 +188,7 @@ export default function AboutPage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-[1.35rem] font-bold text-slate-950">{value.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{t(`about.values.${value.title === t("about.values.1") ? "detail1" : value.title === t("about.values.2") ? "detail2" : value.title === t("about.values.3") ? "detail3" : "detail4"}`)}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{value.detail}</p>
                 </div>
               );
             })}
@@ -159,11 +203,11 @@ export default function AboutPage() {
                 <h2 className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]" data-testid="text-about-promise-title">
                   {t("about.promise.title")}
                 </h2>
-                <p className="mt-4 max-w-[44rem] text-[1rem] leading-8 text-slate-300" data-testid="text-about-promise-description">
+                <p className="mt-4 max-w-[46rem] text-[1rem] leading-8 text-slate-300" data-testid="text-about-promise-description">
                   {t("about.promise.desc")}
                 </p>
               </div>
-              <Button asChild size="lg" variant="secondary" className="h-14 rounded-full px-8 text-base font-semibold" >
+              <Button asChild size="lg" variant="secondary" className="h-14 rounded-full px-8 text-base font-semibold">
                 <a href="/#contact" data-testid="button-about-cta-contact">
                   {t("about.cta.secondary")}
                 </a>
