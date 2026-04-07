@@ -39,18 +39,18 @@ export function Navbar() {
         <div className="flex min-h-[94px] items-center gap-6 md:min-h-[102px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <div className="group flex flex-col items-start leading-none" data-testid="img-globalvelo-logo">
-                <div className="flex items-end tracking-[-0.06em]">
-                  <span className="text-[2.35rem] font-black italic text-slate-300 drop-shadow-[0_10px_24px_rgba(15,23,42,0.3)] sm:text-[2.7rem] lg:text-[3rem]">
-                    Global
-                  </span>
-                  <span className="-ml-1 text-[2.45rem] font-black italic text-[#9fd236] drop-shadow-[0_10px_24px_rgba(15,23,42,0.24)] sm:text-[2.8rem] lg:text-[3.1rem]">
-                    Velo
-                  </span>
-                </div>
-                <div className="-mt-1 h-[0.42rem] w-[11.5rem] rounded-full bg-[linear-gradient(90deg,#94c83d_0%,#9fd236_58%,#85bf2d_100%)] shadow-[0_10px_24px_-18px_rgba(159,210,54,0.85)] sm:w-[13.25rem] lg:w-[14.5rem]">
-                  <div className="ml-[2.9rem] h-full w-[5.9rem] rounded-full bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.95)_0_18px,transparent_18px_28px)] opacity-90 sm:ml-[3.3rem] sm:w-[6.8rem] lg:ml-[3.7rem] lg:w-[7.3rem]" />
-                </div>
+              <div className="relative h-14 w-[15.5rem] sm:h-[4.05rem] sm:w-[17.9rem] lg:h-[4.45rem] lg:w-[19.6rem]" data-testid="img-globalvelo-logo">
+                <img
+                  src="/logo-globalvelo-white-header.png"
+                  alt="Globalvelo Logo"
+                  className="h-full w-full object-contain"
+                />
+                <img
+                  src="/logo-globalvelo-white-header.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(0_47%_42%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                />
               </div>
             </div>
           </Link>
@@ -125,18 +125,18 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
               <div className="flex flex-col gap-7 pt-8">
-                <div className="flex flex-col items-start leading-none" data-testid="img-mobile-globalvelo-logo">
-                  <div className="flex items-end tracking-[-0.06em]">
-                    <span className="text-[2.2rem] font-black italic text-slate-300 drop-shadow-[0_10px_24px_rgba(15,23,42,0.3)]">
-                      Global
-                    </span>
-                    <span className="-ml-1 text-[2.3rem] font-black italic text-[#9fd236] drop-shadow-[0_10px_24px_rgba(15,23,42,0.24)]">
-                      Velo
-                    </span>
-                  </div>
-                  <div className="-mt-1 h-[0.38rem] w-[10.75rem] rounded-full bg-[linear-gradient(90deg,#94c83d_0%,#9fd236_58%,#85bf2d_100%)] shadow-[0_10px_24px_-18px_rgba(159,210,54,0.85)]">
-                    <div className="ml-[2.7rem] h-full w-[5.4rem] rounded-full bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.95)_0_16px,transparent_16px_25px)] opacity-90" />
-                  </div>
+                <div className="relative h-14 w-[15.5rem]" data-testid="img-mobile-globalvelo-logo">
+                  <img
+                    src="/logo-globalvelo-white-header.png"
+                    alt="Globalvelo Logo"
+                    className="h-full w-full object-contain"
+                  />
+                  <img
+                    src="/logo-globalvelo-white-header.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(0_47%_42%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                  />
                 </div>
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
