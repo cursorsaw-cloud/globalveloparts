@@ -36,10 +36,10 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
       <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
-        <div className="flex min-h-[94px] items-center gap-6 md:min-h-[102px]">
+        <div className="flex min-h-[176px] items-center gap-6 md:min-h-[188px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <div className="relative h-[4.2rem] w-[15.8rem] sm:h-[4.6rem] sm:w-[17.4rem] lg:h-[5rem] lg:w-[18.9rem]" data-testid="img-globalvelo-logo">
+              <div className="relative h-[8.4rem] w-[31.6rem] sm:h-[9.2rem] sm:w-[34.8rem] lg:h-[10rem] lg:w-[37.8rem]" data-testid="img-globalvelo-logo">
                 <img
                   src="/globalvelo-banner-logo.png"
                   alt="Globalvelo Spare Parts Logo"
@@ -147,7 +147,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
               <div className="flex flex-col gap-7 pt-8">
-                <div className="relative h-[4.2rem] w-[15.8rem]" data-testid="img-mobile-globalvelo-logo">
+                <div className="relative h-[8.4rem] w-[31.6rem] max-w-full" data-testid="img-mobile-globalvelo-logo">
                   <img
                     src="/globalvelo-banner-logo.png"
                     alt="Globalvelo Spare Parts Logo"
