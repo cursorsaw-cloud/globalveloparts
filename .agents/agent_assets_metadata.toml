@@ -24,6 +24,60 @@ uri = "file://client/public/images/neovelo/neovelo-parts-hero.png"
 type = "image"
 title = "NeoVelo parts hero image"
 
+[[generated]]
+id = "UGjvQRX9mVrqIlsrX6hIy"
+uri = "file://client/public/images/neovelo/categories/brake-systems.png"
+type = "image"
+title = "Premium brake systems image"
+
+[[generated]]
+id = "YjpbXpZU1jk1Z4QzoiJwA"
+uri = "file://client/public/images/neovelo/categories/filters.png"
+type = "image"
+title = "Premium filters category image"
+
+[[generated]]
+id = "9geb3x6zL2fqv-wJFuHra"
+uri = "file://client/public/images/neovelo/categories/engine-parts.png"
+type = "image"
+title = "Premium engine parts image"
+
+[[generated]]
+id = "TSe3W4NT_KjpvGegzFz_T"
+uri = "file://client/public/images/neovelo/categories/suspension-damping.png"
+type = "image"
+title = "Premium suspension image"
+
+[[generated]]
+id = "k6zhzeI6DpHnQbU_hr5FQ"
+uri = "file://client/public/images/neovelo/categories/belts-chains.png"
+type = "image"
+title = "Premium belts chains image"
+
+[[generated]]
+id = "Z9N5i_CpnjBhT-bibeTaj"
+uri = "file://client/public/images/neovelo/categories/electrical-lighting.png"
+type = "image"
+title = "Premium electrical image"
+
+[[generated]]
+id = "isetreYUxaRe9POIGJmDl"
+uri = "file://client/public/images/neovelo/categories/cooling-heating.png"
+type = "image"
+title = "Premium cooling image"
+
+[[generated]]
+id = "h90gXeWop35aySEEsmFhj"
+uri = "file://client/public/images/neovelo/categories/clutch-drivetrain.png"
+type = "image"
+title = "Premium clutch image"
+
+[[generated]]
+id = "VATdtvcBdoCUj4hGhRBUC"
+uri = "file://client/public/images/neovelo/categories/exhaust-fuel.png"
+type = "image"
+title = "Premium exhaust fuel image"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
