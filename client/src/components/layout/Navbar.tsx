@@ -1,7 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Globe, Menu } from "lucide-react";
 import { useState } from "react";
-import bannerLogo from "@assets/image_1775586561862.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -36,18 +35,16 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
-      <div className="w-full pl-2 pr-2 sm:pl-3 sm:pr-3 lg:pl-4 lg:pr-6 xl:pr-8">
-        <div className="flex min-h-[88px] items-center gap-6 md:min-h-[96px]">
+      <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
+        <div className="flex min-h-[94px] items-center gap-6 md:min-h-[102px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <div className="rounded-[1.1rem] border border-white/8 bg-white/[0.025] px-2.5 py-2 shadow-[0_18px_45px_-28px_rgba(15,23,42,0.75)] backdrop-blur-sm transition-colors duration-300 hover:bg-white/[0.04]">
-                <img
-                  src={bannerLogo}
-                  alt="GlobalVelo Logo"
-                  className="h-8 w-auto object-contain sm:h-9 lg:h-[2.45rem]"
-                  data-testid="img-globalvelo-logo"
-                />
-              </div>
+              <img
+                src="/logo-globalvelo-white-header.png"
+                alt="Globalvelo Logo"
+                className="h-14 w-auto object-contain sm:h-[4.05rem] lg:h-[4.45rem]"
+                data-testid="img-globalvelo-logo"
+              />
             </div>
           </Link>
 
@@ -121,14 +118,12 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
               <div className="flex flex-col gap-7 pt-8">
-                <div className="inline-flex max-w-fit rounded-[1.1rem] border border-white/8 bg-white/[0.025] px-2.5 py-2 shadow-[0_18px_45px_-28px_rgba(15,23,42,0.75)] backdrop-blur-sm">
-                  <img
-                    src={bannerLogo}
-                    alt="GlobalVelo Logo"
-                    className="h-8 w-auto object-contain"
-                    data-testid="img-mobile-globalvelo-logo"
-                  />
-                </div>
+                <img
+                  src="/logo-globalvelo-white-header.png"
+                  alt="Globalvelo Logo"
+                  className="h-14 w-auto object-contain"
+                  data-testid="img-mobile-globalvelo-logo"
+                />
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
                   {links.map((link) => (
