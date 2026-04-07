@@ -80,76 +80,94 @@ export function Contact() {
     }
   };
 
+  const contactItems = [
+    {
+      icon: Mail,
+      title: t("contact.email.title"),
+      description: t("contact.email.desc"),
+      content: (
+        <a href="mailto:info@globalvelo.com.tr" className="font-medium text-primary hover:underline" data-testid="link-contact-email">
+          info@globalvelo.com.tr
+        </a>
+      ),
+    },
+    {
+      icon: Phone,
+      title: t("contact.phone.title"),
+      description: t("contact.phone.desc"),
+      content: (
+        <a href="tel:+902160000000" className="font-medium text-primary hover:underline" data-testid="link-contact-phone">
+          +90 (216) 000 00 00
+        </a>
+      ),
+    },
+    {
+      icon: MapPin,
+      title: t("contact.address.title"),
+      description: (
+        <p className="text-slate-600 leading-relaxed" data-testid="text-contact-address">
+          {t("contact.address.desc1")}
+          <br />
+          {t("contact.address.desc2")}
+        </p>
+      ),
+      content: null,
+    },
+  ];
+
   return (
-    <section id="contact" className="relative overflow-hidden bg-white py-24">
+    <section id="contact" className="section-divider relative overflow-hidden bg-white">
       <div className="absolute left-0 top-10 h-72 w-72 rounded-full bg-primary/5 blur-[130px]" />
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-secondary/10 blur-[120px]" />
 
-      <div className="container relative z-10">
-        <div className="grid items-start gap-16 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <span className="mb-3 block text-sm font-semibold uppercase tracking-[0.18em] text-secondary" data-testid="text-contact-badge">
-              {t("contact.badge")}
-            </span>
-            <h2 className="mb-6 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl" data-testid="text-contact-title">
-              {t("contact.title1")}
-              <br />
-              <span className="text-primary">{t("contact.title2")}</span>
-            </h2>
-            <p className="mb-10 text-lg leading-8 text-slate-600" data-testid="text-contact-description">
-              {t("contact.desc")}
-            </p>
+      <div className="section-shell relative z-10">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:gap-12">
+          <div className="space-y-10 pt-2">
+            <div className="section-heading">
+              <span className="section-kicker text-secondary" data-testid="text-contact-badge">
+                {t("contact.badge")}
+              </span>
+              <h2 className="section-title" data-testid="text-contact-title">
+                {t("contact.title1")}
+                <br />
+                <span className="text-primary">{t("contact.title2")}</span>
+              </h2>
+              <p className="section-copy" data-testid="text-contact-description">
+                {t("contact.desc")}
+              </p>
+            </div>
 
-            <div className="space-y-8">
-              <div className="group flex items-start gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200/70 bg-slate-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="mb-1 text-lg font-bold text-slate-900">{t("contact.email.title")}</h3>
-                  <p className="mb-1 text-slate-600">{t("contact.email.desc")}</p>
-                  <a href="mailto:info@globalvelo.com.tr" className="font-medium text-primary hover:underline" data-testid="link-contact-email">
-                    info@globalvelo.com.tr
-                  </a>
-                </div>
-              </div>
+            <div className="grid gap-4">
+              {contactItems.map((item, index) => {
+                const Icon = item.icon;
 
-              <div className="group flex items-start gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200/70 bg-slate-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="mb-1 text-lg font-bold text-slate-900">{t("contact.phone.title")}</h3>
-                  <p className="mb-1 text-slate-600">{t("contact.phone.desc")}</p>
-                  <a href="tel:+902160000000" className="font-medium text-primary hover:underline" data-testid="link-contact-phone">
-                    +90 (216) 000 00 00
-                  </a>
-                </div>
-              </div>
-
-              <div className="group flex items-start gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200/70 bg-slate-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="mb-1 text-lg font-bold text-slate-900">{t("contact.address.title")}</h3>
-                  <p className="text-slate-600 leading-relaxed" data-testid="text-contact-address">
-                    {t("contact.address.desc1")}
-                    <br />
-                    {t("contact.address.desc2")}
-                  </p>
-                </div>
-              </div>
+                return (
+                  <div key={index} className="surface-panel rounded-[1.75rem] px-5 py-5 sm:px-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-slate-200/80 bg-slate-50 text-primary">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                        <div className="mt-1 text-sm leading-7 text-slate-600">{item.description}</div>
+                        {item.content ? <div className="mt-2">{item.content}</div> : null}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="lg:col-span-3">
-            <Card className="relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white p-8 shadow-[0_35px_100px_-50px_rgba(15,23,42,0.45)] md:p-10">
-              <div className="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-primary via-secondary to-primary" />
+          <div>
+            <Card className="surface-panel relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white p-7 md:p-9">
+              <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-primary" />
               <div className="mb-8 flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-slate-950" data-testid="text-contact-form-title">{t("contact.form.title")}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-500" data-testid="text-contact-form-helper">{t("contact.form.helper")}</p>
+                  <p className="mt-2 max-w-md text-sm leading-6 text-slate-500" data-testid="text-contact-form-helper">
+                    {t("contact.form.helper")}
+                  </p>
                 </div>
               </div>
 
@@ -216,7 +234,7 @@ export function Contact() {
                   <Textarea
                     id="message"
                     placeholder={t("contact.form.message.ph")}
-                    className="min-h-[170px] rounded-2xl border-slate-200 bg-slate-50 transition-colors focus:bg-white resize-none"
+                    className="min-h-[170px] resize-none rounded-2xl border-slate-200 bg-slate-50 transition-colors focus:bg-white"
                     aria-invalid={Boolean(errors.message)}
                     data-testid="input-contact-message"
                     {...register("message")}

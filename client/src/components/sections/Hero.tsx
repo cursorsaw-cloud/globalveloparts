@@ -26,7 +26,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative flex min-h-[calc(100vh-108px)] w-full items-center overflow-hidden bg-slate-950">
+    <section className="relative flex min-h-[calc(100vh-92px)] w-full items-center overflow-hidden bg-slate-950 md:min-h-[calc(100vh-98px)]">
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.png"
@@ -43,21 +43,21 @@ export function Hero() {
       <div className="pointer-events-none absolute left-[-10rem] top-12 h-[24rem] w-[24rem] rounded-full bg-primary/25 blur-[160px]" />
       <div className="pointer-events-none absolute bottom-[-8rem] right-[-4rem] h-[22rem] w-[22rem] rounded-full bg-secondary/25 blur-[150px]" />
 
-      <div className="container relative z-10 py-20 lg:py-28">
-        <div className="max-w-4xl">
+      <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
+        <div className="max-w-[52rem]">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/6 px-4 py-2.5 backdrop-blur-md">
+            <div className="glass-panel-dark mb-8 inline-flex items-center gap-3 rounded-full px-4 py-2.5">
               <span className="flex h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_rgba(37,99,235,0.8)]" />
-              <span className="text-sm font-semibold tracking-[0.12em] text-slate-300 uppercase" data-testid="text-hero-badge">
+              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300" data-testid="text-hero-badge">
                 {t("hero.badge")}
               </span>
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:text-[5.2rem]">
+            <h1 className="max-w-[50rem] text-5xl font-extrabold leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl md:text-[4.5rem] lg:text-[5.35rem]">
               {t("hero.title1")}
               <br />
               <span className="bg-gradient-to-r from-slate-100 via-white to-blue-300 bg-clip-text text-transparent">
@@ -71,7 +71,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="mt-8 max-w-2xl text-lg font-light leading-8 text-slate-300 md:text-xl" data-testid="text-hero-description">
+            <p className="mt-8 max-w-[38rem] text-[1.06rem] font-light leading-8 text-slate-300 md:text-[1.18rem]" data-testid="text-hero-description">
               {t("hero.desc")}
             </p>
           </motion.div>
@@ -101,7 +101,7 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <div className="mt-16 grid max-w-3xl gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
+          <div className="mt-16 grid max-w-[58rem] gap-4 border-t border-white/10 pt-8 sm:grid-cols-3 lg:gap-5">
             {trustItems.map((item, index) => {
               const Icon = item.icon;
 
@@ -112,13 +112,13 @@ export function Hero() {
                   initial="hidden"
                   animate="visible"
                   custom={index}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+                  className="glass-panel-dark rounded-[1.4rem] p-5"
                   data-testid={`card-hero-trust-${index}`}
                 >
                   <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-semibold tracking-[0.08em] text-slate-200 uppercase">
+                  <span className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-200">
                     {item.label}
                   </span>
                 </motion.div>

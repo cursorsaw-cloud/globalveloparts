@@ -25,146 +25,159 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 py-4 pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-4 xl:pl-2 xl:pr-5">
-        <Link href="/">
-          <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-            <img
-              src="/logo-globalvelo-white-header.png"
-              alt="Globalvelo Logo"
-              className="h-14 w-auto object-contain sm:h-16 lg:h-[4.5rem]"
-              data-testid="img-globalvelo-logo"
-            />
-          </div>
-        </Link>
-
-        <div className="hidden min-w-0 flex-1 items-center justify-end gap-8 md:flex lg:gap-10">
-          <div className="flex items-center gap-6 lg:gap-8 xl:gap-10">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span
-                  className={`cursor-pointer whitespace-nowrap text-[13px] font-semibold tracking-[0.16em] uppercase transition-colors duration-300 ${location === link.href ? "text-white" : "text-slate-300 hover:text-white"}`}
-                  data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
-                >
-                  {link.label}
-                </span>
-              </Link>
-            ))}
-
-            <a
-              href="/#contact"
-              className="whitespace-nowrap text-[13px] font-semibold tracking-[0.16em] uppercase text-slate-300 transition-colors duration-300 hover:text-white"
-              data-testid="link-nav-contact"
-            >
-              {t("nav.contact")}
-            </a>
-          </div>
-
-          <div className="h-8 w-px bg-white/12" />
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="h-11 rounded-full border border-white/12 bg-white/6 px-4 text-white hover:bg-white/10 hover:text-white"
-                data-testid="button-language-switcher"
-              >
-                <Globe className="h-4 w-4" />
-                {language.toUpperCase()}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[144px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
-              <DropdownMenuItem
-                className={`cursor-pointer rounded-xl font-medium ${language === "tr" ? "text-white" : "text-slate-400"}`}
-                onClick={() => setLanguage("tr")}
-                data-testid="button-language-tr"
-              >
-                TR - Türkçe
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                className={`cursor-pointer rounded-xl font-medium ${language === "en" ? "text-white" : "text-slate-400"}`}
-                onClick={() => setLanguage("en")}
-                data-testid="button-language-en"
-              >
-                EN - English
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-white hover:bg-white/10 hover:text-white"
-              data-testid="button-mobile-menu"
-            >
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="border-l border-white/10 bg-slate-950 text-white">
-            <div className="flex flex-col gap-6 pt-8">
+      <div className="site-shell">
+        <div className="flex min-h-[92px] items-center justify-between gap-6 md:min-h-[98px]">
+          <Link href="/">
+            <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
               <img
                 src="/logo-globalvelo-white-header.png"
                 alt="Globalvelo Logo"
-                className="h-14 w-auto object-contain"
-                data-testid="img-mobile-globalvelo-logo"
+                className="h-13 w-auto object-contain sm:h-[3.85rem] lg:h-[4.25rem]"
+                data-testid="img-globalvelo-logo"
               />
+            </div>
+          </Link>
 
-              {links.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <span
-                    className="cursor-pointer text-lg font-semibold text-white/90"
-                    onClick={() => setIsOpen(false)}
-                    data-testid={`link-mobile-${link.href.replace("/", "") || "home"}`}
-                  >
-                    {link.label}
-                  </span>
-                </Link>
-              ))}
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-7 md:flex lg:gap-8">
+            <div className="flex items-center gap-1 rounded-full border border-white/8 bg-white/[0.04] px-2 py-1.5">
+              {links.map((link) => {
+                const isActive = location === link.href;
+
+                return (
+                  <Link key={link.href} href={link.href}>
+                    <span
+                      className={`relative cursor-pointer whitespace-nowrap rounded-full px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
+                        isActive
+                          ? "bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+                          : "text-slate-300 hover:bg-white/6 hover:text-white"
+                      }`}
+                      data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                );
+              })}
 
               <a
                 href="/#contact"
-                className="text-lg font-semibold text-white/90"
-                onClick={() => setIsOpen(false)}
-                data-testid="link-mobile-contact"
+                className="rounded-full px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition-all duration-300 hover:bg-white/6 hover:text-white"
+                data-testid="link-nav-contact"
               >
                 {t("nav.contact")}
               </a>
+            </div>
 
-              <div className="my-1 h-px w-full bg-white/10" />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-10 rounded-full border border-white/10 bg-white/[0.045] px-4 text-[12px] font-semibold tracking-[0.14em] text-slate-100 hover:bg-white/10 hover:text-white"
+                  data-testid="button-language-switcher"
+                >
+                  <Globe className="h-4 w-4" />
+                  {language.toUpperCase()}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[152px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
+                <DropdownMenuItem
+                  className={`cursor-pointer rounded-xl font-medium ${language === "tr" ? "bg-white/8 text-white" : "text-slate-400"}`}
+                  onClick={() => setLanguage("tr")}
+                  data-testid="button-language-tr"
+                >
+                  TR - Türkçe
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className={`cursor-pointer rounded-xl font-medium ${language === "en" ? "bg-white/8 text-white" : "text-slate-400"}`}
+                  onClick={() => setLanguage("en")}
+                  data-testid="button-language-en"
+                >
+                  EN - English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
-              <div className="flex items-center gap-4">
-                <Globe className="h-5 w-5 text-slate-400" />
-                <div className="flex gap-4">
-                  <button
-                    type="button"
-                    className={`text-lg font-semibold ${language === "tr" ? "text-white" : "text-slate-400"}`}
-                    onClick={() => {
-                      setLanguage("tr");
-                      setIsOpen(false);
-                    }}
-                    data-testid="button-mobile-language-tr"
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-11 w-11 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+                data-testid="button-mobile-menu"
+              >
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
+              <div className="flex flex-col gap-7 pt-8">
+                <img
+                  src="/logo-globalvelo-white-header.png"
+                  alt="Globalvelo Logo"
+                  className="h-14 w-auto object-contain"
+                  data-testid="img-mobile-globalvelo-logo"
+                />
+
+                <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
+                  {links.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      <span
+                        className={`block cursor-pointer rounded-2xl px-4 py-3 text-base font-semibold transition-colors ${
+                          location === link.href ? "bg-white/10 text-white" : "text-white/85 hover:bg-white/6 hover:text-white"
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                        data-testid={`link-mobile-${link.href.replace("/", "") || "home"}`}
+                      >
+                        {link.label}
+                      </span>
+                    </Link>
+                  ))}
+
+                  <a
+                    href="/#contact"
+                    className="block rounded-2xl px-4 py-3 text-base font-semibold text-white/85 transition-colors hover:bg-white/6 hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                    data-testid="link-mobile-contact"
                   >
-                    TR
-                  </button>
-                  <button
-                    type="button"
-                    className={`text-lg font-semibold ${language === "en" ? "text-white" : "text-slate-400"}`}
-                    onClick={() => {
-                      setLanguage("en");
-                      setIsOpen(false);
-                    }}
-                    data-testid="button-mobile-language-en"
-                  >
-                    EN
-                  </button>
+                    {t("nav.contact")}
+                  </a>
+                </div>
+
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-4">
+                  <div className="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    <Globe className="h-4 w-4" />
+                    Language
+                  </div>
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      className={`flex-1 rounded-full px-4 py-3 text-sm font-semibold ${language === "tr" ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
+                      onClick={() => {
+                        setLanguage("tr");
+                        setIsOpen(false);
+                      }}
+                      data-testid="button-mobile-language-tr"
+                    >
+                      TR
+                    </button>
+                    <button
+                      type="button"
+                      className={`flex-1 rounded-full px-4 py-3 text-sm font-semibold ${language === "en" ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
+                      onClick={() => {
+                        setLanguage("en");
+                        setIsOpen(false);
+                      }}
+                      data-testid="button-mobile-language-en"
+                    >
+                      EN
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );
