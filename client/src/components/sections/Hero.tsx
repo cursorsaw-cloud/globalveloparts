@@ -1,92 +1,130 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, Globe2, ShieldCheck, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
+
+const statVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.45 + index * 0.12,
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
 
 export function Hero() {
   const { t } = useLanguage();
-  
+
+  const trustItems = [
+    { icon: Globe2, label: t("hero.trust.countries") },
+    { icon: ShieldCheck, label: t("hero.trust.original") },
+    { icon: Zap, label: t("hero.trust.fast") },
+  ];
+
   return (
-    <section className="relative min-h-[90vh] w-full flex items-center bg-slate-950 overflow-hidden">
-      {/* Premium Background with Gradient & Texture */}
+    <section className="relative flex min-h-[calc(100vh-108px)] w-full items-center overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-bg.png" 
-          alt="Automotive Parts Background" 
-          className="h-full w-full object-cover opacity-40 mix-blend-luminosity"
+        <img
+          src="/hero-bg.png"
+          alt="Automotive Parts Background"
+          className="h-full w-full object-cover opacity-35 mix-blend-luminosity"
+          loading="eager"
+          fetchPriority="high"
+          data-testid="img-hero-background"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.24),transparent_28%),linear-gradient(105deg,rgba(2,6,23,0.97)_18%,rgba(2,6,23,0.88)_48%,rgba(2,6,23,0.52)_100%)]" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 mix-blend-soft-light" />
       </div>
 
-      {/* Decorative Light Beams */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="pointer-events-none absolute left-[-10rem] top-12 h-[24rem] w-[24rem] rounded-full bg-primary/25 blur-[160px]" />
+      <div className="pointer-events-none absolute bottom-[-8rem] right-[-4rem] h-[22rem] w-[22rem] rounded-full bg-secondary/25 blur-[150px]" />
 
-      <div className="container relative z-10 py-20 lg:py-32">
-        <div className="max-w-3xl">
+      <div className="container relative z-10 py-20 lg:py-28">
+        <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-sm font-medium text-slate-300">{t('hero.badge')}</span>
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/6 px-4 py-2.5 backdrop-blur-md">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_rgba(37,99,235,0.8)]" />
+              <span className="text-sm font-semibold tracking-[0.12em] text-slate-300 uppercase" data-testid="text-hero-badge">
+                {t("hero.badge")}
+              </span>
             </div>
-            
-            <h1 className="mb-6 font-heading text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl leading-[1.1]">
-              {t('hero.title1')} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">{t('hero.title2')}</span>
+
+            <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:text-[5.2rem]">
+              {t("hero.title1")}
+              <br />
+              <span className="bg-gradient-to-r from-slate-100 via-white to-blue-300 bg-clip-text text-transparent">
+                {t("hero.title2")}
+              </span>
             </h1>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.75, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="mb-10 text-lg text-slate-300 md:text-xl font-light leading-relaxed max-w-2xl">
-              {t('hero.desc')}
+            <p className="mt-8 max-w-2xl text-lg font-light leading-8 text-slate-300 md:text-xl" data-testid="text-hero-description">
+              {t("hero.desc")}
             </p>
           </motion.div>
-          
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col gap-4 sm:flex-row items-start"
+            transition={{ duration: 0.75, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 flex flex-col items-start gap-4 sm:flex-row"
           >
-            <Button size="lg" className="text-base h-14 px-8 rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all group">
-              {t('hero.btn.products')}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="h-14 rounded-full px-8 text-base shadow-[0_20px_60px_-24px_rgba(37,99,235,0.75)]">
+              <a href="/products" data-testid="button-hero-products">
+                {t("hero.btn.products")}
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-base h-14 px-8 rounded-full bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white backdrop-blur-sm transition-all group">
-              {t('hero.btn.contact')}
-              <ChevronRight className="ml-1 h-5 w-5 text-slate-400 group-hover:text-white transition-colors" />
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-14 rounded-full border-white/15 bg-white/5 px-8 text-base text-white backdrop-blur-sm hover:bg-white/10 hover:text-white"
+            >
+              <a href="/#contact" data-testid="button-hero-contact">
+                {t("hero.btn.contact")}
+                <ChevronRight className="h-5 w-5 text-slate-300" />
+              </a>
             </Button>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="mt-16 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-2xl"
-          >
-            <div className="flex items-center gap-3">
-              <Globe2 className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">{t('hero.trust.countries')}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">{t('hero.trust.original')}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Zap className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-slate-300">{t('hero.trust.fast')}</span>
-            </div>
-          </motion.div>
+          <div className="mt-16 grid max-w-3xl gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
+            {trustItems.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.label}
+                  variants={statVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+                  data-testid={`card-hero-trust-${index}`}
+                >
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold tracking-[0.08em] text-slate-200 uppercase">
+                    {item.label}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

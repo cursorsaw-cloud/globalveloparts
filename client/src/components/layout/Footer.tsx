@@ -1,68 +1,86 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-slate-950 text-slate-200">
-      <div className="container py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="Globalvelo" className="h-12 w-auto brightness-0 invert" />
+      <div className="container py-14 md:py-18">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1fr_1fr]">
+          <div className="space-y-5">
+            <div className="inline-flex rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <img src="/logo.png" alt="Globalvelo" className="h-14 w-auto brightness-0 invert" data-testid="img-footer-logo" />
             </div>
-            <p className="text-sm text-slate-400 max-w-xs">
-              {t('hero.desc')}
+            <p className="max-w-sm text-sm leading-7 text-slate-400" data-testid="text-footer-description">
+              {t("footer.desc")}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">Hızlı Erişim</h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link href="/about" className="hover:text-white transition-colors">{t('nav.about')}</Link></li>
-              <li><Link href="/products" className="hover:text-white transition-colors">{t('nav.products')}</Link></li>
-              <li><Link href="/global" className="hover:text-white transition-colors">{t('nav.global')}</Link></li>
-              <li><Link href="/#contact" className="hover:text-white transition-colors">{t('nav.contact')}</Link></li>
+            <h3 className="mb-4 text-lg font-semibold text-white">{t("footer.quick")}</h3>
+            <ul className="space-y-3 text-sm text-slate-400">
+              <li><Link href="/about" className="transition-colors hover:text-white" data-testid="link-footer-about">{t("nav.about")}</Link></li>
+              <li><Link href="/products" className="transition-colors hover:text-white" data-testid="link-footer-products">{t("nav.products")}</Link></li>
+              <li><Link href="/global" className="transition-colors hover:text-white" data-testid="link-footer-global">{t("nav.global")}</Link></li>
+              <li><a href="/#contact" className="transition-colors hover:text-white" data-testid="link-footer-contact">{t("nav.contact")}</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">{t('nav.contact')}</h3>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <h3 className="mb-4 text-lg font-semibold text-white">{t("footer.contact")}</h3>
+            <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 shrink-0 text-primary" />
-                <span>{t('contact.address.desc1')}<br />{t('contact.address.desc2')}</span>
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <span data-testid="text-footer-address">{t("contact.address.desc1")}<br />{t("contact.address.desc2")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span>+90 (212) 555 0000</span>
+                <a href="tel:+902160000000" className="transition-colors hover:text-white" data-testid="link-footer-phone">+90 (216) 000 00 00</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
-                <span>info@globalvelo.com</span>
+                <a href="mailto:info@globalvelo.com.tr" className="transition-colors hover:text-white" data-testid="link-footer-email">info@globalvelo.com.tr</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-white">Bizi Takip Edin</h3>
-            <div className="flex gap-4">
-              <a href="#" className="rounded-full bg-slate-800 p-2 hover:bg-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
+            <h3 className="mb-4 text-lg font-semibold text-white">{t("footer.connect")}</h3>
+            <div className="space-y-3 text-sm text-slate-400">
+              <a
+                href="mailto:info@globalvelo.com.tr"
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition-colors hover:border-white/20 hover:bg-white/10 hover:text-white"
+                data-testid="link-footer-cta-email"
+              >
+                <span>{t("footer.connectEmail")}</span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a href="#" className="rounded-full bg-slate-800 p-2 hover:bg-primary transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a
+                href="/#contact"
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition-colors hover:border-white/20 hover:bg-white/10 hover:text-white"
+                data-testid="link-footer-cta-form"
+              >
+                <span>{t("footer.connectForm")}</span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a href="#" className="rounded-full bg-slate-800 p-2 hover:bg-primary transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a
+                href="https://www.sabancidx.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition-colors hover:border-white/20 hover:bg-white/10 hover:text-white"
+                data-testid="link-footer-cta-sabancidx"
+              >
+                <span>{t("footer.connectPartner")}</span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} Globalvelo Otomotiv A.Ş. Tüm hakları saklıdır.
+
+        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500" data-testid="text-footer-copyright">
+          © {new Date().getFullYear()} Globalvelo Otomotiv A.Ş. {t("footer.rights")}
         </div>
       </div>
     </footer>

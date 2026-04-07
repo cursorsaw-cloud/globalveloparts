@@ -1,0 +1,70 @@
+Act as a senior full-stack developer, UX/UI designer, and CRO expert. Perform a complete audit, fix, and premium-level redesign of the website with a focus on performance, usability, and conversion optimization.
+
+1. Header & Hero Section
+Ensure the company logo is clearly visible, sharp, and positioned prominently in the header/banner.
+Completely remove the “SabancıDx Güvencesiyle” text/section from the banner.
+Keep existing HERO text structure, but implement:
+Smooth animated transitions (fade/slide)
+Maintain consistency in typography and layout
+2. Navigation & Page Integrity Audit
+Scan and list ALL pages in the website.
+Detect and fix:
+Broken links
+صفحات that do not load
+गलत या yanlış yönlendirmeler (wrong redirects)
+Ensure:
+Every link redirects to the correct destination
+Navigation structure is logical and user-friendly
+3. Product Categories Section
+Identify missing or broken images in product categories.
+Replace with:
+High-quality, relevant images
+Optimized formats (WebP preferred)
+Ensure:
+Images are fully responsive
+Properly displayed across all devices
+4. Contact / Partnership Form (Critical Fix)
+Section: “İletişim – İş Ortaklığı İçin Adım Atın”
+Current issue: UI exists but no backend functionality
+Implement:
+Fully functional form submission system
+On submit → send data to: info@globalvelo.com.tr
+Validate:
+All fields (required, format checks)
+Success & error states
+Fix email consistency:
+Replace all occurrences of info@globalvelo.com
+ → info@globalvelo.com.tr
+Ensure consistency across entire site
+5. Design Upgrade to Premium مستوى
+
+Keep the base design but elevate it to a premium, modern, global brand level:
+
+Improve:
+Spacing (use consistent spacing system, e.g. 8pt grid)
+Typography hierarchy
+Icon quality (use modern icon libraries)
+Section separation & visual flow
+Enhance:
+Micro-interactions (hover, scroll animations)
+Loading states (skeletons, lazy loading)
+Use tools & frameworks:
+TailwindCSS
+shadcn/ui
+Modern animation libraries (Framer Motion if applicable)
+Optimize:
+Lighthouse score (Performance, Accessibility, SEO)
+Image loading (lazy load, compression)
+6. Performance & QA
+Run full audit using tools like:
+Lighthouse
+PageSpeed Insights
+Ensure:
+Fast loading time
+Mobile-first responsiveness
+Cross-browser compatibility
+7. Final Output अपेक्षा
+Provide:
+List of all fixes made
+Before / After improvements
+Suggestions for further scaling (design + technical)

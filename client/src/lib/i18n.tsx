@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
 type Language = 'tr' | 'en';
 
@@ -6,7 +6,6 @@ type Translations = Record<string, Record<string, string>>;
 
 const translations: Translations = {
   tr: {
-    // Navbar
     'nav.assurance': 'SabancıDx Güvencesiyle',
     'nav.about': 'Hakkımızda',
     'nav.products': 'Ürünler',
@@ -14,7 +13,6 @@ const translations: Translations = {
     'nav.sabancidx': 'SabancıDx',
     'nav.contact': 'İletişim',
 
-    // Hero
     'hero.badge': 'Global Yedek Parça Tedarikçiniz',
     'hero.title1': 'Otomotiv Dünyasında',
     'hero.title2': 'Global Güç',
@@ -25,7 +23,6 @@ const translations: Translations = {
     'hero.trust.original': '%100 Orijinal',
     'hero.trust.fast': 'Hızlı Teslimat',
 
-    // Features
     'feat.badge': 'Kurumsal Değerlerimiz',
     'feat.title': 'Neden Globalvelo?',
     'feat.desc': 'Sektördeki köklü tecrübemiz, yenilikçi lojistik altyapımız ve tavizsiz kalite odaklı yaklaşımımızla global iş ortaklarımıza sürdürülebilir değer katıyoruz.',
@@ -42,14 +39,15 @@ const translations: Translations = {
     'feat.stat.3.label': 'Ürün Çeşidi',
     'feat.stat.4.label': 'OEM Kalitesi',
 
-    // Products
+    'prod.badge': 'Ürün Evreni',
     'prod.title': 'Ürün Kategorileri & Markalar',
     'prod.desc': 'Globalvelo olarak, dünyanın önde gelen otomotiv yedek parça üreticileriyle çalışıyoruz. Aşağıdaki kategorilerden ürün gruplarını ve distribütörlüğünü yaptığımız markaları inceleyebilirsiniz.',
+    'prod.viewAll': 'Tüm Kategorileri Gör',
     'prod.btn.details': 'Detaylar',
     'prod.subcats': 'Alt Kategoriler',
     'prod.brands': 'Tedarikçi Markalar',
+    'prod.brandCount': 'marka',
 
-    // Contact
     'contact.badge': 'İletişim',
     'contact.title1': 'İş Ortaklığı İçin',
     'contact.title2': 'Adım Atın',
@@ -62,6 +60,8 @@ const translations: Translations = {
     'contact.address.desc1': 'İçerenköy Mah. Kayışdağı Yolu Cad.',
     'contact.address.desc2': 'Ataşehir, İstanbul / Türkiye',
     'contact.form.title': 'Bize Ulaşın',
+    'contact.form.helper': 'Talebiniz için tüm alanları doldurun. Gönderdiğinizde bilgileriniz hazır bir e-posta taslağı olarak açılır.',
+    'contact.form.note': 'Bu prototipte form, varsayılan e-posta uygulamanızda info@globalvelo.com.tr adresine önceden doldurulmuş bir mesaj oluşturur.',
     'contact.form.name': 'Firma / Ad Soyad',
     'contact.form.name.ph': 'Örn: ABC Otomotiv Ltd.',
     'contact.form.email': 'Kurumsal E-posta',
@@ -71,8 +71,17 @@ const translations: Translations = {
     'contact.form.message': 'Mesajınız ve Talepleriniz',
     'contact.form.message.ph': 'İhtiyaç duyduğunuz OEM numaralarını veya markaları belirtebilirsiniz...',
     'contact.form.submit': 'Talebi Gönder',
+    'contact.form.sending': 'Hazırlanıyor...',
+    'contact.form.error.name': 'Lütfen ad veya firma bilgisini girin.',
+    'contact.form.error.email': 'Lütfen geçerli bir e-posta adresi girin.',
+    'contact.form.error.phone': 'Lütfen geçerli bir telefon numarası girin.',
+    'contact.form.error.subject': 'Lütfen konu bilgisini girin.',
+    'contact.form.error.message': 'Lütfen en az 10 karakterlik bir mesaj yazın.',
+    'contact.form.success.title': 'Talep hazırlandı',
+    'contact.form.success.desc': 'E-posta taslağınız info@globalvelo.com.tr için açılıyor.',
+    'contact.form.fail.title': 'Bir sorun oluştu',
+    'contact.form.fail.desc': 'Lütfen tekrar deneyin veya doğrudan info@globalvelo.com.tr adresine yazın.',
 
-    // About Page
     'about.title': 'Hakkımızda',
     'about.desc': 'Globalvelo, otomotiv yedek parça sektöründe 20 yılı aşkın tecrübesiyle uluslararası arenada faaliyet gösteren öncü bir kuruluştur. Misyonumuz, dünyanın dört bir yanındaki müşterilerimize en kaliteli yedek parçaları, en rekabetçi fiyatlarla ve en hızlı lojistik çözümleriyle ulaştırmaktır.',
     'about.vision.title': 'Vizyonumuz',
@@ -83,30 +92,36 @@ const translations: Translations = {
     'about.values.3': 'Etik Ticaret',
     'about.values.4': 'Global İşbirliği',
 
-    // SabanciDx Page
     'sdx.title': 'Dijital Dönüşümde Güçlü İş Ortaklığı',
     'sdx.desc': 'Globalvelo olarak, global çaptaki tüm operasyonlarımızın teknolojik altyapısını Türkiye\'nin lider dijital dönüşüm şirketi SabancıDx güvencesiyle sağlıyoruz.',
     'sdx.1.title': 'Üst Düzey Veri Güvenliği',
-    'sdx.1.desc': 'Müşterilerimizin, bayilerimizin ve iş ortaklarımızın tüm verileri, SabancıDx\'in siber güvenlik (Cyber Security) çözümleriyle korunmaktadır. Küresel veri standartlarına uygun, uçtan uca şifrelenmiş altyapı ile çalışıyoruz.',
+    'sdx.1.desc': 'Müşterilerimizin, bayilerimizin ve iş ortaklarımızın tüm verileri, SabancıDx\'in siber güvenlik çözümleriyle korunmaktadır. Küresel veri standartlarına uygun, uçtan uca şifrelenmiş altyapı ile çalışıyoruz.',
     'sdx.2.title': 'Kesintisiz B2B Altyapısı',
-    'sdx.2.desc': 'Yedek parça tedarik ve sipariş yönetim sistemlerimiz, SabancıDx\'in bulut bilişim (Cloud Computing) mimarisi üzerinde koşmaktadır. Bu sayede 7/24 kesintisiz, hızlı ve hatasız sipariş yönetimi sağlıyoruz.',
+    'sdx.2.desc': 'Yedek parça tedarik ve sipariş yönetim sistemlerimiz, SabancıDx\'in bulut bilişim mimarisi üzerinde koşmaktadır. Bu sayede 7/24 kesintisiz, hızlı ve hatasız sipariş yönetimi sağlıyoruz.',
     'sdx.3.title': 'Küresel Entegrasyon',
-    'sdx.3.desc': '80\'den fazla küresel marka ile olan entegrasyonlarımız, ileri veri analitiği ve yapay zeka (AI) destekli stok tahminleme sistemleri sayesinde kusursuz bir şekilde yönetilmektedir.',
+    'sdx.3.desc': '80\'den fazla küresel marka ile olan entegrasyonlarımız, ileri veri analitiği ve yapay zeka destekli stok tahminleme sistemleri sayesinde kusursuz bir şekilde yönetilmektedir.',
     'sdx.4.title': 'Operasyonel Çeviklik',
     'sdx.4.desc': 'Dijitalleşme süreçlerimiz sayesinde, siparişten teslimata kadar geçen süre optimize edilmiş, lojistik operasyonlarımızda SabancıDx\'in teknolojik vizyonu ile maksimum verimliliğe ulaşılmıştır.',
     'sdx.cta.title': 'Geleceğe Birlikte Yürüyoruz',
     'sdx.cta.desc': 'SabancıDx\'in güçlü referansları arasında yer almaktan gurur duyuyor, otomotiv yedek parça sektöründe dijital standartları birlikte belirliyoruz.',
     'sdx.cta.btn': 'SabancıDx\'i Keşfedin',
 
-    // Global Page
     'global.title': 'Global Ağımız',
     'global.desc': 'Globalvelo, Türkiye merkezli olmak üzere Avrupa, Orta Doğu, Asya ve Afrika pazarlarında aktif bir rol oynamaktadır. 40\'tan fazla ülkeye yayılan geniş distribütör ağımız ve stratejik lojistik merkezlerimizle, yedek parça ihtiyacını sınır tanımadan karşılıyoruz.',
     'global.eu': 'Avrupa Lojistik Merkezi: Almanya',
     'global.me': 'Orta Doğu Dağıtım: Dubai',
     'global.asia': 'Asya Pasifik Ofisi: Şangay',
+
+    'footer.desc': 'Globalvelo, premium otomotiv yedek parça tedarikinde güçlü marka portföyü, hızlı lojistik kabiliyeti ve global ticaret disiplini ile iş ortaklarına sürdürülebilir değer sunar.',
+    'footer.quick': 'Hızlı Erişim',
+    'footer.contact': 'İletişim Bilgileri',
+    'footer.connect': 'Bağlantılar',
+    'footer.connectEmail': 'E-posta gönder',
+    'footer.connectForm': 'İletişim formuna git',
+    'footer.connectPartner': 'SabancıDx partnerliği',
+    'footer.rights': 'Tüm hakları saklıdır.',
   },
   en: {
-    // Navbar
     'nav.assurance': 'Powered by SabancıDx',
     'nav.about': 'About Us',
     'nav.products': 'Products',
@@ -114,7 +129,6 @@ const translations: Translations = {
     'nav.sabancidx': 'SabancıDx',
     'nav.contact': 'Contact',
 
-    // Hero
     'hero.badge': 'Your Global Spare Parts Supplier',
     'hero.title1': 'Global Power in the',
     'hero.title2': 'Automotive World',
@@ -125,43 +139,45 @@ const translations: Translations = {
     'hero.trust.original': '100% Original',
     'hero.trust.fast': 'Fast Delivery',
 
-    // Features
     'feat.badge': 'Our Corporate Values',
     'feat.title': 'Why Globalvelo?',
     'feat.desc': 'With our deep-rooted experience in the sector, innovative logistics infrastructure, and uncompromising quality-oriented approach, we add sustainable value to our global business partners.',
     'feat.1.title': 'Global Supply Network',
     'feat.1.desc': 'Export capacity to over 40 countries and strong supply chain partnerships with the world\'s leading automotive brands.',
     'feat.2.title': 'Original and OEM Quality',
-    'feat.2.desc': 'All our spare parts comply with international quality standards (ISO/TS), are certified and under manufacturer warranty.',
+    'feat.2.desc': 'All our spare parts comply with international quality standards, are certified and under manufacturer warranty.',
     'feat.3.title': 'Fast Logistics Solutions',
     'feat.3.desc': 'Thanks to our modern storage infrastructure, we offer safe, insured, and timely delivery guarantees to everywhere in the world.',
     'feat.4.title': 'Expert Support Team',
-    'feat.4.desc': 'With our expert staff with years of experience in the sector, we provide 24/7 technical and operational support to our business partners.',
+    'feat.4.desc': 'With our experienced specialist team, we provide 24/7 technical and operational support to our business partners.',
     'feat.stat.1.label': 'Export Countries',
     'feat.stat.2.label': 'Global Brands',
     'feat.stat.3.label': 'Product Types',
     'feat.stat.4.label': 'OEM Quality',
 
-    // Products
+    'prod.badge': 'Product Universe',
     'prod.title': 'Product Categories & Brands',
-    'prod.desc': 'As Globalvelo, we work with the world\'s leading automotive spare parts manufacturers. You can examine the product groups from the categories below and the brands we distribute.',
+    'prod.desc': 'At Globalvelo, we work with the world\'s leading automotive spare parts manufacturers. Explore the product groups below together with the brands we distribute.',
+    'prod.viewAll': 'View All Categories',
     'prod.btn.details': 'Details',
     'prod.subcats': 'Sub Categories',
     'prod.brands': 'Supplier Brands',
+    'prod.brandCount': 'brands',
 
-    // Contact
     'contact.badge': 'Contact',
     'contact.title1': 'Take a Step for',
     'contact.title2': 'Business Partnership',
-    'contact.desc': 'Contact our expert team to be a part of our global spare parts supply chain, get detailed information about our products or request a quote.',
+    'contact.desc': 'Reach our expert team to join our global spare parts supply chain, request a quote, or get detailed information about our product range.',
     'contact.email.title': 'Email',
     'contact.email.desc': 'For 24/7 operational support:',
     'contact.phone.title': 'Phone',
     'contact.phone.desc': 'Weekdays between 09:00 - 18:00:',
     'contact.address.title': 'Head Office',
     'contact.address.desc1': 'İçerenköy Mah. Kayışdağı Yolu Cad.',
-    'contact.address.desc2': 'Ataşehir, Istanbul / Turkey',
+    'contact.address.desc2': 'Ataşehir, Istanbul / Türkiye',
     'contact.form.title': 'Contact Us',
+    'contact.form.helper': 'Fill in all fields. On submit, your details open as a ready-to-send email draft.',
+    'contact.form.note': 'In this prototype, the form creates a prefilled message to info@globalvelo.com.tr in your default email application.',
     'contact.form.name': 'Company / Full Name',
     'contact.form.name.ph': 'e.g. ABC Automotive Ltd.',
     'contact.form.email': 'Corporate Email',
@@ -171,10 +187,19 @@ const translations: Translations = {
     'contact.form.message': 'Your Message and Requests',
     'contact.form.message.ph': 'You can specify the OEM numbers or brands you need...',
     'contact.form.submit': 'Send Request',
+    'contact.form.sending': 'Preparing...',
+    'contact.form.error.name': 'Please enter your name or company name.',
+    'contact.form.error.email': 'Please enter a valid email address.',
+    'contact.form.error.phone': 'Please enter a valid phone number.',
+    'contact.form.error.subject': 'Please enter a subject.',
+    'contact.form.error.message': 'Please write a message with at least 10 characters.',
+    'contact.form.success.title': 'Request prepared',
+    'contact.form.success.desc': 'Your email draft for info@globalvelo.com.tr is opening.',
+    'contact.form.fail.title': 'Something went wrong',
+    'contact.form.fail.desc': 'Please try again or email info@globalvelo.com.tr directly.',
 
-    // About Page
     'about.title': 'About Us',
-    'about.desc': 'Globalvelo is a pioneering organization operating in the international arena with over 20 years of experience in the automotive spare parts sector. Our mission is to deliver the highest quality spare parts to our customers all over the world with the most competitive prices and fastest logistics solutions.',
+    'about.desc': 'Globalvelo is a pioneering organization operating in the international arena with over 20 years of experience in the automotive spare parts sector. Our mission is to deliver the highest quality spare parts to our customers all over the world with competitive pricing and fast logistics solutions.',
     'about.vision.title': 'Our Vision',
     'about.vision.desc': 'To be the most reliable and innovative solution partner on a global scale in automotive spare parts supply.',
     'about.values.title': 'Our Values',
@@ -183,28 +208,35 @@ const translations: Translations = {
     'about.values.3': 'Ethical Trade',
     'about.values.4': 'Global Cooperation',
 
-    // SabanciDx Page
     'sdx.title': 'Strong Partnership in Digital Transformation',
-    'sdx.desc': 'As Globalvelo, we provide the technological infrastructure of all our global operations with the assurance of SabancıDx, Turkey\'s leading digital transformation company.',
-    'sdx.1.title': 'Top Level Data Security',
-    'sdx.1.desc': 'All data of our customers, dealers and business partners are protected by SabancıDx\'s Cyber Security solutions. We work with end-to-end encrypted infrastructure in accordance with global data standards.',
+    'sdx.desc': 'At Globalvelo, we power our global operations with the assurance of SabancıDx, one of Turkey\'s leading digital transformation companies.',
+    'sdx.1.title': 'Advanced Data Security',
+    'sdx.1.desc': 'All customer, dealer and business partner data is protected through SabancıDx cybersecurity solutions with end-to-end encrypted infrastructure.',
     'sdx.2.title': 'Uninterrupted B2B Infrastructure',
-    'sdx.2.desc': 'Our spare parts supply and order management systems run on SabancıDx\'s Cloud Computing architecture. In this way, we provide 24/7 uninterrupted, fast and error-free order management.',
+    'sdx.2.desc': 'Our spare parts supply and order management systems run on SabancıDx cloud architecture, enabling uninterrupted, fast and accurate operations.',
     'sdx.3.title': 'Global Integration',
-    'sdx.3.desc': 'Our integrations with more than 80 global brands are managed flawlessly thanks to advanced data analytics and artificial intelligence (AI) supported inventory forecasting systems.',
+    'sdx.3.desc': 'Our integrations with more than 80 global brands are managed with advanced analytics and AI-supported inventory forecasting systems.',
     'sdx.4.title': 'Operational Agility',
-    'sdx.4.desc': 'Thanks to our digitalization processes, the time from order to delivery has been optimized, and maximum efficiency has been achieved in our logistics operations with SabancıDx\'s technological vision.',
-    'sdx.cta.title': 'Walking to the Future Together',
-    'sdx.cta.desc': 'We are proud to be among SabancıDx\'s strong references, and we are setting digital standards together in the automotive spare parts sector.',
+    'sdx.4.desc': 'Thanks to digitalization, the time from order to delivery is optimized and logistics performance is maximized across the business.',
+    'sdx.cta.title': 'Building the Future Together',
+    'sdx.cta.desc': 'We are proud to be among SabancıDx\'s strong references and to set digital standards together in the automotive spare parts sector.',
     'sdx.cta.btn': 'Discover SabancıDx',
 
-    // Global Page
     'global.title': 'Our Global Network',
-    'global.desc': 'Globalvelo plays an active role in the European, Middle Eastern, Asian and African markets, headquartered in Turkey. With our extensive distributor network spread over 40 countries and strategic logistics centers, we meet the need for spare parts without borders.',
+    'global.desc': 'Globalvelo plays an active role in the European, Middle Eastern, Asian and African markets, headquartered in Turkey. With our distributor network across 40+ countries and strategic logistics centers, we answer spare parts demand without borders.',
     'global.eu': 'European Logistics Center: Germany',
     'global.me': 'Middle East Distribution: Dubai',
     'global.asia': 'Asia Pacific Office: Shanghai',
-  }
+
+    'footer.desc': 'Globalvelo delivers sustainable value through a premium brand portfolio, fast logistics capability, and disciplined international automotive spare parts trade.',
+    'footer.quick': 'Quick Access',
+    'footer.contact': 'Contact Details',
+    'footer.connect': 'Connections',
+    'footer.connectEmail': 'Send an email',
+    'footer.connectForm': 'Open contact form',
+    'footer.connectPartner': 'SabancıDx partnership',
+    'footer.rights': 'All rights reserved.',
+  },
 };
 
 interface LanguageContextType {
@@ -215,7 +247,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('tr');
 
   useEffect(() => {
@@ -228,10 +260,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
   };
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const t = (key: string): string => {
-    return translations[language]?.[key] || translations['tr'][key] || key;
+    return translations[language]?.[key] || translations.tr[key] || key;
   };
 
   return (

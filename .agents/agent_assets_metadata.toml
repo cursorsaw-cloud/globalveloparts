@@ -1,0 +1,50 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "oQ9HaHs7Yz_01GwnXd3KN"
+uri = "file://client/public/images/categories/brake-system.jpg"
+type = "image"
+title = "premium automotive brake disc and caliper close-up industrial product photography"
+
+[[outputs]]
+id = "GBg_zc1Ep4DGLbL1Y4Zal"
+uri = "file://client/public/images/categories/filters.jpg"
+type = "image"
+title = "automotive engine air and oil filters premium product photography"
+
+[[outputs]]
+id = "M1Cs1o2s58qvv5K5TPpO1"
+uri = "file://client/public/images/categories/engine-parts.jpg"
+type = "image"
+title = "automotive engine components pistons timing parts premium industrial photography"
+
+[[outputs]]
+id = "HM1Cej8Yggge9LLkwS11B"
+uri = "file://client/public/images/categories/suspension.jpg"
+type = "image"
+title = "automotive suspension shock absorber and spring premium product photo"
+
+[[outputs]]
+id = "wQVd1mP96p4GXvxwOZbsF"
+uri = "file://client/public/images/categories/belt-chain.jpg"
+type = "image"
+title = "automotive timing belt and chain kit premium product photography"
+
+[[outputs]]
+id = "5QDkj1QIxRmbdygS0e1in"
+uri = "file://client/public/images/categories/electrical-lighting.jpg"
+type = "image"
+title = "automotive headlight battery ignition electrical parts premium product photography"
+
+[[outputs]]
+id = "MtVmIjJoFmuXcfbid6DRY"
+uri = "file://client/public/images/categories/cooling-heating.jpg"
+type = "image"
+title = "automotive radiator cooling system parts premium product photography"
+
+[[outputs]]
+id = "LRn--6WAVuClefkgNuvEG"
+uri = "file://client/public/images/categories/clutch-drivetrain.jpg"
+type = "image"
+title = "automotive clutch kit transmission drivetrain premium industrial product photography"
