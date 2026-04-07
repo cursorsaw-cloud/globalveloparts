@@ -27,7 +27,7 @@ const categories = [
       tr: "Zamanlama, conta, piston ve pompa gruplarında OEM odaklı seçim.",
       en: "OEM-focused selection for timing, gasket, piston and pump groups.",
     },
-    image: "/images/categories/engine-parts.jpg",
+    image: "/images/categories/engine-parts-pro.png",
   },
   {
     key: "suspension",
@@ -45,7 +45,7 @@ const categories = [
       tr: "Triger setleri ve gergi çözümleri için güçlü ürün çeşitliliği.",
       en: "Strong assortment for timing kits and tensioning solutions.",
     },
-    image: "/images/categories/belt-chain.jpg",
+    image: "/images/categories/belt-chain-pro.png",
   },
   {
     key: "electrical",
@@ -63,7 +63,7 @@ const categories = [
       tr: "Radyatör, termostat ve pompa gruplarında global tedarik.",
       en: "Global sourcing for radiators, thermostats and pump assemblies.",
     },
-    image: "/images/categories/cooling-heating.jpg",
+    image: "/images/categories/cooling-heating-pro.png",
   },
   {
     key: "clutch",
