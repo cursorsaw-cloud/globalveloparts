@@ -24,7 +24,7 @@ const getBrandDomain = (brandName: string) => {
     Textar: "textar.com",
     Ferodo: "ferodo.com",
     Bosch: "bosch.com",
-    TRW: "aftermarket.zf.com",
+    TRW: "trwaftermarket.com",
     ATE: "ate-brakes.com",
     Delphi: "delphiautoparts.com",
     Jurid: "jurid.com",
@@ -74,7 +74,7 @@ const getBrandDomain = (brandName: string) => {
     Alkar: "alkar.es",
     NGK: "ngkntk.com",
     Denso: "denso.com",
-    Beru: "borgwarner.com",
+    Beru: "beru.com",
     Nissens: "nissens.com",
     Hepu: "hepu.de",
     Wahler: "wahler.de",
@@ -88,10 +88,44 @@ const getBrandDomain = (brandName: string) => {
     Corteco: "corteco.com",
     Varta: "varta-automotive.com",
     Exide: "exidegroup.com",
-    Contitech: "continental.com",
+    Contitech: "contitech.de",
   };
 
   return domainMap[brandName];
+};
+
+const getBrandWordmark = (brandName: string) => {
+  const styleMap: Record<string, { textColor: string; accentColor: string; background: string; italic?: boolean; fontWeight?: number; letterSpacing?: number }> = {
+    TRW: { textColor: "#1E40AF", accentColor: "#EF4444", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
+    Lemförder: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", italic: true, fontWeight: 800, letterSpacing: 5 },
+    Sachs: { textColor: "#0F172A", accentColor: "#D4AF37", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
+    Pierburg: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 5 },
+    Kolbenschmidt: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 3 },
+    Beru: { textColor: "#0F172A", accentColor: "#F59E0B", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
+    Contitech: { textColor: "#0F172A", accentColor: "#F97316", background: "#FFFFFF", fontWeight: 800, letterSpacing: 4 },
+    "Magneti Marelli": { textColor: "#1E3A8A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 3 },
+    "Liqui Moly": { textColor: "#1E3A8A", accentColor: "#DC2626", background: "#FFFFFF", fontWeight: 900, letterSpacing: 4 },
+    Mann: { textColor: "#0F172A", accentColor: "#FACC15", background: "#FFFFFF", fontWeight: 900, letterSpacing: 5 },
+  };
+
+  const style = styleMap[brandName] ?? {
+    textColor: "#0F172A",
+    accentColor: "#94A3B8",
+    background: "#FFFFFF",
+    fontWeight: 800,
+    letterSpacing: 4,
+  };
+  const viewBoxWidth = 640;
+  const viewBoxHeight = 220;
+  const displayName = brandName.toUpperCase().replace(/&/g, "&amp;");
+  const fontSize = brandName.length > 14 ? 42 : brandName.length > 9 ? 54 : 70;
+  const accentHeight = 14;
+  const accentWidth = Math.min(380, Math.max(140, brandName.length * 26));
+  const accentX = (viewBoxWidth - accentWidth) / 2;
+  const transform = style.italic ? "skewX(-14)" : "";
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}"><rect width="100%" height="100%" rx="28" fill="${style.background}"/><text x="50%" y="50%" fill="${style.textColor}" font-family="Arial, Helvetica, sans-serif" font-size="${fontSize}" font-style="normal" font-weight="${style.fontWeight}" letter-spacing="${style.letterSpacing}" text-anchor="middle" dominant-baseline="middle" transform="${transform}" transform-origin="center">${displayName}</text><rect x="${accentX}" y="166" width="${accentWidth}" height="${accentHeight}" rx="999" fill="${style.accentColor}" opacity="0.95"/></svg>`;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 };
 
 const getBrandLogoCandidates = (brandName: string) => {
@@ -100,27 +134,16 @@ const getBrandLogoCandidates = (brandName: string) => {
     INA: "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg",
     FAG: "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg",
     Vitesco: "https://www.repxpert.com.tr/assets/images/brands/vitesco-logo.svg",
-    Bosch: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Bosch-logo.svg",
-    TRW: "https://upload.wikimedia.org/wikipedia/commons/b/b5/TRW_logo.svg",
     ATE: "https://www.ate-brakes.com/img/logo_ate.png",
-    Castrol: "https://upload.wikimedia.org/wikipedia/commons/6/69/Castrol_logo_2023.svg",
-    Motul: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Motul_logo.svg",
     Budweg: "https://www.budweg.com/hubfs/budweg-logo.png",
     Autofren: "https://www.autofrenseinsa.com/themes/custom/autofren/logo.svg",
-    Valeo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Valeo_Logo.svg",
-    Hella: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Hella-logo.svg",
-    NGK: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ngk_logo.svg",
-    Denso: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Denso_logo.svg",
-    Varta: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Varta-logo-2021.svg",
-    Exide: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Exide_Logo.svg",
   };
 
   const domain = getBrandDomain(brandName);
   const candidates = [
     brandLogoOverrides[brandName],
-    domain && domain !== "repxpert.com.tr" ? `https://logo.clearbit.com/${domain}?size=800` : null,
-    domain ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=256` : null,
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`,
+    domain && domain !== "repxpert.com.tr" ? `https://logo.clearbit.com/${domain}?size=1200` : null,
+    getBrandWordmark(brandName),
   ].filter((value): value is string => Boolean(value));
 
   return [...new Set(candidates)];
@@ -371,13 +394,17 @@ export default function ProductsPage() {
                           </h3>
                           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                             {category.brands.map((brand) => (
-                              <div key={brand} className="group flex flex-col items-center justify-center rounded-[1.35rem] border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-primary/25 hover:shadow-md" data-testid={`card-products-brand-${category.id}-${brand}`}>
-                                <div className="mb-3 flex h-16 w-full items-center justify-center p-2 sm:h-20">
+                              <div
+                                key={brand}
+                                className="group flex flex-col rounded-[1.45rem] border border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
+                                data-testid={`card-products-brand-${category.id}-${brand}`}
+                              >
+                                <div className="mb-3 flex min-h-[5.1rem] w-full items-center justify-center rounded-[1.15rem] border border-slate-100 bg-white px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] sm:min-h-[5.7rem]">
                                   <img
                                     src={getBrandLogo(brand)}
                                     alt={`${brand} logo`}
-                                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                                    style={{ filter: "contrast(1.04) saturate(1.02)" }}
+                                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                                    style={{ filter: "contrast(1.08) saturate(1.06)" }}
                                     loading="lazy"
                                     decoding="async"
                                     referrerPolicy="no-referrer"
@@ -395,7 +422,7 @@ export default function ProductsPage() {
                                     }}
                                   />
                                 </div>
-                                <span className="text-center text-xs font-semibold text-slate-700 sm:text-sm">{brand}</span>
+                                <span className="mt-auto text-center text-[0.78rem] font-semibold tracking-[0.02em] text-slate-700 sm:text-sm">{brand}</span>
                               </div>
                             ))}
                           </div>
