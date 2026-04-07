@@ -45,17 +45,33 @@ export function Navbar() {
                   alt="Globalvelo Spare Parts Logo"
                   className="h-full w-full object-contain"
                 />
-                <img
-                  src="/globalvelo-banner-logo.png"
-                  alt=""
+                <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(4%_44%_34%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                  className="pointer-events-none absolute inset-0 bg-[#c8d1dc] opacity-100 [clip-path:inset(4%_44%_34%_0)]"
+                  style={{
+                    WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
+                    maskImage: "url('/globalvelo-banner-logo.png')",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
+                  }}
                 />
-                <img
-                  src="/globalvelo-banner-logo.png"
-                  alt=""
+                <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(78%_24%_0_24%)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                  className="pointer-events-none absolute inset-0 bg-[#b9c3cf] opacity-100 [clip-path:inset(78%_24%_0_24%)]"
+                  style={{
+                    WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
+                    maskImage: "url('/globalvelo-banner-logo.png')",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
+                  }}
                 />
               </div>
             </div>
@@ -137,17 +153,33 @@ export function Navbar() {
                     alt="Globalvelo Spare Parts Logo"
                     className="h-full w-full object-contain"
                   />
-                  <img
-                    src="/globalvelo-banner-logo.png"
-                    alt=""
+                  <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(4%_44%_34%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                    className="pointer-events-none absolute inset-0 bg-[#c8d1dc] opacity-100 [clip-path:inset(4%_44%_34%_0)]"
+                    style={{
+                      WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
+                      maskImage: "url('/globalvelo-banner-logo.png')",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                      maskSize: "contain",
+                      WebkitMaskPosition: "center",
+                      maskPosition: "center",
+                    }}
                   />
-                  <img
-                    src="/globalvelo-banner-logo.png"
-                    alt=""
+                  <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(78%_24%_0_24%)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                    className="pointer-events-none absolute inset-0 bg-[#b9c3cf] opacity-100 [clip-path:inset(78%_24%_0_24%)]"
+                    style={{
+                      WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
+                      maskImage: "url('/globalvelo-banner-logo.png')",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                      maskSize: "contain",
+                      WebkitMaskPosition: "center",
+                      maskPosition: "center",
+                    }}
                   />
                 </div>
 
