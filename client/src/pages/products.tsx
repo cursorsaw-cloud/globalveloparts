@@ -35,8 +35,8 @@ const getBrandDomain = (brandName: string) => {
     "Liqui Moly": "liqui-moly.com",
     Motul: "motul.com",
     Pierburg: "ms-motorservice.com",
-    Frenkit: "frenkit.com",
-    Autofren: "autofren.com",
+    Frenkit: "frenkit.es",
+    Autofren: "autofrenseinsa.com",
     Febi: "febi.com",
     Mann: "mann-filter.com",
     Mahle: "mahle.com",
@@ -67,14 +67,14 @@ const getBrandDomain = (brandName: string) => {
     Eibach: "eibach.com",
     Lesjöfors: "lesjoforsab.com",
     Valeo: "valeo.com",
-    "Magneti Marelli": "magnetimarelli.com",
+    "Magneti Marelli": "marelli.com",
     "Van Wezel": "vanwezel.be",
     Klokkerholm: "klokkerholm.com",
     TYC: "tyc-europe.com",
     Alkar: "alkar.es",
     NGK: "ngkntk.com",
     Denso: "denso.com",
-    Beru: "beru.com",
+    Beru: "borgwarner.com",
     Nissens: "nissens.com",
     Hepu: "hepu.de",
     Wahler: "wahler.de",
@@ -83,7 +83,7 @@ const getBrandDomain = (brandName: string) => {
     Garrett: "garrettmotion.com",
     BorgWarner: "borgwarner.com",
     ZF: "zf.com",
-    GKN: "gkn.com",
+    GKN: "gknautomotive.com",
     VDO: "vdo.com",
     Corteco: "corteco.com",
     Varta: "varta-automotive.com",
@@ -94,7 +94,7 @@ const getBrandDomain = (brandName: string) => {
   return domainMap[brandName];
 };
 
-const getBrandLogo = (brandName: string) => {
+const getBrandLogoCandidates = (brandName: string) => {
   const brandLogoOverrides: Record<string, string> = {
     LuK: "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg",
     INA: "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg",
@@ -107,20 +107,26 @@ const getBrandLogo = (brandName: string) => {
     Motul: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Motul_logo.svg",
     Budweg: "https://www.budweg.com/hubfs/budweg-logo.png",
     Autofren: "https://www.autofrenseinsa.com/themes/custom/autofren/logo.svg",
+    Valeo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Valeo_Logo.svg",
+    Hella: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Hella-logo.svg",
+    NGK: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ngk_logo.svg",
+    Denso: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Denso_logo.svg",
+    Varta: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Varta-logo-2021.svg",
+    Exide: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Exide_Logo.svg",
   };
 
-  const override = brandLogoOverrides[brandName];
-  if (override) {
-    return override;
-  }
-
   const domain = getBrandDomain(brandName);
-  if (domain && domain !== "repxpert.com.tr") {
-    return `https://logo.clearbit.com/${domain}?size=800`;
-  }
+  const candidates = [
+    brandLogoOverrides[brandName],
+    domain && domain !== "repxpert.com.tr" ? `https://logo.clearbit.com/${domain}?size=800` : null,
+    domain ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=256` : null,
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`,
+  ].filter((value): value is string => Boolean(value));
 
-  return `https://ui-avatars.com/api/?name=${encodeURIComponent(brandName)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`;
+  return [...new Set(candidates)];
 };
+
+const getBrandLogo = (brandName: string) => getBrandLogoCandidates(brandName)[0];
 
 const categories = [
   {
@@ -377,14 +383,15 @@ export default function ProductsPage() {
                                     referrerPolicy="no-referrer"
                                     onError={(event) => {
                                       const target = event.target as HTMLImageElement;
-                                      if (target.src.includes("clearbit")) {
-                                        const domain = getBrandDomain(brand);
-                                        if (domain) {
-                                          target.src = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=256`;
-                                          return;
-                                        }
+                                      const candidates = getBrandLogoCandidates(brand);
+                                      const currentIndex = Number(target.dataset.logoIndex ?? "0");
+                                      const nextIndex = currentIndex + 1;
+                                      const nextSrc = candidates[nextIndex];
+
+                                      if (nextSrc) {
+                                        target.dataset.logoIndex = String(nextIndex);
+                                        target.src = nextSrc;
                                       }
-                                      target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(brand)}&background=f8fafc&color=0f172a&font-size=0.33&size=800`;
                                     }}
                                   />
                                 </div>
