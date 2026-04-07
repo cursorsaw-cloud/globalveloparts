@@ -39,17 +39,23 @@ export function Navbar() {
         <div className="flex min-h-[94px] items-center gap-6 md:min-h-[102px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <div className="relative h-14 w-[15.5rem] sm:h-[4.05rem] sm:w-[17.9rem] lg:h-[4.45rem] lg:w-[19.6rem]" data-testid="img-globalvelo-logo">
+              <div className="relative h-[4.2rem] w-[15.8rem] sm:h-[4.6rem] sm:w-[17.4rem] lg:h-[5rem] lg:w-[18.9rem]" data-testid="img-globalvelo-logo">
                 <img
-                  src="/logo-globalvelo-white-header.png"
-                  alt="Globalvelo Logo"
+                  src="/globalvelo-banner-logo.png"
+                  alt="Globalvelo Spare Parts Logo"
                   className="h-full w-full object-contain"
                 />
                 <img
-                  src="/logo-globalvelo-white-header.png"
+                  src="/globalvelo-banner-logo.png"
                   alt=""
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(0_47%_42%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(4%_44%_34%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                />
+                <img
+                  src="/globalvelo-banner-logo.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(78%_24%_0_24%)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
                 />
               </div>
             </div>
@@ -125,17 +131,23 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
               <div className="flex flex-col gap-7 pt-8">
-                <div className="relative h-14 w-[15.5rem]" data-testid="img-mobile-globalvelo-logo">
+                <div className="relative h-[4.2rem] w-[15.8rem]" data-testid="img-mobile-globalvelo-logo">
                   <img
-                    src="/logo-globalvelo-white-header.png"
-                    alt="Globalvelo Logo"
+                    src="/globalvelo-banner-logo.png"
+                    alt="Globalvelo Spare Parts Logo"
                     className="h-full w-full object-contain"
                   />
                   <img
-                    src="/logo-globalvelo-white-header.png"
+                    src="/globalvelo-banner-logo.png"
                     alt=""
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(0_47%_42%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(4%_44%_34%_0)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
+                  />
+                  <img
+                    src="/globalvelo-banner-logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-contain opacity-95 [clip-path:inset(78%_24%_0_24%)] [filter:brightness(0)_saturate(100%)_invert(90%)_sepia(8%)_saturate(294%)_hue-rotate(180deg)_brightness(93%)_contrast(90%)]"
                   />
                 </div>
 
