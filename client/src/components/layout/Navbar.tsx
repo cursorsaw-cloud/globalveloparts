@@ -40,9 +40,9 @@ export function Navbar() {
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
               <img
-                src="/logo-globalvelo-white-header.png"
-                alt="Globalvelo Logo"
-                className="h-14 w-auto object-contain sm:h-[4.05rem] lg:h-[4.45rem]"
+                src="/globalvelo-banner-logo.png"
+                alt="GlobalVelo Spare Parts Logo"
+                className="h-12 w-auto object-contain opacity-95 drop-shadow-[0_14px_28px_rgba(15,23,42,0.28)] sm:h-[3.5rem] lg:h-[3.8rem]"
                 data-testid="img-globalvelo-logo"
               />
             </div>
@@ -119,9 +119,9 @@ export function Navbar() {
             <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
               <div className="flex flex-col gap-7 pt-8">
                 <img
-                  src="/logo-globalvelo-white-header.png"
-                  alt="Globalvelo Logo"
-                  className="h-14 w-auto object-contain"
+                  src="/globalvelo-banner-logo.png"
+                  alt="GlobalVelo Spare Parts Logo"
+                  className="h-12 w-auto object-contain opacity-95 drop-shadow-[0_14px_28px_rgba(15,23,42,0.28)]"
                   data-testid="img-mobile-globalvelo-logo"
                 />
 
