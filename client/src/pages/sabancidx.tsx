@@ -33,24 +33,36 @@ export default function SabanciDxPage() {
         <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
           <div className="mx-auto max-w-[70rem]">
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)] lg:items-start lg:gap-12">
-              <div className="max-w-[44rem]">
-                <span className="section-kicker text-slate-300" data-testid="text-sdx-badge">
-                  {t("sdx.badge")}
-                </span>
-                <div className="mt-6 inline-flex items-center rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm" data-testid="card-sdx-brand-lockup">
-                  <img
-                    src="https://www.sabancidx.com/assets/images/logo.svg"
-                    alt="SabancıDx Logo"
-                    className="h-11 object-contain brightness-0 invert"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://ui-avatars.com/api/?name=SabanciDx&background=0f172a&color=fff&size=120";
-                    }}
-                  />
-                  <span className="mx-4 text-2xl text-white/20">|</span>
-                  <img src="/logo-globalvelo-white-header.png" alt="Globalvelo Logo" className="h-11 object-contain" />
+              <div className="max-w-[46rem]">
+                <div className="mt-1 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5" data-testid="card-sdx-brand-lockup">
+                  <span className="section-kicker whitespace-nowrap text-slate-300" data-testid="text-sdx-badge">
+                    {t("sdx.badge")}
+                  </span>
+                  <div className="inline-flex max-w-full items-center gap-4 rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[0_22px_60px_-34px_rgba(15,23,42,0.9)] backdrop-blur-md sm:px-5">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[1rem] bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_-16px_rgba(15,23,42,0.55)]">
+                      <img
+                        src="https://www.sabancidx.com/assets/images/logo.svg"
+                        alt="SabancıDx Logo"
+                        className="h-9 w-auto object-contain"
+                        data-testid="img-sdx-logo"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://ui-avatars.com/api/?name=SabanciDx&background=ffffff&color=0f172a&size=120";
+                        }}
+                      />
+                    </div>
+                    <div className="h-10 w-px shrink-0 bg-white/14" />
+                    <div className="min-w-0 rounded-[0.9rem] bg-white/[0.02] px-1 py-1">
+                      <img
+                        src="/logo-globalvelo-white-header.png"
+                        alt="Globalvelo Logo"
+                        className="h-10 w-auto max-w-[10.5rem] object-contain sm:h-11 sm:max-w-[12.5rem]"
+                        data-testid="img-globalvelo-logo"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <h1 className="mt-7 text-[3rem] font-extrabold leading-[0.96] tracking-[-0.05em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-sdx-title">
+                <h1 className="mt-8 text-[3rem] font-extrabold leading-[0.96] tracking-[-0.05em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-sdx-title">
                   {t("sdx.title")}
                 </h1>
                 <p className="mt-7 max-w-[38rem] text-[1.05rem] leading-8 text-slate-300 md:text-[1.16rem]" data-testid="text-sdx-description">
