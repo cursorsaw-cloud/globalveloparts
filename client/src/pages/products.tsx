@@ -128,7 +128,7 @@ const categories = [
   {
     id: "motor",
     icon: Settings,
-    image: "/images/categories/engine-parts.jpg",
+    image: "/images/categories/engine-parts-pro.png",
     name: { tr: "Motor Parçaları", en: "Engine Parts" },
     subCategories: {
       tr: ["Yağ", "Conta", "Zamanlama", "Piston", "Pompa"],
@@ -150,7 +150,7 @@ const categories = [
   {
     id: "kayis",
     icon: Link2,
-    image: "/images/categories/belt-chain.jpg",
+    image: "/images/categories/belt-chain-pro.png",
     name: { tr: "Kayış & Zincir", en: "Belts & Chains" },
     subCategories: {
       tr: ["Triger Seti", "V Kayışı", "Gergi"],
@@ -172,7 +172,7 @@ const categories = [
   {
     id: "sogutma",
     icon: Snowflake,
-    image: "/images/categories/cooling-heating.jpg",
+    image: "/images/categories/cooling-heating-pro.png",
     name: { tr: "Soğutma & Isıtma", en: "Cooling & Heating" },
     subCategories: {
       tr: ["Radyatör", "Pompa", "Termostat"],

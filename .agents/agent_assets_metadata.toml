@@ -1,5 +1,22 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "UABbWT_RCM1jupstX2f-P"
+uri = "file://client/public/images/categories/engine-parts-pro.png"
+type = "image"
+title = "premium engine parts image"
+
+[[generated]]
+id = "Ue-2K_hnzYaQloDrjkec2"
+uri = "file://client/public/images/categories/belt-chain-pro.png"
+type = "image"
+title = "premium belt chain image"
+
+[[generated]]
+id = "yD08NaDArs_qZ2N6TaJ0A"
+uri = "file://client/public/images/categories/cooling-heating-pro.png"
+type = "image"
+title = "premium cooling parts image"
 
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
