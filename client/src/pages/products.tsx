@@ -15,6 +15,7 @@ import {
   Snowflake,
   Zap,
 } from "lucide-react";
+import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -96,6 +97,7 @@ const getBrandDomain = (brandName: string) => {
 
 const getBrandLogoCandidates = (brandName: string) => {
   const brandLogoOverrides: Record<string, string> = {
+    NeoVelo: neoveloLogo,
     LuK: "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg",
     INA: "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg",
     FAG: "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg",
@@ -151,7 +153,7 @@ const categories = [
       tr: ["Balata", "Disk", "Kaliper", "Hidrolik", "ABS", "Hortum"],
       en: ["Pads", "Discs", "Calipers", "Hydraulics", "ABS", "Hoses"],
     },
-    brands: ["Brembo", "Textar", "Ferodo", "Bosch", "TRW", "ATE", "Delphi", "Jurid", "Zimmermann", "Budweg", "Castrol", "Liqui Moly", "Motul", "Frenkit", "Autofren", "Febi"],
+    brands: ["NeoVelo", "Brembo", "Textar", "Ferodo", "Bosch", "TRW", "ATE", "Delphi", "Jurid", "Zimmermann", "Budweg", "Castrol", "Liqui Moly", "Motul", "Frenkit", "Autofren", "Febi"],
   },
   {
     id: "filtre",
@@ -162,7 +164,7 @@ const categories = [
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
       en: ["Oil", "Air", "Cabin", "Fuel", "Performance"],
     },
-    brands: ["Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "K&N", "Pipercross"],
+    brands: ["NeoVelo", "Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "K&N", "Pipercross"],
   },
   {
     id: "motor",
@@ -173,7 +175,7 @@ const categories = [
       tr: ["Yağ", "Conta", "Zamanlama", "Piston", "Pompa"],
       en: ["Oil", "Gaskets", "Timing", "Pistons", "Pumps"],
     },
-    brands: ["Castrol", "Mobil", "Liqui Moly", "Victor Reinz", "Elring", "Ajusa", "INA", "Gates", "Dayco", "SKF", "Mahle", "Kolbenschmidt", "Pierburg", "Febi"],
+    brands: ["NeoVelo", "Castrol", "Mobil", "Liqui Moly", "Victor Reinz", "Elring", "Ajusa", "INA", "Gates", "Dayco", "SKF", "Mahle", "Kolbenschmidt", "Pierburg", "Febi"],
   },
   {
     id: "suspansiyon",
@@ -184,7 +186,7 @@ const categories = [
       tr: ["Salıncak", "Rot", "Rulman", "Amortisör", "Yay"],
       en: ["Control Arms", "Tie Rods", "Bearings", "Shock Absorbers", "Springs"],
     },
-    brands: ["Lemförder", "TRW", "Delphi", "SKF", "FAG", "SNR", "Febi", "Meyle", "Bilstein", "Sachs", "KYB", "Monroe", "Eibach", "Lesjöfors"],
+    brands: ["NeoVelo", "Lemförder", "TRW", "Delphi", "SKF", "FAG", "SNR", "Febi", "Meyle", "Bilstein", "Sachs", "KYB", "Monroe", "Eibach", "Lesjöfors"],
   },
   {
     id: "kayis",
@@ -195,7 +197,7 @@ const categories = [
       tr: ["Triger Seti", "V Kayışı", "Gergi"],
       en: ["Timing Kits", "V-Belts", "Tensioners"],
     },
-    brands: ["INA", "Gates", "Dayco", "Contitech", "SKF"],
+    brands: ["NeoVelo", "INA", "Gates", "Dayco", "Contitech", "SKF"],
   },
   {
     id: "elektrik",
@@ -206,7 +208,7 @@ const categories = [
       tr: ["Far", "Silecek", "Ateşleme", "Akü", "Röle"],
       en: ["Headlights", "Wipers", "Ignition", "Batteries", "Relays"],
     },
-    brands: ["Valeo", "Hella", "Bosch", "Magneti Marelli", "NGK", "Denso", "Beru", "Varta", "Exide"],
+    brands: ["NeoVelo", "Valeo", "Hella", "Bosch", "Magneti Marelli", "NGK", "Denso", "Beru", "Varta", "Exide"],
   },
   {
     id: "sogutma",
@@ -217,7 +219,7 @@ const categories = [
       tr: ["Radyatör", "Pompa", "Termostat"],
       en: ["Radiators", "Pumps", "Thermostats"],
     },
-    brands: ["Valeo", "Nissens", "SKF", "Hepu", "Mahle", "Wahler"],
+    brands: ["NeoVelo", "Valeo", "Nissens", "SKF", "Hepu", "Mahle", "Wahler"],
   },
   {
     id: "debriyaj",
@@ -228,7 +230,7 @@ const categories = [
       tr: ["Debriyaj Seti", "Volan", "Aks", "Şanzıman"],
       en: ["Clutch Kits", "Flywheels", "Axles", "Transmissions"],
     },
-    brands: ["LuK", "Sachs", "Valeo", "GKN", "SKF", "Febi", "Meyle", "ZF", "Liqui Moly"],
+    brands: ["NeoVelo", "LuK", "Sachs", "Valeo", "GKN", "SKF", "Febi", "Meyle", "ZF", "Liqui Moly"],
   },
   {
     id: "egzoz",
@@ -239,7 +241,7 @@ const categories = [
       tr: ["Turbo", "EGR", "Enjektör", "Yakıt Pompası"],
       en: ["Turbo", "EGR", "Injectors", "Fuel Pumps"],
     },
-    brands: ["Garrett", "BorgWarner", "Pierburg", "Valeo", "Bosal", "Walker", "Bosch", "Delphi", "Denso"],
+    brands: ["NeoVelo", "Garrett", "BorgWarner", "Pierburg", "Valeo", "Bosal", "Walker", "Bosch", "Delphi", "Denso"],
   },
 ];
 
