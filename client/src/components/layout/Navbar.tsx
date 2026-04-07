@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 px-1.5 py-4 sm:px-2 lg:px-3 xl:px-4">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 py-4 pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-4 xl:pl-2 xl:pr-5">
         <Link href="/">
           <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
             <img
