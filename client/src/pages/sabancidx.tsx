@@ -25,7 +25,7 @@ export default function SabanciDxPage() {
         ? "SabancıDx'in sitesinde öne çıkan bulut çözümleri yaklaşımı, Globalvelo'nun sipariş, entegrasyon ve kurumsal iş akışlarını tek kaynaktan daha ölçeklenebilir biçimde kurgulamasını destekler."
         : "SabancıDx's cloud solutions approach supports Globalvelo in structuring order, integration and enterprise workflows from a scalable single source.",
       href: "https://www.sabancidx.com/en/cloud-solutions",
-      image: "https://www.sabancidx.com/gallery/about-us-4.png",
+      image: "/images/sabancidx/solution-cloud.png",
     },
     {
       icon: ServerCog,
@@ -34,7 +34,7 @@ export default function SabanciDxPage() {
         ? "Yönetilen hizmetler modeli; operasyonların sürekliliği, sistem takibi ve kritik altyapının kararlı çalışması için Globalvelo tarafında güven veren bir teknoloji omurgası oluşturur."
         : "The managed services model builds a dependable technology backbone for Globalvelo with continuity, monitoring and stable infrastructure operations.",
       href: "https://www.sabancidx.com/en/managed-services/information-technology-infrastructure-management",
-      image: "https://www.sabancidx.com/gallery/about-us-6.png",
+      image: "/images/sabancidx/solution-managed-services.png",
     },
     {
       icon: Sparkles,
@@ -43,7 +43,7 @@ export default function SabanciDxPage() {
         ? "SabancıDx'in dijital dönüşüm ürünleri yaklaşımı; veri görünürlüğü, karar desteği ve süreç optimizasyonu ile Globalvelo'nun B2B deneyimini daha hızlı ve daha izlenebilir hale getirir."
         : "SabancıDx's digital transformation products strengthen Globalvelo's B2B experience with better visibility, decision support and process optimization.",
       href: "https://www.sabancidx.com/en/digital-transformation-products",
-      image: "https://www.sabancidx.com/success-stories/agesa/images/slide.png",
+      image: "/images/sabancidx/solution-digital-transformation.png",
     },
   ];
 
@@ -157,8 +157,8 @@ export default function SabanciDxPage() {
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_35px_90px_-45px_rgba(15,23,42,0.9)] backdrop-blur-md">
                 <img
-                  src="https://www.sabancidx.com/gallery/about-us-4.png"
-                  alt="SabancıDx team and technology environment"
+                  src="/images/sabancidx/hero-automotive-tech.png"
+                  alt="Premium automotive spare parts and digital supply chain visual"
                   className="h-[24rem] w-full object-cover"
                   loading="eager"
                   referrerPolicy="no-referrer"
@@ -178,8 +178,8 @@ export default function SabanciDxPage() {
 
               <div className="surface-panel absolute -bottom-8 -left-6 hidden w-[15rem] rounded-[1.7rem] p-4 lg:block">
                 <img
-                  src="https://www.sabancidx.com/success-stories/agesa/images/slide.png"
-                  alt="SabancıDx success story visual"
+                  src="/images/sabancidx/secondary-parts-closeup.png"
+                  alt="Premium automotive spare parts close-up visual"
                   className="h-36 w-full rounded-[1.2rem] object-cover"
                   loading="lazy"
                   referrerPolicy="no-referrer"
@@ -270,8 +270,8 @@ export default function SabanciDxPage() {
 
               <div className="mt-8 overflow-hidden rounded-[1.6rem] border border-slate-200/80 bg-white">
                 <img
-                  src="https://www.sabancidx.com/gallery/about-us-2.png"
-                  alt="SabancıDx collaborative work environment"
+                  src="/images/sabancidx/integration-network.png"
+                  alt="Global automotive spare parts network visual"
                   className="h-64 w-full object-cover"
                   loading="lazy"
                   referrerPolicy="no-referrer"

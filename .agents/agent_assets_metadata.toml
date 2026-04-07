@@ -78,6 +78,42 @@ uri = "file://client/public/images/neovelo/categories/exhaust-fuel.png"
 type = "image"
 title = "Premium exhaust fuel image"
 
+[[generated]]
+id = "5-YHgWUxBnmzDiwYmuvsj"
+uri = "file://client/public/images/sabancidx/hero-automotive-tech.png"
+type = "image"
+title = "Automotive tech hero scene"
+
+[[generated]]
+id = "DvrUapyJe0juLNzuQFodX"
+uri = "file://client/public/images/sabancidx/secondary-parts-closeup.png"
+type = "image"
+title = "Premium spare parts closeup"
+
+[[generated]]
+id = "8l3rSzUqn3koEjESjdyhO"
+uri = "file://client/public/images/sabancidx/solution-cloud.png"
+type = "image"
+title = "Cloud logistics automotive visual"
+
+[[generated]]
+id = "9kExXMPi3cRrRhh4k9zQL"
+uri = "file://client/public/images/sabancidx/solution-managed-services.png"
+type = "image"
+title = "Managed services automotive visual"
+
+[[generated]]
+id = "HI5uREToCDKRlm68PV3sq"
+uri = "file://client/public/images/sabancidx/solution-digital-transformation.png"
+type = "image"
+title = "Digital transformation parts visual"
+
+[[generated]]
+id = "uQDPif_lZSuu9uPyATzzZ"
+uri = "file://client/public/images/sabancidx/integration-network.png"
+type = "image"
+title = "Automotive supply network visual"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
