@@ -95,10 +95,24 @@ const getBrandDomain = (brandName: string) => {
 };
 
 const getBrandLogo = (brandName: string) => {
-  if (brandName === "LuK") return "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg";
-  if (brandName === "INA") return "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg";
-  if (brandName === "FAG") return "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg";
-  if (brandName === "Vitesco") return "https://www.repxpert.com.tr/assets/images/brands/vitesco-logo.svg";
+  const brandLogoOverrides: Record<string, string> = {
+    LuK: "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg",
+    INA: "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg",
+    FAG: "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg",
+    Vitesco: "https://www.repxpert.com.tr/assets/images/brands/vitesco-logo.svg",
+    Bosch: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Bosch-logo.svg",
+    TRW: "https://upload.wikimedia.org/wikipedia/commons/b/b5/TRW_logo.svg",
+    ATE: "https://www.ate-brakes.com/img/logo_ate.png",
+    Castrol: "https://upload.wikimedia.org/wikipedia/commons/6/69/Castrol_logo_2023.svg",
+    Motul: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Motul_logo.svg",
+    Budweg: "https://www.budweg.com/hubfs/budweg-logo.png",
+    Autofren: "https://www.autofrenseinsa.com/themes/custom/autofren/logo.svg",
+  };
+
+  const override = brandLogoOverrides[brandName];
+  if (override) {
+    return override;
+  }
 
   const domain = getBrandDomain(brandName);
   if (domain && domain !== "repxpert.com.tr") {
@@ -356,10 +370,11 @@ export default function ProductsPage() {
                                   <img
                                     src={getBrandLogo(brand)}
                                     alt={`${brand} logo`}
-                                    className="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
-                                    style={{ filter: "contrast(1.05) grayscale(0.08)" }}
+                                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                    style={{ filter: "contrast(1.04) saturate(1.02)" }}
                                     loading="lazy"
                                     decoding="async"
+                                    referrerPolicy="no-referrer"
                                     onError={(event) => {
                                       const target = event.target as HTMLImageElement;
                                       if (target.src.includes("clearbit")) {
