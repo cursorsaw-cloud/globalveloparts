@@ -94,59 +94,45 @@ const getBrandDomain = (brandName: string) => {
   return domainMap[brandName];
 };
 
-const getBrandWordmark = (brandName: string) => {
-  const styleMap: Record<string, { textColor: string; accentColor: string; background: string; italic?: boolean; fontWeight?: number; letterSpacing?: number }> = {
-    TRW: { textColor: "#1E40AF", accentColor: "#EF4444", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
-    Lemförder: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", italic: true, fontWeight: 800, letterSpacing: 5 },
-    Sachs: { textColor: "#0F172A", accentColor: "#D4AF37", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
-    Pierburg: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 5 },
-    Kolbenschmidt: { textColor: "#0F172A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 3 },
-    Beru: { textColor: "#0F172A", accentColor: "#F59E0B", background: "#FFFFFF", italic: true, fontWeight: 900, letterSpacing: 7 },
-    Contitech: { textColor: "#0F172A", accentColor: "#F97316", background: "#FFFFFF", fontWeight: 800, letterSpacing: 4 },
-    "Magneti Marelli": { textColor: "#1E3A8A", accentColor: "#2563EB", background: "#FFFFFF", fontWeight: 800, letterSpacing: 3 },
-    "Liqui Moly": { textColor: "#1E3A8A", accentColor: "#DC2626", background: "#FFFFFF", fontWeight: 900, letterSpacing: 4 },
-    Mann: { textColor: "#0F172A", accentColor: "#FACC15", background: "#FFFFFF", fontWeight: 900, letterSpacing: 5 },
-  };
-
-  const style = styleMap[brandName] ?? {
-    textColor: "#0F172A",
-    accentColor: "#94A3B8",
-    background: "#FFFFFF",
-    fontWeight: 800,
-    letterSpacing: 4,
-  };
-  const viewBoxWidth = 640;
-  const viewBoxHeight = 220;
-  const displayName = brandName.toUpperCase().replace(/&/g, "&amp;");
-  const fontSize = brandName.length > 14 ? 42 : brandName.length > 9 ? 54 : 70;
-  const accentHeight = 14;
-  const accentWidth = Math.min(380, Math.max(140, brandName.length * 26));
-  const accentX = (viewBoxWidth - accentWidth) / 2;
-  const transform = style.italic ? "skewX(-14)" : "";
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}"><rect width="100%" height="100%" rx="28" fill="${style.background}"/><text x="50%" y="50%" fill="${style.textColor}" font-family="Arial, Helvetica, sans-serif" font-size="${fontSize}" font-style="normal" font-weight="${style.fontWeight}" letter-spacing="${style.letterSpacing}" text-anchor="middle" dominant-baseline="middle" transform="${transform}" transform-origin="center">${displayName}</text><rect x="${accentX}" y="166" width="${accentWidth}" height="${accentHeight}" rx="999" fill="${style.accentColor}" opacity="0.95"/></svg>`;
-
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-};
-
 const getBrandLogoCandidates = (brandName: string) => {
   const brandLogoOverrides: Record<string, string> = {
     LuK: "https://www.repxpert.com.tr/assets/images/brands/luk-logo.svg",
     INA: "https://www.repxpert.com.tr/assets/images/brands/ina-logo.svg",
     FAG: "https://www.repxpert.com.tr/assets/images/brands/fag-logo.svg",
     Vitesco: "https://www.repxpert.com.tr/assets/images/brands/vitesco-logo.svg",
+    Bosch: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bosch-logo.svg",
+    TRW: "https://commons.wikimedia.org/wiki/Special:Redirect/file/TRW_logo.svg",
     ATE: "https://www.ate-brakes.com/img/logo_ate.png",
+    Castrol: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Castrol_logo_2023.svg",
+    Motul: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Motul_logo.svg",
+    Valeo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Valeo_Logo.svg",
+    Hella: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hella-logo.svg",
+    NGK: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngk_logo.svg",
+    Denso: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Denso_logo.svg",
+    Varta: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Varta-logo-2021.svg",
+    Exide: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Exide_Logo.svg",
     Budweg: "https://www.budweg.com/hubfs/budweg-logo.png",
     Autofren: "https://www.autofrenseinsa.com/themes/custom/autofren/logo.svg",
+    Brembo: "https://www.brembo.com/en/_layouts/15/IBSA/Images/brembo_logo.png",
+    Textar: "https://www.textar.com/fileadmin/_processed_/c/2/csm_textar-logo_9ca4cc88f9.png",
+    Ferodo: "https://www.ferodo.com/content/dam/marketing/emea/ferodo/logos/ferodo-logo.png",
+    Mahle: "https://www.mahle.com/media/local-country-sites/mahle_com/images/mahle-logo.png",
+    Mann: "https://www.mann-filter.com/content/dam/website/mann-filter/logo/mann-filter-logo.png",
+    Delphi: "https://www.delphiautoparts.com/content/dam/marketing/delphi-aftermarket/global/logo/delphi-logo.png",
+    "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
+    Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
+    Beru: "https://www.beru.com/assets/img/logo.svg",
   };
 
   const domain = getBrandDomain(brandName);
   const candidates = [
     brandLogoOverrides[brandName],
-    domain && domain !== "repxpert.com.tr" ? `https://logo.clearbit.com/${domain}?size=1200` : null,
-    getBrandWordmark(brandName),
+    domain
+      ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=256`
+      : null,
   ].filter((value): value is string => Boolean(value));
 
-  return [...new Set(candidates)];
+  return Array.from(new Set(candidates));
 };
 
 const getBrandLogo = (brandName: string) => getBrandLogoCandidates(brandName)[0];
