@@ -25,8 +25,8 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
-      <div className="site-shell">
-        <div className="flex min-h-[92px] items-center justify-between gap-6 md:min-h-[98px]">
+      <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
+        <div className="flex min-h-[92px] items-center gap-6 md:min-h-[98px]">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
               <img
@@ -38,18 +38,16 @@ export function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-7 md:flex lg:gap-8">
-            <div className="flex items-center gap-1 rounded-full border border-white/8 bg-white/[0.04] px-2 py-1.5">
+          <div className="ml-auto hidden min-w-0 items-center justify-end gap-6 md:flex lg:gap-7">
+            <div className="flex items-center gap-5 lg:gap-7 xl:gap-8">
               {links.map((link) => {
                 const isActive = location === link.href;
 
                 return (
                   <Link key={link.href} href={link.href}>
                     <span
-                      className={`relative cursor-pointer whitespace-nowrap rounded-full px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
-                        isActive
-                          ? "bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
-                          : "text-slate-300 hover:bg-white/6 hover:text-white"
+                      className={`relative cursor-pointer whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
+                        isActive ? "text-white" : "text-slate-300 hover:text-white"
                       }`}
                       data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
                     >
@@ -61,7 +59,7 @@ export function Navbar() {
 
               <a
                 href="/#contact"
-                className="rounded-full px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition-all duration-300 hover:bg-white/6 hover:text-white"
+                className="whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition-colors duration-300 hover:text-white"
                 data-testid="link-nav-contact"
               >
                 {t("nav.contact")}
