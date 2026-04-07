@@ -14,10 +14,30 @@ export default function NeoVeloPartsPage() {
   ];
 
   const ranges = [
-    { icon: ShieldCheck, title: t("neovelo.range.1") },
-    { icon: Gauge, title: t("neovelo.range.2") },
-    { icon: Layers3, title: t("neovelo.range.3") },
-    { icon: Zap, title: t("neovelo.range.4") },
+    {
+      icon: ShieldCheck,
+      title: t("neovelo.range.1"),
+      description: t("neovelo.range.desc.1"),
+      image: "/images/categories/brake-system.jpg",
+    },
+    {
+      icon: Gauge,
+      title: t("neovelo.range.2"),
+      description: t("neovelo.range.desc.2"),
+      image: "/images/categories/filters.jpg",
+    },
+    {
+      icon: Layers3,
+      title: t("neovelo.range.3"),
+      description: t("neovelo.range.desc.3"),
+      image: "/images/categories/suspension.jpg",
+    },
+    {
+      icon: Zap,
+      title: t("neovelo.range.4"),
+      description: t("neovelo.range.desc.4"),
+      image: "/images/categories/electrical-lighting.jpg",
+    },
   ];
 
   const advantages = [
@@ -188,11 +208,41 @@ export default function NeoVeloPartsPage() {
               const Icon = range.icon;
 
               return (
-                <div key={range.title} className="surface-panel rounded-[1.8rem] p-6" data-testid={`card-neovelo-range-${range.title}`}>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-slate-200/80 bg-slate-100 text-primary">
-                    <Icon className="h-6 w-6" />
+                <div
+                  key={range.title}
+                  className="group relative min-h-[20rem] overflow-hidden rounded-[1.85rem] border border-slate-200/90 bg-slate-950 shadow-[0_28px_90px_-48px_rgba(15,23,42,0.5)]"
+                  data-testid={`card-neovelo-range-${range.title}`}
+                >
+                  <img
+                    src={range.image}
+                    alt={range.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    loading="lazy"
+                    decoding="async"
+                    data-testid={`img-neovelo-range-${range.title}`}
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.08)_0%,rgba(15,23,42,0.48)_46%,rgba(2,6,23,0.92)_100%)]" />
+                  <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_70%)] opacity-70" />
+
+                  <div className="relative z-10 flex h-full flex-col justify-between p-5 text-white">
+                    <div>
+                      <span className="inline-flex rounded-full border border-white/16 bg-black/20 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/90 backdrop-blur-sm" data-testid={`text-neovelo-range-badge-${range.title}`}>
+                        NeoVelo Parts
+                      </span>
+                    </div>
+
+                    <div>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-white/14 bg-white/10 text-white shadow-[0_14px_34px_-24px_rgba(15,23,42,0.9)] backdrop-blur-sm">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="mt-5 max-w-[12rem] text-[1.55rem] font-bold leading-[1.05] tracking-[-0.04em] text-white">
+                        {range.title}
+                      </h3>
+                      <p className="mt-3 max-w-[14rem] text-sm leading-6 text-slate-200/92" data-testid={`text-neovelo-range-description-${range.title}`}>
+                        {range.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="mt-5 text-[1.35rem] font-bold text-slate-950">{range.title}</h3>
                 </div>
               );
             })}
