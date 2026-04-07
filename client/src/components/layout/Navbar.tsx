@@ -47,7 +47,7 @@ export function Navbar() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[#c8d1dc] opacity-100 [clip-path:inset(4%_44%_34%_0)]"
+                  className="pointer-events-none absolute inset-0 bg-[#c9d2dc] opacity-100 [clip-path:polygon(0%_10%,54%_4%,52%_53%,0%_60%)]"
                   style={{
                     WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
                     maskImage: "url('/globalvelo-banner-logo.png')",
@@ -61,7 +61,7 @@ export function Navbar() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[#b9c3cf] opacity-100 [clip-path:inset(78%_24%_0_24%)]"
+                  className="pointer-events-none absolute inset-0 bg-[#bcc6d1] opacity-100 [clip-path:polygon(30%_76%,72%_76%,72%_100%,30%_100%)]"
                   style={{
                     WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
                     maskImage: "url('/globalvelo-banner-logo.png')",
@@ -155,7 +155,7 @@ export function Navbar() {
                   />
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[#c8d1dc] opacity-100 [clip-path:inset(4%_44%_34%_0)]"
+                    className="pointer-events-none absolute inset-0 bg-[#c9d2dc] opacity-100 [clip-path:polygon(0%_10%,54%_4%,52%_53%,0%_60%)]"
                     style={{
                       WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
                       maskImage: "url('/globalvelo-banner-logo.png')",
@@ -169,7 +169,7 @@ export function Navbar() {
                   />
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[#b9c3cf] opacity-100 [clip-path:inset(78%_24%_0_24%)]"
+                    className="pointer-events-none absolute inset-0 bg-[#bcc6d1] opacity-100 [clip-path:polygon(30%_76%,72%_76%,72%_100%,30%_100%)]"
                     style={{
                       WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
                       maskImage: "url('/globalvelo-banner-logo.png')",
