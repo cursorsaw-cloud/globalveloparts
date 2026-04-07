@@ -10,13 +10,8 @@ export function Footer() {
       <div className="container py-14 md:py-18">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1fr_1fr]">
           <div className="space-y-5">
-            <div className="inline-flex rounded-[1.6rem] border border-white/10 bg-white/[0.04] px-5 py-4 shadow-[0_22px_60px_-32px_rgba(15,23,42,0.9)] backdrop-blur-sm">
-              <img
-                src="/logo-clean.png"
-                alt="GlobalVelo Spare Parts Logo"
-                className="h-16 w-auto object-contain drop-shadow-[0_18px_38px_rgba(15,23,42,0.35)]"
-                data-testid="img-footer-logo"
-              />
+            <div className="inline-flex rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <img src="/logo.png" alt="Globalvelo" className="h-14 w-auto brightness-0 invert" data-testid="img-footer-logo" />
             </div>
             <p className="max-w-sm text-sm leading-7 text-slate-400" data-testid="text-footer-description">
               {t("footer.desc")}
