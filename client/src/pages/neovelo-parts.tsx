@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Cpu, Gauge, Layers3, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, BadgeCheck, Cpu, Filter, Fuel, Link2, MoveVertical, Settings, Settings2, ShieldCheck, Snowflake, Sparkles, Zap } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -21,22 +21,52 @@ export default function NeoVeloPartsPage() {
       image: "/images/categories/brake-system.jpg",
     },
     {
-      icon: Gauge,
+      icon: Filter,
       title: t("neovelo.range.2"),
       description: t("neovelo.range.desc.2"),
       image: "/images/categories/filters.jpg",
     },
     {
-      icon: Layers3,
+      icon: Settings,
       title: t("neovelo.range.3"),
       description: t("neovelo.range.desc.3"),
+      image: "/images/categories/engine-parts-pro.png",
+    },
+    {
+      icon: MoveVertical,
+      title: t("neovelo.range.4"),
+      description: t("neovelo.range.desc.4"),
       image: "/images/categories/suspension.jpg",
     },
     {
+      icon: Link2,
+      title: t("neovelo.range.5"),
+      description: t("neovelo.range.desc.5"),
+      image: "/images/categories/belt-chain-pro.png",
+    },
+    {
       icon: Zap,
-      title: t("neovelo.range.4"),
-      description: t("neovelo.range.desc.4"),
+      title: t("neovelo.range.6"),
+      description: t("neovelo.range.desc.6"),
       image: "/images/categories/electrical-lighting.jpg",
+    },
+    {
+      icon: Snowflake,
+      title: t("neovelo.range.7"),
+      description: t("neovelo.range.desc.7"),
+      image: "/images/categories/cooling-heating-pro.png",
+    },
+    {
+      icon: Settings2,
+      title: t("neovelo.range.8"),
+      description: t("neovelo.range.desc.8"),
+      image: "/images/categories/clutch-drivetrain.jpg",
+    },
+    {
+      icon: Fuel,
+      title: t("neovelo.range.9"),
+      description: t("neovelo.range.desc.9"),
+      image: "/images/categories/engine-parts.jpg",
     },
   ];
 
@@ -203,7 +233,7 @@ export default function NeoVeloPartsPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {ranges.map((range) => {
               const Icon = range.icon;
 
