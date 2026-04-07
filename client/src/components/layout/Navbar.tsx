@@ -24,6 +24,15 @@ export function Navbar() {
     { href: "/sabancidx", label: t("nav.sabancidx") },
   ];
 
+  const languageOptions = [
+    { value: "tr", label: "TR - Türkçe" },
+    { value: "en", label: "EN - English" },
+    { value: "es", label: "ES - Español" },
+    { value: "ar", label: "AR - العربية" },
+    { value: "ru", label: "RU - Русский" },
+    { value: "fr", label: "FR - Français" },
+  ] as const;
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
       <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
@@ -81,21 +90,17 @@ export function Navbar() {
                   {language.toUpperCase()}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[152px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
-                <DropdownMenuItem
-                  className={`cursor-pointer rounded-xl font-medium ${language === "tr" ? "bg-white/8 text-white" : "text-slate-400"}`}
-                  onClick={() => setLanguage("tr")}
-                  data-testid="button-language-tr"
-                >
-                  TR - Türkçe
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className={`cursor-pointer rounded-xl font-medium ${language === "en" ? "bg-white/8 text-white" : "text-slate-400"}`}
-                  onClick={() => setLanguage("en")}
-                  data-testid="button-language-en"
-                >
-                  EN - English
-                </DropdownMenuItem>
+              <DropdownMenuContent align="end" className="w-[188px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
+                {languageOptions.map((option) => (
+                  <DropdownMenuItem
+                    key={option.value}
+                    className={`cursor-pointer rounded-xl font-medium ${language === option.value ? "bg-white/8 text-white" : "text-slate-400"}`}
+                    onClick={() => setLanguage(option.value)}
+                    data-testid={`button-language-${option.value}`}
+                  >
+                    {option.label}
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -150,29 +155,21 @@ export function Navbar() {
                     <Globe className="h-4 w-4" />
                     Language
                   </div>
-                  <div className="flex gap-3">
-                    <button
-                      type="button"
-                      className={`flex-1 rounded-full px-4 py-3 text-sm font-semibold ${language === "tr" ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
-                      onClick={() => {
-                        setLanguage("tr");
-                        setIsOpen(false);
-                      }}
-                      data-testid="button-mobile-language-tr"
-                    >
-                      TR
-                    </button>
-                    <button
-                      type="button"
-                      className={`flex-1 rounded-full px-4 py-3 text-sm font-semibold ${language === "en" ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
-                      onClick={() => {
-                        setLanguage("en");
-                        setIsOpen(false);
-                      }}
-                      data-testid="button-mobile-language-en"
-                    >
-                      EN
-                    </button>
+                  <div className="grid grid-cols-2 gap-3">
+                    {languageOptions.map((option) => (
+                      <button
+                        key={option.value}
+                        type="button"
+                        className={`rounded-full px-4 py-3 text-sm font-semibold ${language === option.value ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
+                        onClick={() => {
+                          setLanguage(option.value);
+                          setIsOpen(false);
+                        }}
+                        data-testid={`button-mobile-language-${option.value}`}
+                      >
+                        {option.value.toUpperCase()}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>

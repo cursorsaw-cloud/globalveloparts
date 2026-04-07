@@ -1,8 +1,10 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
-type Language = 'tr' | 'en';
+type Language = 'tr' | 'en' | 'es' | 'ar' | 'ru' | 'fr';
 
 type Translations = Record<string, Record<string, string>>;
+
+const supportedLanguages: Language[] = ['tr', 'en', 'es', 'ar', 'ru', 'fr'];
 
 const translations: Translations = {
   tr: {
@@ -531,6 +533,11 @@ const translations: Translations = {
   },
 };
 
+translations.es = { ...translations.en };
+translations.ar = { ...translations.en };
+translations.ru = { ...translations.en };
+translations.fr = { ...translations.en };
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -543,8 +550,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('tr');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'tr' || savedLang === 'en')) {
+    const savedLang = localStorage.getItem('language') as Language | null;
+    if (savedLang && supportedLanguages.includes(savedLang)) {
       setLanguageState(savedLang);
     }
   }, []);
@@ -553,10 +560,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   };
 
   useEffect(() => {
     document.documentElement.lang = language;
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
 
   const t = (key: string): string => {
