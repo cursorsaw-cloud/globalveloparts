@@ -106,11 +106,13 @@ export default function NeoVeloPartsPage() {
                 {metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm"
+                    className="flex min-h-[8.5rem] flex-col rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm"
                     data-testid={`card-neovelo-metric-${metric.label}`}
                   >
                     <div className="text-[1.9rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
-                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{metric.label}</div>
+                    <div className="mt-3 max-w-[10rem] text-[0.7rem] font-semibold uppercase leading-[1.45] tracking-[0.14em] text-slate-400 break-words">
+                      {metric.label}
+                    </div>
                   </div>
                 ))}
               </div>
