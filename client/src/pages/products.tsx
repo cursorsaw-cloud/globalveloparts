@@ -385,38 +385,62 @@ export default function ProductsPage() {
                             {t("prod.brands")}
                           </h3>
                           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                            {category.brands.map((brand) => (
-                              <div
-                                key={brand}
-                                className="group flex flex-col rounded-[1.45rem] border border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
-                                data-testid={`card-products-brand-${category.id}-${brand}`}
-                              >
-                                <div className="mb-3 flex min-h-[5.1rem] w-full items-center justify-center rounded-[1.15rem] border border-slate-100 bg-white px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] sm:min-h-[5.7rem]">
-                                  <img
-                                    src={getBrandLogo(brand)}
-                                    alt={`${brand} logo`}
-                                    className="h-full w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04]"
-                                    style={{ filter: "contrast(1.1) saturate(1.08)", objectPosition: "center" }}
-                                    loading="lazy"
-                                    decoding="async"
-                                    referrerPolicy="no-referrer"
-                                    onError={(event) => {
-                                      const target = event.target as HTMLImageElement;
-                                      const candidates = getBrandLogoCandidates(brand);
-                                      const currentIndex = Number(target.dataset.logoIndex ?? "0");
-                                      const nextIndex = currentIndex + 1;
-                                      const nextSrc = candidates[nextIndex];
+                            {category.brands.map((brand) => {
+                              const isNeoVelo = brand === "NeoVelo";
 
-                                      if (nextSrc) {
-                                        target.dataset.logoIndex = String(nextIndex);
-                                        target.src = nextSrc;
-                                      }
-                                    }}
-                                  />
+                              return (
+                                <div
+                                  key={brand}
+                                  className={`group relative flex flex-col rounded-[1.45rem] border p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-0.5 ${
+                                    isNeoVelo
+                                      ? "border-primary/35 bg-[linear-gradient(180deg,rgba(239,246,255,0.96)_0%,rgba(255,255,255,1)_100%)] shadow-[0_30px_80px_-44px_rgba(37,99,235,0.34)] ring-1 ring-primary/12 hover:border-primary/55 hover:shadow-[0_34px_90px_-42px_rgba(37,99,235,0.42)]"
+                                      : "border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
+                                  }`}
+                                  data-testid={`card-products-brand-${category.id}-${brand}`}
+                                >
+                                  {isNeoVelo ? (
+                                    <span className="absolute right-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.18em] text-white shadow-[0_12px_24px_-12px_rgba(37,99,235,0.8)]" data-testid={`badge-products-brand-${category.id}-${brand}`}>
+                                      Featured
+                                    </span>
+                                  ) : null}
+                                  <div
+                                    className={`mb-3 flex w-full items-center justify-center rounded-[1.15rem] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] ${
+                                      isNeoVelo
+                                        ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
+                                        : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                    }`}
+                                  >
+                                    <img
+                                      src={getBrandLogo(brand)}
+                                      alt={`${brand} logo`}
+                                      className={`w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04] ${
+                                        isNeoVelo ? "h-14 sm:h-16" : "h-full"
+                                      }`}
+                                      style={{
+                                        filter: isNeoVelo ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))" : "contrast(1.1) saturate(1.08)",
+                                        objectPosition: "center",
+                                      }}
+                                      loading="lazy"
+                                      decoding="async"
+                                      referrerPolicy="no-referrer"
+                                      onError={(event) => {
+                                        const target = event.target as HTMLImageElement;
+                                        const candidates = getBrandLogoCandidates(brand);
+                                        const currentIndex = Number(target.dataset.logoIndex ?? "0");
+                                        const nextIndex = currentIndex + 1;
+                                        const nextSrc = candidates[nextIndex];
+
+                                        if (nextSrc) {
+                                          target.dataset.logoIndex = String(nextIndex);
+                                          target.src = nextSrc;
+                                        }
+                                      }}
+                                    />
+                                  </div>
+                                  <span className={`mt-auto text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : "text-[0.78rem] text-slate-700"}`}>{brand}</span>
                                 </div>
-                                <span className="mt-auto text-center text-[0.78rem] font-semibold tracking-[0.02em] text-slate-700 sm:text-sm">{brand}</span>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
