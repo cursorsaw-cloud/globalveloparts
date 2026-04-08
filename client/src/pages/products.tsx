@@ -29,6 +29,7 @@ import hifiFilterLogo from "@assets/image_1775647976008.png";
 import donaldsonLogo from "@assets/image_1775651340765.png";
 import filtronLogo from "@assets/image_1775648857294.png";
 import parkerLogo from "@assets/image_1775651494735.png";
+import kybLogo from "@assets/image_1775651723100.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -152,6 +153,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Sachs: sachsLogo,
     MAPA: "https://www.mapa.com.tr/wp-content/themes/mapa/assets/theme//images/mapa_logo.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
+    KYB: kybLogo,
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Pierburg: pierburgLogo,
     Bosal: "https://cdn.worldvectorlogo.com/logos/bosal.svg",
@@ -442,6 +444,7 @@ export default function ProductsPage() {
                               const isPurflux = brand === "Purflux";
                               const isHifiFilter = brand === "Hifi Filter";
                               const isDonaldson = brand === "Donaldson";
+                              const isKYB = brand === "KYB";
 
                               return (
                                 <div
@@ -476,6 +479,8 @@ export default function ProductsPage() {
                                                     ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
                                                     : isDonaldson
                                                       ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
+                                                      : isKYB
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                                       : isFebi || isMapa || isWalker
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
@@ -507,6 +512,8 @@ export default function ProductsPage() {
                                                           ? "h-auto w-full max-h-[4.8rem] max-w-[15rem] group-hover:scale-100 sm:max-h-[5rem] sm:max-w-[15.6rem]"
                                                           : isDonaldson
                                                             ? "h-auto w-full max-h-[5rem] max-w-[15.6rem] group-hover:scale-100 sm:max-h-[5.3rem] sm:max-w-[16rem]"
+                                                            : isKYB
+                                                              ? "h-auto w-full max-h-[4.4rem] max-w-[14.2rem] group-hover:scale-100 sm:max-h-[4.7rem] sm:max-w-[14.8rem]"
                                                             : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
@@ -516,7 +523,7 @@ export default function ProductsPage() {
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson || isKYB
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
