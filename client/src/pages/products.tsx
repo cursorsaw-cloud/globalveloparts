@@ -131,7 +131,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
     Febi: "https://cdn.worldvectorlogo.com/logos/febi-bilstein.svg",
     Sachs: sachsLogo,
-    MAPA: "https://www.mapa.com.tr/wp-content/uploads/2021/11/about.png",
+    MAPA: "https://www.mapa.com.tr/wp-content/themes/mapa/assets/theme//images/mapa_logo.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
