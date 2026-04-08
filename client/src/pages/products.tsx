@@ -406,7 +406,9 @@ export default function ProductsPage() {
                                   className={`group relative flex flex-col rounded-[1.45rem] border p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-0.5 ${
                                     isNeoVelo
                                       ? "border-primary/35 bg-[linear-gradient(180deg,rgba(239,246,255,0.96)_0%,rgba(255,255,255,1)_100%)] shadow-[0_30px_80px_-44px_rgba(37,99,235,0.34)] ring-1 ring-primary/12 hover:border-primary/55 hover:shadow-[0_34px_90px_-42px_rgba(37,99,235,0.42)]"
-                                      : "border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
+                                      : isLemforder
+                                        ? "border-sky-200 bg-[linear-gradient(180deg,#f8fbff_0%,#eef6ff_100%)] ring-1 ring-sky-100 hover:border-sky-300 hover:shadow-[0_30px_84px_-44px_rgba(14,116,144,0.28)]"
+                                        : "border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
                                   }`}
                                   data-testid={`card-products-brand-${category.id}-${brand}`}
                                 >
@@ -420,7 +422,7 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[5.4rem] border border-slate-100 bg-white px-4 sm:min-h-[6rem]"
+                                          ? "min-h-[6.4rem] border border-sky-100 bg-[linear-gradient(180deg,#ffffff_0%,#f3f9ff_100%)] px-2 sm:min-h-[7rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
@@ -428,10 +430,14 @@ export default function ProductsPage() {
                                       src={getBrandLogo(brand)}
                                       alt={`${brand} logo`}
                                       className={`w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04] ${
-                                        isNeoVelo ? "h-14 sm:h-16" : isLemforder ? "h-10 sm:h-11" : "h-full"
+                                        isNeoVelo ? "h-14 sm:h-16" : isLemforder ? "h-14 max-w-[10.5rem] sm:h-16 sm:max-w-[11.5rem]" : "h-full"
                                       }`}
                                       style={{
-                                        filter: isNeoVelo ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))" : "contrast(1.1) saturate(1.08)",
+                                        filter: isNeoVelo
+                                          ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
+                                          : isLemforder
+                                            ? "contrast(1.22) saturate(1.08) drop-shadow(0 10px 16px rgba(14,116,144,0.12))"
+                                            : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
                                       loading="lazy"
@@ -451,7 +457,7 @@ export default function ProductsPage() {
                                       }}
                                     />
                                   </div>
-                                  <span className={`mt-auto overflow-hidden text-ellipsis whitespace-nowrap text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : "text-[0.78rem] text-slate-700"}`}>
+                                  <span className={`mt-auto overflow-hidden text-ellipsis whitespace-nowrap text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : isLemforder ? "text-[0.82rem] text-sky-800" : "text-[0.78rem] text-slate-700"}`}>
                                     {brand}
                                   </span>
                                 </div>
