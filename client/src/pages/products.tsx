@@ -433,9 +433,11 @@ export default function ProductsPage() {
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
                                           ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
-                                          : isFebi || isSachs || isMapa
-                                            ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
-                                            : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                          : isSachs
+                                            ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
+                                            : isFebi || isMapa
+                                              ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                              : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
@@ -449,7 +451,7 @@ export default function ProductsPage() {
                                             : isFebi
                                               ? "h-auto w-[84%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.2rem]"
                                               : isSachs
-                                                ? "h-auto w-[80%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
+                                                ? "h-auto w-[94%] max-w-[9.4rem] group-hover:scale-100 sm:max-w-[9.9rem]"
                                                 : isMapa
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
                                                   : "h-full w-full"
