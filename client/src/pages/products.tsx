@@ -20,6 +20,7 @@ import {
 import neoveloLogo from "@assets/image_1775560940186.png";
 import marelliLogo from "@assets/image_1775641394433.png";
 import sachsLogo from "@assets/image_1775645082561.png";
+import pierburgLogo from "@assets/image_1775645499709.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -134,7 +135,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     MAPA: "https://www.mapa.com.tr/wp-content/themes/mapa/assets/theme//images/mapa_logo.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
-    Pierburg: "https://logos-download.com/wp-content/uploads/2022/01/Pierburg_Logo.svg",
+    Pierburg: pierburgLogo,
     Bosal: "https://cdn.worldvectorlogo.com/logos/bosal.svg",
     Walker: "https://cdn.worldvectorlogo.com/logos/walker-mufflers.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
