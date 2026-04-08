@@ -18,7 +18,6 @@ import {
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
-import lemforderLogo from "@assets/image_1775640695829.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -129,7 +128,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
-    Lemförder: lemforderLogo,
+    Lemförder: "https://www.liblogo.com/img-logo/le4145lf93-lemforder-logo-lemforder-logo-png-transparent-amp-svg-vector-freebie-supply.png",
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
@@ -423,7 +422,7 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[7.2rem] border border-transparent bg-transparent px-0 py-0 shadow-none sm:min-h-[7.8rem]"
+                                          ? "min-h-[5.8rem] border border-slate-100 bg-white px-3 sm:min-h-[6.2rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
@@ -434,14 +433,14 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-[6.4rem] w-auto max-w-[6.4rem] sm:h-[7rem] sm:max-w-[7rem]"
+                                            ? "h-9 w-full max-w-[9rem] sm:h-10 sm:max-w-[10rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "none"
+                                            ? "contrast(1.02) saturate(1.02)"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
