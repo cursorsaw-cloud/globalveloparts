@@ -21,6 +21,7 @@ import neoveloLogo from "@assets/image_1775560940186.png";
 import marelliLogo from "@assets/image_1775641394433.png";
 import sachsLogo from "@assets/image_1775645082561.png";
 import pierburgLogo from "@assets/image_1775645658529.png";
+import snrLogo from "@assets/image_1775646456486.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -138,7 +139,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Pierburg: pierburgLogo,
     Bosal: "https://cdn.worldvectorlogo.com/logos/bosal.svg",
     Walker: "https://cdn.worldvectorlogo.com/logos/walker-mufflers.svg",
-    SNR: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Logo-NTN-SNR-2025.svg",
+    SNR: snrLogo,
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     Graf: "https://www.metelligroup.it/images/2.png",
     Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
