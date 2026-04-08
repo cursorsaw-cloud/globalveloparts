@@ -18,6 +18,7 @@ import {
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
+import marelliLogo from "@assets/image_1775641394433.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -111,6 +112,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Motul: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Motul_logo.svg",
     Valeo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Valeo_Logo.svg",
     Hella: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hella-logo.svg",
+    "Magneti Marelli": marelliLogo,
     NGK: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngk_logo.svg",
     TYC: "https://images.seeklogo.com/logo-png/61/1/tyc-logo-png_seeklogo-617739.png",
     Denso: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Denso_logo.svg",
