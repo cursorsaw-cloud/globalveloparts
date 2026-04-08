@@ -20,7 +20,7 @@ import {
 import neoveloLogo from "@assets/image_1775560940186.png";
 import marelliLogo from "@assets/image_1775641394433.png";
 import sachsLogo from "@assets/image_1775645082561.png";
-import pierburgLogo from "@assets/image_1775645539096.png";
+import pierburgLogo from "@assets/image_1775645658529.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
