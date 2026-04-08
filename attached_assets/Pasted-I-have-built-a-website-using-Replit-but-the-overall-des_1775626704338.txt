@@ -1,0 +1,66 @@
+I have built a website using Replit, but the overall design, structure, and user experience feel incomplete and not at a premium level. I want you to act as a senior product designer, UX/UI expert, and front-end architect and perform a full-scale audit and transformation plan.
+
+Your goal is to elevate this website to the level of a Fortune 500 / S&P 500 company website in terms of design, performance, usability, and brand perception.
+
+Scope of Work
+1. Full Website Audit
+Analyze the entire website structure (all pages, navigation, hierarchy)
+Identify:
+UX/UI issues
+Weak visual hierarchy
+Inconsistent components
+Poor spacing, typography, or color usage
+Accessibility gaps (WCAG)
+Performance bottlenecks
+Broken flows or unclear user journeys
+Evaluate mobile responsiveness and cross-device consistency
+2. Design System & UI Upgrade
+Create a scalable design system
+Define:
+Typography system (font pairing, scale, hierarchy)
+Color system (primary, secondary, neutrals, semantic colors)
+Spacing & grid system
+Component library (buttons, cards, inputs, tables, modals, etc.)
+Use tools and frameworks such as:
+Storybook (for component documentation)
+Tailwind CSS / Tailwind UI (for modern UI system)
+Lucide Icons (for consistent iconography)
+Optional: SwiftUI-inspired design principles for clarity and minimalism
+3. Component & Layout Redesign
+Redesign all key sections:
+Hero sections (high-impact, conversion-focused)
+Navigation (sticky, intuitive, premium feel)
+Product/category pages
+About / brand storytelling
+CTA sections
+Footer (structured and informative)
+Introduce:
+Better section separation
+Modern layouts (grid-based, asymmetric where needed)
+Micro-interactions and animations
+4. Performance Optimization
+Audit and improve:
+Image optimization (next-gen formats, lazy loading)
+Code splitting
+Lighthouse score (target 90+)
+Load times and responsiveness
+Suggest best practices and tools
+5. UX & Conversion Optimization
+Improve:
+User flow and navigation clarity
+Call-to-action placement and effectiveness
+Readability and content structure
+Trust signals (branding, consistency, credibility elements)
+6. Deliverables
+
+Provide:
+
+A detailed audit report
+A step-by-step improvement roadmap
+Example before/after suggestions
+Sample component redesigns (code or structure)
+Suggested tech stack improvements
+Clear prioritization (high impact vs low effort)
+Goal
+
+Transform the website into a premium, high-performance, enterprise-grade digital experience comparable to top-tier global companies.
