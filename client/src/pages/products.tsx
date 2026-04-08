@@ -435,7 +435,7 @@ export default function ProductsPage() {
                                         : isLemforder
                                           ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                           : isSachs
-                                            ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
+                                            ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                             : isFebi || isMapa
                                               ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                               : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
@@ -452,7 +452,7 @@ export default function ProductsPage() {
                                             : isFebi
                                               ? "h-auto w-[84%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.2rem]"
                                               : isSachs
-                                                ? "h-auto w-full max-w-none scale-[1.85] group-hover:scale-[1.85]"
+                                                ? "h-auto w-[90%] max-w-[9.25rem] group-hover:scale-100 sm:max-w-[9.8rem]"
                                                 : isMapa
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
                                                   : "h-full w-full"
