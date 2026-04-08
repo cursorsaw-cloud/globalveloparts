@@ -48,12 +48,6 @@ export function Navbar() {
             </div>
           </Link>
 
-          <div className="ml-auto hidden items-center gap-3 xl:flex">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">
-              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_18px_rgba(37,99,235,0.85)]" />
-              <span data-testid="text-nav-assurance">{t("nav.assurance")}</span>
-            </div>
-          </div>
 
           <div className="hidden items-center gap-1.5 md:flex lg:gap-2 xl:gap-2.5">
             {links.map((link) => {
@@ -62,7 +56,7 @@ export function Navbar() {
               return (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`relative cursor-pointer rounded-full px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 lg:px-4.5 lg:text-[12.5px] ${
+                    className={`relative cursor-pointer whitespace-nowrap rounded-full px-3 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 lg:px-4 lg:text-[12px] ${
                       isActive
                         ? "bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
                         : "text-slate-300 hover:bg-white/[0.05] hover:text-white"
@@ -133,17 +127,13 @@ export function Navbar() {
               className="w-[92vw] max-w-sm border-l border-white/10 bg-[linear-gradient(180deg,#020617_0%,#0f172a_100%)] px-5 text-white sm:px-6"
             >
               <div className="flex flex-col gap-6 pt-8">
-                <div className="space-y-4">
+                <div>
                   <img
                     src="/logo-globalvelo-white-header.png"
                     alt="Globalvelo Spare Parts Logo"
                     className="h-12 w-auto object-contain"
                     data-testid="img-mobile-globalvelo-logo"
                   />
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
-                    <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_16px_rgba(37,99,235,0.75)]" />
-                    <span data-testid="text-mobile-nav-assurance">{t("nav.assurance")}</span>
-                  </div>
                 </div>
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">

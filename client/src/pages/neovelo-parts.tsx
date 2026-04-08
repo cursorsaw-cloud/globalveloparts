@@ -1,4 +1,18 @@
-import { ArrowRight, BadgeCheck, Cpu, Filter, Fuel, Link2, MoveVertical, Settings, Settings2, ShieldCheck, Snowflake, Sparkles, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Cpu,
+  Filter,
+  Fuel,
+  Link2,
+  MoveVertical,
+  Settings,
+  Settings2,
+  ShieldCheck,
+  Snowflake,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -87,30 +101,32 @@ export default function NeoVeloPartsPage() {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#0b1220_0%,#0f172a_48%,#1e293b_100%)] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.18),transparent_30%)]" />
-        <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(24rem,32rem)] lg:gap-12">
-            <div className="max-w-[46rem]">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#020617_0%,#0f172a_48%,#1e3a1d_100%)] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(163,230,53,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.18),transparent_30%)]" />
+        <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
+
+        <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
+          <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-10">
+            <div className="max-w-[48rem]">
               <span className="section-kicker text-slate-300" data-testid="text-neovelo-badge">
                 {t("neovelo.badge")}
               </span>
-              <h1 className="mt-5 text-[3rem] font-extrabold leading-[0.94] tracking-[-0.055em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-neovelo-title">
+              <h1 className="display-title mt-5 text-white" data-testid="text-neovelo-title">
                 {t("neovelo.title")}
               </h1>
-              <p className="mt-7 max-w-[41rem] text-[1.06rem] leading-8 text-slate-300 md:text-[1.14rem]" data-testid="text-neovelo-description">
+              <p className="body-lead mt-7 max-w-[42rem]" data-testid="text-neovelo-description">
                 {t("neovelo.desc")}
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                {metrics.map((metric) => (
+                {metrics.map((metric, index) => (
                   <div
                     key={metric.label}
-                    className="flex min-h-[8.5rem] flex-col rounded-[1.4rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm"
-                    data-testid={`card-neovelo-metric-${metric.label}`}
+                    className="flex min-h-[8.25rem] flex-col rounded-[1.45rem] border border-white/10 bg-white/[0.05] px-5 py-5 backdrop-blur-sm"
+                    data-testid={`card-neovelo-metric-${index}`}
                   >
-                    <div className="text-[1.9rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
-                    <div className="mt-3 max-w-[10rem] text-[0.7rem] font-semibold uppercase leading-[1.45] tracking-[0.14em] text-slate-400 break-words">
+                    <div className="text-[2rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
+                    <div className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">
                       {metric.label}
                     </div>
                   </div>
@@ -118,16 +134,20 @@ export default function NeoVeloPartsPage() {
               </div>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="h-14 rounded-full px-8 text-base shadow-[0_22px_55px_-24px_rgba(37,99,235,0.7)]">
-                  <a href="/products" data-testid="button-neovelo-products">
+                <Button asChild size="lg" className="px-8 text-base" data-testid="button-neovelo-products">
+                  <a href="/products">
                     {t("neovelo.cta.primary")}
                     <ArrowRight className="h-5 w-5" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="h-14 rounded-full border-white/15 bg-white/5 px-8 text-base text-white hover:bg-white/10 hover:text-white">
-                  <a href="/#contact" data-testid="button-neovelo-contact">
-                    {t("neovelo.cta.secondary")}
-                  </a>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="ghost"
+                  className="border border-white/15 bg-white/[0.05] px-8 text-base text-white hover:border-white/24 hover:bg-white/[0.1] hover:text-white"
+                  data-testid="button-neovelo-contact"
+                >
+                  <a href="/#contact">{t("neovelo.cta.secondary")}</a>
                 </Button>
               </div>
             </div>
@@ -171,7 +191,7 @@ export default function NeoVeloPartsPage() {
 
       <section className="section-divider bg-white">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] xl:gap-10">
             <div className="surface-panel rounded-[2rem] p-7 md:p-9">
               <span className="section-kicker text-secondary" data-testid="text-neovelo-story-kicker">
                 {t("neovelo.story.kicker")}
@@ -267,10 +287,10 @@ export default function NeoVeloPartsPage() {
                       <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-white/14 bg-white/10 text-white shadow-[0_14px_34px_-24px_rgba(15,23,42,0.9)] backdrop-blur-sm">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <h3 className="mt-5 max-w-[12rem] text-[1.55rem] font-bold leading-[1.05] tracking-[-0.04em] text-white">
+                      <h3 className="mt-5 max-w-[14rem] text-[1.55rem] font-bold leading-[1.05] tracking-[-0.04em] text-white">
                         {range.title}
                       </h3>
-                      <p className="mt-3 max-w-[14rem] text-sm leading-6 text-slate-200/92" data-testid={`text-neovelo-range-description-${range.title}`}>
+                      <p className="mt-3 max-w-[16rem] text-sm leading-6 text-slate-200/92" data-testid={`text-neovelo-range-description-${range.title}`}>
                         {range.description}
                       </p>
                     </div>
@@ -284,7 +304,7 @@ export default function NeoVeloPartsPage() {
 
       <section className="section-divider bg-white">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-10">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-10">
             <div className="rounded-[2rem] bg-[linear-gradient(135deg,#0f172a_0%,#1e293b_100%)] p-7 text-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.75)] md:p-9">
               <p className="section-kicker text-slate-400" data-testid="text-neovelo-advantages-kicker">
                 {t("neovelo.advantages.kicker")}
@@ -317,7 +337,7 @@ export default function NeoVeloPartsPage() {
 
       <section className="section-divider bg-slate-50">
         <div className="section-shell">
-          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
+          <div className="grid items-center gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:gap-12">
             <div>
               <span className="section-kicker text-secondary" data-testid="text-neovelo-digital-kicker">
                 {t("neovelo.digital.kicker")}
@@ -371,10 +391,8 @@ export default function NeoVeloPartsPage() {
                   {t("neovelo.cta.desc")}
                 </p>
               </div>
-              <Button asChild size="lg" variant="secondary" className="h-14 rounded-full px-8 text-base font-semibold">
-                <a href="/#contact" data-testid="button-neovelo-cta-contact">
-                  {t("neovelo.cta.secondary")}
-                </a>
+              <Button asChild size="lg" variant="secondary" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-contact">
+                <a href="/#contact">{t("neovelo.cta.secondary")}</a>
               </Button>
             </div>
           </div>

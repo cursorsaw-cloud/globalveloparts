@@ -28,12 +28,14 @@ export default function SabanciDxPage() {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#0f172a_0%,#111827_52%,#1e293b_100%)] text-white">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#020617_0%,#0f172a_52%,#1e293b_100%)] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.22),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(148,163,184,0.12),transparent_30%)]" />
-        <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
-          <div className="mx-auto max-w-[70rem]">
-            <div className="flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)] lg:items-start lg:gap-12">
-              <div className="max-w-[46rem]">
+        <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
+
+        <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
+          <div className="mx-auto max-w-[74rem]">
+            <div className="grid gap-10 xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] xl:items-start xl:gap-10">
+              <div className="max-w-[48rem]">
                 <div className="mt-1 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5" data-testid="card-sdx-brand-lockup">
                   <span className="section-kicker whitespace-nowrap text-slate-300" data-testid="text-sdx-badge">
                     {t("sdx.badge")}
@@ -62,10 +64,11 @@ export default function SabanciDxPage() {
                     </div>
                   </div>
                 </div>
-                <h1 className="mt-8 text-[3rem] font-extrabold leading-[0.96] tracking-[-0.05em] text-white sm:text-[4rem] lg:text-[5rem]" data-testid="text-sdx-title">
+
+                <h1 className="display-title mt-8 max-w-[44rem] text-white" data-testid="text-sdx-title">
                   {t("sdx.title")}
                 </h1>
-                <p className="mt-7 max-w-[38rem] text-[1.05rem] leading-8 text-slate-300 md:text-[1.16rem]" data-testid="text-sdx-description">
+                <p className="body-lead mt-7 max-w-[40rem]" data-testid="text-sdx-description">
                   {t("sdx.desc")}
                 </p>
               </div>
@@ -135,7 +138,7 @@ export default function SabanciDxPage() {
 
       <section className="section-divider bg-slate-50">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-10">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:gap-10">
             <div className="surface-panel rounded-[2rem] p-7 md:p-9">
               <span className="section-kicker text-secondary" data-testid="text-sdx-outcomes-badge">
                 {t("sdx.outcomes.kicker")}
@@ -176,15 +179,19 @@ export default function SabanciDxPage() {
                 </p>
               </div>
               <a href="https://www.sabancidx.com/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="h-14 rounded-full px-8 text-base font-semibold shadow-[0_20px_55px_-25px_rgba(37,99,235,0.65)]" data-testid="button-sdx-primary">
+                <Button size="lg" className="px-8 text-base font-semibold" data-testid="button-sdx-primary">
                   {t("sdx.cta.btn")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </a>
-              <Button asChild size="lg" variant="outline" className="h-14 rounded-full border-white/15 bg-white/5 px-8 text-base text-white hover:bg-white/10 hover:text-white">
-                <a href="/#contact" data-testid="button-sdx-contact">
-                  {t("sdx.cta.secondary")}
-                </a>
+              <Button
+                asChild
+                size="lg"
+                variant="ghost"
+                className="border border-white/15 bg-white/[0.05] px-8 text-base text-white hover:border-white/24 hover:bg-white/[0.1] hover:text-white"
+                data-testid="button-sdx-contact"
+              >
+                <a href="/#contact">{t("sdx.cta.secondary")}</a>
               </Button>
             </div>
           </div>

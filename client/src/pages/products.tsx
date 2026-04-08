@@ -12,7 +12,9 @@ import {
   MoveVertical,
   Settings,
   Settings2,
+  ShieldCheck,
   Snowflake,
+  Sparkles,
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
@@ -248,15 +250,16 @@ const categories = [
 export default function ProductsPage() {
   const [expandedId, setExpandedId] = useState<string | null>(categories[0].id);
   const { language, t } = useLanguage();
+  const contentLanguage = language === "tr" ? "tr" : "en";
 
   const localizedCategories = useMemo(
     () =>
       categories.map((category) => ({
         ...category,
-        label: category.name[language],
-        labels: category.subCategories[language],
+        label: category.name[contentLanguage],
+        labels: category.subCategories[contentLanguage],
       })),
-    [language],
+    [contentLanguage],
   );
 
   const stats = [
@@ -265,50 +268,57 @@ export default function ProductsPage() {
     { value: "40+", label: t("prod.stat.3") },
   ];
 
+  const sourcingPoints = [t("prod.guide.desc"), t("hero.trust.original"), t("hero.trust.fast")];
+
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.08),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(15,23,42,0.06),transparent_28%)]" />
-        <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
-          <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)] lg:gap-12">
-            <div className="max-w-[46rem]">
+        <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
+          <div className="grid items-end gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] xl:gap-10">
+            <div className="max-w-[47rem]">
               <span className="section-kicker text-secondary" data-testid="text-products-page-badge">
                 {t("prod.badge")}
               </span>
-              <h1 className="mt-5 text-[3rem] font-extrabold leading-[0.96] tracking-[-0.05em] text-slate-950 sm:text-[4rem] lg:text-[5rem]" data-testid="text-products-page-title">
+              <h1 className="section-title mt-5 !text-[clamp(3.1rem,5vw,5.1rem)]" data-testid="text-products-page-title">
                 {t("prod.title")}
               </h1>
-              <p className="mt-7 max-w-[39rem] text-[1.05rem] leading-8 text-slate-600 md:text-[1.16rem]" data-testid="text-products-page-description">
+              <p className="section-copy mt-7 max-w-[40rem]" data-testid="text-products-page-description">
                 {t("prod.desc")}
               </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {stats.map((stat, index) => (
+                  <div key={stat.label} className="surface-panel rounded-[1.5rem] px-5 py-5" data-testid={`card-products-stat-${index}`}>
+                    <div className="text-3xl font-extrabold tracking-[-0.05em] text-slate-950">{stat.value}</div>
+                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="surface-panel rounded-[2rem] p-6 md:p-7">
-              <p className="section-kicker text-secondary" data-testid="text-products-page-guide-kicker">
-                {t("prod.guide.kicker")}
-              </p>
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span data-testid="text-products-page-guide-kicker">{t("prod.guide.kicker")}</span>
+              </div>
               <h2 className="mt-4 text-2xl font-bold text-slate-950" data-testid="text-products-page-guide-title">
                 {t("prod.guide.title")}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600" data-testid="text-products-page-guide-description">
-                {t("prod.guide.desc")}
-              </p>
-              <Button asChild className="mt-6 h-12 rounded-full px-6" data-testid="button-products-page-contact">
+              <div className="mt-5 grid gap-3">
+                {sourcingPoints.map((item, index) => (
+                  <div key={index} className="rounded-[1.25rem] border border-slate-200 bg-white px-4 py-4" data-testid={`row-products-guide-${index}`}>
+                    <p className="text-sm leading-7 text-slate-700">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <Button asChild className="mt-6 px-6" data-testid="button-products-page-contact">
                 <a href="/#contact">
                   {t("contact.badge")}
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
             </div>
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div key={stat.label} className="surface-panel rounded-[1.5rem] px-5 py-5" data-testid={`card-products-stat-${stat.label}`}>
-                <div className="text-3xl font-extrabold tracking-[-0.05em] text-slate-950">{stat.value}</div>
-                <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -437,7 +447,9 @@ export default function ProductsPage() {
                                       }}
                                     />
                                   </div>
-                                  <span className={`mt-auto text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : "text-[0.78rem] text-slate-700"}`}>{brand}</span>
+                                  <span className={`mt-auto overflow-hidden text-ellipsis whitespace-nowrap text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : "text-[0.78rem] text-slate-700"}`}>
+                                    {brand}
+                                  </span>
                                 </div>
                               );
                             })}
@@ -449,6 +461,39 @@ export default function ProductsPage() {
                 </section>
               );
             })}
+          </div>
+
+          <div className="mt-14 rounded-[2rem] bg-[linear-gradient(135deg,#0f172a_0%,#1e293b_100%)] px-7 py-8 text-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.75)] md:px-10 md:py-10">
+            <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+              <div>
+                <p className="section-kicker text-slate-400" data-testid="text-products-bottom-kicker">
+                  {t("sdx.badge")}
+                </p>
+                <h2 className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]" data-testid="text-products-bottom-title">
+                  {t("sdx.title")}
+                </h2>
+                <p className="mt-4 max-w-[46rem] text-[1rem] leading-8 text-slate-300" data-testid="text-products-bottom-description">
+                  {t("sdx.desc")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="px-8 text-base" data-testid="button-products-bottom-sdx">
+                  <a href="/sabancidx">
+                    {t("nav.sabancidx")}
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="ghost"
+                  className="border border-white/15 bg-white/[0.05] px-8 text-base text-white hover:border-white/24 hover:bg-white/[0.1] hover:text-white"
+                  data-testid="button-products-bottom-contact"
+                >
+                  <a href="/#contact">{t("sdx.cta.secondary")}</a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
