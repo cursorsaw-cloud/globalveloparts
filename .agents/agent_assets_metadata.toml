@@ -114,6 +114,12 @@ uri = "file://client/public/images/sabancidx/integration-network.png"
 type = "image"
 title = "Automotive supply network visual"
 
+[[generated]]
+id = "y9glGErXnIJop5qt1F1wN"
+uri = "file://client/src/assets/images/products-warehouse-bg.png"
+type = "image"
+title = "Corporate spare parts warehouse background"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
