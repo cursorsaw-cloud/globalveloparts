@@ -128,6 +128,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
+    Lemförder: "https://static.cdnlogo.com/logos/l/51/lemforder.svg",
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
