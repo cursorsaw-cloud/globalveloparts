@@ -32,6 +32,7 @@ import parkerLogo from "@assets/image_1775651494735.png";
 import kybLogo from "@assets/image_1775651723100.png";
 import nuralLogo from "@assets/image_1775653162129.png";
 import kolbenschmidtLogo from "@assets/image_1775653561995.png";
+import hengstLogo from "@assets/image_1775653755025.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -148,7 +149,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Ferodo: "https://www.ferodo.com/content/loc-emea/loc-eu/fmmp-ferodo/en_GB/_jcr_content/page-nav/site_nav/logo-image.img.png/Ferodo%20Logo-1635556089357.png",
     Mahle: "https://www.mahle.com/media/system_files/img/mahle_logo_2020.png",
     Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
-    Hengst: "https://www.hengst.com/typo3conf/ext/hengst/Resources/Public/Images/logo-hengst.svg",
+    Hengst: hengstLogo,
     Filtron: filtronLogo,
     Purflux: purfluxLogo,
     Donaldson: donaldsonLogo,
