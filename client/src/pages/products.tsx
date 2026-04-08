@@ -197,7 +197,7 @@ const categories = [
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
       en: ["Oil", "Air", "Cabin", "Fuel", "Performance"],
     },
-    brands: ["NeoVelo", "Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "Donaldson", "Hifi Filter", "K&N", "Pipercross"],
+    brands: ["NeoVelo", "Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "Donaldson", "Hifi Filter"],
   },
   {
     id: "motor",
