@@ -461,6 +461,7 @@ export default function ProductsPage() {
                               const isDolz = brand === "Dolz";
                               const isNural = brand === "Nüral";
                               const isAE = brand === "AE";
+                              const isKolbenschmidt = brand === "Kolbenschmidt";
 
                               return (
                                 <div
@@ -503,6 +504,8 @@ export default function ProductsPage() {
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
                                                       : isAE
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-0.5 sm:min-h-[5.7rem]"
+                                                      : isKolbenschmidt
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-0.5 sm:min-h-[5.7rem]"
                                                       : isFebi || isMapa || isWalker
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
@@ -542,6 +545,8 @@ export default function ProductsPage() {
                                                               ? "h-auto w-full max-h-[4.2rem] max-w-[14.4rem] group-hover:scale-100 sm:max-h-[4.45rem] sm:max-w-[15rem]"
                                                             : isAE
                                                               ? "h-auto w-full max-h-[4.8rem] max-w-[15rem] group-hover:scale-100 sm:max-h-[5.2rem] sm:max-w-[15.8rem]"
+                                                            : isKolbenschmidt
+                                                              ? "h-auto w-full max-h-[1.6rem] max-w-[5.2rem] group-hover:scale-100 sm:max-h-[1.75rem] sm:max-w-[5.7rem]"
                                                             : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
@@ -551,12 +556,12 @@ export default function ProductsPage() {
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson || isKYB || isDolz || isNural || isAE
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson || isKYB || isDolz || isNural || isAE || isKolbenschmidt
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
-                                        transform: isAE ? "scale(3)" : undefined,
-                                        transformOrigin: isAE ? "center" : undefined,
+                                        transform: isAE || isKolbenschmidt ? "scale(3)" : undefined,
+                                        transformOrigin: isAE || isKolbenschmidt ? "center" : undefined,
                                       }}
                                       loading="lazy"
                                       decoding="async"
