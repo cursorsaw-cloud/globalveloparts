@@ -1,0 +1,74 @@
+Act as a senior frontend engineer, UX/UI designer, and mobile optimization expert.
+
+My website is fully functional on desktop, but the mobile experience is poor. I want you to perform a complete mobile-first audit of the entire website and then create a clear, actionable improvement plan to significantly enhance the mobile user experience.
+
+Your tasks:
+1. Full Mobile UX/UI Audit
+
+Analyze the website as if you are conducting a professional audit using tools like Lighthouse and modern UX standards. Evaluate:
+
+Responsiveness across screen sizes (phones & tablets)
+Layout issues (overflow, broken grids, spacing problems)
+Typography (font size, readability, line height)
+Navigation (menus, hamburger usability, accessibility)
+Touch targets (buttons, links, tap areas)
+Visual hierarchy and content prioritization
+Image scaling and responsiveness
+Performance on mobile (load time, CLS, LCP, etc.)
+Accessibility (contrast, tap usability, readability)
+2. Identify Issues Clearly
+
+List all problems in a structured way:
+
+Critical issues (breaking UX)
+Medium issues (hurting usability)
+Minor improvements (polish)
+3. Create a Mobile-First Redesign Strategy
+
+Provide a step-by-step improvement plan including:
+
+Layout restructuring (mobile-first approach)
+Grid system recommendations
+Component redesign suggestions
+Navigation improvements (sticky nav, bottom nav, etc.)
+Content prioritization for smaller screens
+4. Technical Implementation Plan
+
+Suggest concrete improvements using modern tools and frameworks:
+
+Tailwind CSS (responsive utilities, spacing, breakpoints)
+Flexbox / CSS Grid fixes
+Recommended component libraries (e.g. shadcn/ui)
+Image optimization strategies (lazy loading, sizes)
+Performance improvements (code splitting, minification)
+5. Code-Level Suggestions
+
+Where possible, include example code snippets for:
+
+Responsive layouts
+Mobile navigation menu
+Button and touch improvements
+Typography scaling
+6. Performance Optimization
+
+Provide a mobile performance checklist:
+
+Lighthouse score improvements
+Reducing unused JS/CSS
+Image compression
+Caching strategies
+7. Final Output Format
+
+Deliver your response in this structure:
+
+Audit Summary
+Key Issues List
+Redesign Strategy
+Technical Implementation Plan
+Code Examples
+Performance Checklist
+Goal:
+
+Transform the current website into a fast, clean, mobile-first, production-level experience comparable to top-tier (S&P 500-level) websites.
+
+Be detailed, practical, and execution-focused. Avoid generic advice.
