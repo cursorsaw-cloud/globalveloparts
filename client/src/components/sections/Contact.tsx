@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
 interface ContactFormValues {
@@ -105,7 +105,7 @@ export function Contact() {
       icon: MapPin,
       title: t("contact.address.title"),
       description: (
-        <p className="text-slate-600 leading-relaxed" data-testid="text-contact-address">
+        <p className="leading-relaxed text-slate-600" data-testid="text-contact-address">
           {t("contact.address.desc1")}
           <br />
           {t("contact.address.desc2")}
@@ -115,12 +115,44 @@ export function Contact() {
     },
   ];
 
+  const finalCtaItems = [t("global.cta.primary"), t("sdx.cta.secondary"), t("hero.trust.fast")];
+
   return (
     <section id="contact" className="section-divider relative scroll-mt-32 overflow-hidden bg-white">
       <div className="absolute left-0 top-10 h-72 w-72 rounded-full bg-primary/5 blur-[130px]" />
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-secondary/10 blur-[120px]" />
 
       <div className="section-shell relative z-10">
+        <div className="mb-12 overflow-hidden rounded-[2.1rem] border border-white/10 bg-[linear-gradient(135deg,#020617_0%,#0f172a_45%,#111827_100%)] p-7 text-white shadow-[0_40px_100px_-70px_rgba(15,23,42,0.95)] md:p-10">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-end">
+            <div>
+              <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300" data-testid="text-contact-cta-badge">
+                {t("global.cta.kicker")}
+              </div>
+              <h3 className="mt-5 max-w-3xl text-[2rem] font-bold leading-tight text-white sm:text-[2.5rem]" data-testid="text-contact-cta-title">
+                {t("global.cta.title")}
+              </h3>
+              <p className="mt-4 max-w-3xl text-[1rem] leading-8 text-slate-300" data-testid="text-contact-cta-description">
+                {t("global.cta.desc")}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {finalCtaItems.map((item, index) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300" data-testid={`text-contact-cta-pill-${index}`}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <Button asChild size="lg" className="w-fit px-7" data-testid="button-contact-cta-products">
+              <a href="/products">
+                {t("global.cta.primary")}
+                <ArrowRight className="h-4.5 w-4.5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
         <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
           <div className="space-y-10 pt-2">
             <div className="section-heading">
@@ -246,7 +278,7 @@ export function Contact() {
                   {t("contact.form.note")}
                 </div>
 
-                <Button type="submit" size="lg" className="mt-4 h-14 w-full rounded-full text-base font-semibold shadow-[0_20px_60px_-28px_rgba(37,99,235,0.7)]" data-testid="button-contact-submit" disabled={isSubmitting}>
+                <Button type="submit" size="lg" className="mt-4 h-14 w-full text-base font-semibold shadow-[0_20px_60px_-28px_rgba(37,99,235,0.7)]" data-testid="button-contact-submit" disabled={isSubmitting}>
                   {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
