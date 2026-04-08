@@ -419,7 +419,9 @@ export default function ProductsPage() {
                                     className={`mb-3 flex w-full items-center justify-center overflow-hidden rounded-[1.15rem] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] ${
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
-                                        : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                        : isLemforder
+                                          ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
+                                          : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
@@ -429,7 +431,7 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-auto w-[74%] max-w-[7.4rem] group-hover:scale-100 sm:max-w-[8rem]"
+                                            ? "h-auto w-[96%] max-w-[10.25rem] group-hover:scale-100 sm:max-w-[11rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
