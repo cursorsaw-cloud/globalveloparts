@@ -28,6 +28,7 @@ import purfluxLogo from "@assets/image_1775647824718.png";
 import hifiFilterLogo from "@assets/image_1775647976008.png";
 import donaldsonLogo from "@assets/image_1775651340765.png";
 import filtronLogo from "@assets/image_1775648857294.png";
+import parkerLogo from "@assets/image_1775651494735.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -58,6 +59,7 @@ const getBrandDomain = (brandName: string) => {
     Purflux: "purflux.com",
     Donaldson: "donaldson.com",
     "Hifi Filter": "hifi-filter.com",
+    Parker: "parker.com",
     "K&N": "knfilters.com",
     Pipercross: "pipercross.com",
     Mobil: "mobil.com",
@@ -143,6 +145,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Purflux: purfluxLogo,
     Donaldson: donaldsonLogo,
     "Hifi Filter": hifiFilterLogo,
+    Parker: parkerLogo,
     "K&N": knLogo,
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
     Febi: "https://cdn.worldvectorlogo.com/logos/febi-bilstein.svg",
@@ -197,7 +200,7 @@ const categories = [
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
       en: ["Oil", "Air", "Cabin", "Fuel", "Performance"],
     },
-    brands: ["NeoVelo", "Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "Donaldson", "Hifi Filter"],
+    brands: ["NeoVelo", "Mann", "Mahle", "Bosch", "Hengst", "Filtron", "Purflux", "Delphi", "Donaldson", "Hifi Filter", "Parker"],
   },
   {
     id: "motor",
