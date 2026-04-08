@@ -173,7 +173,7 @@ const categories = [
       tr: ["Balata", "Disk", "Kaliper", "Hidrolik", "ABS", "Hortum"],
       en: ["Pads", "Discs", "Calipers", "Hydraulics", "ABS", "Hoses"],
     },
-    brands: ["NeoVelo", "Brembo", "Textar", "Ferodo", "Bosch", "TRW", "ATE", "Delphi", "Jurid", "Zimmermann", "Budweg", "Castrol", "Liqui Moly", "Motul", "Frenkit", "Autofren", "Febi"],
+    brands: ["NeoVelo", "Brembo", "Textar", "Ferodo", "Bosch", "TRW", "ATE", "Delphi", "Zimmermann", "Castrol", "Motul", "Febi"],
   },
   {
     id: "filtre",
