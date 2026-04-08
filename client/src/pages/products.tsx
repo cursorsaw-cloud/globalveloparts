@@ -138,6 +138,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Pierburg: pierburgLogo,
     Bosal: "https://cdn.worldvectorlogo.com/logos/bosal.svg",
     Walker: "https://cdn.worldvectorlogo.com/logos/walker-mufflers.svg",
+    SNR: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Logo-NTN-SNR-2025.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     Graf: "https://www.metelligroup.it/images/2.png",
     Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
@@ -214,7 +215,7 @@ const categories = [
       tr: ["Triger Seti", "V Kayışı", "Gergi"],
       en: ["Timing Kits", "V-Belts", "Tensioners"],
     },
-    brands: ["NeoVelo", "INA", "Gates", "Dayco", "Contitech", "SKF"],
+    brands: ["NeoVelo", "INA", "Gates", "Dayco", "Contitech", "SKF", "SNR"],
   },
   {
     id: "elektrik",
