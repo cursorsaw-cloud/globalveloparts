@@ -27,6 +27,7 @@ import knLogo from "@assets/image_1775647760267.png";
 import purfluxLogo from "@assets/image_1775647824718.png";
 import hifiFilterLogo from "@assets/image_1775647976008.png";
 import donaldsonLogo from "@assets/image_1775648835647.png";
+import filtronLogo from "@assets/image_1775648857294.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -138,7 +139,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Mahle: "https://www.mahle.com/media/system_files/img/mahle_logo_2020.png",
     Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
     Hengst: "https://www.hengst.com/typo3conf/ext/hengst/Resources/Public/Images/logo-hengst.svg",
-    Filtron: "https://www.filtron.eu/images/logo-filtron.png",
+    Filtron: filtronLogo,
     Purflux: purfluxLogo,
     Donaldson: donaldsonLogo,
     "Hifi Filter": hifiFilterLogo,
