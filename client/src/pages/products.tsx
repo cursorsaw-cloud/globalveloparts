@@ -22,6 +22,7 @@ import marelliLogo from "@assets/image_1775641394433.png";
 import sachsLogo from "@assets/image_1775645082561.png";
 import pierburgLogo from "@assets/image_1775645658529.png";
 import snrLogo from "@assets/image_1775646456486.png";
+import contitechLogo from "@assets/image_1775646531584.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -145,7 +146,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
     Lemförder: "https://wp.logos-download.com/wp-content/uploads/2021/01/LEMFORDER_Logo.svg?dl",
-    Contitech: "https://upload.wikimedia.org/wikipedia/commons/e/e9/ContiTech-Textlogo.svg",
+    Contitech: contitechLogo,
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
 
