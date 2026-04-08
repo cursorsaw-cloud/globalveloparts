@@ -31,7 +31,7 @@ import filtronLogo from "@assets/image_1775648857294.png";
 import parkerLogo from "@assets/image_1775651494735.png";
 import kybLogo from "@assets/image_1775651723100.png";
 import nuralLogo from "@assets/image_1775653162129.png";
-import kolbenschmidtLogo from "@assets/image_1775653289274.png";
+import kolbenschmidtLogo from "@assets/image_1775653561995.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
