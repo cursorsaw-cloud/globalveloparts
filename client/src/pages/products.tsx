@@ -26,6 +26,7 @@ import contitechLogo from "@assets/image_1775646531584.png";
 import knLogo from "@assets/image_1775647760267.png";
 import purfluxLogo from "@assets/image_1775647824718.png";
 import hifiFilterLogo from "@assets/image_1775647976008.png";
+import donaldsonLogo from "@assets/image_1775648835647.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -139,7 +140,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Hengst: "https://www.hengst.com/typo3conf/ext/hengst/Resources/Public/Images/logo-hengst.svg",
     Filtron: "https://www.filtron.eu/images/logo-filtron.png",
     Purflux: purfluxLogo,
-    Donaldson: "https://www.donaldson.com/content/dam/donaldson/en-us/images/logo/donaldson-logo.png",
+    Donaldson: donaldsonLogo,
     "Hifi Filter": hifiFilterLogo,
     "K&N": knLogo,
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
