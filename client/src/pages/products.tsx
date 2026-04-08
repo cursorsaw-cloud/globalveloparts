@@ -222,7 +222,7 @@ const categories = [
       tr: ["Salıncak", "Rot", "Rulman", "Amortisör", "Yay"],
       en: ["Control Arms", "Tie Rods", "Bearings", "Shock Absorbers", "Springs"],
     },
-    brands: ["NeoVelo", "Lemförder", "TRW", "Delphi", "SKF", "FAG", "SNR", "Febi", "Meyle", "Bilstein", "Sachs", "KYB", "Monroe", "Eibach", "Lesjöfors"],
+    brands: ["NeoVelo", "Lemförder", "TRW", "Delphi", "SKF", "FAG", "SNR", "Febi", "Meyle", "Bilstein", "Sachs", "KYB", "Monroe", "Lesjöfors"],
   },
   {
     id: "kayis",
