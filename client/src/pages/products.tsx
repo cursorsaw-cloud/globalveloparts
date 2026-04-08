@@ -496,7 +496,9 @@ export default function ProductsPage() {
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                                       : isDolz
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-1.5 sm:min-h-[5.7rem]"
-                                                      : isNural || isAE
+                                                      : isNural
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                      : isAE
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-0.5 sm:min-h-[5.7rem]"
                                                       : isFebi || isMapa || isWalker
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
@@ -533,7 +535,9 @@ export default function ProductsPage() {
                                                               ? "h-auto w-full max-h-[4.4rem] max-w-[14.2rem] group-hover:scale-100 sm:max-h-[4.7rem] sm:max-w-[14.8rem]"
                                                             : isDolz
                                                               ? "h-auto w-full max-h-[4.2rem] max-w-[13.8rem] group-hover:scale-100 sm:max-h-[4.5rem] sm:max-w-[14.4rem]"
-                                                            : isNural || isAE
+                                                            : isNural
+                                                              ? "h-auto w-full max-h-[2.1rem] max-w-[7.2rem] group-hover:scale-100 sm:max-h-[2.35rem] sm:max-w-[7.8rem]"
+                                                            : isAE
                                                               ? "h-auto w-full max-h-[4.8rem] max-w-[15rem] group-hover:scale-100 sm:max-h-[5.2rem] sm:max-w-[15.8rem]"
                                                             : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
@@ -548,8 +552,8 @@ export default function ProductsPage() {
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
-                                        transform: isNural || isAE ? "scale(3)" : undefined,
-                                        transformOrigin: isNural || isAE ? "center" : undefined,
+                                        transform: isAE ? "scale(3)" : undefined,
+                                        transformOrigin: isAE ? "center" : undefined,
                                       }}
                                       loading="lazy"
                                       decoding="async"
