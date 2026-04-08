@@ -134,6 +134,9 @@ const getBrandLogoCandidates = (brandName: string) => {
     MAPA: "https://www.mapa.com.tr/wp-content/themes/mapa/assets/theme//images/mapa_logo.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
+    Pierburg: "https://logos-download.com/wp-content/uploads/2022/01/Pierburg_Logo.svg",
+    Bosal: "https://cdn.worldvectorlogo.com/logos/bosal.svg",
+    Walker: "https://cdn.worldvectorlogo.com/logos/walker-mufflers.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     Graf: "https://www.metelligroup.it/images/2.png",
     Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
@@ -412,6 +415,9 @@ export default function ProductsPage() {
                               const isFebi = brand === "Febi";
                               const isSachs = brand === "Sachs";
                               const isMapa = brand === "MAPA";
+                              const isPierburg = brand === "Pierburg";
+                              const isBosal = brand === "Bosal";
+                              const isWalker = brand === "Walker";
 
                               return (
                                 <div
@@ -436,9 +442,11 @@ export default function ProductsPage() {
                                           ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                           : isSachs
                                             ? "min-h-[5.1rem] border border-slate-100 bg-white px-2.5 py-2 sm:min-h-[5.7rem]"
-                                            : isFebi || isMapa
+                                            : isFebi || isMapa || isPierburg || isWalker
                                               ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
-                                              : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                              : isBosal
+                                                ? "min-h-[5.1rem] border border-slate-100 bg-white px-3 py-3 sm:min-h-[5.7rem]"
+                                                : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
@@ -455,12 +463,18 @@ export default function ProductsPage() {
                                                 ? "h-auto w-[92%] max-h-[3.2rem] max-w-[10rem] group-hover:scale-100 sm:max-h-[3.35rem] sm:max-w-[10.4rem]"
                                                 : isMapa
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
-                                                  : "h-full w-full"
+                                                  : isPierburg
+                                                    ? "h-auto w-[78%] max-w-[7.8rem] group-hover:scale-100 sm:max-w-[8.2rem]"
+                                                    : isBosal
+                                                      ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
+                                                      : isWalker
+                                                        ? "h-auto w-[82%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
+                                                        : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
