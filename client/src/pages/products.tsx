@@ -26,7 +26,7 @@ import contitechLogo from "@assets/image_1775646531584.png";
 import knLogo from "@assets/image_1775647760267.png";
 import purfluxLogo from "@assets/image_1775647824718.png";
 import hifiFilterLogo from "@assets/image_1775647976008.png";
-import donaldsonLogo from "@assets/image_1775648924826.png";
+import donaldsonLogo from "@assets/image_1775651340765.png";
 import filtronLogo from "@assets/image_1775648857294.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
