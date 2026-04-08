@@ -20,7 +20,7 @@ import {
 import neoveloLogo from "@assets/image_1775560940186.png";
 import marelliLogo from "@assets/image_1775641394433.png";
 import sachsLogo from "@assets/image_1775645082561.png";
-import pierburgLogo from "@assets/image_1775645499709.png";
+import pierburgLogo from "@assets/image_1775645539096.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -443,11 +443,13 @@ export default function ProductsPage() {
                                           ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                           : isSachs
                                             ? "min-h-[5.1rem] border border-slate-100 bg-white px-2.5 py-2 sm:min-h-[5.7rem]"
-                                            : isFebi || isMapa || isPierburg || isWalker
-                                              ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
-                                              : isBosal
-                                                ? "min-h-[5.1rem] border border-slate-100 bg-white px-3 py-3 sm:min-h-[5.7rem]"
-                                                : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                            : isPierburg
+                                              ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-2 sm:min-h-[5.7rem]"
+                                              : isFebi || isMapa || isWalker
+                                                ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                : isBosal
+                                                  ? "min-h-[5.1rem] border border-slate-100 bg-white px-3 py-3 sm:min-h-[5.7rem]"
+                                                  : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
@@ -465,7 +467,7 @@ export default function ProductsPage() {
                                                 : isMapa
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
                                                   : isPierburg
-                                                    ? "h-auto w-[78%] max-w-[7.8rem] group-hover:scale-100 sm:max-w-[8.2rem]"
+                                                    ? "h-auto w-[96%] max-h-[3rem] max-w-[10.8rem] group-hover:scale-100 sm:max-h-[3.15rem] sm:max-w-[11.2rem]"
                                                     : isBosal
                                                       ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                       : isWalker
