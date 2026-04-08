@@ -66,6 +66,7 @@ const getBrandDomain = (brandName: string) => {
     Meyle: "meyle.com",
     Bilstein: "bilstein.com",
     Sachs: "aftermarket.zf.com",
+    MAPA: "mapa.com.tr",
     KYB: "kyb.com",
     Monroe: "monroe.com",
     Eibach: "eibach.com",
@@ -127,7 +128,9 @@ const getBrandLogoCandidates = (brandName: string) => {
     Mahle: "https://www.mahle.com/media/system_files/img/mahle_logo_2020.png",
     Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
-    Febi: "https://www.febi.com/typo3conf/ext/febi_theme/Resources/Public/Images/logo.svg",
+    Febi: "https://cdn.worldvectorlogo.com/logos/febi-bilstein.svg",
+    Sachs: "https://cdn.worldvectorlogo.com/logos/sachs-2.svg",
+    MAPA: "https://www.mapa.com.tr/wp-content/uploads/2021/11/about.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
@@ -239,7 +242,7 @@ const categories = [
       tr: ["Debriyaj Seti", "Volan", "Aks", "Şanzıman"],
       en: ["Clutch Kits", "Flywheels", "Axles", "Transmissions"],
     },
-    brands: ["NeoVelo", "LuK", "Sachs", "Valeo", "GKN", "SKF", "Febi", "Meyle", "ZF", "Liqui Moly"],
+    brands: ["NeoVelo", "LuK", "Sachs", "Valeo", "GKN", "SKF", "Febi", "Meyle", "ZF", "MAPA"],
   },
   {
     id: "egzoz",
@@ -405,6 +408,9 @@ export default function ProductsPage() {
                             {category.brands.map((brand) => {
                               const isNeoVelo = brand === "NeoVelo";
                               const isLemforder = brand === "Lemförder";
+                              const isFebi = brand === "Febi";
+                              const isSachs = brand === "Sachs";
+                              const isMapa = brand === "MAPA";
 
                               return (
                                 <div
@@ -427,7 +433,9 @@ export default function ProductsPage() {
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
                                           ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
-                                          : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                          : isFebi || isSachs || isMapa
+                                            ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                            : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
@@ -438,12 +446,18 @@ export default function ProductsPage() {
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
                                             ? "h-auto w-[92%] max-w-[9.5rem] scale-[1.35] group-hover:scale-[1.35] sm:max-w-[10rem]"
-                                            : "h-full w-full"
+                                            : isFebi
+                                              ? "h-auto w-[84%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.2rem]"
+                                              : isSachs
+                                                ? "h-auto w-[80%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
+                                                : isMapa
+                                                  ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
+                                                  : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder
+                                          : isLemforder || isFebi || isSachs || isMapa
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
