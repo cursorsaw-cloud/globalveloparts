@@ -112,6 +112,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Valeo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Valeo_Logo.svg",
     Hella: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hella-logo.svg",
     NGK: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngk_logo.svg",
+    TYC: "https://images.seeklogo.com/logo-png/61/1/tyc-logo-png_seeklogo-617739.png",
     Denso: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Denso_logo.svg",
     Varta: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Varta-logo-2021.svg",
     Exide: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Exide_Logo.svg",
@@ -211,7 +212,7 @@ const categories = [
       tr: ["Far", "Silecek", "Ateşleme", "Akü", "Röle"],
       en: ["Headlights", "Wipers", "Ignition", "Batteries", "Relays"],
     },
-    brands: ["NeoVelo", "Valeo", "Hella", "Bosch", "Magneti Marelli", "NGK", "Denso", "Beru", "Varta", "Exide"],
+    brands: ["NeoVelo", "Valeo", "Hella", "Bosch", "Magneti Marelli", "TYC", "Denso", "Varta", "Exide"],
   },
   {
     id: "sogutma",
