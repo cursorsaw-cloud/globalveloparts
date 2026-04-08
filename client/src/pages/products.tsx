@@ -24,6 +24,7 @@ import pierburgLogo from "@assets/image_1775645658529.png";
 import snrLogo from "@assets/image_1775646456486.png";
 import contitechLogo from "@assets/image_1775646531584.png";
 import knLogo from "@assets/image_1775647760267.png";
+import purfluxLogo from "@assets/image_1775647824718.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -136,7 +137,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
     Hengst: "https://www.hengst.com/typo3conf/ext/hengst/Resources/Public/Images/logo-hengst.svg",
     Filtron: "https://www.filtron.eu/images/logo-filtron.png",
-    Purflux: "https://www.purflux.com/images/logo-purflux.png",
+    Purflux: purfluxLogo,
     Donaldson: "https://www.donaldson.com/content/dam/donaldson/en-us/images/logo/donaldson-logo.png",
     "Hifi Filter": "https://hifi-filter.com/themes/hifi/img/logo-hifi-filter.svg",
     "K&N": knLogo,
