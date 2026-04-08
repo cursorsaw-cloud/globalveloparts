@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
 import marelliLogo from "@assets/image_1775641394433.png";
+import sachsLogo from "@assets/image_1775644605618.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -129,7 +130,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Mann: "https://www.mann-filter.com/us-en/_jcr_content/mainBrandLogo.coreimg.svg/1762774610821/logo.svg",
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
     Febi: "https://cdn.worldvectorlogo.com/logos/febi-bilstein.svg",
-    Sachs: "https://cdn.worldvectorlogo.com/logos/sachs-2.svg",
+    Sachs: sachsLogo,
     MAPA: "https://www.mapa.com.tr/wp-content/uploads/2021/11/about.png",
     Monroe: "https://www.monroe.com/content/dam/marketing/North-America/monroe/homepage/monroe-logo.png",
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
