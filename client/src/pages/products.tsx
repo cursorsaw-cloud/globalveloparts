@@ -416,7 +416,7 @@ export default function ProductsPage() {
                                     </span>
                                   ) : null}
                                   <div
-                                    className={`mb-3 flex w-full items-center justify-center rounded-[1.15rem] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] ${
+                                    className={`mb-3 flex w-full items-center justify-center overflow-hidden rounded-[1.15rem] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] ${
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
@@ -429,14 +429,14 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-full w-full scale-[2.15]"
+                                            ? "h-auto w-[74%] max-w-[7.4rem] group-hover:scale-100 sm:max-w-[8rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "contrast(1.02) saturate(1.02)"
+                                            ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
