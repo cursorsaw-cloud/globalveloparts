@@ -422,21 +422,25 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[6.4rem] border border-sky-100 bg-[linear-gradient(180deg,#ffffff_0%,#f3f9ff_100%)] px-2 sm:min-h-[7rem]"
+                                          ? "min-h-[5.8rem] border border-sky-100 bg-[linear-gradient(180deg,#ffffff_0%,#f3f9ff_100%)] px-3 sm:min-h-[6.2rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
                                       src={getBrandLogo(brand)}
                                       alt={`${brand} logo`}
-                                      className={`w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04] ${
-                                        isNeoVelo ? "h-14 sm:h-16" : isLemforder ? "h-14 max-w-[10.5rem] sm:h-16 sm:max-w-[11.5rem]" : "h-full"
+                                      className={`object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04] ${
+                                        isNeoVelo
+                                          ? "h-14 w-full sm:h-16"
+                                          : isLemforder
+                                            ? "h-9 w-auto max-w-[8.5rem] sm:h-10 sm:max-w-[9.25rem]"
+                                            : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "contrast(1.22) saturate(1.08) drop-shadow(0 10px 16px rgba(14,116,144,0.12))"
+                                            ? "contrast(1.14) saturate(1.04) drop-shadow(0 8px 14px rgba(14,116,144,0.1))"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
