@@ -18,6 +18,7 @@ import {
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
+import lemforderLogo from "@assets/image_1775640579146.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -128,7 +129,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
-    Lemförder: "https://seekvectorlogo.com/wp-content/uploads/2018/03/lemforder-vector-logo.png",
+    Lemförder: lemforderLogo,
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
@@ -422,7 +423,7 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[5.8rem] border border-sky-100 bg-[linear-gradient(180deg,#ffffff_0%,#f3f9ff_100%)] px-3 sm:min-h-[6.2rem]"
+                                          ? "min-h-[6.6rem] border border-slate-200 bg-white px-2 sm:min-h-[7rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
@@ -433,14 +434,14 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-9 w-auto max-w-[8.5rem] sm:h-10 sm:max-w-[9.25rem]"
+                                            ? "h-[4.6rem] w-auto max-w-[6rem] sm:h-[5rem] sm:max-w-[6.4rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "contrast(1.14) saturate(1.04) drop-shadow(0 8px 14px rgba(14,116,144,0.1))"
+                                            ? "contrast(1) saturate(1) drop-shadow(0 6px 12px rgba(15,23,42,0.08))"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
@@ -461,9 +462,11 @@ export default function ProductsPage() {
                                       }}
                                     />
                                   </div>
-                                  <span className={`mt-auto overflow-hidden text-ellipsis whitespace-nowrap text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : isLemforder ? "text-[0.82rem] text-sky-800" : "text-[0.78rem] text-slate-700"}`}>
-                                    {brand}
-                                  </span>
+                                  {isLemforder ? null : (
+                                    <span className={`mt-auto overflow-hidden text-ellipsis whitespace-nowrap text-center font-semibold tracking-[0.02em] sm:text-sm ${isNeoVelo ? "text-[0.82rem] text-primary" : "text-[0.78rem] text-slate-700"}`}>
+                                      {brand}
+                                    </span>
+                                  )}
                                 </div>
                               );
                             })}
