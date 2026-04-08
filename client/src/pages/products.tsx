@@ -30,6 +30,7 @@ import donaldsonLogo from "@assets/image_1775651340765.png";
 import filtronLogo from "@assets/image_1775648857294.png";
 import parkerLogo from "@assets/image_1775651494735.png";
 import kybLogo from "@assets/image_1775651723100.png";
+import nuralLogo from "@assets/image_1775653162129.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -154,7 +155,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Parker: parkerLogo,
     "K&N": knLogo,
     Delphi: "https://www.delphiautoparts.com/ResourcePackages/Delphi/dist/a1d6c1389a3f6b5a43bd.svg",
-    "Nüral": "https://www.drivparts.com/content/dam/marketing/emea/fmmp/brands/brands-navi/nural.png",
+    "Nüral": nuralLogo,
     Goetze: "https://cdn.worldvectorlogo.com/logos/goetze.svg",
     Glyco: "https://cdn.worldvectorlogo.com/logos/glyco.svg",
     Payen: "https://cdn.worldvectorlogo.com/logos/payen.svg",
