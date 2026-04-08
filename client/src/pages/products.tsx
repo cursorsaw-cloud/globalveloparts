@@ -144,7 +144,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
     Lemförder: "https://wp.logos-download.com/wp-content/uploads/2021/01/LEMFORDER_Logo.svg?dl",
-    Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
+    Contitech: "https://upload.wikimedia.org/wikipedia/commons/e/e9/ContiTech-Textlogo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
 
@@ -420,6 +420,7 @@ export default function ProductsPage() {
                               const isPierburg = brand === "Pierburg";
                               const isBosal = brand === "Bosal";
                               const isWalker = brand === "Walker";
+                              const isContitech = brand === "Contitech";
 
                               return (
                                 <div
@@ -446,8 +447,10 @@ export default function ProductsPage() {
                                             ? "min-h-[5.1rem] border border-slate-100 bg-white px-2.5 py-2 sm:min-h-[5.7rem]"
                                             : isPierburg
                                               ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-2 sm:min-h-[5.7rem]"
-                                              : isFebi || isMapa || isWalker
+                                              : isContitech
                                                 ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                : isFebi || isMapa || isWalker
+                                                  ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
                                                   ? "min-h-[5.1rem] border border-slate-100 bg-white px-3 py-3 sm:min-h-[5.7rem]"
                                                   : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
@@ -469,16 +472,18 @@ export default function ProductsPage() {
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
                                                   : isPierburg
                                                     ? "h-auto w-full max-h-[3.45rem] max-w-[11.8rem] group-hover:scale-100 sm:max-h-[3.6rem] sm:max-w-[12.2rem]"
-                                                    : isBosal
-                                                      ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
-                                                      : isWalker
-                                                        ? "h-auto w-[82%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
-                                                        : "h-full w-full"
+                                                    : isContitech
+                                                      ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.2rem]"
+                                                      : isBosal
+                                                        ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
+                                                        : isWalker
+                                                          ? "h-auto w-[82%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
+                                                          : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
