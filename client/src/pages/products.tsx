@@ -33,6 +33,7 @@ import kybLogo from "@assets/image_1775651723100.png";
 import nuralLogo from "@assets/image_1775653162129.png";
 import kolbenschmidtLogo from "@assets/image_1775653561995.png";
 import hengstLogo from "@assets/image_1775653755025.png";
+import warehouseVisual from "@assets/image_1775659372691.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -324,6 +325,18 @@ export default function ProductsPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.08),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(15,23,42,0.06),transparent_28%)]" />
+        <div className="pointer-events-none absolute inset-y-0 right-[-10%] hidden w-[58%] items-center justify-end md:flex lg:w-[54%] xl:w-[48%]">
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_62%)]" />
+            <img
+              src={warehouseVisual}
+              alt="GlobalVelo warehouse operations visual"
+              className="absolute right-0 top-1/2 w-full max-w-[44rem] -translate-y-1/2 object-contain opacity-[0.14] mix-blend-multiply saturate-[0.85] xl:opacity-[0.2]"
+              data-testid="img-products-page-warehouse-background"
+            />
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#eef2f7] via-[#eef2f7]/82 to-transparent" />
+          </div>
+        </div>
         <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
           <div className="grid items-end gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] xl:gap-10">
             <div className="max-w-[47rem]">
