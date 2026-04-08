@@ -31,6 +31,7 @@ import filtronLogo from "@assets/image_1775648857294.png";
 import parkerLogo from "@assets/image_1775651494735.png";
 import kybLogo from "@assets/image_1775651723100.png";
 import nuralLogo from "@assets/image_1775653162129.png";
+import kolbenschmidtLogo from "@assets/image_1775653289274.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -160,6 +161,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Glyco: "https://cdn.worldvectorlogo.com/logos/glyco.svg",
     Payen: "https://cdn.worldvectorlogo.com/logos/payen.svg",
     AE: "https://www.drivparts.com/content/dam/marketing/emea/fmmp/brands/brands-navi/ae.png",
+    Kolbenschmidt: kolbenschmidtLogo,
     Febi: "https://cdn.worldvectorlogo.com/logos/febi-bilstein.svg",
     Sachs: sachsLogo,
     MAPA: "https://www.mapa.com.tr/wp-content/themes/mapa/assets/theme//images/mapa_logo.png",
