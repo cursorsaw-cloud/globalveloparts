@@ -5,34 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
-" hover-elevate active-elevate-2",
+  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold tracking-[0.08em] transition-[transform,box-shadow,background-color,color,border-color] duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-           // @replit: no hover, and add primary border
-           "bg-primary text-primary-foreground border border-primary-border",
+          "border border-slate-900/90 bg-[linear-gradient(135deg,#0f172a_0%,#1e293b_100%)] text-white shadow-[0_18px_50px_-24px_rgba(15,23,42,0.55)] hover:-translate-y-0.5 hover:border-slate-700 hover:shadow-[0_22px_56px_-24px_rgba(15,23,42,0.62)] active:translate-y-0",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm border-destructive-border",
+          "border border-red-800/60 bg-red-600 text-white shadow-[0_16px_40px_-24px_rgba(220,38,38,0.6)] hover:-translate-y-0.5 hover:bg-red-500",
         outline:
-          // @replit Shows the background color of whatever card / sidebar / accent background it is inside of.
-          // Inherits the current text color. Uses shadow-xs. no shadow on active
-          // No hover state
-          " border [border-color:var(--button-outline)] shadow-xs active:shadow-none ",
+          "border border-slate-300/80 bg-white/80 text-slate-950 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.22)] hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white",
         secondary:
-          // @replit border, no hover, no shadow, secondary border.
-          "border bg-secondary text-secondary-foreground border border-secondary-border ",
-        // @replit no hover, transparent border
-        ghost: "border border-transparent",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border border-slate-200 bg-slate-100 text-slate-900 shadow-[0_12px_32px_-26px_rgba(15,23,42,0.25)] hover:-translate-y-0.5 hover:bg-slate-200",
+        ghost: "border border-transparent hover:bg-accent hover:text-accent-foreground",
+        link: "rounded-none border-none px-0 py-0 text-primary underline-offset-4 hover:underline",
       },
       size: {
-        // @replit changed sizes
-        default: "min-h-9 px-4 py-2",
-        sm: "min-h-8 rounded-md px-3 text-xs",
-        lg: "min-h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "min-h-10 px-5 py-2.5",
+        sm: "min-h-9 px-4 text-xs",
+        lg: "min-h-12 px-7 text-sm sm:text-[0.95rem]",
+        icon: "h-10 w-10 rounded-full p-0",
       },
     },
     defaultVariants: {

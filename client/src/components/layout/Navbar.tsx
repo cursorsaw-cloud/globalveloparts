@@ -34,92 +34,65 @@ export function Navbar() {
   ] as const;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,#1b2230_0%,#111827_100%)] shadow-[0_20px_60px_-34px_rgba(15,23,42,0.7)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/92">
-      <div className="w-full pl-1 pr-2 sm:pl-1.5 sm:pr-3 lg:pl-2 lg:pr-6 xl:pr-8">
-        <div className="flex min-h-[176px] items-center gap-6 md:min-h-[188px]">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.96)_0%,rgba(2,6,23,0.92)_100%)] shadow-[0_20px_60px_-36px_rgba(2,6,23,0.9)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/88">
+      <div className="site-shell">
+        <div className="flex min-h-[var(--nav-height-mobile)] items-center gap-4 lg:min-h-[var(--nav-height)] lg:gap-6">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <div className="relative h-[8.4rem] w-[31.6rem] sm:h-[9.2rem] sm:w-[34.8rem] lg:h-[10rem] lg:w-[37.8rem]" data-testid="img-globalvelo-logo">
-                <img
-                  src="/globalvelo-banner-logo.png"
-                  alt="Globalvelo Spare Parts Logo"
-                  className="h-full w-full object-contain"
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[#c9d2dc] opacity-100 [clip-path:polygon(0%_10%,54%_4%,52%_53%,0%_60%)]"
-                  style={{
-                    WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
-                    maskImage: "url('/globalvelo-banner-logo.png')",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskSize: "contain",
-                    maskSize: "contain",
-                    WebkitMaskPosition: "center",
-                    maskPosition: "center",
-                  }}
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[#bcc6d1] opacity-100 [clip-path:polygon(30%_76%,72%_76%,72%_100%,30%_100%)]"
-                  style={{
-                    WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
-                    maskImage: "url('/globalvelo-banner-logo.png')",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskSize: "contain",
-                    maskSize: "contain",
-                    WebkitMaskPosition: "center",
-                    maskPosition: "center",
-                  }}
-                />
-              </div>
+              <img
+                src="/logo-globalvelo-white-header.png"
+                alt="Globalvelo Spare Parts Logo"
+                className="h-12 w-auto object-contain sm:h-[3.35rem] lg:h-[3.65rem]"
+                data-testid="img-globalvelo-logo"
+              />
             </div>
           </Link>
 
-          <div className="ml-auto hidden min-w-0 items-center justify-end gap-6 md:flex lg:gap-8 xl:gap-10">
-            <div className="flex items-center gap-6 lg:gap-8 xl:gap-9">
-              {links.map((link) => {
-                const isActive = location === link.href;
-
-                return (
-                  <Link key={link.href} href={link.href}>
-                    <span
-                      className={`relative cursor-pointer whitespace-nowrap py-2 text-[13px] font-semibold uppercase tracking-[0.16em] transition-colors duration-300 lg:text-[14px] ${
-                        isActive ? "text-white" : "text-slate-300 hover:text-white"
-                      }`}
-                      data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
-                    >
-                      {link.label}
-                    </span>
-                  </Link>
-                );
-              })}
-
-              <a
-                href="/#contact"
-                className="whitespace-nowrap py-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-slate-300 transition-colors duration-300 hover:text-white lg:text-[14px]"
-                data-testid="link-nav-contact"
-              >
-                {t("nav.contact")}
-              </a>
+          <div className="ml-auto hidden items-center gap-3 xl:flex">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">
+              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_18px_rgba(37,99,235,0.85)]" />
+              <span data-testid="text-nav-assurance">{t("nav.assurance")}</span>
             </div>
+          </div>
 
-            <div className="h-7 w-px bg-white/12" />
+          <div className="hidden items-center gap-1.5 md:flex lg:gap-2 xl:gap-2.5">
+            {links.map((link) => {
+              const isActive = location === link.href;
 
+              return (
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className={`relative cursor-pointer rounded-full px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 lg:px-4.5 lg:text-[12.5px] ${
+                      isActive
+                        ? "bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+                        : "text-slate-300 hover:bg-white/[0.05] hover:text-white"
+                    }`}
+                    data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="hidden items-center gap-3 md:flex">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-10 rounded-full border border-white/10 bg-white/[0.045] px-4 text-[13px] font-semibold tracking-[0.14em] text-slate-100 hover:bg-white/10 hover:text-white"
+                  className="h-10 rounded-full border border-white/10 bg-white/[0.045] px-4 text-[12px] font-semibold tracking-[0.14em] text-slate-100 hover:border-white/20 hover:bg-white/10 hover:text-white"
                   data-testid="button-language-switcher"
                 >
                   <Globe className="h-4 w-4" />
                   {language.toUpperCase()}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[188px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white">
+              <DropdownMenuContent
+                align="end"
+                className="w-[188px] rounded-2xl border-slate-700 bg-slate-900 p-2 text-white"
+              >
                 {languageOptions.map((option) => (
                   <DropdownMenuItem
                     key={option.value}
@@ -132,6 +105,16 @@ export function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="h-10 rounded-full border border-white/12 bg-white/[0.05] px-5 text-[12px] font-semibold uppercase tracking-[0.16em] text-white hover:border-white/20 hover:bg-white/12"
+              data-testid="button-nav-contact"
+            >
+              <a href="/#contact">{t("nav.contact")}</a>
+            </Button>
           </div>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -145,50 +128,30 @@ export function Navbar() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="border-l border-white/10 bg-slate-950 px-6 text-white">
-              <div className="flex flex-col gap-7 pt-8">
-                <div className="relative h-[8.4rem] w-[31.6rem] max-w-full" data-testid="img-mobile-globalvelo-logo">
+            <SheetContent
+              side="right"
+              className="w-[92vw] max-w-sm border-l border-white/10 bg-[linear-gradient(180deg,#020617_0%,#0f172a_100%)] px-5 text-white sm:px-6"
+            >
+              <div className="flex flex-col gap-6 pt-8">
+                <div className="space-y-4">
                   <img
-                    src="/globalvelo-banner-logo.png"
+                    src="/logo-globalvelo-white-header.png"
                     alt="Globalvelo Spare Parts Logo"
-                    className="h-full w-full object-contain"
+                    className="h-12 w-auto object-contain"
+                    data-testid="img-mobile-globalvelo-logo"
                   />
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[#c9d2dc] opacity-100 [clip-path:polygon(0%_10%,54%_4%,52%_53%,0%_60%)]"
-                    style={{
-                      WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
-                      maskImage: "url('/globalvelo-banner-logo.png')",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                      maskSize: "contain",
-                      WebkitMaskPosition: "center",
-                      maskPosition: "center",
-                    }}
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[#bcc6d1] opacity-100 [clip-path:polygon(30%_76%,72%_76%,72%_100%,30%_100%)]"
-                    style={{
-                      WebkitMaskImage: "url('/globalvelo-banner-logo.png')",
-                      maskImage: "url('/globalvelo-banner-logo.png')",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                      maskSize: "contain",
-                      WebkitMaskPosition: "center",
-                      maskPosition: "center",
-                    }}
-                  />
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
+                    <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_16px_rgba(37,99,235,0.75)]" />
+                    <span data-testid="text-mobile-nav-assurance">{t("nav.assurance")}</span>
+                  </div>
                 </div>
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
                   {links.map((link) => (
                     <Link key={link.href} href={link.href}>
                       <span
-                        className={`block cursor-pointer rounded-2xl px-4 py-3 text-[1.02rem] font-semibold transition-colors ${
-                          location === link.href ? "bg-white/10 text-white" : "text-white/85 hover:bg-white/6 hover:text-white"
+                        className={`block cursor-pointer rounded-2xl px-4 py-3 text-[0.98rem] font-semibold transition-colors ${
+                          location === link.href ? "bg-white/10 text-white" : "text-white/80 hover:bg-white/6 hover:text-white"
                         }`}
                         onClick={() => setIsOpen(false)}
                         data-testid={`link-mobile-${link.href.replace("/", "") || "home"}`}
@@ -197,16 +160,18 @@ export function Navbar() {
                       </span>
                     </Link>
                   ))}
+                </div>
 
-                  <a
-                    href="/#contact"
-                    className="block rounded-2xl px-4 py-3 text-[1.02rem] font-semibold text-white/85 transition-colors hover:bg-white/6 hover:text-white"
-                    onClick={() => setIsOpen(false)}
-                    data-testid="link-mobile-contact"
-                  >
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-13 w-full rounded-full text-sm font-semibold uppercase tracking-[0.16em]"
+                  data-testid="button-mobile-contact"
+                >
+                  <a href="/#contact" onClick={() => setIsOpen(false)}>
                     {t("nav.contact")}
                   </a>
-                </div>
+                </Button>
 
                 <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-4">
                   <div className="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
@@ -218,7 +183,11 @@ export function Navbar() {
                       <button
                         key={option.value}
                         type="button"
-                        className={`rounded-full px-4 py-3 text-sm font-semibold ${language === option.value ? "bg-white text-slate-950" : "border border-white/10 bg-transparent text-slate-300"}`}
+                        className={`rounded-full px-4 py-3 text-sm font-semibold transition-all ${
+                          language === option.value
+                            ? "bg-white text-slate-950"
+                            : "border border-white/10 bg-transparent text-slate-300 hover:border-white/20 hover:text-white"
+                        }`}
                         onClick={() => {
                           setLanguage(option.value);
                           setIsOpen(false);

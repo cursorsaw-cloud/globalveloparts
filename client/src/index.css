@@ -65,11 +65,13 @@
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
   --site-max-width: 1380px;
-  --shell-padding: clamp(1.1rem, 1.8vw, 2rem);
-  --section-space: clamp(5.5rem, 10vw, 8rem);
-  --section-gap: clamp(1.25rem, 2vw, 2rem);
+  --shell-padding: clamp(1.1rem, 1.9vw, 2rem);
+  --section-space: clamp(5rem, 8vw, 7rem);
+  --section-gap: clamp(1.25rem, 1.8vw, 1.9rem);
   --content-max-width: 42rem;
-  --copy-max-width: 38rem;
+  --copy-max-width: 40rem;
+  --nav-height: 5.75rem;
+  --nav-height-mobile: 5.25rem;
 }
 
 .dark {
@@ -111,6 +113,7 @@
   body {
     @apply bg-background font-sans antialiased text-foreground;
     background-image: radial-gradient(circle at top, rgba(148, 163, 184, 0.16), transparent 28%), linear-gradient(180deg, #f8fafc 0%, #ffffff 40%, #f8fafc 100%);
+    line-height: 1.6;
   }
 
   h1,
@@ -120,6 +123,11 @@
   h5,
   h6 {
     @apply font-heading font-bold tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
@@ -149,7 +157,7 @@
   .section-heading {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.1rem;
     max-width: var(--content-max-width);
   }
 
@@ -162,17 +170,31 @@
   }
 
   .section-title {
-    font-size: clamp(2.4rem, 4vw, 4rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.55rem, 4.2vw, 4.35rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
     color: #020617;
   }
 
   .section-copy {
     max-width: var(--copy-max-width);
-    font-size: clamp(1rem, 1.2vw, 1.125rem);
-    line-height: 1.9;
+    font-size: clamp(1.03rem, 1.2vw, 1.15rem);
+    line-height: 1.85;
     color: rgb(71 85 105);
+  }
+
+  .display-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3.2rem, 5vw, 5.65rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .body-lead {
+    max-width: 42rem;
+    font-size: clamp(1.05rem, 1.2vw, 1.18rem);
+    line-height: 1.9;
+    color: rgb(203 213 225 / 0.92);
   }
 
   .section-divider {
