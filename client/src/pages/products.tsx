@@ -475,7 +475,7 @@ export default function ProductsPage() {
                                                   : isPierburg
                                                     ? "h-auto w-full max-h-[3.45rem] max-w-[11.8rem] group-hover:scale-100 sm:max-h-[3.6rem] sm:max-w-[12.2rem]"
                                                     : isContitech
-                                                      ? "h-auto w-full max-h-[4.05rem] max-w-[12.4rem] group-hover:scale-100 sm:max-h-[4.25rem] sm:max-w-[12.9rem]"
+                                                      ? "h-auto w-full max-h-[4.85rem] max-w-[14.8rem] group-hover:scale-100 sm:max-h-[5.05rem] sm:max-w-[15.4rem]"
                                                       : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
