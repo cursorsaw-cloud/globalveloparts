@@ -97,7 +97,7 @@ const getBrandDomain = (brandName: string) => {
     Nissens: "nissens.com",
     Hepu: "hepu.de",
     Graf: "metelligroup.it",
-    Bolz: "autowelt-bolz.de",
+    Dolz: "idolz.com",
     Bosal: "bosal.com",
     Walker: "walkerexhaust.com",
     Garrett: "garrettmotion.com",
@@ -161,7 +161,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     SNR: snrLogo,
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     Graf: "https://www.metelligroup.it/images/2.png",
-    Bolz: "https://autowelt-bolz.de/wp-content/uploads/2021/06/bolz_logo.png",
+    Dolz: "https://www.idolz.com/wp-content/uploads/2021/03/dolz-2021-retina.png",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
     Lemförder: "https://wp.logos-download.com/wp-content/uploads/2021/01/LEMFORDER_Logo.svg?dl",
     Contitech: contitechLogo,
@@ -257,7 +257,7 @@ const categories = [
       tr: ["Radyatör", "Pompa", "Termostat"],
       en: ["Radiators", "Pumps", "Thermostats"],
     },
-    brands: ["NeoVelo", "Valeo", "Nissens", "SKF", "Hepu", "Mahle", "Graf", "Bolz"],
+    brands: ["NeoVelo", "Valeo", "Nissens", "SKF", "Hepu", "Mahle", "Graf", "Dolz"],
   },
   {
     id: "debriyaj",
@@ -445,6 +445,7 @@ export default function ProductsPage() {
                               const isHifiFilter = brand === "Hifi Filter";
                               const isDonaldson = brand === "Donaldson";
                               const isKYB = brand === "KYB";
+                              const isDolz = brand === "Dolz";
 
                               return (
                                 <div
@@ -481,6 +482,8 @@ export default function ProductsPage() {
                                                       ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
                                                       : isKYB
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
+                                                      : isDolz
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-1.5 sm:min-h-[5.7rem]"
                                                       : isFebi || isMapa || isWalker
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
@@ -514,6 +517,8 @@ export default function ProductsPage() {
                                                             ? "h-auto w-full max-h-[5rem] max-w-[15.6rem] group-hover:scale-100 sm:max-h-[5.3rem] sm:max-w-[16rem]"
                                                             : isKYB
                                                               ? "h-auto w-full max-h-[4.4rem] max-w-[14.2rem] group-hover:scale-100 sm:max-h-[4.7rem] sm:max-w-[14.8rem]"
+                                                            : isDolz
+                                                              ? "h-auto w-full max-h-[4.2rem] max-w-[13.8rem] group-hover:scale-100 sm:max-h-[4.5rem] sm:max-w-[14.4rem]"
                                                             : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
@@ -523,7 +528,7 @@ export default function ProductsPage() {
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson || isKYB
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson || isKYB || isDolz
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
