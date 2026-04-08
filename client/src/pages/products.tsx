@@ -128,7 +128,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
-    Lemförder: "https://www.liblogo.com/img-logo/le4145lf93-lemforder-logo-lemforder-logo-png-transparent-amp-svg-vector-freebie-supply.png",
+    Lemförder: "https://wp.logos-download.com/wp-content/uploads/2021/01/LEMFORDER_Logo.svg?dl",
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
@@ -440,7 +440,7 @@ export default function ProductsPage() {
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "contrast(1.02) saturate(1.02)"
+                                            ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
