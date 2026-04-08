@@ -420,7 +420,7 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-0.5 sm:min-h-[5.7rem]"
+                                          ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1 sm:min-h-[5.7rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
@@ -431,7 +431,7 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-auto w-full max-w-none scale-[1.9] group-hover:scale-[1.9]"
+                                            ? "h-auto w-[92%] max-w-[9.5rem] scale-[1.35] group-hover:scale-[1.35] sm:max-w-[10rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
