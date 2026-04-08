@@ -4,7 +4,6 @@ import {
   Building2,
   ChevronRight,
   Globe2,
-  Route,
   ShieldCheck,
   Zap,
 } from "lucide-react";
@@ -25,7 +24,7 @@ const statVariants = {
 };
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const trustItems = [
     { icon: Globe2, label: t("hero.trust.countries") },
@@ -33,18 +32,65 @@ export function Hero() {
     { icon: Zap, label: t("hero.trust.fast") },
   ];
 
-  const proofStats = [
-    { value: "40+", label: t("feat.stat.1.label") },
-    { value: "80+", label: t("feat.stat.2.label") },
-    { value: "15k+", label: t("feat.stat.3.label") },
-    { value: "%100", label: t("feat.stat.4.label") },
-  ];
+  const compactProofTitle = {
+    tr: "Dijital operasyon katmanı",
+    en: "Digital operations layer",
+    es: "Capa digital operativa",
+    ar: "طبقة التشغيل الرقمية",
+    ru: "Цифровой операционный слой",
+    fr: "Couche opérationnelle digitale",
+  };
 
-  const hubs = [
-    { city: t("global.hub.1.city"), role: t("global.hub.1.role") },
-    { city: t("global.hub.2.city"), role: t("global.hub.2.role") },
-    { city: t("global.hub.3.city"), role: t("global.hub.3.role") },
-  ];
+  const compactProofDescription = {
+    tr: "Sipariş, raporlama ve süreklilik tek çatı altında.",
+    en: "Orders, reporting and continuity in one layer.",
+    es: "Pedidos, reportes y continuidad en una sola capa.",
+    ar: "الطلبات والتقارير والاستمرارية ضمن طبقة واحدة.",
+    ru: "Заказы, отчётность и непрерывность в одном слое.",
+    fr: "Commandes, reporting et continuité en une seule couche.",
+  };
+
+  const compactProofStats = {
+    tr: [
+      { value: "40+", label: "Ülke" },
+      { value: "80+", label: "Marka" },
+      { value: "15k+", label: "Ürün" },
+      { value: "%100", label: "OEM" },
+    ],
+    en: [
+      { value: "40+", label: "Countries" },
+      { value: "80+", label: "Brands" },
+      { value: "15k+", label: "Products" },
+      { value: "100%", label: "OEM" },
+    ],
+    es: [
+      { value: "40+", label: "Países" },
+      { value: "80+", label: "Marcas" },
+      { value: "15k+", label: "Productos" },
+      { value: "100 %", label: "OEM" },
+    ],
+    ar: [
+      { value: "+40", label: "دولة" },
+      { value: "+80", label: "علامة" },
+      { value: "+15k", label: "منتج" },
+      { value: "%100", label: "OEM" },
+    ],
+    ru: [
+      { value: "40+", label: "Стран" },
+      { value: "80+", label: "Брендов" },
+      { value: "15k+", label: "Товаров" },
+      { value: "100%", label: "OEM" },
+    ],
+    fr: [
+      { value: "40+", label: "Pays" },
+      { value: "80+", label: "Marques" },
+      { value: "15k+", label: "Produits" },
+      { value: "100%", label: "OEM" },
+    ],
+  };
+
+  const hubs = [t("global.hub.1.city"), t("global.hub.2.city"), t("global.hub.3.city")];
+  const proofStats = compactProofStats[language];
 
   return (
     <section className="relative flex min-h-[calc(100vh-var(--nav-height-mobile))] w-full items-center overflow-hidden bg-slate-950 lg:min-h-[calc(100vh-var(--nav-height))]">
@@ -155,52 +201,46 @@ export function Hero() {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="glass-panel-dark relative overflow-hidden rounded-[2rem] p-6 sm:p-7 lg:p-8"
+            className="glass-panel-dark relative overflow-hidden rounded-[2rem] p-5 sm:p-6 lg:p-7"
             data-testid="card-hero-proof-panel"
           >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-primary/20 blur-[100px]" />
+            <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-primary/20 blur-[90px]" />
 
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                 <Building2 className="h-3.5 w-3.5" />
-                <span data-testid="text-hero-proof-kicker">{t("nav.assurance")}</span>
+                <span data-testid="text-hero-proof-kicker">{t("nav.sabancidx")}</span>
               </div>
 
-              <div className="mt-5 flex items-start justify-between gap-6">
-                <div>
-                  <h2 className="max-w-sm text-[1.85rem] font-bold leading-tight text-white sm:text-[2.15rem]" data-testid="text-hero-proof-title">
-                    {t("sdx.panel.title")}
-                  </h2>
-                  <p className="mt-3 max-w-md text-sm leading-7 text-slate-300" data-testid="text-hero-proof-description">
-                    {t("sdx.panel.desc")}
-                  </p>
-                </div>
-                <div className="hidden h-12 w-px bg-white/10 lg:block" />
+              <div className="mt-4">
+                <h2 className="max-w-sm text-[1.45rem] font-bold leading-tight text-white sm:text-[1.7rem]" data-testid="text-hero-proof-title">
+                  {compactProofTitle[language]}
+                </h2>
+                <p className="mt-2 max-w-md text-sm leading-6 text-slate-300" data-testid="text-hero-proof-description">
+                  {compactProofDescription[language]}
+                </p>
               </div>
 
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              <div className="mt-5 grid grid-cols-2 gap-3">
                 {proofStats.map((stat, index) => (
-                  <div key={stat.label} className="rounded-[1.4rem] border border-white/10 bg-white/[0.04] p-4" data-testid={`card-hero-proof-stat-${index}`}>
-                    <div className="text-[1.95rem] font-bold tracking-[-0.05em] text-white">{stat.value}</div>
-                    <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">{stat.label}</div>
+                  <div key={stat.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] px-4 py-3.5" data-testid={`card-hero-proof-stat-${index}`}>
+                    <div className="text-[1.7rem] font-bold tracking-[-0.05em] text-white">{stat.value}</div>
+                    <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-7 rounded-[1.6rem] border border-white/10 bg-slate-950/35 p-5">
-                <div className="mb-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                  <Route className="h-4 w-4" />
-                  <span data-testid="text-hero-proof-network-label">{t("global.badge")}</span>
-                </div>
-                <div className="space-y-3">
-                  {hubs.map((hub, index) => (
-                    <div key={hub.city} className="flex items-center justify-between gap-4 rounded-2xl border border-white/6 bg-white/[0.03] px-4 py-3" data-testid={`row-hero-proof-hub-${index}`}>
-                      <span className="text-sm font-semibold text-white">{hub.city}</span>
-                      <span className="text-xs uppercase tracking-[0.16em] text-slate-400">{hub.role}</span>
-                    </div>
-                  ))}
-                </div>
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                {hubs.map((hub, index) => (
+                  <div
+                    key={hub}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-300"
+                    data-testid={`row-hero-proof-hub-${index}`}
+                  >
+                    {hub}
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
