@@ -438,6 +438,7 @@ export default function ProductsPage() {
                               const isContitech = brand === "Contitech";
                               const isPurflux = brand === "Purflux";
                               const isHifiFilter = brand === "Hifi Filter";
+                              const isDonaldson = brand === "Donaldson";
 
                               return (
                                 <div
@@ -470,8 +471,10 @@ export default function ProductsPage() {
                                                   ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-1.5 sm:min-h-[5.7rem]"
                                                   : isHifiFilter
                                                     ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
-                                                    : isFebi || isMapa || isWalker
-                                                      ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                    : isDonaldson
+                                                      ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
+                                                      : isFebi || isMapa || isWalker
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
                                                   ? "min-h-[5.1rem] border border-slate-100 bg-white px-3 py-3 sm:min-h-[5.7rem]"
                                                   : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
@@ -499,7 +502,9 @@ export default function ProductsPage() {
                                                         ? "h-auto w-full max-h-[4.5rem] max-w-[13.8rem] group-hover:scale-100 sm:max-h-[4.8rem] sm:max-w-[14.4rem]"
                                                         : isHifiFilter
                                                           ? "h-auto w-full max-h-[4.8rem] max-w-[15rem] group-hover:scale-100 sm:max-h-[5rem] sm:max-w-[15.6rem]"
-                                                          : isBosal
+                                                          : isDonaldson
+                                                            ? "h-auto w-full max-h-[5rem] max-w-[15.6rem] group-hover:scale-100 sm:max-h-[5.3rem] sm:max-w-[16rem]"
+                                                            : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
                                                           ? "h-auto w-[82%] max-w-[8rem] group-hover:scale-100 sm:max-w-[8.5rem]"
@@ -508,7 +513,7 @@ export default function ProductsPage() {
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
-                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter
+                                          : isLemforder || isFebi || isSachs || isMapa || isPierburg || isBosal || isWalker || isContitech || isPurflux || isHifiFilter || isDonaldson
                                             ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
