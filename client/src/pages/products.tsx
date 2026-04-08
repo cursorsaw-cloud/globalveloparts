@@ -451,7 +451,7 @@ export default function ProductsPage() {
                                             : isFebi
                                               ? "h-auto w-[84%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.2rem]"
                                               : isSachs
-                                                ? "h-auto w-[94%] max-w-[9.4rem] group-hover:scale-100 sm:max-w-[9.9rem]"
+                                                ? "h-auto w-full max-w-none scale-[1.85] group-hover:scale-[1.85]"
                                                 : isMapa
                                                   ? "h-auto w-[88%] max-w-[8.8rem] group-hover:scale-100 sm:max-w-[9.4rem]"
                                                   : "h-full w-full"
