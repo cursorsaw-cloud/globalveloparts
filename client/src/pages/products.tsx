@@ -450,7 +450,7 @@ export default function ProductsPage() {
                                             : isPierburg
                                               ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-2 sm:min-h-[5.7rem]"
                                               : isContitech
-                                                ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                ? "min-h-[5.1rem] border border-slate-100 bg-white px-1 py-2 sm:min-h-[5.7rem]"
                                                 : isFebi || isMapa || isWalker
                                                   ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
                                                 : isBosal
@@ -475,7 +475,7 @@ export default function ProductsPage() {
                                                   : isPierburg
                                                     ? "h-auto w-full max-h-[3.45rem] max-w-[11.8rem] group-hover:scale-100 sm:max-h-[3.6rem] sm:max-w-[12.2rem]"
                                                     : isContitech
-                                                      ? "h-auto w-full max-h-[3.6rem] max-w-[11.2rem] group-hover:scale-100 sm:max-h-[3.8rem] sm:max-w-[11.8rem]"
+                                                      ? "h-auto w-full max-h-[4.05rem] max-w-[12.4rem] group-hover:scale-100 sm:max-h-[4.25rem] sm:max-w-[12.9rem]"
                                                       : isBosal
                                                         ? "h-auto w-[64%] max-w-[6rem] group-hover:scale-100 sm:max-w-[6.4rem]"
                                                         : isWalker
