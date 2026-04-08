@@ -128,7 +128,7 @@ const getBrandLogoCandidates = (brandName: string) => {
     Garrett: "https://www.garrettmotion.com/wp-content/themes/garrettmotion/images/logo.svg",
     Nissens: "https://powerful-wisdom-ab8ee1c7df.media.strapiapp.com/logo_1_1_6ae8158e28.svg",
     "Liqui Moly": "https://www.liqui-moly.com/_Resources/Persistent/2/5/8/e/258e7ce972cde7f6b6ef260ef66bc9508e8eb6dc/liqui-moly-logo.svg",
-    Lemförder: "https://static.cdnlogo.com/logos/l/51/lemforder.svg",
+    Lemförder: "https://seekvectorlogo.com/wp-content/uploads/2018/03/lemforder-vector-logo.png",
     Contitech: "https://www.continental-industry.com/getmedia/f251d265-5db0-4d53-bc42-5f1fd58764ba/contitech-logo.svg",
     Beru: "https://www.beru.com/assets/img/logo.svg",
   };
@@ -398,6 +398,7 @@ export default function ProductsPage() {
                           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                             {category.brands.map((brand) => {
                               const isNeoVelo = brand === "NeoVelo";
+                              const isLemforder = brand === "Lemförder";
 
                               return (
                                 <div
@@ -418,14 +419,16 @@ export default function ProductsPage() {
                                     className={`mb-3 flex w-full items-center justify-center rounded-[1.15rem] px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_34px_-28px_rgba(15,23,42,0.28)] ${
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
-                                        : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
+                                        : isLemforder
+                                          ? "min-h-[5.4rem] border border-slate-100 bg-white px-4 sm:min-h-[6rem]"
+                                          : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
                                     <img
                                       src={getBrandLogo(brand)}
                                       alt={`${brand} logo`}
                                       className={`w-full object-contain [image-rendering:-webkit-optimize-contrast] [transform:translateZ(0)] transition-transform duration-300 group-hover:scale-[1.04] ${
-                                        isNeoVelo ? "h-14 sm:h-16" : "h-full"
+                                        isNeoVelo ? "h-14 sm:h-16" : isLemforder ? "h-10 sm:h-11" : "h-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))" : "contrast(1.1) saturate(1.08)",
