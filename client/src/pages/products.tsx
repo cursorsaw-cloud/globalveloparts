@@ -497,7 +497,7 @@ export default function ProductsPage() {
                                                       : isDolz
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-1.5 py-1.5 sm:min-h-[5.7rem]"
                                                       : isNural
-                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-2 py-2 sm:min-h-[5.7rem]"
+                                                        ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-1 sm:min-h-[5.7rem]"
                                                       : isAE
                                                         ? "min-h-[5.1rem] border border-slate-100 bg-white px-0.5 py-0.5 sm:min-h-[5.7rem]"
                                                       : isFebi || isMapa || isWalker
@@ -536,7 +536,7 @@ export default function ProductsPage() {
                                                             : isDolz
                                                               ? "h-auto w-full max-h-[4.2rem] max-w-[13.8rem] group-hover:scale-100 sm:max-h-[4.5rem] sm:max-w-[14.4rem]"
                                                             : isNural
-                                                              ? "h-auto w-full max-h-[2.1rem] max-w-[7.2rem] group-hover:scale-100 sm:max-h-[2.35rem] sm:max-w-[7.8rem]"
+                                                              ? "h-auto w-full max-h-[4.2rem] max-w-[14.4rem] group-hover:scale-100 sm:max-h-[4.45rem] sm:max-w-[15rem]"
                                                             : isAE
                                                               ? "h-auto w-full max-h-[4.8rem] max-w-[15rem] group-hover:scale-100 sm:max-h-[5.2rem] sm:max-w-[15.8rem]"
                                                             : isBosal
