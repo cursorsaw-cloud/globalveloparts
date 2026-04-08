@@ -18,7 +18,7 @@ import {
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
-import lemforderLogo from "@assets/image_1775640579146.png";
+import lemforderLogo from "@assets/image_1775640695829.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -408,7 +408,7 @@ export default function ProductsPage() {
                                     isNeoVelo
                                       ? "border-primary/35 bg-[linear-gradient(180deg,rgba(239,246,255,0.96)_0%,rgba(255,255,255,1)_100%)] shadow-[0_30px_80px_-44px_rgba(37,99,235,0.34)] ring-1 ring-primary/12 hover:border-primary/55 hover:shadow-[0_34px_90px_-42px_rgba(37,99,235,0.42)]"
                                       : isLemforder
-                                        ? "border-sky-200 bg-[linear-gradient(180deg,#f8fbff_0%,#eef6ff_100%)] ring-1 ring-sky-100 hover:border-sky-300 hover:shadow-[0_30px_84px_-44px_rgba(14,116,144,0.28)]"
+                                        ? "border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] hover:border-slate-300 hover:shadow-[0_28px_80px_-46px_rgba(15,23,42,0.18)]"
                                         : "border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] hover:border-primary/30 hover:shadow-[0_28px_80px_-46px_rgba(37,99,235,0.24)]"
                                   }`}
                                   data-testid={`card-products-brand-${category.id}-${brand}`}
@@ -423,7 +423,7 @@ export default function ProductsPage() {
                                       isNeoVelo
                                         ? "min-h-[6rem] border border-primary/15 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),rgba(255,255,255,0.96)_55%)] sm:min-h-[6.6rem]"
                                         : isLemforder
-                                          ? "min-h-[6.6rem] border border-slate-200 bg-white px-2 sm:min-h-[7rem]"
+                                          ? "min-h-[7.2rem] border border-transparent bg-transparent px-0 py-0 shadow-none sm:min-h-[7.8rem]"
                                           : "min-h-[5.1rem] border border-slate-100 bg-white sm:min-h-[5.7rem]"
                                     }`}
                                   >
@@ -434,14 +434,14 @@ export default function ProductsPage() {
                                         isNeoVelo
                                           ? "h-14 w-full sm:h-16"
                                           : isLemforder
-                                            ? "h-[4.6rem] w-auto max-w-[6rem] sm:h-[5rem] sm:max-w-[6.4rem]"
+                                            ? "h-[6.4rem] w-auto max-w-[6.4rem] sm:h-[7rem] sm:max-w-[7rem]"
                                             : "h-full w-full"
                                       }`}
                                       style={{
                                         filter: isNeoVelo
                                           ? "contrast(1.16) saturate(1.16) drop-shadow(0 8px 18px rgba(37,99,235,0.16))"
                                           : isLemforder
-                                            ? "contrast(1) saturate(1) drop-shadow(0 6px 12px rgba(15,23,42,0.08))"
+                                            ? "none"
                                             : "contrast(1.1) saturate(1.08)",
                                         objectPosition: "center",
                                       }}
