@@ -13,13 +13,14 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
 export default function NeoVeloPartsPage() {
   const { t } = useLanguage();
+  const [, navigate] = useLocation();
 
   const metrics = [
     { value: "01", label: t("neovelo.metrics.1") },
@@ -135,11 +136,14 @@ export default function NeoVeloPartsPage() {
               </div>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="px-8 text-base" data-testid="button-neovelo-products">
-                  <Link href="/products">
-                    {t("neovelo.cta.primary")}
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
+                <Button
+                  size="lg"
+                  className="px-8 text-base"
+                  data-testid="button-neovelo-products"
+                  onClick={() => navigate("/products")}
+                >
+                  {t("neovelo.cta.primary")}
+                  <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button
                   asChild
@@ -393,11 +397,14 @@ export default function NeoVeloPartsPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-products">
-                  <Link href="/products">
-                    {t("neovelo.cta.primary")}
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
+                <Button
+                  size="lg"
+                  className="px-8 text-base font-semibold"
+                  data-testid="button-neovelo-cta-products"
+                  onClick={() => navigate("/products")}
+                >
+                  {t("neovelo.cta.primary")}
+                  <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button asChild size="lg" variant="secondary" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-contact">
                   <a href="/#contact">{t("neovelo.cta.secondary")}</a>
