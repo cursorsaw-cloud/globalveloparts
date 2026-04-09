@@ -106,7 +106,7 @@ const categories = [
   {
     id: "debriyaj",
     icon: Settings2,
-    image: "/images/categories/clutch-drivetrain-pro.png",
+    image: "/images/categories/clutch-pro-v2.png",
     name: { tr: "Debriyaj & Aktarma", en: "Clutch & Drivetrain" },
     subCategories: {
       tr: ["Debriyaj Seti", "Volan", "Aks", "Şanzıman"],
