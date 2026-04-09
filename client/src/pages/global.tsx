@@ -1,4 +1,5 @@
 import { ArrowRight, Boxes, Building2, Globe2, Plane, Ship, Truck } from "lucide-react";
+import globalNetworkBg from "@/assets/image_1775720213210.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -31,6 +32,17 @@ export default function GlobalNetworkPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.08),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.07),transparent_30%)]" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <img
+            src={globalNetworkBg}
+            alt="Global logistics network background"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.25] mix-blend-multiply saturate-[0.98] sm:opacity-[0.30] lg:opacity-[0.35]"
+            data-testid="img-global-page-network-background"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(238,242,247,0.96)_0%,rgba(238,242,247,0.72)_38%,rgba(238,242,247,0.30)_65%,rgba(238,242,247,0.08)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#eef2f7] via-[#eef2f7]/85 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#eef2f7] via-[#eef2f7]/60 to-transparent" />
+        </div>
         <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
           <div className="grid items-end gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] xl:gap-10">
             <div className="max-w-[47rem]">
