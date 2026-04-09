@@ -5,24 +5,27 @@ import { Button } from "@/components/ui/button";
 const categories = [
   {
     key: "brakes",
+    categoryId: "fren",
     title: { tr: "Fren Sistemi", en: "Brake Systems" },
     desc: {
       tr: "Balata, disk, kaliper ve hidrolik çözümlerinde premium tedarik ağı.",
       en: "Premium supply network for pads, discs, calipers and hydraulic solutions.",
     },
-    image: "/images/categories/brake-system.jpg",
+    image: "/images/categories/brake-system-pro.png",
   },
   {
     key: "filters",
+    categoryId: "filtre",
     title: { tr: "Filtreler", en: "Filters" },
     desc: {
       tr: "Yağ, hava, polen ve yakıt filtrelerinde yüksek stok sürekliliği.",
       en: "High stock continuity across oil, air, cabin and fuel filters.",
     },
-    image: "/images/categories/filters.jpg",
+    image: "/images/categories/filters-pro.png",
   },
   {
     key: "engine",
+    categoryId: "motor",
     title: { tr: "Motor Parçaları", en: "Engine Parts" },
     desc: {
       tr: "Zamanlama, conta, piston ve pompa gruplarında OEM odaklı seçim.",
@@ -32,15 +35,17 @@ const categories = [
   },
   {
     key: "suspension",
+    categoryId: "suspansiyon",
     title: { tr: "Süspansiyon & Sönümleme", en: "Suspension & Damping" },
     desc: {
       tr: "Amortisör, yay ve rulman gruplarında güvenilir markalar.",
       en: "Reliable brands for shock absorbers, springs and bearing groups.",
     },
-    image: "/images/categories/suspension.jpg",
+    image: "/images/categories/suspension-pro.png",
   },
   {
     key: "belt",
+    categoryId: "kayis",
     title: { tr: "Kayış & Zincir", en: "Belts & Chains" },
     desc: {
       tr: "Triger setleri ve gergi çözümleri için güçlü ürün çeşitliliği.",
@@ -50,15 +55,17 @@ const categories = [
   },
   {
     key: "electrical",
+    categoryId: "elektrik",
     title: { tr: "Elektrik & Aydınlatma", en: "Electrical & Lighting" },
     desc: {
       tr: "Far, akü, ateşleme ve elektrik gruplarında hızlı temin.",
       en: "Fast sourcing across lighting, batteries, ignition and electrical groups.",
     },
-    image: "/images/categories/electrical-lighting.jpg",
+    image: "/images/categories/electrical-lighting-pro.png",
   },
   {
     key: "cooling",
+    categoryId: "sogutma",
     title: { tr: "Soğutma & Isıtma", en: "Cooling & Heating" },
     desc: {
       tr: "Radyatör, termostat ve pompa gruplarında global tedarik.",
@@ -68,12 +75,13 @@ const categories = [
   },
   {
     key: "clutch",
+    categoryId: "debriyaj",
     title: { tr: "Debriyaj & Aktarma", en: "Clutch & Drivetrain" },
     desc: {
       tr: "Debriyaj seti, volan ve şanzıman parçalarında uzman portföy.",
       en: "Specialist portfolio for clutch kits, flywheels and transmission parts.",
     },
-    image: "/images/categories/clutch-drivetrain.jpg",
+    image: "/images/categories/clutch-pro-v2.png",
   },
 ];
 
@@ -121,7 +129,7 @@ export function Products() {
           {categories.map((category) => (
             <a
               key={category.key}
-              href="/products"
+              href={`/products?category=${category.categoryId}`}
               className="group relative overflow-hidden rounded-[1.95rem] border border-white/65 bg-slate-900 shadow-[0_34px_90px_-50px_rgba(15,23,42,0.62)]"
               data-testid={`card-home-category-${category.key}`}
             >

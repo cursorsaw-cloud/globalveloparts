@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSearch } from "wouter";
 import {
   ArrowRight,
   ChevronDown,
@@ -128,9 +129,18 @@ const categories = [
 ];
 
 export default function ProductsPage() {
-  const [expandedId, setExpandedId] = useState<string | null>(categories[0].id);
+  const search = useSearch();
+  const categoryParam = useMemo(() => {
+    const params = new URLSearchParams(search);
+    const val = params.get("category");
+    return val && categories.some((c) => c.id === val) ? val : null;
+  }, [search]);
+
+  const [expandedId, setExpandedId] = useState<string | null>(
+    categoryParam ?? categories[0].id,
+  );
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(categoryParam);
   const { language, t } = useLanguage();
   const contentLanguage = language === "tr" ? "tr" : "en";
 
@@ -164,6 +174,15 @@ export default function ProductsPage() {
       setExpandedId(filteredCategories[0].id);
     }
   }, [filteredCategories, searchQuery, activeCategory]);
+
+  useEffect(() => {
+    if (categoryParam) {
+      const el = document.getElementById("products-categories");
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 200);
+      }
+    }
+  }, [categoryParam]);
 
   const stats = [
     { value: `${categories.length}`, label: t("prod.stat.1") },
@@ -237,7 +256,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="section-divider bg-white">
+      <section id="products-categories" className="section-divider bg-white">
         <div className="section-shell pt-10 md:pt-12">
           <div className="mb-8 rounded-[2rem] border border-slate-200 bg-slate-50/80 p-4 backdrop-blur-sm md:p-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
