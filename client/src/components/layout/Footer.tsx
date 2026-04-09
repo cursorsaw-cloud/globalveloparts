@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
@@ -82,6 +82,18 @@ export function Footer() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/globalvelo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
+                  data-testid="link-footer-linkedin"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  {t("footer.social.linkedin")}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -134,7 +146,7 @@ export function Footer() {
         <div className="mt-8 flex flex-col gap-3 border-t border-slate-800/90 pt-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <p data-testid="text-footer-copyright">© {new Date().getFullYear()} Globalvelo Otomotiv A.Ş. {t("footer.rights")}</p>
           <p className="text-slate-600" data-testid="text-footer-tagline">
-            Global automotive aftermarket trade and digital B2B enablement.
+            {t("footer.tagline")}
           </p>
         </div>
       </div>
