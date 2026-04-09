@@ -62,7 +62,7 @@ function BrandCard({ name }: { name: string }) {
       className="group flex shrink-0 flex-col items-center gap-2"
       data-testid={`img-brand-strip-${name.toLowerCase().replace(/[\s+]/g, "-")}`}
     >
-      <div className="flex h-[72px] w-[88px] items-center justify-center rounded-[0.875rem] border border-slate-200/70 bg-white p-3 shadow-[0_2px_10px_-4px_rgba(15,23,42,0.08)] transition-shadow duration-300 group-hover:border-blue-200 group-hover:shadow-[0_4px_18px_-4px_rgba(37,99,235,0.15)]">
+      <div className="flex h-[72px] w-[88px] items-center justify-center rounded-[0.875rem] border border-slate-200/70 bg-white p-3 shadow-[0_2px_10px_-4px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:scale-[1.13] group-hover:border-blue-200 group-hover:shadow-[0_6px_22px_-4px_rgba(37,99,235,0.20)]">
         {failed || !currentSrc ? (
           <span className="text-[0.6rem] font-black tracking-widest text-slate-400 text-center uppercase leading-tight">
             {name}
@@ -91,7 +91,7 @@ export function BrandStrip() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden border-t border-slate-200/70 bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)] py-14">
+    <section className="relative overflow-x-hidden border-t border-slate-200/70 bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)] py-14">
       <div className="section-shell mb-10 text-center">
         <span className="section-kicker text-secondary" data-testid="text-brandstrip-badge">
           {t("brands.badge")}
@@ -108,9 +108,9 @@ export function BrandStrip() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-[linear-gradient(90deg,rgba(248,250,252,1)_0%,rgba(248,250,252,0)_100%)]" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-[linear-gradient(270deg,rgba(248,250,252,1)_0%,rgba(248,250,252,0)_100%)]" />
 
-        <div className="flex overflow-hidden py-2">
+        <div className="flex py-3"  style={{ overflowX: "hidden", overflowY: "visible" }}>
           <div
-            className="flex animate-marquee items-center gap-4 pr-4"
+            className="flex animate-marquee items-center gap-6 pr-6"
             data-testid="div-brandstrip-marquee"
           >
             {ALL_BRAND_NAMES.map((name) => (
