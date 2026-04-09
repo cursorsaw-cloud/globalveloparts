@@ -2,17 +2,22 @@ import { useState } from "react";
 import { useLanguage } from "@/lib/i18n";
 import { getBrandLogoCandidates } from "@/lib/brandLogos";
 
+// These local files are used FIRST (reliable local assets)
+const LOCAL_FIRST: Record<string, string> = {
+  NGK:    "/images/brands/ngk.svg",
+  KYB:    "/images/brands/kyb.png",
+  Monroe: "/images/brands/monroe.png",
+};
+
+// These local files are used as FALLBACK after external URLs fail
 const LOCAL_FALLBACKS: Record<string, string> = {
-  Brembo:      "/images/brands/brembo.svg",
-  Bosch:       "/images/brands/bosch.svg",
-  SKF:         "/images/brands/skf.svg",
-  Valeo:       "/images/brands/valeo.svg",
-  Mann:        "/images/brands/mann.svg",
-  Febi:        "/images/brands/febi.svg",
-  Hella:       "/images/brands/hella.svg",
-  NGK:         "/images/brands/ngk.svg",
-  KYB:         "/images/brands/kyb.png",
-  Monroe:      "/images/brands/monroe.png",
+  Brembo: "/images/brands/brembo.svg",
+  Bosch:  "/images/brands/bosch.svg",
+  SKF:    "/images/brands/skf.svg",
+  Valeo:  "/images/brands/valeo.svg",
+  Mann:   "/images/brands/mann.svg",
+  Febi:   "/images/brands/febi.svg",
+  Hella:  "/images/brands/hella.svg",
 };
 
 const ALL_BRAND_NAMES = [
@@ -25,15 +30,19 @@ const ALL_BRAND_NAMES = [
   "KYB", "Monroe", "Contitech", "Valeo", "Hella", "Magneti Marelli",
   "TYC", "Denso", "Varta", "Exide", "Nissens", "Hepu", "Graf", "Dolz",
   "LuK", "GKN", "ZF", "MAPA", "Garrett", "BorgWarner", "Bosal", "Walker",
-  "Continental", "NGK",
+  "NGK",
 ];
 
 function BrandCard({ name }: { name: string }) {
-  const allExternal = getBrandLogoCandidates(name);
+  const localFirst   = LOCAL_FIRST[name];
+  const allExternal  = getBrandLogoCandidates(name);
   const localFallback = LOCAL_FALLBACKS[name];
   const candidates = [
-    ...allExternal,
-    ...(localFallback && !allExternal.includes(localFallback) ? [localFallback] : []),
+    ...(localFirst ? [localFirst] : []),
+    ...allExternal.filter((c) => c !== localFirst),
+    ...(localFallback && !allExternal.includes(localFallback) && localFallback !== localFirst
+      ? [localFallback]
+      : []),
   ].filter(Boolean);
 
   const [idx, setIdx] = useState(0);
