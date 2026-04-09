@@ -52,6 +52,16 @@ export function Contact() {
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
+
       const mailtoSubject = encodeURIComponent(`Globalvelo | ${values.subject}`);
       const mailtoBody = encodeURIComponent(
         [
