@@ -329,11 +329,12 @@ export default function ProductsPage() {
           <img
             src={warehouseVisual}
             alt="GlobalVelo warehouse operations visual"
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.18] mix-blend-multiply saturate-[0.96] sm:opacity-[0.2] lg:opacity-[0.22]"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.28] mix-blend-multiply saturate-[0.98] sm:opacity-[0.32] lg:opacity-[0.36]"
             data-testid="img-products-page-warehouse-background"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(238,242,247,0.96)_0%,rgba(238,242,247,0.82)_34%,rgba(238,242,247,0.38)_60%,rgba(238,242,247,0.14)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#eef2f7] via-[#eef2f7]/72 to-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(238,242,247,0.96)_0%,rgba(238,242,247,0.72)_38%,rgba(238,242,247,0.30)_65%,rgba(238,242,247,0.08)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#eef2f7] via-[#eef2f7]/85 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#eef2f7] via-[#eef2f7]/60 to-transparent" />
         </div>
         <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
           <div className="grid items-end gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] xl:gap-10">
