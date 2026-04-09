@@ -11,7 +11,7 @@ const categories = [
       tr: "Balata, disk, kaliper ve hidrolik çözümlerinde premium tedarik ağı.",
       en: "Premium supply network for pads, discs, calipers and hydraulic solutions.",
     },
-    image: "/images/categories/brake-system-pro.png",
+    image: "/images/categories/brake-system.jpg",
   },
   {
     key: "filters",
@@ -21,7 +21,7 @@ const categories = [
       tr: "Yağ, hava, polen ve yakıt filtrelerinde yüksek stok sürekliliği.",
       en: "High stock continuity across oil, air, cabin and fuel filters.",
     },
-    image: "/images/categories/filters-pro.png",
+    image: "/images/categories/filters.jpg",
   },
   {
     key: "engine",
@@ -41,7 +41,7 @@ const categories = [
       tr: "Amortisör, yay ve rulman gruplarında güvenilir markalar.",
       en: "Reliable brands for shock absorbers, springs and bearing groups.",
     },
-    image: "/images/categories/suspension-pro.png",
+    image: "/images/categories/suspension.jpg",
   },
   {
     key: "belt",
@@ -61,7 +61,7 @@ const categories = [
       tr: "Far, akü, ateşleme ve elektrik gruplarında hızlı temin.",
       en: "Fast sourcing across lighting, batteries, ignition and electrical groups.",
     },
-    image: "/images/categories/electrical-lighting-pro.png",
+    image: "/images/categories/electrical-lighting.jpg",
   },
   {
     key: "cooling",

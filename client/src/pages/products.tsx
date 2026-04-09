@@ -30,7 +30,7 @@ const categories = [
   {
     id: "fren",
     icon: CircleDot,
-    image: "/images/categories/brake-system-pro.png",
+    image: "/images/categories/brake-system.jpg",
     name: { tr: "Fren Sistemi", en: "Brake Systems" },
     subCategories: {
       tr: ["Balata", "Disk", "Kaliper", "Hidrolik", "ABS", "Hortum"],
@@ -41,7 +41,7 @@ const categories = [
   {
     id: "filtre",
     icon: Filter,
-    image: "/images/categories/filters-pro.png",
+    image: "/images/categories/filters.jpg",
     name: { tr: "Filtreler", en: "Filters" },
     subCategories: {
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
@@ -63,7 +63,7 @@ const categories = [
   {
     id: "suspansiyon",
     icon: MoveVertical,
-    image: "/images/categories/suspension-pro.png",
+    image: "/images/categories/suspension.jpg",
     name: { tr: "Süspansiyon & Sönümleme", en: "Suspension & Damping" },
     subCategories: {
       tr: ["Salıncak", "Rot", "Rulman", "Amortisör", "Yay"],
@@ -85,7 +85,7 @@ const categories = [
   {
     id: "elektrik",
     icon: Zap,
-    image: "/images/categories/electrical-lighting-pro.png",
+    image: "/images/categories/electrical-lighting.jpg",
     name: { tr: "Elektrik & Aydınlatma", en: "Electrical & Lighting" },
     subCategories: {
       tr: ["Far", "Silecek", "Ateşleme", "Akü", "Röle"],
