@@ -13,6 +13,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import { Link } from "wouter";
 import neoveloLogo from "@assets/image_1775560940186.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -135,10 +136,10 @@ export default function NeoVeloPartsPage() {
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg" className="px-8 text-base" data-testid="button-neovelo-products">
-                  <a href="/products">
+                  <Link href="/products">
                     {t("neovelo.cta.primary")}
                     <ArrowRight className="h-5 w-5" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button
                   asChild
@@ -393,10 +394,10 @@ export default function NeoVeloPartsPage() {
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-products">
-                  <a href="/products">
+                  <Link href="/products">
                     {t("neovelo.cta.primary")}
                     <ArrowRight className="h-5 w-5" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-contact">
                   <a href="/#contact">{t("neovelo.cta.secondary")}</a>
