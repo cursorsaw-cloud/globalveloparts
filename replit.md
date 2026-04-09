@@ -66,6 +66,17 @@ Preferred communication style: Simple, everyday language.
 - Schema includes a `users` table, but no auth routes or session middleware are currently wired up in `routes.ts`
 - `connect-pg-simple` is listed as a dependency (for PostgreSQL session storage), suggesting auth may be added later
 
+### UX / CRO Enhancements (Layout)
+Three persistent UI components are rendered in `Layout.tsx` for all pages:
+- **FloatingContact** (`FloatingContact.tsx`) – Sticky bottom-right button (bottom-left for Arabic RTL). After scrolling 420px, shows a toggle button that expands to reveal WhatsApp (`wa.me/902160000000`) and email (`info@globalvelo.com.tr`) quick-contact links. Fully i18n'd across all 6 languages including pre-filled WhatsApp message text.
+- **ScrollToTop** (`ScrollToTop.tsx`) – Appears after 600px of scroll. One-click smooth scroll back to the top. RTL-aware (appears bottom-left for Arabic).
+- **CookieConsent** (`CookieConsent.tsx`) – GDPR-compliant consent banner slides up from the bottom 1.2 seconds after first visit. Accept/Decline choice is stored in `localStorage` under key `globalvelo_cookie_consent`. Fully i18n'd in all 6 languages.
+
+### Internationalization Improvements
+- **Arabic RTL**: `Layout.tsx` now sets `dir="rtl"` and `lang="ar"` on the root element when Arabic is selected, ensuring proper text directionality throughout the site.
+- **Language class**: Root div now uses `lang-{code}` class (e.g. `lang-ar`, `lang-tr`) instead of only `lang-en` / `lang-tr`.
+- **Contact form toast**: Success message strings in all 6 languages updated from "email draft opening" to "request received" messaging, aligned with the API-only submission flow.
+
 ### Routing
 - React app uses **Wouter** with these routes:
   - `/` → Home
