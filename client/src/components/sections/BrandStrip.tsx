@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n";
-import { getBrandLogo, getBrandLogoCandidates } from "@/lib/brandLogos";
+import { getBrandLogoCandidates } from "@/lib/brandLogos";
 
-const LOCAL_LOGOS: Record<string, string> = {
+const LOCAL_FALLBACKS: Record<string, string> = {
   Brembo:      "/images/brands/brembo.svg",
   Bosch:       "/images/brands/bosch.svg",
   SKF:         "/images/brands/skf.svg",
@@ -13,12 +13,6 @@ const LOCAL_LOGOS: Record<string, string> = {
   NGK:         "/images/brands/ngk.svg",
   KYB:         "/images/brands/kyb.png",
   Monroe:      "/images/brands/monroe.png",
-  Bilstein:    "/images/brands/bilstein.svg",
-  Meyle:       "/images/brands/meyle.svg",
-  Gates:       "/images/brands/gates.svg",
-  Dayco:       "/images/brands/dayco.svg",
-  Continental: "/images/brands/continental.svg",
-  Mahle:       "/images/brands/mahle.svg",
 };
 
 const ALL_BRAND_NAMES = [
@@ -35,12 +29,11 @@ const ALL_BRAND_NAMES = [
 ];
 
 function BrandCard({ name }: { name: string }) {
-  const local = LOCAL_LOGOS[name];
-  const external = getBrandLogo(name);
+  const allExternal = getBrandLogoCandidates(name);
+  const localFallback = LOCAL_FALLBACKS[name];
   const candidates = [
-    ...(local ? [local] : []),
-    ...(external && external !== local ? [external] : []),
-    ...getBrandLogoCandidates(name).filter((c) => c !== external),
+    ...allExternal,
+    ...(localFallback && !allExternal.includes(localFallback) ? [localFallback] : []),
   ].filter(Boolean);
 
   const [idx, setIdx] = useState(0);
