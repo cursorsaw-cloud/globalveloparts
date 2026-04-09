@@ -62,24 +62,11 @@ export function Contact() {
         throw new Error("Server error");
       }
 
-      const mailtoSubject = encodeURIComponent(`Globalvelo | ${values.subject}`);
-      const mailtoBody = encodeURIComponent(
-        [
-          `${t("contact.form.name")}: ${values.name}`,
-          `${t("contact.form.email")}: ${values.email}`,
-          `${t("contact.form.phone")}: ${values.phone}`,
-          "",
-          `${t("contact.form.message")}:`,
-          values.message,
-        ].join("\n"),
-      );
-
       toast({
         title: t("contact.form.success.title"),
         description: t("contact.form.success.desc"),
       });
 
-      window.location.href = `mailto:info@globalvelo.com.tr?subject=${mailtoSubject}&body=${mailtoBody}`;
       reset();
     } catch {
       toast({

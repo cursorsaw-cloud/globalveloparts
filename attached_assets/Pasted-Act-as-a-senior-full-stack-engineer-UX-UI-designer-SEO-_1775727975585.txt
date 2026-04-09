@@ -1,0 +1,166 @@
+Act as a senior full-stack engineer, UX/UI designer, SEO expert, and CRO (conversion rate optimization) specialist. Perform a deep, production-level audit and transformation of the website and implement all fixes and improvements.
+
+Website: https://globalvelo.com.tr/
+
+🔥 1. CORE OBJECTIVE (CRITICAL)
+
+Transform this website from a static company presentation site into a:
+
+👉 High-converting B2B lead generation platform
+
+Every page must guide users toward a clear action (CTA) such as:
+
+Get a wholesale quote
+Request partnership
+Contact sales
+🧠 2. GLOBAL STRUCTURE (APPLY TO ALL PAGES)
+
+Rebuild page flow using this structure:
+
+Hero → Trust → Product → Proof → CTA
+
+Ensure:
+
+Clear value proposition
+Defined target audience (B2B buyers, distributors)
+Strong and repeated CTAs
+🎯 3. HERO & CTA OPTIMIZATION
+Fix Hero Section:
+Keep existing design but improve messaging:
+Clear headline (what + who + value)
+Supporting subtext
+Add smooth animations (fade/slide)
+Replace ALL weak CTAs with high-conversion ones:
+“Ürünleri incele” → “🚀 Toptan Teklif Al”
+“İletişim” → “🤝 Distribütör Ol”
+“Kategoriler” → “📦 Fiyat Listesi Talep Et”
+
+Ensure:
+
+Every CTA leads somewhere meaningful (no dead clicks)
+🔗 4. FULL LINK & NAVIGATION AUDIT
+Scan ALL pages and links
+Fix:
+Broken links
+Empty # links
+गलत/yanlış yönlendirmeler
+Ensure:
+Every button navigates correctly
+Navigation is logical and consistent
+🧩 5. PRODUCT SYSTEM (MAJOR UPGRADE)
+
+Transform /products into a real B2B product system:
+
+Add:
+🔍 Search bar (support OEM / product codes)
+🎯 Filters:
+Brand
+Vehicle type
+Category
+Create:
+Individual product/category detail pages
+
+Each detail page must include:
+
+Product info
+Use cases
+CTA (Request quote)
+📩 6. CONTACT FORM (CRITICAL FIX)
+
+Current issue: Form opens email client → NOT acceptable
+
+Implement:
+Fully functional backend form system
+
+Options:
+
+Node.js (Express) backend (preferred)
+or EmailJS / Formspree (fast solution)
+Requirements:
+Send submissions to: info@globalvelo.com.tr
+Validate inputs
+Show success/error states
+Also:
+Replace ALL instances of:
+info@globalvelo.com → info@globalvelo.com.tr
+🌍 7. MULTILANGUAGE SYSTEM (FIX ARCHITECTURE)
+Current issue:
+Language changes but URL does NOT
+Fix:
+
+Implement structured URLs:
+
+/tr/
+/en/
+/ar/
+Add:
+Proper routing per language
+SEO-friendly hreflang tags
+RTL FIX (Arabic):
+Apply RTL layout:
+direction: rtl;
+text-align: right;
+🎨 8. PREMIUM UI/UX UPGRADE
+
+Keep base design but elevate to enterprise-level quality:
+
+Improve:
+Spacing system (8px grid)
+Typography hierarchy
+Section flow
+Upgrade:
+Icons → modern library
+Add section separators
+Add micro-interactions:
+hover effects
+scroll animations
+Use:
+TailwindCSS
+shadcn/ui
+Framer Motion (if applicable)
+🌐 9. GLOBAL PAGE IMPROVEMENT (/global)
+Replace static content with:
+Interactive map
+Region-based data
+Show:
+Countries served
+Logistics strength
+🧾 10. SEO (FULL IMPLEMENTATION)
+Add to ALL pages:
+<meta name="description" content="...">
+<link rel="canonical" href="...">
+Also:
+Add alt tags to all images
+Create:
+sitemap.xml
+robots.txt
+⚡ 11. PERFORMANCE OPTIMIZATION
+Optimize images (WebP)
+Add lazy loading:
+<img loading="lazy" />
+Improve Lighthouse scores:
+Performance
+Accessibility
+SEO
+📱 12. MOBILE UX VALIDATION
+
+Test and fix:
+
+Navigation menu
+Buttons (tap-friendly)
+Forms usability
+Layout consistency
+📊 13. OUTPUT EXPECTATION
+
+Provide:
+
+List of ALL issues found
+Fixes applied
+Before vs After improvements
+Suggestions for scaling (technical + design)
+💥 FINAL GOAL
+
+Turn this website into a:
+👉 Premium, global-level B2B automotive platform
+👉 Comparable to top-tier international suppliers
+👉 Fully functional, fast, and conversion-optimized

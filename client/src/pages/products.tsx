@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
@@ -10,11 +10,13 @@ import {
   Layers,
   Link2,
   MoveVertical,
+  Search,
   Settings,
   Settings2,
   ShieldCheck,
   Snowflake,
   Sparkles,
+  X,
   Zap,
 } from "lucide-react";
 import neoveloLogo from "@assets/image_1775560940186.png";
@@ -300,6 +302,8 @@ const categories = [
 
 export default function ProductsPage() {
   const [expandedId, setExpandedId] = useState<string | null>(categories[0].id);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const { language, t } = useLanguage();
   const contentLanguage = language === "tr" ? "tr" : "en";
 
@@ -312,6 +316,27 @@ export default function ProductsPage() {
       })),
     [contentLanguage],
   );
+
+  const filteredCategories = useMemo(() => {
+    let result = localizedCategories;
+    if (activeCategory) result = result.filter((c) => c.id === activeCategory);
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (c) =>
+          c.label.toLowerCase().includes(q) ||
+          c.labels.some((s) => s.toLowerCase().includes(q)) ||
+          c.brands.some((b) => b.toLowerCase().includes(q)),
+      );
+    }
+    return result;
+  }, [localizedCategories, searchQuery, activeCategory]);
+
+  useEffect(() => {
+    if (filteredCategories.length > 0 && (searchQuery || activeCategory)) {
+      setExpandedId(filteredCategories[0].id);
+    }
+  }, [filteredCategories, searchQuery, activeCategory]);
 
   const stats = [
     { value: `${categories.length}`, label: t("prod.stat.1") },
@@ -386,9 +411,76 @@ export default function ProductsPage() {
       </section>
 
       <section className="section-divider bg-white">
-        <div className="section-shell pt-14 md:pt-16">
+        <div className="section-shell pt-10 md:pt-12">
+          <div className="mb-8 rounded-[2rem] border border-slate-200 bg-slate-50/80 p-4 backdrop-blur-sm md:p-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="search"
+                  placeholder={language === "tr" ? "Marka, kategori veya ürün ara…" : "Search brand, category or part…"}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="h-12 w-full rounded-[1rem] border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-800 shadow-sm outline-none ring-0 transition-colors placeholder:text-slate-400 focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
+                  data-testid="input-products-search"
+                />
+                {searchQuery && (
+                  <button type="button" onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 hover:text-slate-700" data-testid="button-products-search-clear">
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              <Button asChild size="default" className="h-12 shrink-0 px-6 text-sm font-semibold" data-testid="button-products-get-quote">
+                <a href="/#contact">
+                  {language === "tr" ? "Teklif Al" : "Get a Quote"}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveCategory(null)}
+                className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${!activeCategory ? "bg-primary text-white shadow-sm" : "border border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:text-primary"}`}
+                data-testid="button-products-filter-all"
+              >
+                {language === "tr" ? "Tümü" : "All"}
+              </button>
+              {localizedCategories.map((cat) => {
+                const Icon = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
+                    className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${activeCategory === cat.id ? "bg-primary text-white shadow-sm" : "border border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:text-primary"}`}
+                    data-testid={`button-products-filter-${cat.id}`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
+            {(searchQuery || activeCategory) && (
+              <p className="mt-2 text-xs text-slate-500" data-testid="text-products-filter-count">
+                {filteredCategories.length} {language === "tr" ? "kategori bulundu" : "categor" + (filteredCategories.length !== 1 ? "ies found" : "y found")}
+              </p>
+            )}
+          </div>
+
           <div className="grid gap-6">
-            {localizedCategories.map((category) => {
+            {filteredCategories.length === 0 ? (
+              <div className="rounded-[2rem] border border-slate-200 bg-slate-50 px-8 py-16 text-center" data-testid="text-products-no-results">
+                <Search className="mx-auto h-10 w-10 text-slate-300" />
+                <p className="mt-4 font-semibold text-slate-600">{language === "tr" ? "Sonuç bulunamadı" : "No results found"}</p>
+                <p className="mt-2 text-sm text-slate-400">{language === "tr" ? "Farklı bir arama terimi deneyin." : "Try a different search term."}</p>
+                <Button variant="ghost" className="mt-4 text-primary" onClick={() => { setSearchQuery(""); setActiveCategory(null); }} data-testid="button-products-reset-filters">
+                  {language === "tr" ? "Filtreleri temizle" : "Clear filters"}
+                </Button>
+              </div>
+            ) : null}
+            {filteredCategories.map((category) => {
               const isExpanded = expandedId === category.id;
               const Icon = category.icon;
 

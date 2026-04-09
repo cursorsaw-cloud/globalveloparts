@@ -152,7 +152,7 @@ export function Hero() {
               className="mt-10 flex flex-col items-start gap-4 sm:flex-row"
             >
               <Button asChild size="lg" className="h-14 px-8 text-base shadow-[0_20px_60px_-24px_rgba(15,23,42,0.6)]" data-testid="button-hero-products">
-                <a href="/products">
+                <a href="/#contact">
                   {t("hero.btn.products")}
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
@@ -164,7 +164,7 @@ export function Hero() {
                 className="h-14 rounded-full border border-white/14 bg-white/[0.05] px-8 text-base text-white backdrop-blur-sm hover:border-white/24 hover:bg-white/[0.1] hover:text-white"
                 data-testid="button-hero-contact"
               >
-                <a href="/#contact">
+                <a href="/products">
                   {t("hero.btn.contact")}
                   <ChevronRight className="h-5 w-5 text-slate-300 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
