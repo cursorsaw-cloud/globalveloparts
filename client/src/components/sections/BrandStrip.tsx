@@ -1,42 +1,55 @@
 import { useLanguage } from "@/lib/i18n";
+import { getBrandLogo, getBrandLogoCandidates } from "@/lib/brandLogos";
 
-const brands = [
-  { name: "Brembo",      logo: "/images/brands/brembo.svg" },
-  { name: "Bosch",       logo: "/images/brands/bosch.svg" },
-  { name: "Continental", logo: "/images/brands/continental.svg" },
-  { name: "SKF",         logo: "/images/brands/skf.svg" },
-  { name: "Valeo",       logo: "/images/brands/valeo.svg" },
-  { name: "Gates",       logo: "/images/brands/gates.svg" },
-  { name: "Bilstein",    logo: "/images/brands/bilstein.svg" },
-  { name: "KYB",         logo: "/images/brands/kyb.png" },
-  { name: "Mann",        logo: "/images/brands/mann.svg" },
-  { name: "Febi",        logo: "/images/brands/febi.svg" },
-  { name: "Meyle",       logo: "/images/brands/meyle.svg" },
-  { name: "Hella",       logo: "/images/brands/hella.svg" },
-  { name: "NGK",         logo: "/images/brands/ngk.svg" },
-  { name: "Monroe",      logo: "/images/brands/monroe.png" },
-  { name: "Dayco",       logo: "/images/brands/dayco.svg" },
-  { name: "Mahle",       logo: "/images/brands/mahle.png" },
+const brandNames = [
+  "Brembo", "Bosch", "Continental", "SKF", "Valeo",
+  "Gates", "Bilstein", "KYB", "Mann", "Febi",
+  "Meyle", "Hella", "NGK", "Monroe", "Dayco", "Mahle",
 ];
 
-function BrandLogo({ name, logo }: { name: string; logo: string }) {
+function BrandLogo({ name }: { name: string }) {
+  const primarySrc = getBrandLogo(name);
+
+  if (!primarySrc) {
+    return (
+      <div
+        className="flex h-14 shrink-0 items-center justify-center rounded-[1.1rem] border border-slate-200/80 bg-white px-5 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.15)]"
+        data-testid={`img-brand-strip-${name.toLowerCase().replace(/\s+/g, "-")}`}
+      >
+        <span className="text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase">{name}</span>
+      </div>
+    );
+  }
+
   return (
     <div
       className="flex h-14 shrink-0 items-center justify-center rounded-[1.1rem] border border-slate-200/80 bg-white px-5 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_12px_32px_-12px_rgba(37,99,235,0.2)]"
       data-testid={`img-brand-strip-${name.toLowerCase().replace(/\s+/g, "-")}`}
     >
       <img
-        src={logo}
+        src={primarySrc}
         alt={`${name} logo`}
         className="h-7 w-auto max-w-[6rem] object-contain grayscale transition-all duration-300 hover:grayscale-0"
         loading="lazy"
         decoding="async"
+        referrerPolicy="no-referrer"
+        data-logo-index="0"
         onError={(e) => {
           const img = e.target as HTMLImageElement;
-          img.style.display = "none";
-          const parent = img.parentElement;
-          if (parent) {
-            parent.innerHTML = `<span class="text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase">${name}</span>`;
+          const candidates = getBrandLogoCandidates(name);
+          const currentIdx = Number(img.dataset.logoIndex ?? "0");
+          const nextIdx = currentIdx + 1;
+          const nextSrc = candidates[nextIdx];
+
+          if (nextSrc) {
+            img.dataset.logoIndex = String(nextIdx);
+            img.src = nextSrc;
+          } else {
+            img.style.display = "none";
+            const parent = img.parentElement;
+            if (parent) {
+              parent.innerHTML = `<span class="text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase">${name}</span>`;
+            }
           }
         }}
       />
@@ -67,11 +80,11 @@ export function BrandStrip() {
 
         <div className="flex overflow-hidden">
           <div className="flex animate-marquee gap-4 pr-4" data-testid="div-brandstrip-marquee">
-            {brands.map((b) => (
-              <BrandLogo key={b.name} name={b.name} logo={b.logo} />
+            {brandNames.map((name) => (
+              <BrandLogo key={name} name={name} />
             ))}
-            {brands.map((b) => (
-              <BrandLogo key={`${b.name}-dup`} name={b.name} logo={b.logo} />
+            {brandNames.map((name) => (
+              <BrandLogo key={`${name}-dup`} name={name} />
             ))}
           </div>
         </div>
