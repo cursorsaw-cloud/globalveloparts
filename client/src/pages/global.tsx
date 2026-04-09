@@ -1,5 +1,6 @@
 import { ArrowRight, Boxes, Building2, Globe2, Plane, Ship, Truck } from "lucide-react";
 import globalNetworkBg from "@assets/image_1775720213210.png";
+import worldMapBg from "@/assets/images/global-network-bg.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -38,6 +39,12 @@ export default function GlobalNetworkPage() {
             alt="Global logistics network background"
             className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.25] mix-blend-multiply saturate-[0.98] sm:opacity-[0.30] lg:opacity-[0.35]"
             data-testid="img-global-page-network-background"
+          />
+          <img
+            src={worldMapBg}
+            alt=""
+            aria-hidden="true"
+            className="absolute right-[-8%] top-1/2 h-[120%] w-auto -translate-y-1/2 object-contain opacity-[0.10] sm:opacity-[0.13] lg:opacity-[0.16]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(238,242,247,0.96)_0%,rgba(238,242,247,0.72)_38%,rgba(238,242,247,0.30)_65%,rgba(238,242,247,0.08)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#eef2f7] via-[#eef2f7]/85 to-transparent" />
