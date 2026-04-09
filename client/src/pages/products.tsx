@@ -29,7 +29,7 @@ const categories = [
   {
     id: "fren",
     icon: CircleDot,
-    image: "/images/categories/brake-system.jpg",
+    image: "/images/categories/brake-system-pro.png",
     name: { tr: "Fren Sistemi", en: "Brake Systems" },
     subCategories: {
       tr: ["Balata", "Disk", "Kaliper", "Hidrolik", "ABS", "Hortum"],
@@ -40,7 +40,7 @@ const categories = [
   {
     id: "filtre",
     icon: Filter,
-    image: "/images/categories/filters.jpg",
+    image: "/images/categories/filters-pro.png",
     name: { tr: "Filtreler", en: "Filters" },
     subCategories: {
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
@@ -62,7 +62,7 @@ const categories = [
   {
     id: "suspansiyon",
     icon: MoveVertical,
-    image: "/images/categories/suspension.jpg",
+    image: "/images/categories/suspension-pro.png",
     name: { tr: "Süspansiyon & Sönümleme", en: "Suspension & Damping" },
     subCategories: {
       tr: ["Salıncak", "Rot", "Rulman", "Amortisör", "Yay"],
@@ -84,7 +84,7 @@ const categories = [
   {
     id: "elektrik",
     icon: Zap,
-    image: "/images/categories/electrical-lighting.jpg",
+    image: "/images/categories/electrical-lighting-pro.png",
     name: { tr: "Elektrik & Aydınlatma", en: "Electrical & Lighting" },
     subCategories: {
       tr: ["Far", "Silecek", "Ateşleme", "Akü", "Röle"],
@@ -106,7 +106,7 @@ const categories = [
   {
     id: "debriyaj",
     icon: Settings2,
-    image: "/images/categories/clutch-drivetrain.jpg",
+    image: "/images/categories/clutch-drivetrain-pro.png",
     name: { tr: "Debriyaj & Aktarma", en: "Clutch & Drivetrain" },
     subCategories: {
       tr: ["Debriyaj Seti", "Volan", "Aks", "Şanzıman"],
@@ -117,7 +117,7 @@ const categories = [
   {
     id: "egzoz",
     icon: Fuel,
-    image: "/images/categories/engine-parts.jpg",
+    image: "/images/categories/exhaust-fuel-pro.png",
     name: { tr: "Egzoz & Yakıt", en: "Exhaust & Fuel" },
     subCategories: {
       tr: ["Turbo", "EGR", "Enjektör", "Yakıt Pompası"],

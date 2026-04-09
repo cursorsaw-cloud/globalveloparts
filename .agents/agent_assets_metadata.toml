@@ -126,6 +126,42 @@ uri = "file://client/src/assets/images/global-network-bg.png"
 type = "image"
 title = "Global logistics network background"
 
+[[generated]]
+id = "HPwNRY7NHTewTxDmlFTfK"
+uri = "file://client/public/images/categories/brake-system-pro.png"
+type = "image"
+title = "brake system parts"
+
+[[generated]]
+id = "3B3cvd0qhqTDLQ_rtlZo-"
+uri = "file://client/public/images/categories/filters-pro.png"
+type = "image"
+title = "automotive filters"
+
+[[generated]]
+id = "kbMOEbPiEKJLVRkeeX2JV"
+uri = "file://client/public/images/categories/suspension-pro.png"
+type = "image"
+title = "suspension shock absorber"
+
+[[generated]]
+id = "m3SAsnX0N3IxS_6zsMq-W"
+uri = "file://client/public/images/categories/electrical-lighting-pro.png"
+type = "image"
+title = "automotive electrical lighting"
+
+[[generated]]
+id = "Aj4xedE2j4VIouv6_W0Un"
+uri = "file://client/public/images/categories/clutch-drivetrain-pro.png"
+type = "image"
+title = "clutch drivetrain parts"
+
+[[generated]]
+id = "WeSMGy0mMKsYQ6_2B-yUc"
+uri = "file://client/public/images/categories/exhaust-fuel-pro.png"
+type = "image"
+title = "turbo exhaust fuel system"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
