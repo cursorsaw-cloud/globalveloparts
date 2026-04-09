@@ -391,9 +391,17 @@ export default function NeoVeloPartsPage() {
                   {t("neovelo.cta.desc")}
                 </p>
               </div>
-              <Button asChild size="lg" variant="secondary" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-contact">
-                <a href="/#contact">{t("neovelo.cta.secondary")}</a>
-              </Button>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-products">
+                  <a href="/products">
+                    {t("neovelo.cta.primary")}
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="px-8 text-base font-semibold" data-testid="button-neovelo-cta-contact">
+                  <a href="/#contact">{t("neovelo.cta.secondary")}</a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
