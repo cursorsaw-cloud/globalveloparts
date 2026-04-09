@@ -8,15 +8,15 @@ const brands = [
   { name: "Valeo",       logo: "/images/brands/valeo.svg" },
   { name: "Gates",       logo: "/images/brands/gates.svg" },
   { name: "Bilstein",    logo: "/images/brands/bilstein.svg" },
-  { name: "KYB",         logo: "/images/brands/kyb.svg" },
+  { name: "KYB",         logo: "/images/brands/kyb.png" },
   { name: "Mann",        logo: "/images/brands/mann.svg" },
   { name: "Febi",        logo: "/images/brands/febi.svg" },
   { name: "Meyle",       logo: "/images/brands/meyle.svg" },
   { name: "Hella",       logo: "/images/brands/hella.svg" },
   { name: "NGK",         logo: "/images/brands/ngk.svg" },
-  { name: "Monroe",      logo: "/images/brands/monroe.svg" },
+  { name: "Monroe",      logo: "/images/brands/monroe.png" },
   { name: "Dayco",       logo: "/images/brands/dayco.svg" },
-  { name: "Mahle",       logo: "/images/brands/mahle.svg" },
+  { name: "Mahle",       logo: "/images/brands/mahle.png" },
 ];
 
 function BrandLogo({ name, logo }: { name: string; logo: string }) {
