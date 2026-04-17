@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLanguage } from "@/lib/i18n";
+import { GlobalVeloLogo } from "@/components/layout/GlobalVeloLogo";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,7 @@ export function Navbar() {
         <div className="flex min-h-[var(--nav-height-mobile)] items-center gap-4 lg:min-h-[var(--nav-height)] lg:gap-6">
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
-              <img
-                src="/logo-globalvelo-white-header.png"
-                alt="Globalvelo Spare Parts Logo"
-                className="h-12 w-auto object-contain sm:h-[3.35rem] lg:h-[3.65rem]"
-                data-testid="img-globalvelo-logo"
-              />
+              <GlobalVeloLogo className="h-12 w-auto sm:h-[3.35rem] lg:h-[3.65rem]" />
             </div>
           </Link>
 
@@ -128,12 +124,7 @@ export function Navbar() {
             >
               <div className="flex flex-col gap-6 pt-8">
                 <div>
-                  <img
-                    src="/logo-globalvelo-white-header.png"
-                    alt="Globalvelo Spare Parts Logo"
-                    className="h-12 w-auto object-contain"
-                    data-testid="img-mobile-globalvelo-logo"
-                  />
+                  <GlobalVeloLogo className="h-12 w-auto" />
                 </div>
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
