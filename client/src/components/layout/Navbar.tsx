@@ -40,7 +40,7 @@ export function Navbar() {
           <Link href="/">
             <div className="flex shrink-0 cursor-pointer items-center" data-testid="link-home-logo">
               <img
-                src="/logo-globalvelo-white-header.png"
+                src="/logo-globalvelo-dark.png"
                 alt="Globalvelo Spare Parts Logo"
                 className="h-12 w-auto object-contain sm:h-[3.35rem] lg:h-[3.65rem]"
                 data-testid="img-globalvelo-logo"
@@ -129,7 +129,7 @@ export function Navbar() {
               <div className="flex flex-col gap-6 pt-8">
                 <div>
                   <img
-                    src="/logo-globalvelo-white-header.png"
+                    src="/logo-globalvelo-dark.png"
                     alt="Globalvelo Spare Parts Logo"
                     className="h-12 w-auto object-contain"
                     data-testid="img-mobile-globalvelo-logo"

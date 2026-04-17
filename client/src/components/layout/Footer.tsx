@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid gap-8 rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] p-7 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.95)] md:p-10 xl:grid-cols-[1.25fr_0.8fr_0.85fr_1fr] xl:gap-10">
           <div className="space-y-6">
             <div className="inline-flex rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-              <img src="/logo-globalvelo-white-header.png" alt="Globalvelo" className="h-14 w-auto" data-testid="img-footer-logo" />
+              <img src="/logo-globalvelo-dark.png" alt="Globalvelo" className="h-14 w-auto" data-testid="img-footer-logo" />
             </div>
             <p className="max-w-md text-[0.98rem] leading-8 text-slate-400" data-testid="text-footer-description">
               {t("footer.desc")}
