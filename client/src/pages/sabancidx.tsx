@@ -56,7 +56,7 @@ export default function SabanciDxPage() {
                     <div className="h-10 w-px shrink-0 bg-white/14" />
                     <div className="min-w-0 rounded-[0.9rem] bg-white/[0.02] px-1 py-1">
                       <img
-                        src="/logo-globalvelo-white-header.png"
+                        src="/logo-globalvelo-dark.png"
                         alt="Globalvelo Logo"
                         className="h-10 w-auto max-w-[10.5rem] object-contain sm:h-11 sm:max-w-[12.5rem]"
                         data-testid="img-globalvelo-logo"
