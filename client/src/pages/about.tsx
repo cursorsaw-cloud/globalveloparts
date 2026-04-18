@@ -5,6 +5,7 @@ import {
   Network,
   ShieldCheck,
   Sparkles,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -171,6 +172,23 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-white">
+        <div className="section-shell">
+          <div className="mx-auto max-w-[52rem] text-center">
+            <span className="section-kicker text-secondary flex items-center justify-center gap-2" data-testid="text-about-activities-kicker">
+              <TrendingUp className="h-4 w-4" />
+              {t("about.activities.kicker")}
+            </span>
+            <h2 className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]" data-testid="text-about-activities-title">
+              {t("about.activities.title")}
+            </h2>
+            <p className="mx-auto mt-5 max-w-[44rem] text-[1rem] leading-8 text-slate-600" data-testid="text-about-activities-desc">
+              {t("about.activities.desc")}
+            </p>
           </div>
         </div>
       </section>

@@ -200,6 +200,9 @@ const tr: TranslationMap = {
   'about.promise.desc': 'GlobalVelo; otomotiv yedek parça tedariği ile dijital ticaret teknolojisini tek çatı altında buluşturarak iş ortaklarına uzun vadeli güven, hız ve rekabet gücü kazandırmaya devam eder.',
   'about.cta.primary': 'Ürün portföyünü keşfedin',
   'about.cta.secondary': 'Ekibimizle iletişime geçin',
+  'about.activities.kicker': 'Genel Faaliyetlerimiz',
+  'about.activities.title': 'Küresel ölçekte, çok alanlı operasyonel varlık',
+  'about.activities.desc': 'GlobalVelo; otomotiv yedek parça tedarikinden dijital ticaret altyapısına kadar geniş bir faaliyet yelpazesiyle B2B ortaklarının yanında yer alır.',
 
   'sdx.badge': 'Teknoloji Partnerliği',
   'sdx.title': 'Dijital dönüşümde güçlü iş ortaklığı',
@@ -478,6 +481,9 @@ const en: TranslationMap = {
   'about.promise.desc': 'By bringing automotive spare parts supply and digital trade technology together under one roof, GlobalVelo continues to deliver long-term trust, speed and commercial strength to its partners.',
   'about.cta.primary': 'Explore the product portfolio',
   'about.cta.secondary': 'Contact our team',
+  'about.activities.kicker': 'Our Operations',
+  'about.activities.title': 'Multi-field operational presence on a global scale',
+  'about.activities.desc': 'GlobalVelo stands by its B2B partners across a broad spectrum of activities — from automotive spare parts supply to digital trade infrastructure.',
 
   'sdx.badge': 'Technology Partnership',
   'sdx.title': 'Strong partnership in digital transformation',
@@ -756,6 +762,9 @@ const es: TranslationMap = {
   'about.promise.desc': 'Al reunir el suministro de repuestos automotrices y la tecnología de comercio digital bajo una misma estructura, GlobalVelo sigue ofreciendo confianza a largo plazo, rapidez y fortaleza comercial a sus socios.',
   'about.cta.primary': 'Explore el portafolio de productos',
   'about.cta.secondary': 'Contacte a nuestro equipo',
+  'about.activities.kicker': 'Nuestras Actividades',
+  'about.activities.title': 'Presencia operativa multisectorial a escala global',
+  'about.activities.desc': 'GlobalVelo acompaña a sus socios B2B en un amplio espectro de actividades, desde el suministro de repuestos automotrices hasta la infraestructura de comercio digital.',
 
   'sdx.badge': 'Alianza Tecnológica',
   'sdx.title': 'Una sólida alianza en la transformación digital',
@@ -1034,6 +1043,9 @@ const ar: TranslationMap = {
   'about.promise.desc': 'من خلال جمع توريد قطع غيار السيارات وتقنيات التجارة الرقمية تحت سقف واحد، تواصل GlobalVelo تقديم الثقة طويلة الأمد والسرعة والقوة التجارية لشركائها.',
   'about.cta.primary': 'استكشف محفظة المنتجات',
   'about.cta.secondary': 'تواصل مع فريقنا',
+  'about.activities.kicker': 'أنشطتنا العامة',
+  'about.activities.title': 'حضور تشغيلي متعدد المجالات على نطاق عالمي',
+  'about.activities.desc': 'تقف GlobalVelo إلى جانب شركائها في مجال B2B عبر طيف واسع من الأنشطة، من توريد قطع غيار السيارات إلى البنية التحتية للتجارة الرقمية.',
 
   'sdx.badge': 'شراكة تقنية',
   'sdx.title': 'شراكة قوية في التحول الرقمي',
@@ -1312,6 +1324,9 @@ const ru: TranslationMap = {
   'about.promise.desc': 'Объединяя поставки автомобильных запасных частей и технологии цифровой торговли под одной крышей, GlobalVelo продолжает обеспечивать партнёрам долгосрочное доверие, скорость и коммерческую силу.',
   'about.cta.primary': 'Изучить продуктовый портфель',
   'about.cta.secondary': 'Связаться с нашей командой',
+  'about.activities.kicker': 'Наша деятельность',
+  'about.activities.title': 'Многопрофильное операционное присутствие в глобальном масштабе',
+  'about.activities.desc': 'GlobalVelo поддерживает своих партнёров в сфере B2B в широком спектре направлений — от поставки автозапчастей до инфраструктуры цифровой торговли.',
 
   'sdx.badge': 'Технологическое партнёрство',
   'sdx.title': 'Сильное партнёрство в цифровой трансформации',
@@ -1590,6 +1605,9 @@ const fr: TranslationMap = {
   'about.promise.desc': 'En réunissant l’approvisionnement en pièces automobiles et les technologies de commerce digital sous une même structure, GlobalVelo continue d’apporter à ses partenaires confiance à long terme, rapidité et puissance commerciale.',
   'about.cta.primary': 'Explorer le portefeuille produits',
   'about.cta.secondary': 'Contacter notre équipe',
+  'about.activities.kicker': 'Nos Activités',
+  'about.activities.title': "Présence opérationnelle multi-domaines à l'échelle mondiale",
+  'about.activities.desc': "GlobalVelo accompagne ses partenaires B2B dans un large éventail d'activités, de la fourniture de pièces détachées automobiles à l'infrastructure du commerce numérique.",
 
   'sdx.badge': 'Partenariat technologique',
   'sdx.title': 'Un partenariat fort dans la transformation digitale',
