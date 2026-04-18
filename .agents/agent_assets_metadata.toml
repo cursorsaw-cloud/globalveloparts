@@ -162,6 +162,12 @@ uri = "file://client/public/images/categories/exhaust-fuel-pro.png"
 type = "image"
 title = "turbo exhaust fuel system"
 
+[[generated]]
+id = "rjHb3edbsZtjpcBZJ-Ouf"
+uri = "file://client/src/assets/global-logistics-hero.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"

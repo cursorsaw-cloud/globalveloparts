@@ -1,5 +1,5 @@
 import { ArrowRight, Boxes, Building2, Globe2, Plane, Ship, Truck } from "lucide-react";
-import globalNetworkBg from "@assets/image_1775720213210.png";
+import globalNetworkBg from "@assets/global-logistics-hero.png";
 import worldMapNetworkBg from "@assets/image_1775746724311.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
