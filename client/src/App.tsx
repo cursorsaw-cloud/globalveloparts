@@ -14,21 +14,29 @@ import Global from "@/pages/global";
 import SabanciDx from "@/pages/sabancidx";
 import NotFound from "@/pages/not-found";
 
+// Disable browser scroll restoration immediately at module load time
+if (typeof window !== "undefined" && "scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function scrollInstantToTop() {
+  // Temporarily disable any CSS smooth scroll, force instant jump to top
+  const html = document.documentElement;
+  const prev = html.style.scrollBehavior;
+  html.style.scrollBehavior = "auto";
+  html.scrollTop = 0;
+  document.body.scrollTop = 0;
+  html.style.scrollBehavior = prev;
+}
+
 function HashScrollManager() {
   const [location] = useLocation();
-
-  useEffect(() => {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-  }, []);
 
   useEffect(() => {
     const hash = window.location.hash;
 
     if (!hash) {
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
+      scrollInstantToTop();
       return;
     }
 

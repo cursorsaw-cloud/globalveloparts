@@ -54,7 +54,7 @@ export function Navbar() {
               const isActive = location === link.href;
 
               return (
-                <Link key={link.href} href={link.href} onClick={() => { document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+                <Link key={link.href} href={link.href} onClick={() => { const h = document.documentElement; const p = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; h.scrollTop = 0; document.body.scrollTop = 0; h.style.scrollBehavior = p; }}>
                   <span
                     className={`relative cursor-pointer whitespace-nowrap rounded-full px-3 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 lg:px-4 lg:text-[12px] ${
                       isActive
@@ -138,7 +138,7 @@ export function Navbar() {
 
                 <div className="space-y-2 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-3">
                   {links.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => { setIsOpen(false); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+                    <Link key={link.href} href={link.href} onClick={() => { setIsOpen(false); const h = document.documentElement; const p = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; h.scrollTop = 0; document.body.scrollTop = 0; h.style.scrollBehavior = p; }}>
                       <span
                         className={`block cursor-pointer rounded-2xl px-4 py-3 text-[0.98rem] font-semibold transition-colors ${
                           location === link.href ? "bg-white/10 text-white" : "text-white/80 hover:bg-white/6 hover:text-white"
