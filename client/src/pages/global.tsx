@@ -1,6 +1,5 @@
 import { ArrowRight, Boxes, Building2, MapPin, Plane, Ship, Truck } from "lucide-react";
 import logisticsBannerBg from "@assets/global-logistics-banner.png";
-import worldMapNetworkBg from "@assets/image_1775746724311.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -29,28 +28,24 @@ export default function GlobalNetworkPage() {
 
   const regions = [t("global.eu"), t("global.me"), t("global.asia"), t("global.africa")];
 
-  const pins = [
-    { label: t("global.hub.1.city"), pct: "18%" },
-    { label: t("global.hub.3.city"), pct: "42%" },
-    { label: t("global.hub.4.city"), pct: "63%" },
-    { label: t("global.hub.2.city"), pct: "82%" },
-  ];
-
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
 
-      {/* ── HERO ─ dark navy theme ───────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#080f1e]">
-        {/* World-map faint overlay */}
+      {/* ── HERO ─ full-bleed logistics image background ─────── */}
+      <section className="relative overflow-hidden bg-[#060d1a]">
+        {/* Full-bleed logistics image */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <img
-            src={worldMapNetworkBg}
+            src={logisticsBannerBg}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.07]"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-100"
           />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.18),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(15,180,220,0.10),transparent_50%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#080f1e] to-transparent" />
+          {/* Directional gradient overlays — text readable, image still vivid */}
+          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(6,13,26,0.92)_0%,rgba(6,13,26,0.80)_30%,rgba(6,13,26,0.55)_60%,rgba(6,13,26,0.35)_100%)]" />
+          {/* Top & bottom fades */}
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#060d1a] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#060d1a] to-transparent" />
         </div>
 
         <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
@@ -141,58 +136,6 @@ export default function GlobalNetworkPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── CİNEMATİK LOJİSTİK BANNER ───────────────────────── */}
-      <section className="relative overflow-hidden" style={{ height: "clamp(320px, 42vw, 560px)" }} data-testid="section-global-logistics-banner">
-        {/* Main image — full opacity, cinematic */}
-        <img
-          src={logisticsBannerBg}
-          alt="Global logistics network — ships, trucks, aircraft"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          data-testid="img-global-page-network-background"
-        />
-
-        {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,15,30,0.55)_0%,rgba(8,15,30,0.10)_40%,rgba(8,15,30,0.10)_60%,rgba(8,15,30,0.72)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,15,30,0.60)_0%,transparent_35%,transparent_65%,rgba(8,15,30,0.60)_100%)]" />
-
-        {/* Center badge */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-8">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/30 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur-md">
-            <Ship className="h-3.5 w-3.5 text-cyan-300" />
-            <span>{t("global.flow.kicker")}</span>
-            <Plane className="h-3.5 w-3.5 text-blue-300" />
-          </div>
-        </div>
-
-        {/* Transport mode icons strip — center */}
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-center gap-8 px-6 md:gap-14">
-          {[Ship, Truck, Plane].map((Icon, i) => (
-            <div
-              key={i}
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/25 text-white/80 shadow-lg backdrop-blur-md md:h-16 md:w-16"
-            >
-              <Icon className="h-6 w-6 md:h-7 md:w-7" />
-            </div>
-          ))}
-        </div>
-
-        {/* Location pins row at the bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-28">
-          {pins.map((pin, i) => (
-            <div
-              key={pin.label}
-              className="absolute bottom-6 flex -translate-x-1/2 flex-col items-center gap-1"
-              style={{ left: pin.pct }}
-            >
-              <span className="rounded-full border border-white/20 bg-black/40 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-white/90 backdrop-blur-sm">
-                {pin.label}
-              </span>
-              <MapPin className="h-5 w-5 text-red-500 drop-shadow-[0_2px_6px_rgba(239,68,68,0.7)]" fill="#ef4444" />
-            </div>
-          ))}
         </div>
       </section>
 
