@@ -1,5 +1,5 @@
-import { ArrowRight, Boxes, Building2, Globe2, Plane, Ship, Truck } from "lucide-react";
-import globalNetworkBg from "@assets/global-logistics-hero.png";
+import { ArrowRight, Boxes, Building2, MapPin, Plane, Ship, Truck } from "lucide-react";
+import logisticsBannerBg from "@assets/global-logistics-banner.png";
 import worldMapNetworkBg from "@assets/image_1775746724311.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -29,79 +29,112 @@ export default function GlobalNetworkPage() {
 
   const regions = [t("global.eu"), t("global.me"), t("global.asia"), t("global.africa")];
 
+  const pins = [
+    { label: t("global.hub.1.city"), pct: "18%" },
+    { label: t("global.hub.3.city"), pct: "42%" },
+    { label: t("global.hub.4.city"), pct: "63%" },
+    { label: t("global.hub.2.city"), pct: "82%" },
+  ];
+
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.08),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.07),transparent_30%)]" />
+
+      {/* ── HERO ─ dark navy theme ───────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#080f1e]">
+        {/* World-map faint overlay */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <img
-            src={globalNetworkBg}
-            alt="Global logistics network background"
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.25] mix-blend-multiply saturate-[0.98] sm:opacity-[0.30] lg:opacity-[0.35]"
-            data-testid="img-global-page-network-background"
-          />
           <img
             src={worldMapNetworkBg}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-[70%_50%] mix-blend-multiply opacity-[0.42] sm:opacity-[0.50] lg:opacity-[0.56]"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.07]"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(238,242,247,0.96)_0%,rgba(238,242,247,0.72)_38%,rgba(238,242,247,0.30)_65%,rgba(238,242,247,0.08)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#eef2f7] via-[#eef2f7]/85 to-transparent" />
-          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#eef2f7] via-[#eef2f7]/60 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.18),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(15,180,220,0.10),transparent_50%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#080f1e] to-transparent" />
         </div>
-        <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
-          <div className="grid items-end gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] xl:gap-10">
-            <div className="max-w-[47rem]">
-              <span className="section-kicker text-secondary" data-testid="text-global-badge">
+
+        <div className="section-shell relative z-10 py-20 md:py-24 lg:py-28">
+          <div className="grid items-center gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.88fr)] xl:gap-12">
+
+            {/* Left — text */}
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-400"
+                data-testid="text-global-badge"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
                 {t("global.badge")}
               </span>
-              <h1 className="section-title mt-5 max-w-[40rem] !text-[clamp(3.2rem,5vw,5.2rem)]" data-testid="text-global-title">
+
+              <h1
+                className="mt-6 text-[clamp(2.8rem,5vw,5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-white"
+                data-testid="text-global-title"
+              >
                 {t("global.title")}
               </h1>
-              <p className="section-copy mt-7 max-w-[40rem]" data-testid="text-global-description">
+
+              <p
+                className="mt-6 max-w-[42rem] text-[1.05rem] leading-8 text-slate-400"
+                data-testid="text-global-description"
+              >
                 {t("global.desc")}
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((stat, index) => (
-                  <div key={stat.label} className="surface-panel rounded-[1.5rem] px-5 py-5" data-testid={`card-global-stat-${index}`}>
-                    <div className="text-3xl font-extrabold tracking-[-0.05em] text-slate-950">{stat.value}</div>
-                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{stat.label}</div>
+                  <div
+                    key={stat.label}
+                    className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] px-5 py-5 backdrop-blur-sm"
+                    data-testid={`card-global-stat-${index}`}
+                  >
+                    <div className="text-[2rem] font-extrabold tracking-[-0.05em] text-white">{stat.value}</div>
+                    <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(160deg,#0f172a_0%,#1e293b_100%)] p-7 text-white shadow-[0_35px_100px_-50px_rgba(15,23,42,0.78)] md:p-8">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_55%)]" />
-              <div className="absolute left-10 top-10 h-3 w-3 rounded-full bg-blue-300 shadow-[0_0_0_10px_rgba(96,165,250,0.15)]" />
-              <div className="absolute right-12 top-24 h-3 w-3 rounded-full bg-slate-200 shadow-[0_0_0_10px_rgba(226,232,240,0.12)]" />
-              <div className="absolute bottom-16 left-16 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_0_10px_rgba(103,232,249,0.12)]" />
-              <div className="absolute bottom-10 right-10 h-3 w-3 rounded-full bg-blue-400 shadow-[0_0_0_10px_rgba(96,165,250,0.12)]" />
+            {/* Right — hub panel */}
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[linear-gradient(160deg,#0f1f3d_0%,#0d1a2e_100%)] p-7 shadow-[0_40px_120px_-50px_rgba(0,0,0,0.8)] md:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_60%)]" />
+              <div className="absolute left-8 top-8 h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_0_8px_rgba(96,165,250,0.12)]" />
+              <div className="absolute right-10 top-20 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_0_8px_rgba(103,232,249,0.10)]" />
+              <div className="absolute bottom-14 left-14 h-2 w-2 rounded-full bg-slate-300 shadow-[0_0_0_8px_rgba(226,232,240,0.10)]" />
+              <div className="absolute bottom-8 right-8 h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_0_8px_rgba(96,165,250,0.10)]" />
 
               <div className="relative z-10">
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white/10 text-blue-300">
-                    <Plane className="h-6 w-6" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[0.9rem] bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/20">
+                    <Plane className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400" data-testid="text-global-panel-kicker">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400" data-testid="text-global-panel-kicker">
                       {t("global.panel.kicker")}
                     </p>
-                    <h2 className="mt-1 text-2xl font-bold text-white" data-testid="text-global-panel-title">
+                    <h2 className="mt-0.5 text-xl font-bold text-white" data-testid="text-global-panel-title">
                       {t("global.panel.title")}
                     </h2>
                   </div>
                 </div>
-                <p className="max-w-md text-sm leading-7 text-slate-300" data-testid="text-global-panel-description">
+
+                <p className="max-w-md text-sm leading-7 text-slate-400" data-testid="text-global-panel-description">
                   {t("global.panel.desc")}
                 </p>
-                <div className="mt-8 grid gap-3">
+
+                <div className="mt-7 grid gap-2.5">
                   {hubs.map((hub, index) => (
-                    <div key={hub.city} className="rounded-[1.3rem] border border-white/10 bg-white/5 px-5 py-4" data-testid={`card-global-hub-${index}`}>
-                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{hub.role}</div>
-                      <div className="mt-2 text-lg font-bold text-white">{hub.city}</div>
+                    <div
+                      key={hub.city}
+                      className="flex items-center gap-4 rounded-[1.1rem] border border-white/[0.07] bg-white/[0.03] px-5 py-3.5"
+                      data-testid={`card-global-hub-${index}`}
+                    >
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-500/10">
+                        <MapPin className="h-3.5 w-3.5 text-blue-400" />
+                      </div>
+                      <div>
+                        <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-slate-500">{hub.role}</div>
+                        <div className="mt-0.5 text-[0.95rem] font-bold text-white">{hub.city}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -111,16 +144,75 @@ export default function GlobalNetworkPage() {
         </div>
       </section>
 
+      {/* ── CİNEMATİK LOJİSTİK BANNER ───────────────────────── */}
+      <section className="relative overflow-hidden" style={{ height: "clamp(320px, 42vw, 560px)" }} data-testid="section-global-logistics-banner">
+        {/* Main image — full opacity, cinematic */}
+        <img
+          src={logisticsBannerBg}
+          alt="Global logistics network — ships, trucks, aircraft"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          data-testid="img-global-page-network-background"
+        />
+
+        {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,15,30,0.55)_0%,rgba(8,15,30,0.10)_40%,rgba(8,15,30,0.10)_60%,rgba(8,15,30,0.72)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,15,30,0.60)_0%,transparent_35%,transparent_65%,rgba(8,15,30,0.60)_100%)]" />
+
+        {/* Center badge */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-8">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/30 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur-md">
+            <Ship className="h-3.5 w-3.5 text-cyan-300" />
+            <span>{t("global.flow.kicker")}</span>
+            <Plane className="h-3.5 w-3.5 text-blue-300" />
+          </div>
+        </div>
+
+        {/* Transport mode icons strip — center */}
+        <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-center gap-8 px-6 md:gap-14">
+          {[Ship, Truck, Plane].map((Icon, i) => (
+            <div
+              key={i}
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/25 text-white/80 shadow-lg backdrop-blur-md md:h-16 md:w-16"
+            >
+              <Icon className="h-6 w-6 md:h-7 md:w-7" />
+            </div>
+          ))}
+        </div>
+
+        {/* Location pins row at the bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-28">
+          {pins.map((pin, i) => (
+            <div
+              key={pin.label}
+              className="absolute bottom-6 flex -translate-x-1/2 flex-col items-center gap-1"
+              style={{ left: pin.pct }}
+            >
+              <span className="rounded-full border border-white/20 bg-black/40 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-white/90 backdrop-blur-sm">
+                {pin.label}
+              </span>
+              <MapPin className="h-5 w-5 text-red-500 drop-shadow-[0_2px_6px_rgba(239,68,68,0.7)]" fill="#ef4444" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TEDARIK AKIŞI ────────────────────────────────────── */}
       <section className="section-divider bg-white">
         <div className="section-shell">
           <div className="mx-auto max-w-[44rem] text-center">
             <span className="section-kicker text-secondary" data-testid="text-global-flow-badge">
               {t("global.flow.kicker")}
             </span>
-            <h2 className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]" data-testid="text-global-flow-title">
+            <h2
+              className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]"
+              data-testid="text-global-flow-title"
+            >
               {t("global.flow.title")}
             </h2>
-            <p className="mx-auto mt-5 max-w-[40rem] text-[1rem] leading-8 text-slate-600" data-testid="text-global-flow-description">
+            <p
+              className="mx-auto mt-5 max-w-[40rem] text-[1rem] leading-8 text-slate-600"
+              data-testid="text-global-flow-description"
+            >
               {t("global.flow.desc")}
             </p>
           </div>
@@ -128,7 +220,6 @@ export default function GlobalNetworkPage() {
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {flow.map((item, index) => {
               const Icon = item.icon;
-
               return (
                 <div key={item.title} className="surface-panel rounded-[1.85rem] p-7" data-testid={`card-global-flow-${index}`}>
                   <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-slate-200/80 bg-slate-100 text-primary">
@@ -143,6 +234,7 @@ export default function GlobalNetworkPage() {
         </div>
       </section>
 
+      {/* ── BÖLGELER + CTA ───────────────────────────────────── */}
       <section className="section-divider bg-slate-50">
         <div className="section-shell">
           <div className="grid gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-10">
@@ -150,7 +242,10 @@ export default function GlobalNetworkPage() {
               <span className="section-kicker text-secondary" data-testid="text-global-region-badge">
                 {t("global.region.kicker")}
               </span>
-              <h2 className="mt-4 text-[2.15rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.8rem]" data-testid="text-global-region-title">
+              <h2
+                className="mt-4 text-[2.15rem] font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-[2.8rem]"
+                data-testid="text-global-region-title"
+              >
                 {t("global.region.title")}
               </h2>
               <p className="mt-5 text-[1rem] leading-8 text-slate-600" data-testid="text-global-region-description">
@@ -178,7 +273,10 @@ export default function GlobalNetworkPage() {
                 <p className="section-kicker text-slate-400" data-testid="text-global-cta-kicker">
                   {t("global.cta.kicker")}
                 </p>
-                <h2 className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]" data-testid="text-global-cta-title">
+                <h2
+                  className="mt-4 text-[2rem] font-bold tracking-[-0.04em] text-white md:text-[2.6rem]"
+                  data-testid="text-global-cta-title"
+                >
                   {t("global.cta.title")}
                 </h2>
                 <p className="mt-4 max-w-[44rem] text-[1rem] leading-8 text-slate-300" data-testid="text-global-cta-description">
