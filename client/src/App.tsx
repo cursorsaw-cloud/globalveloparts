@@ -18,25 +18,23 @@ function HashScrollManager() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const scrollToHash = () => {
-      if (window.location.pathname !== "/" || !window.location.hash) {
-        return;
-      }
+    const hash = window.location.hash;
 
-      const targetId = window.location.hash.slice(1);
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+      return;
+    }
+
+    const scrollToHash = () => {
+      const targetId = hash.slice(1);
       const target = document.getElementById(targetId);
 
-      if (!target) {
-        return;
-      }
+      if (!target) return;
 
       const offset = 120;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
-      window.scrollTo({
-        top,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top, behavior: "smooth" });
     };
 
     const timeoutId = window.setTimeout(scrollToHash, 80);
