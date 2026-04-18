@@ -18,22 +18,27 @@ function HashScrollManager() {
   const [location] = useLocation();
 
   useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  useEffect(() => {
     const hash = window.location.hash;
 
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
       return;
     }
 
     const scrollToHash = () => {
       const targetId = hash.slice(1);
       const target = document.getElementById(targetId);
-
       if (!target) return;
-
       const offset = 120;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
-
       window.scrollTo({ top, behavior: "smooth" });
     };
 
