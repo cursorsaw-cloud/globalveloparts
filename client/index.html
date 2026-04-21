@@ -27,7 +27,42 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="GlobalVelo Automotive" />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Favicon & app icons -->
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <meta name="msapplication-TileImage" content="/favicon.png" />
+
+    <!-- JSON-LD: Organization schema — Google uses this for logo in search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GlobalVelo",
+      "alternateName": "GlobalVelo Spare Parts",
+      "url": "https://globalvelo.com.tr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://globalvelo.com.tr/favicon.png",
+        "width": 512,
+        "height": 512
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+905061151156",
+        "contactType": "sales"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ankara",
+        "addressCountry": "TR"
+      },
+      "sameAs": []
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />

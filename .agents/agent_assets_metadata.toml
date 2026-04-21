@@ -221,3 +221,9 @@ id = "LRn--6WAVuClefkgNuvEG"
 uri = "file://client/public/images/categories/clutch-drivetrain.jpg"
 type = "image"
 title = "automotive clutch kit transmission drivetrain premium industrial product photography"
+
+[[outputs]]
+id = "1AEEzw4e8y9DgtSgRTvYW"
+uri = "file://client/public/favicon.png"
+type = "image"
+title = "GlobalVelo Favicon (512×512)"
