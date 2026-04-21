@@ -130,6 +130,7 @@ const tr: TranslationMap = {
   'brands.title': '80+ güvenilir küresel marka, tek kaynaktan',
   'footer.tagline': 'Küresel otomotiv satış sonrası ticaret ve dijital B2B çözüm ortaklığı.',
   'footer.social.linkedin': 'LinkedIn\'de Takip Edin',
+  'footer.social.instagram': 'Instagram\'da Takip Edin',
 
   'contact.badge': 'İletişim',
   'contact.title1': 'İş Ortaklığı İçin',
@@ -411,6 +412,7 @@ const en: TranslationMap = {
   'brands.title': '80+ trusted global brands, from one source',
   'footer.tagline': 'Global automotive aftermarket trade and digital B2B enablement.',
   'footer.social.linkedin': 'Follow on LinkedIn',
+  'footer.social.instagram': 'Follow on Instagram',
 
   'contact.badge': 'Contact',
   'contact.title1': 'Take a Step for',
@@ -692,6 +694,7 @@ const es: TranslationMap = {
   'brands.title': 'Más de 80 marcas globales de confianza, de una sola fuente',
   'footer.tagline': 'Comercio global de posventa automotriz y habilitación digital B2B.',
   'footer.social.linkedin': 'Seguir en LinkedIn',
+  'footer.social.instagram': 'Seguir en Instagram',
 
   'contact.badge': 'Contacto',
   'contact.title1': 'Dé el Paso hacia una',
@@ -973,6 +976,7 @@ const ar: TranslationMap = {
   'brands.title': 'أكثر من 80 علامة تجارية عالمية موثوقة، من مصدر واحد',
   'footer.tagline': 'تجارة قطع غيار السيارات العالمية وتمكين B2B الرقمي.',
   'footer.social.linkedin': 'تابعنا على LinkedIn',
+  'footer.social.instagram': 'تابعنا على Instagram',
 
   'contact.badge': 'اتصل بنا',
   'contact.title1': 'اتخذ خطوة نحو',
@@ -1254,6 +1258,7 @@ const ru: TranslationMap = {
   'brands.title': 'Более 80 надёжных мировых брендов из одного источника',
   'footer.tagline': 'Глобальная торговля автозапчастями и цифровое B2B-сопровождение.',
   'footer.social.linkedin': 'Подписаться в LinkedIn',
+  'footer.social.instagram': 'Подписаться в Instagram',
 
   'contact.badge': 'Контакты',
   'contact.title1': 'Сделайте шаг к',
@@ -1535,6 +1540,7 @@ const fr: TranslationMap = {
   'brands.title': 'Plus de 80 marques mondiales reconnues, en une seule source',
   'footer.tagline': 'Commerce mondial de pièces automobiles et activation B2B numérique.',
   'footer.social.linkedin': 'Suivre sur LinkedIn',
+  'footer.social.instagram': 'Suivre sur Instagram',
 
   'contact.badge': 'Contact',
   'contact.title1': 'Faites un pas vers un',

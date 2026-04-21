@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowUpRight, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
@@ -92,6 +92,18 @@ export function Footer() {
                 >
                   <Linkedin className="h-4 w-4" />
                   {t("footer.social.linkedin")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/globalveloparts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
+                  data-testid="link-footer-instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                  {t("footer.social.instagram")}
                 </a>
               </li>
             </ul>
