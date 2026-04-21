@@ -108,11 +108,11 @@ export default function NeoVeloPartsPage() {
           src="/images/neovelo-hero-bg.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-65"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(2,6,23,0.92)_0%,rgba(15,23,42,0.75)_50%,rgba(2,6,23,0.88)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(163,230,53,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.18),transparent_30%)]" />
-        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(2,6,23,0.88)_0%,rgba(15,23,42,0.55)_45%,rgba(2,6,23,0.72)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(163,230,53,0.12),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.14),transparent_30%)]" />
+        <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
 
         <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
           <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-10">
