@@ -30,7 +30,7 @@ const categories = [
   {
     id: "fren",
     icon: CircleDot,
-    image: "/images/categories/brake-system.jpg",
+    image: "/images/categories/brake-system.webp",
     name: { tr: "Fren Sistemi", en: "Brake Systems" },
     subCategories: {
       tr: ["Balata", "Disk", "Kaliper", "Hidrolik", "ABS", "Hortum"],
@@ -41,7 +41,7 @@ const categories = [
   {
     id: "filtre",
     icon: Filter,
-    image: "/images/categories/filters.jpg",
+    image: "/images/categories/filters.webp",
     name: { tr: "Filtreler", en: "Filters" },
     subCategories: {
       tr: ["Yağ", "Hava", "Polen", "Yakıt", "Performans"],
@@ -52,7 +52,7 @@ const categories = [
   {
     id: "motor",
     icon: Settings,
-    image: "/images/categories/engine-parts-pro.png",
+    image: "/images/categories/engine-parts-pro.webp",
     name: { tr: "Motor Parçaları", en: "Engine Parts" },
     subCategories: {
       tr: ["Yağ", "Conta", "Zamanlama", "Piston", "Pompa"],
@@ -63,7 +63,7 @@ const categories = [
   {
     id: "suspansiyon",
     icon: MoveVertical,
-    image: "/images/categories/suspension.jpg",
+    image: "/images/categories/suspension.webp",
     name: { tr: "Süspansiyon & Sönümleme", en: "Suspension & Damping" },
     subCategories: {
       tr: ["Salıncak", "Rot", "Rulman", "Amortisör", "Yay"],
@@ -74,7 +74,7 @@ const categories = [
   {
     id: "kayis",
     icon: Link2,
-    image: "/images/categories/belt-chain-pro.png",
+    image: "/images/categories/belt-chain-pro.webp",
     name: { tr: "Kayış & Zincir", en: "Belts & Chains" },
     subCategories: {
       tr: ["Triger Seti", "V Kayışı", "Gergi"],
@@ -85,7 +85,7 @@ const categories = [
   {
     id: "elektrik",
     icon: Zap,
-    image: "/images/categories/electrical-lighting.jpg",
+    image: "/images/categories/electrical-lighting.webp",
     name: { tr: "Elektrik & Aydınlatma", en: "Electrical & Lighting" },
     subCategories: {
       tr: ["Far", "Silecek", "Ateşleme", "Akü", "Röle"],
@@ -96,7 +96,7 @@ const categories = [
   {
     id: "sogutma",
     icon: Snowflake,
-    image: "/images/categories/cooling-heating-pro.png",
+    image: "/images/categories/cooling-heating-pro.webp",
     name: { tr: "Soğutma & Isıtma", en: "Cooling & Heating" },
     subCategories: {
       tr: ["Radyatör", "Pompa", "Termostat"],
@@ -107,7 +107,7 @@ const categories = [
   {
     id: "debriyaj",
     icon: Settings2,
-    image: "/images/categories/clutch-pro-v2.png",
+    image: "/images/categories/clutch-pro-v2.webp",
     name: { tr: "Debriyaj & Aktarma", en: "Clutch & Drivetrain" },
     subCategories: {
       tr: ["Debriyaj Seti", "Volan", "Aks", "Şanzıman"],
@@ -118,7 +118,7 @@ const categories = [
   {
     id: "egzoz",
     icon: Fuel,
-    image: "/images/categories/exhaust-fuel-pro.png",
+    image: "/images/categories/exhaust-fuel-pro.webp",
     name: { tr: "Egzoz & Yakıt", en: "Exhaust & Fuel" },
     subCategories: {
       tr: ["Turbo", "EGR", "Enjektör", "Yakıt Pompası"],
@@ -326,9 +326,10 @@ export default function ProductsPage() {
                 </Button>
               </div>
             ) : null}
-            {filteredCategories.map((category) => {
+            {filteredCategories.map((category, index) => {
               const isExpanded = expandedId === category.id;
               const Icon = category.icon;
+              const isAboveFold = index < 6;
 
               return (
                 <section
@@ -348,7 +349,15 @@ export default function ProductsPage() {
                   >
                     <div className="flex min-w-0 flex-1 items-center gap-5">
                       <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[1.3rem] sm:h-28 sm:w-28">
-                        <img src={category.image} alt={category.label} className="h-full w-full object-cover" data-testid={`img-products-category-${category.id}`} />
+                        <img
+                          src={category.image}
+                          alt={category.label}
+                          className="h-full w-full object-cover"
+                          loading={isAboveFold ? "eager" : "lazy"}
+                          fetchPriority={isAboveFold ? "high" : "low"}
+                          decoding={isAboveFold ? "sync" : "async"}
+                          data-testid={`img-products-category-${category.id}`}
+                        />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.12)_0%,rgba(15,23,42,0.55)_100%)]" />
                         <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-[0.95rem] bg-white/15 text-white backdrop-blur-sm">
                           <Icon className="h-5 w-5" />
