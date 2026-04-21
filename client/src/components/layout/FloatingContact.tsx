@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Mail, MessageCircle, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
-const WHATSAPP_NUMBER = "905061151156";
+const WHATSAPP_NUMBER = "905322562571";
 const EMAIL = "info@globalvelo.com.tr";
 
 export function FloatingContact() {

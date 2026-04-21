@@ -93,8 +93,8 @@ export function Contact() {
       title: t("contact.phone.title"),
       description: t("contact.phone.desc"),
       content: (
-        <a href="tel:+905061151156" className="font-medium text-primary hover:underline" data-testid="link-contact-phone">
-          +90 (506) 115 11 56
+        <a href="tel:+905322562571" className="font-medium text-primary hover:underline" data-testid="link-contact-phone">
+          +90 (532) 256 25 71
         </a>
       ),
     },
