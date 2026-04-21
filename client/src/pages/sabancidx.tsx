@@ -30,7 +30,7 @@ export default function SabanciDxPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section className="relative overflow-hidden bg-[#020617] text-white">
         <img
-          src="/images/sabancidx-hero-bg.png"
+          src="/images/sabancidx-v1.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
