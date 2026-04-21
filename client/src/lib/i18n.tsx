@@ -14,6 +14,7 @@ const tr: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'Global Ağımız',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'Online Katalog',
   'nav.contact': 'Teklif Al',
 
   'hero.badge': 'Global Yedek Parça Tedarikçiniz',
@@ -296,6 +297,7 @@ const en: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'Global Network',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'Online Catalog',
   'nav.contact': 'Get a Quote',
 
   'hero.badge': 'Your Global Spare Parts Supplier',
@@ -578,6 +580,7 @@ const es: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'Red Global',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'Catálogo Online',
   'nav.contact': 'Cotizar Ahora',
 
   'hero.badge': 'Su proveedor global de repuestos',
@@ -860,6 +863,7 @@ const ar: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'الشبكة العالمية',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'الكتالوج الإلكتروني',
   'nav.contact': 'طلب عرض سعر',
 
   'hero.badge': 'موردكم العالمي لقطع الغيار',
@@ -1142,6 +1146,7 @@ const ru: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'Глобальная Сеть',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'Онлайн каталог',
   'nav.contact': 'Запросить цены',
 
   'hero.badge': 'Ваш глобальный поставщик запчастей',
@@ -1424,6 +1429,7 @@ const fr: TranslationMap = {
   'nav.neovelo': 'NeoVelo Parts',
   'nav.global': 'Réseau Mondial',
   'nav.sabancidx': 'SabancıDx',
+  'nav.catalog': 'Catalogue en ligne',
   'nav.contact': 'Demander un devis',
 
   'hero.badge': 'Votre fournisseur mondial de pièces détachées',

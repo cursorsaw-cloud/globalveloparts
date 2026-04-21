@@ -71,6 +71,19 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 md:flex">
+            <Link href="/products">
+              <span
+                className={`relative cursor-pointer whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 lg:text-[12px] ${
+                  location === "/products"
+                    ? "border-white/20 bg-white/[0.1] text-white"
+                    : "border-white/12 bg-white/[0.045] text-slate-100 hover:border-white/20 hover:bg-white/10 hover:text-white"
+                }`}
+                data-testid="link-nav-catalog"
+              >
+                {t("nav.catalog")}
+              </span>
+            </Link>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -150,6 +163,19 @@ export function Navbar() {
                     </Link>
                   ))}
                 </div>
+
+                <Link href="/products" onClick={() => { setIsOpen(false); }}>
+                  <span
+                    className={`block cursor-pointer rounded-2xl border px-4 py-3 text-center text-[0.98rem] font-semibold transition-colors ${
+                      location === "/products"
+                        ? "border-white/20 bg-white/10 text-white"
+                        : "border-white/10 bg-white/[0.03] text-white/80 hover:bg-white/6 hover:text-white"
+                    }`}
+                    data-testid="link-mobile-catalog"
+                  >
+                    {t("nav.catalog")}
+                  </span>
+                </Link>
 
                 <Button
                   asChild
