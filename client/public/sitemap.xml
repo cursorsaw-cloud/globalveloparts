@@ -3,43 +3,49 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://globalvelo.com.tr/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://globalveloparts.com/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalveloparts.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalveloparts.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://globalveloparts.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://globalveloparts.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://globalveloparts.com/?lang=fr"/>
   </url>
 
   <url>
-    <loc>https://globalvelo.com.tr/products</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/products</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://globalvelo.com.tr/about</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/about</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://globalvelo.com.tr/global</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/global</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://globalvelo.com.tr/neovelo-parts</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/neovelo-parts</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://globalvelo.com.tr/sabancidx</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://globalveloparts.com/sabancidx</loc>
+    <lastmod>2025-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

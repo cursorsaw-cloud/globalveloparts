@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /api/
 
-Sitemap: https://globalvelo.com.tr/sitemap.xml
+Sitemap: https://globalveloparts.com/sitemap.xml
