@@ -48,16 +48,12 @@ export default function SabanciDxPage() {
                     {t("sdx.badge")}
                   </span>
                   <div className="inline-flex max-w-full items-center gap-4 rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[0_22px_60px_-34px_rgba(15,23,42,0.9)] backdrop-blur-md sm:px-5">
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[1rem] bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_-16px_rgba(15,23,42,0.55)]">
+                    <div className="flex h-16 w-auto shrink-0 items-center justify-center rounded-[1rem] bg-white px-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_-16px_rgba(15,23,42,0.55)]">
                       <img
-                        src="https://www.sabancidx.com/assets/images/logo.svg"
+                        src="/images/sabancidx-logo.png"
                         alt="SabancıDx Logo"
                         className="h-9 w-auto object-contain"
                         data-testid="img-sdx-logo"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "https://ui-avatars.com/api/?name=SabanciDx&background=ffffff&color=0f172a&size=120";
-                        }}
                       />
                     </div>
                     <div className="h-10 w-px shrink-0 bg-white/14" />
