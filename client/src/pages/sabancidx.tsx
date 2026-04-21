@@ -47,21 +47,22 @@ export default function SabanciDxPage() {
                   <span className="section-kicker whitespace-nowrap text-slate-300" data-testid="text-sdx-badge">
                     {t("sdx.badge")}
                   </span>
-                  <div className="inline-flex max-w-full items-center gap-4 rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[0_22px_60px_-34px_rgba(15,23,42,0.9)] backdrop-blur-md sm:px-5">
-                    <div className="flex h-16 w-auto shrink-0 items-center justify-center rounded-[1rem] bg-white px-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_-16px_rgba(15,23,42,0.55)]">
+                  <div className="flex w-fit items-center gap-3 rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[0_22px_60px_-34px_rgba(15,23,42,0.9)] backdrop-blur-md">
+                    <div className="flex shrink-0 items-center justify-center rounded-[1rem] bg-white px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_-16px_rgba(15,23,42,0.55)]">
                       <img
                         src="/images/sabancidx-logo.png"
                         alt="SabancıDx Logo"
-                        className="h-9 w-auto object-contain"
+                        className="h-8 w-auto object-contain"
                         data-testid="img-sdx-logo"
                       />
                     </div>
                     <div className="h-10 w-px shrink-0 bg-white/14" />
-                    <div className="min-w-0 rounded-[0.9rem] bg-white/[0.02] px-1 py-1">
+                    <div className="shrink-0 rounded-[0.9rem] bg-white/[0.02] px-2 py-1">
                       <img
                         src="/logo-globalvelo-dark.png"
-                        alt="Globalvelo Logo"
-                        className="h-10 w-auto max-w-[10.5rem] object-contain sm:h-11 sm:max-w-[12.5rem]"
+                        alt="GlobalVelo Logo"
+                        className="h-8 w-auto object-contain"
+                        style={{ maxWidth: "9rem" }}
                         data-testid="img-globalvelo-logo"
                       />
                     </div>
