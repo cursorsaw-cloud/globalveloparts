@@ -71,7 +71,7 @@ Preferred communication style: Simple, everyday language.
 
 ### UX / CRO Enhancements (Layout)
 Three persistent UI components are rendered in `Layout.tsx` for all pages:
-- **FloatingContact** (`FloatingContact.tsx`) – Sticky bottom-right button (bottom-left for Arabic RTL). After scrolling 420px, shows a toggle button that expands to reveal WhatsApp (`wa.me/902160000000`) and email (`info@globalvelo.com.tr`) quick-contact links. Fully i18n'd across all 6 languages including pre-filled WhatsApp message text.
+- **FloatingContact** (`FloatingContact.tsx`) – Sticky bottom-right button (bottom-left for Arabic RTL). After scrolling 420px, shows a toggle button that expands to reveal WhatsApp (`wa.me/905061151156`) and email (`info@globalvelo.com.tr`) quick-contact links. Fully i18n'd across all 6 languages including pre-filled WhatsApp message text.
 - **ScrollToTop** (`ScrollToTop.tsx`) – Appears after 600px of scroll. One-click smooth scroll back to the top. RTL-aware (appears bottom-left for Arabic).
 - **CookieConsent** (`CookieConsent.tsx`) – GDPR-compliant consent banner slides up from the bottom 1.2 seconds after first visit. Accept/Decline choice is stored in `localStorage` under key `globalvelo_cookie_consent`. Fully i18n'd in all 6 languages.
 
