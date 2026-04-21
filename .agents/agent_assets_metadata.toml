@@ -180,6 +180,12 @@ uri = "file://client/public/images/neovelo-hero-bg.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "a5DUiVz63rep8xBnqJ0XQ"
+uri = "file://client/public/images/sabancidx-hero-bg.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
@@ -239,3 +245,9 @@ id = "QJQaiU9-wUyPvs6MgHrMO"
 uri = "file://client/public/images/neovelo-hero-bg.png"
 type = "image"
 title = "NeoVelo Hero Arka Plan Görseli"
+
+[[outputs]]
+id = "arNXBo1jZedT4GuNKRcwr"
+uri = "file://client/public/images/sabancidx-hero-bg.png"
+type = "image"
+title = "SabancıDx Dijital Ortaklık Arka Plan Görseli"

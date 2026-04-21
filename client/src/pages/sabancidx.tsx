@@ -28,9 +28,16 @@ export default function SabanciDxPage() {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#020617_0%,#0f172a_52%,#1e293b_100%)] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.22),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(148,163,184,0.12),transparent_30%)]" />
-        <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
+      <section className="relative overflow-hidden bg-[#020617] text-white">
+        <img
+          src="/images/sabancidx-hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.90)_0%,rgba(15,23,42,0.55)_48%,rgba(2,6,23,0.78)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.18),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(148,163,184,0.10),transparent_30%)]" />
+        <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:72px_72px]" />
 
         <div className="section-shell relative z-10 py-18 md:py-22 lg:py-24">
           <div className="mx-auto max-w-[74rem]">
