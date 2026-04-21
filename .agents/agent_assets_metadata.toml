@@ -186,6 +186,18 @@ uri = "file://client/public/images/sabancidx-hero-bg.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "OYi5087VZyj3mG7IzWYoH"
+uri = "file://client/public/images/sabancidx-v1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "FgtMwMW94B9tLhYXCmDVU"
+uri = "file://client/public/images/sabancidx-v2.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "oQ9HaHs7Yz_01GwnXd3KN"
 uri = "file://client/public/images/categories/brake-system.jpg"
@@ -251,3 +263,15 @@ id = "arNXBo1jZedT4GuNKRcwr"
 uri = "file://client/public/images/sabancidx-hero-bg.png"
 type = "image"
 title = "Yeni SabancıDx Arka Plan Görseli"
+
+[[outputs]]
+id = "EGwJnrhGOr2RbozuPuiRj"
+uri = "file://client/public/images/sabancidx-v1.png"
+type = "image"
+title = "Versiyon 1 — Otomotiv Parçalar + Dijital Akışlar"
+
+[[outputs]]
+id = "VR-Cfr0CQzD8VfDvK0jf5"
+uri = "file://client/public/images/sabancidx-v2.png"
+type = "image"
+title = "Versiyon 2 — İki Küre Ortaklık"
