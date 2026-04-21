@@ -48,11 +48,11 @@ export default function SabanciDxPage() {
                     {t("sdx.badge")}
                   </span>
                   <div className="flex w-fit items-center gap-3 rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[0_22px_60px_-34px_rgba(15,23,42,0.9)] backdrop-blur-md">
-                    <div className="flex shrink-0 items-center justify-center px-2 py-1">
+                    <div className="flex shrink-0 items-center justify-center rounded-[0.75rem] bg-white px-3 py-1.5">
                       <img
-                        src="/images/sabancidx-logo-transparent.png"
+                        src="/images/sabancidx-logo.png"
                         alt="SabancıDx Logo"
-                        className="h-8 w-auto object-contain brightness-0 invert"
+                        className="h-7 w-auto object-contain"
                         data-testid="img-sdx-logo"
                       />
                     </div>
