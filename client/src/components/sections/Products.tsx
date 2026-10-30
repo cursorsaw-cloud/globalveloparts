@@ -68,8 +68,8 @@ const categories = [
     categoryId: "sogutma",
     title: { tr: "Soğutma & Isıtma", en: "Cooling & Heating" },
     desc: {
-      tr: "Radyatör, termostat ve pompa gruplarında global tedarik.",
-      en: "Global sourcing for radiators, thermostats and pump assemblies.",
+      tr: "Radyatör, termostat ve pompa gruplarında Türkiye geneline yönelik tedarik organizasyonu.",
+      en: "Structured sourcing across Turkey for radiators, thermostats and pump assemblies.",
     },
     image: "/images/categories/cooling-heating-pro.png",
   },
@@ -89,8 +89,8 @@ export function Products() {
   const { language, t } = useLanguage();
   const contentLanguage = language === "tr" ? "tr" : "en";
 
-  const productStats = [t("prod.stat.1"), t("prod.stat.2"), t("prod.stat.3")];
-  const sdxOutcomes = [t("sdx.outcomes.1"), t("sdx.outcomes.2"), t("sdx.outcomes.3")];
+  const productStats = [t("prod.stat.1"), t("home.prod.stat.2"), t("home.prod.stat.3")];
+  const sdxOutcomes = [t("home.tech.outcome.1"), t("home.tech.outcome.2"), t("home.tech.outcome.3")];
 
   return (
     <section id="products" className="section-divider relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_32%,#eef2f7_100%)]">
@@ -105,7 +105,7 @@ export function Products() {
               {t("prod.title")}
             </h2>
             <p className="section-copy" data-testid="text-products-description">
-              {t("prod.desc")}
+              {t("home.prod.desc")}
             </p>
           </div>
 
@@ -146,12 +146,9 @@ export function Products() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/42 to-transparent" />
               <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5">
-                <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200">
-                  Globalvelo
-                </div>
                 <div className="inline-flex items-center gap-1 rounded-full border border-white/12 bg-slate-950/45 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                   <ShieldCheck className="h-3.5 w-3.5" />
-                  OEM
+                  {t("home.prod.oem")}
                 </div>
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6">
@@ -167,13 +164,13 @@ export function Products() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300" data-testid="text-products-sdx-badge">
                 <Sparkles className="h-3.5 w-3.5" />
-                {t("sdx.badge")}
+                {t("home.tech.badge")}
               </div>
               <h3 className="mt-5 text-[2rem] font-bold leading-tight text-white sm:text-[2.4rem]" data-testid="text-products-sdx-title">
-                {t("sdx.title")}
+                {t("home.tech.panel.title")}
               </h3>
               <p className="mt-4 max-w-xl text-[1rem] leading-8 text-slate-300" data-testid="text-products-sdx-description">
-                {t("sdx.desc")}
+                {t("home.tech.panel.desc")}
               </p>
             </div>
 
@@ -189,7 +186,7 @@ export function Products() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg" className="w-fit px-7" data-testid="button-products-sdx-page">
               <a href="/sabancidx">
-                {t("nav.sabancidx")}
+                {t("home.tech.cta")}
                 <ArrowRight className="h-4.5 w-4.5" />
               </a>
             </Button>

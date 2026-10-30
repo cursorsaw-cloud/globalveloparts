@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/i18n";
 export function Footer() {
   const { t } = useLanguage();
 
-  const trustItems = [t("hero.trust.countries"), t("hero.trust.fast"), t("nav.assurance")];
+  const trustItems = [t("footer.stat.1"), t("footer.stat.2"), t("footer.stat.3")];
 
   return (
     <footer className="border-t border-white/6 bg-slate-950 text-slate-200">
@@ -64,23 +64,6 @@ export function Footer() {
                 <Link href="/neovelo-parts" className="transition-colors hover:text-white" data-testid="link-footer-neovelo">
                   {t("nav.neovelo")}
                 </Link>
-              </li>
-              <li>
-                <Link href="/sabancidx" className="transition-colors hover:text-white" data-testid="link-footer-sabancidx">
-                  {t("nav.sabancidx")}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://www.sabancidx.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
-                  data-testid="link-footer-partner-site"
-                >
-                  {t("footer.connectPartner")}
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
               </li>
               <li>
                 <a

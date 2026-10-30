@@ -3,9 +3,9 @@ import {
   ArrowRight,
   Building2,
   ChevronRight,
-  Globe2,
+  Map,
   ShieldCheck,
-  Zap,
+  Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -27,70 +27,73 @@ export function Hero() {
   const { t, language } = useLanguage();
 
   const trustItems = [
-    { icon: Globe2, label: t("hero.trust.countries") },
-    { icon: ShieldCheck, label: t("hero.trust.original") },
-    { icon: Zap, label: t("hero.trust.fast") },
+    { icon: Map, label: t("home.trust.1") },
+    { icon: ShieldCheck, label: t("home.trust.2") },
+    { icon: Truck, label: t("home.trust.3") },
   ];
 
   const compactProofTitle = {
-    tr: "Dijital operasyon katmanı",
-    en: "Digital operations layer",
-    es: "Capa digital operativa",
-    ar: "طبقة التشغيل الرقمية",
-    ru: "Цифровой операционный слой",
-    fr: "Couche opérationnelle digitale",
+    tr: "Dijital Operasyon Altyapısı",
+    en: "Digital Operations Infrastructure",
+    es: "Infraestructura de operaciones digitales",
+    ar: "البنية التحتية للعمليات الرقمية",
+    ru: "Инфраструктура цифровых операций",
+    fr: "Infrastructure des opérations digitales",
   };
 
   const compactProofDescription = {
-    tr: "Sipariş, raporlama ve süreklilik tek çatı altında.",
-    en: "Orders, reporting and continuity in one layer.",
-    es: "Pedidos, reportes y continuidad en una sola capa.",
-    ar: "الطلبات والتقارير والاستمرارية ضمن طبقة واحدة.",
-    ru: "Заказы, отчётность и непрерывность в одном слое.",
-    fr: "Commandes, reporting et continuité en une seule couche.",
+    tr: "Sipariş yönetimi, stok takibi, raporlama ve ticari süreçleri destekleyen teknoloji odaklı B2B altyapımızla operasyonel verimliliği artırıyoruz.",
+    en: "We raise operational efficiency with a technology-driven B2B infrastructure that supports order management, stock tracking, reporting and commercial processes.",
+    es: "Aumentamos la eficiencia operativa con una infraestructura B2B de base tecnológica que respalda la gestión de pedidos, el seguimiento del stock, los reportes y los procesos comerciales.",
+    ar: "نرفع الكفاءة التشغيلية عبر بنية تحتية للتجارة بين الشركات (B2B) قائمة على التكنولوجيا، تدعم إدارة الطلبات وتتبع المخزون وإعداد التقارير والعمليات التجارية.",
+    ru: "Мы повышаем операционную эффективность за счёт технологической B2B-инфраструктуры, которая поддерживает управление заказами, учёт остатков, отчётность и коммерческие процессы.",
+    fr: "Nous améliorons l’efficacité opérationnelle grâce à une infrastructure B2B axée sur la technologie, qui prend en charge la gestion des commandes, le suivi des stocks, le reporting et les processus commerciaux.",
   };
 
   const compactProofStats = {
     tr: [
-      { value: "40+", label: "Ülke" },
-      { value: "80+", label: "Marka" },
-      { value: "15k+", label: "Ürün" },
-      { value: "%100", label: "OEM" },
+      { value: "80+", label: "Marka İlişkisi" },
+      { value: "%100", label: "Ürün Odaklı Kalite" },
+      { value: "Türkiye Geneli", label: "Tedarik" },
+      { value: "B2B", label: "Dijital Altyapı" },
     ],
     en: [
-      { value: "40+", label: "Countries" },
-      { value: "80+", label: "Brands" },
-      { value: "15k+", label: "Products" },
-      { value: "100%", label: "OEM" },
+      { value: "80+", label: "Brand Relations" },
+      { value: "100%", label: "Product-Focused Quality" },
+      { value: "Nationwide", label: "Supply" },
+      { value: "B2B", label: "Digital Infrastructure" },
     ],
     es: [
-      { value: "40+", label: "Países" },
-      { value: "80+", label: "Marcas" },
-      { value: "15k+", label: "Productos" },
-      { value: "100 %", label: "OEM" },
+      { value: "80+", label: "Relaciones de marca" },
+      { value: "100 %", label: "Calidad centrada en el producto" },
+      { value: "Todo el país", label: "Suministro" },
+      { value: "B2B", label: "Infraestructura digital" },
     ],
     ar: [
-      { value: "+40", label: "دولة" },
-      { value: "+80", label: "علامة" },
-      { value: "+15k", label: "منتج" },
-      { value: "%100", label: "OEM" },
+      { value: "+80", label: "علاقات العلامات التجارية" },
+      { value: "%100", label: "جودة مركّزة على المنتج" },
+      { value: "على مستوى البلاد", label: "التوريد" },
+      { value: "B2B", label: "بنية رقمية" },
     ],
     ru: [
-      { value: "40+", label: "Стран" },
-      { value: "80+", label: "Брендов" },
-      { value: "15k+", label: "Товаров" },
-      { value: "100%", label: "OEM" },
+      { value: "80+", label: "Отношения с брендами" },
+      { value: "100%", label: "Качество в фокусе продукта" },
+      { value: "Вся страна", label: "Поставки" },
+      { value: "B2B", label: "Цифровая инфраструктура" },
     ],
     fr: [
-      { value: "40+", label: "Pays" },
-      { value: "80+", label: "Marques" },
-      { value: "15k+", label: "Produits" },
-      { value: "100%", label: "OEM" },
+      { value: "80+", label: "Relations marques" },
+      { value: "100%", label: "Qualité centrée produit" },
+      { value: "Échelle nationale", label: "Approvisionnement" },
+      { value: "B2B", label: "Infrastructure digitale" },
     ],
   };
 
   const hubs = [t("global.hub.1.city"), t("global.hub.2.city"), t("global.hub.3.city")];
-  const proofStats = compactProofStats[language];
+  const proofStats = compactProofStats[language].map((stat) => ({
+    ...stat,
+    compact: !/^[\d+/.:%\s]+$/.test(stat.value),
+  }));
 
   return (
     <section className="relative flex min-h-[calc(100vh-var(--nav-height-mobile))] w-full items-center overflow-hidden bg-slate-950 lg:min-h-[calc(100vh-var(--nav-height))]">
@@ -210,7 +213,7 @@ export function Hero() {
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                 <Building2 className="h-3.5 w-3.5" />
-                <span data-testid="text-hero-proof-kicker">{t("nav.sabancidx")}</span>
+                <span data-testid="text-hero-proof-kicker">{t("home.tech.kicker")}</span>
               </div>
 
               <div className="mt-4">
@@ -225,7 +228,7 @@ export function Hero() {
               <div className="mt-5 grid grid-cols-2 gap-3">
                 {proofStats.map((stat, index) => (
                   <div key={stat.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] px-4 py-3.5" data-testid={`card-hero-proof-stat-${index}`}>
-                    <div className="text-[1.7rem] font-bold tracking-[-0.05em] text-white">{stat.value}</div>
+                    <div className={stat.compact ? "text-[1.1rem] font-bold leading-tight tracking-[-0.03em] text-white" : "text-[1.7rem] font-bold tracking-[-0.05em] text-white"}>{stat.value}</div>
                     <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">{stat.label}</div>
                   </div>
                 ))}

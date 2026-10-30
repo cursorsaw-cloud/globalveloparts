@@ -112,7 +112,7 @@ export function Contact() {
     },
   ];
 
-  const finalCtaItems = [t("global.cta.primary"), t("sdx.cta.secondary"), t("hero.trust.fast")];
+  const finalCtaItems = [t("home.trust.1"), t("home.trust.3"), t("home.tech.kicker")];
 
   return (
     <section id="contact" className="section-divider relative scroll-mt-32 overflow-hidden bg-white">
@@ -124,13 +124,13 @@ export function Contact() {
           <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-end">
             <div>
               <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300" data-testid="text-contact-cta-badge">
-                {t("global.cta.kicker")}
+                {t("home.cta.kicker")}
               </div>
               <h3 className="mt-5 max-w-3xl text-[2rem] font-bold leading-tight text-white sm:text-[2.5rem]" data-testid="text-contact-cta-title">
-                {t("global.cta.title")}
+                {t("home.cta.title")}
               </h3>
               <p className="mt-4 max-w-3xl text-[1rem] leading-8 text-slate-300" data-testid="text-contact-cta-description">
-                {t("global.cta.desc")}
+                {t("home.cta.desc")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 {finalCtaItems.map((item, index) => (
@@ -141,12 +141,23 @@ export function Contact() {
               </div>
             </div>
 
-            <Button asChild size="lg" className="w-fit px-7" data-testid="button-contact-cta-products">
-              <a href="/products">
-                {t("global.cta.primary")}
-                <ArrowRight className="h-4.5 w-4.5" />
-              </a>
-            </Button>
+            <div className="flex flex-col gap-4 sm:flex-row xl:justify-end">
+              <Button asChild size="lg" className="w-fit px-7" data-testid="button-contact-cta-products">
+                <a href="/products">
+                  {t("home.cta.primary")}
+                  <ArrowRight className="h-4.5 w-4.5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="ghost"
+                className="w-fit border border-white/12 bg-white/[0.04] px-7 text-white hover:border-white/24 hover:bg-white/[0.1] hover:text-white"
+                data-testid="button-contact-cta-anchor"
+              >
+                <a href="/#contact">{t("home.cta.secondary")}</a>
+              </Button>
+            </div>
           </div>
         </div>
 

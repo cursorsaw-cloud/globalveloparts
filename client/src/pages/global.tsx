@@ -1,5 +1,5 @@
-import { ArrowRight, Boxes, Building2, MapPin, Plane, Ship, Truck } from "lucide-react";
-import logisticsBannerBg from "@assets/global-logistics-banner.png";
+import { ArrowRight, Boxes, Building2, Map, MapPin, Truck, Warehouse } from "lucide-react";
+import operationsBannerBg from "@assets/turkey-operations-banner.png";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -15,18 +15,18 @@ export default function GlobalNetworkPage() {
 
   const flow = [
     { icon: Boxes, title: t("global.flow.1.title"), desc: t("global.flow.1.desc") },
-    { icon: Ship, title: t("global.flow.2.title"), desc: t("global.flow.2.desc") },
+    { icon: Warehouse, title: t("global.flow.2.title"), desc: t("global.flow.2.desc") },
     { icon: Truck, title: t("global.flow.3.title"), desc: t("global.flow.3.desc") },
   ];
 
   const stats = [
-    { value: "40+", label: t("global.stats.1") },
-    { value: "80+", label: t("global.stats.2") },
-    { value: "4", label: t("global.stats.3") },
-    { value: "24/7", label: t("global.stats.4") },
-  ];
+    { value: t("global.stats.v1"), label: t("global.stats.1") },
+    { value: t("global.stats.v2"), label: t("global.stats.2") },
+    { value: t("global.stats.v3"), label: t("global.stats.3") },
+    { value: t("global.stats.v4"), label: t("global.stats.4") },
+  ].map((stat) => ({ ...stat, compact: !/^[\d+/.:%\s]+$/.test(stat.value) }));
 
-  const regions = [t("global.eu"), t("global.me"), t("global.asia"), t("global.africa")];
+  const regions = [t("global.region.1"), t("global.region.2"), t("global.region.3"), t("global.region.4")];
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -36,7 +36,7 @@ export default function GlobalNetworkPage() {
         {/* Full-bleed logistics image */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <img
-            src={logisticsBannerBg}
+            src={operationsBannerBg}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover object-center opacity-100"
@@ -82,7 +82,15 @@ export default function GlobalNetworkPage() {
                     className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] px-5 py-5 backdrop-blur-sm"
                     data-testid={`card-global-stat-${index}`}
                   >
-                    <div className="text-[2rem] font-extrabold tracking-[-0.05em] text-white">{stat.value}</div>
+                    <div
+                      className={
+                        stat.compact
+                          ? "text-[1.2rem] font-extrabold leading-tight tracking-[-0.03em] text-white"
+                          : "text-[2rem] font-extrabold tracking-[-0.05em] text-white"
+                      }
+                    >
+                      {stat.value}
+                    </div>
                     <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
                   </div>
                 ))}
@@ -100,7 +108,7 @@ export default function GlobalNetworkPage() {
               <div className="relative z-10">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-[0.9rem] bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/20">
-                    <Plane className="h-5 w-5" />
+                    <Map className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400" data-testid="text-global-panel-kicker">

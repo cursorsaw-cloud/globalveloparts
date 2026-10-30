@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, Server, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Globe, Linkedin, Server, Shield, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 
@@ -104,6 +104,62 @@ export default function SabanciDxPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-slate-50">
+        <div className="section-shell">
+          <div className="mx-auto max-w-[44rem] text-center">
+            <span className="section-kicker text-secondary" data-testid="text-sdx-news-kicker">
+              {t("sdx.news.kicker")}
+            </span>
+            <h2 className="mt-4 text-[2.3rem] font-bold tracking-[-0.04em] text-slate-950 md:text-[3rem]" data-testid="text-sdx-news-title">
+              {t("sdx.news.title")}
+            </h2>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-[54rem]">
+            <article className="surface-panel overflow-hidden rounded-[2rem]" data-testid="card-sdx-news">
+              <div className="aspect-[941/691] w-full overflow-hidden bg-slate-100">
+                <img
+                  src="/images/bulutistan-globalvelo-anadolu.jpg"
+                  alt={t("sdx.news.imageAlt")}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                  data-testid="img-sdx-news"
+                />
+              </div>
+
+              <div className="px-6 py-7 md:px-9 md:py-8">
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-primary">
+                    <Linkedin className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-900" data-testid="text-sdx-news-source">
+                    {t("sdx.news.source")}
+                  </span>
+                  <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500" data-testid="text-sdx-news-date">
+                    {t("sdx.news.date")}
+                  </span>
+                </div>
+
+                <div className="mt-6 space-y-5">
+                  <p className="text-[1.02rem] leading-8 text-slate-700" data-testid="text-sdx-news-p1">
+                    {t("sdx.news.p1")}
+                  </p>
+                  <p className="text-[1.02rem] leading-8 text-slate-700" data-testid="text-sdx-news-p2">
+                    {t("sdx.news.p2")}
+                  </p>
+                  <p className="text-[1.02rem] leading-8 text-slate-700" data-testid="text-sdx-news-p3">
+                    {t("sdx.news.p3")}
+                  </p>
+                  <p className="text-[1.02rem] font-semibold leading-8 text-slate-900" data-testid="text-sdx-news-p4">
+                    {t("sdx.news.p4")}
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>

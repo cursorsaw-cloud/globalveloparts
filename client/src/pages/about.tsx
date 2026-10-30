@@ -1,7 +1,7 @@
 import {
   ArrowRight,
+  Boxes,
   CheckCircle2,
-  Globe2,
   Network,
   ShieldCheck,
   Sparkles,
@@ -15,19 +15,21 @@ export default function AboutPage() {
 
   const metrics = [
     { value: "HQ", label: t("about.metrics.years") },
-    { value: "Global", label: t("about.metrics.markets") },
+    { value: "Türkiye", label: t("about.metrics.markets") },
     { value: "B2B", label: t("about.metrics.brands") },
-    { value: "Dx", label: t("about.metrics.support") },
-  ];
+    { value: "TECH", label: t("about.metrics.support") },
+  ].map((metric) => ({ ...metric, compact: metric.value.length > 3 }));
 
   const values = [
-    { icon: Globe2, title: t("about.values.1"), detail: t("about.values.detail1") },
+    { icon: Boxes, title: t("about.values.1"), detail: t("about.values.detail1") },
     { icon: Network, title: t("about.values.2"), detail: t("about.values.detail2") },
     { icon: CheckCircle2, title: t("about.values.3"), detail: t("about.values.detail3") },
     { icon: ShieldCheck, title: t("about.values.4"), detail: t("about.values.detail4") },
   ];
 
-  const narrative = [t("about.story.body1"), t("about.story.body2"), t("about.story.body3")];
+  const intro = [t("about.intro.1"), t("about.intro.2"), t("about.intro.3")];
+
+  const storyParagraphs = [t("about.story.body1"), t("about.story.body2")];
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -55,7 +57,15 @@ export default function AboutPage() {
                     className="rounded-[1.45rem] border border-white/10 bg-white/[0.05] px-5 py-5 backdrop-blur-sm"
                     data-testid={`card-about-metric-${index}`}
                   >
-                    <div className="text-[2rem] font-extrabold tracking-[-0.05em] text-white">{metric.value}</div>
+                    <div
+                      className={
+                        metric.compact
+                          ? "text-[1.5rem] font-extrabold leading-tight tracking-[-0.04em] text-white"
+                          : "text-[2rem] font-extrabold tracking-[-0.05em] text-white"
+                      }
+                    >
+                      {metric.value}
+                    </div>
                     <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                       {metric.label}
                     </div>
@@ -102,7 +112,7 @@ export default function AboutPage() {
               </p>
 
               <div className="mt-7 grid gap-3">
-                {narrative.map((item, index) => (
+                {intro.map((item, index) => (
                   <div
                     key={index}
                     className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] px-4 py-4"
@@ -131,7 +141,7 @@ export default function AboutPage() {
                 {t("about.story.title")}
               </h2>
               <div className="mt-6 space-y-4">
-                {narrative.map((item, index) => (
+                {storyParagraphs.map((item, index) => (
                   <p key={index} className="text-[1rem] leading-8 text-slate-600" data-testid={`text-about-story-body-${index + 1}`}>
                     {item}
                   </p>
@@ -168,7 +178,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <p className="mt-4 text-lg leading-8 text-slate-200" data-testid="text-about-positioning-description">
-                  {t("about.promise.desc")}
+                  {t("about.brand.desc")}
                 </p>
               </div>
             </div>

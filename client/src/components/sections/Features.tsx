@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, ShieldCheck, Truck, Users } from "lucide-react";
+import { ArrowRight, Map, ShieldCheck, Truck, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
@@ -10,7 +10,7 @@ export function Features() {
     {
       title: t("feat.1.title"),
       description: t("feat.1.desc"),
-      icon: Globe,
+      icon: Map,
     },
     {
       title: t("feat.2.title"),
@@ -30,16 +30,16 @@ export function Features() {
   ];
 
   const stats = [
-    { value: "40+", label: t("feat.stat.1.label") },
-    { value: "80+", label: t("feat.stat.2.label") },
-    { value: "15k+", label: t("feat.stat.3.label") },
-    { value: "%100", label: t("feat.stat.4.label") },
-  ];
+    { value: "80+", label: t("feat.stat.1.label") },
+    { value: "15K+", label: t("feat.stat.2.label") },
+    { value: "%100", label: t("feat.stat.3.label") },
+    { value: t("global.stats.v1"), label: t("feat.stat.4.label") },
+  ].map((stat) => ({ ...stat, compact: stat.value.length > 4 && !/^[\d+/.:%\s]+$/.test(stat.value) }));
 
   const flow = [
-    { title: t("global.flow.1.title"), desc: t("global.flow.1.desc") },
-    { title: t("global.flow.2.title"), desc: t("global.flow.2.desc") },
-    { title: t("global.flow.3.title"), desc: t("global.flow.3.desc") },
+    { title: t("home.flow.1.title"), desc: t("home.flow.1.desc") },
+    { title: t("home.flow.2.title"), desc: t("home.flow.2.desc") },
+    { title: t("home.flow.3.title"), desc: t("home.flow.3.desc") },
   ];
 
   return (
@@ -51,7 +51,7 @@ export function Features() {
         <div className="surface-panel grid gap-5 rounded-[2rem] px-6 py-7 sm:grid-cols-2 xl:grid-cols-4 xl:px-8 xl:py-8">
           {stats.map((stat, index) => (
             <div key={index} className="rounded-[1.5rem] border border-slate-200/70 bg-white/80 px-5 py-5 text-center xl:text-left" data-testid={`card-features-stat-${index}`}>
-              <div className="text-4xl font-extrabold tracking-[-0.05em] text-primary">{stat.value}</div>
+              <div className={stat.compact ? "text-[1.45rem] font-extrabold leading-tight tracking-[-0.03em] text-primary" : "text-4xl font-extrabold tracking-[-0.05em] text-primary"}>{stat.value}</div>
               <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
             </div>
           ))}
@@ -80,13 +80,13 @@ export function Features() {
             <div className="grid gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-start">
               <div>
                 <div className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
-                  {t("global.flow.kicker")}
+                  {t("home.flow.kicker")}
                 </div>
                 <h3 className="mt-4 text-[1.8rem] font-bold leading-tight text-slate-950" data-testid="text-features-operations-title">
-                  {t("global.flow.title")}
+                  {t("home.flow.title")}
                 </h3>
                 <p className="mt-3 text-[0.98rem] leading-7 text-slate-600" data-testid="text-features-operations-description">
-                  {t("global.flow.desc")}
+                  {t("home.flow.desc")}
                 </p>
               </div>
 
